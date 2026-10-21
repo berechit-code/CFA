@@ -24,5 +24,57 @@
     "correctIndex": 1,
     "explanation": "ΔP/P ≈ -ModDur * Δy + 0.5 * Convexity * (Δy)^2. Here: -6.2 * 0.01 + 0.5 * 54 * (0.01)^2 = -0.0620 + 0.0027 = -0.0593 (-5.93%).",
     "trap": "Always remember the 0.5 multiplier for the convexity adjustment and keep signs straight."
+  },
+  {
+    "id": 3,
+    "topic": "Portfolio Management",
+    "question": "In the context of total investment risk, macro risks:",
+    "options": [
+      "represent non-systematic risks.",
+      "are independent from total investment risk.",
+      "significantly influence overall investment performance."
+    ],
+    "correctIndex": 2,
+    "explanation": "Macro risks, also known as systematic risks, affect the entire market or a large segment of the market (economic recessions, political instability, changes in interest rates, inflation). These risks are inherent to the aggregate market and cannot be diversified away.",
+    "trap": "Do not confuse systematic (macro/market-wide, non-diversifiable) risk with unsystematic (micro/firm-specific, diversifiable) risk."
+  },
+  {
+    "id": 4,
+    "topic": "Portfolio Management",
+    "question": "A wider range of annual returns for an asset class is typically associated with:",
+    "options": [
+      "lower risk and higher returns.",
+      "higher risk and lower returns.",
+      "higher risk and higher returns."
+    ],
+    "correctIndex": 2,
+    "explanation": "A wider dispersion or range of returns indicates higher variability and volatility (greater risk). Under the fundamental risk-return trade-off principle, investors require higher expected returns to bear higher levels of risk.",
+    "trap": "Avoid confusing narrow dispersion (lower volatility/risk, typically associated with lower returns) with wide dispersion."
+  },
+  {
+    "id": 5,
+    "topic": "Fixed Income",
+    "question": "What does the decline in capital distribution returns in long-term government bonds over the period from the early 2000s to early 2020s indicate?",
+    "options": [
+      "A shift toward higher equity investments",
+      "A decrease in market interest rates",
+      "An increase in corporate default rates"
+    ],
+    "correctIndex": 1,
+    "explanation": "The drop in capital distribution returns (coupon income/yields) on government bonds reflects the secular downward trend in global market interest rates. As newly issued bonds entered the market with lower coupon rates, overall income generation declined.",
+    "trap": "Corporate default rates directly impact corporate credit spreads, not sovereign government bond distributions. Shifts into equities affect asset allocations, not bond coupon yields."
+  },
+  {
+    "id": 6,
+    "topic": "Portfolio Management",
+    "question": "How does the risk-return trade-off principle affect asset allocation among investors with different objectives?",
+    "options": [
+      "It encourages all investors to prioritize high-risk assets for maximum returns.",
+      "It leads investors to allocate assets based on their risk tolerance and return objectives.",
+      "It suggests that low-risk assets offer the highest potential returns."
+    ],
+    "correctIndex": 1,
+    "explanation": "The risk-return trade-off dictates that asset allocation balances expected return against willingness and ability to bear risk (risk tolerance). Investors with distinct profiles structure their portfolios differently along the efficient frontier.",
+    "trap": "The trade-off never mandates high-risk exposure for everyone; allocations are strictly matched to individual utility, liquidity needs, and time horizons."
   }
 ]
