@@ -2,7 +2,7 @@
   "dailyTarget": 20,
   "dailyHistory": {
     "2026-10-21": {
-      "count": 23,
+      "count": 24,
       "correct": 17,
       "answeredIds": [
         1,
@@ -31,11 +31,17 @@
       ]
     }
   },
-  "answeredMap": {},
+  "answeredMap": {
+    "18": {
+      "selectedIndex": 0,
+      "isCorrect": false,
+      "timestamp": 1792602342536
+    }
+  },
   "flaggedIds": [],
   "lesChecked": {
     "Quantitative Methods__10": true,
     "Quantitative Methods__1": true
   },
-  "lastUpdated": 1792588284019
+  "lastUpdated": 1792602342536
 }
