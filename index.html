@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CFA® Level I Exam Simulator - Target Feb 25, 2027 | Carmen Guintrand</title>
+  <title>CFA® Level I 2027 Exam Simulator & LES Tracker | Carmen Guintrand</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- Fonts: Inter & JetBrains Mono for financial figures -->
+  <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -21,7 +21,6 @@
         extend: {
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
-            serif: ['Merriweather', 'serif'],
             mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
@@ -42,1004 +41,1471 @@
   </script>
 
   <style>
-    /* Clean custom scrollbars */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
     ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-    
-    .question-stem {
-      line-height: 1.65;
-    }
-    
-    /* Option button transition */
-    .option-btn {
-      transition: all 0.15s ease-in-out;
-    }
+    .question-stem { line-height: 1.68; }
+    .option-btn { transition: all 0.14s ease-in-out; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-full flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900 antialiased">
 
   <!-- ================= TOP NAVIGATION BAR ================= -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-3">
       
-      <!-- Brand & Candidate Title -->
+      <!-- Brand & Candidate Status -->
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 font-bold text-sm tracking-widest shadow-inner">
+        <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 font-extrabold text-sm tracking-widest shadow-inner shrink-0">
           CFA
         </div>
         <div>
-          <div class="flex items-center gap-2">
-            <h1 class="text-sm font-bold text-slate-900 tracking-tight">CFA® L1 Practice & Mock Engine</h1>
-            <span class="text-[10px] font-semibold uppercase bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded-full">
+          <div class="flex flex-wrap items-center gap-2">
+            <h1 class="text-sm font-bold text-slate-900 tracking-tight">CFA® L1 2027 Simulator & LES Hub</h1>
+            <span class="text-[10px] font-bold uppercase bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded-full">
               Carmen Guintrand
             </span>
+            <span id="json-sync-badge" onclick="syncExternalQuestionsJSON(true)" class="cursor-pointer text-[10px] font-mono font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1 hover:bg-emerald-100 transition" title="Click to reload questions.json from GitHub">
+              <i class="fa-solid fa-rotate text-[9px]"></i> <span id="json-sync-text">Syncing questions.json...</span>
+            </span>
           </div>
-          <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
-            <span>Target: 25 Feb 2027</span>
+          <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 font-mono mt-0.5">
+            <span>Exam: <strong class="text-slate-800">25 Feb 2027</strong></span>
             <span>•</span>
-            <span class="text-emerald-700 font-semibold">MPS Target: 70%+</span>
+            <span id="countdown-mini" class="text-blue-700 font-semibold">-- days left</span>
             <span>•</span>
-            <span id="countdown-mini" class="text-slate-600">-- days remaining</span>
+            <span>LES Total: <strong class="text-slate-800">2,115 Qs</strong></span>
           </div>
         </div>
       </div>
 
-      <!-- App Mode Switcher -->
-      <nav class="flex items-center gap-1 sm:gap-2">
-        <button id="nav-drill" onclick="setAppMode('drill')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all bg-blue-50 text-blue-700 border border-blue-200">
-          <i class="fa-solid fa-bolt"></i>
-          <span>Quiz & Drill</span>
-        </button>
-        <button id="nav-mock" onclick="setAppMode('mock')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent">
-          <i class="fa-solid fa-stopwatch"></i>
-          <span>Timed Mock</span>
-        </button>
-        <button id="nav-stats" onclick="setAppMode('stats')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent">
-          <i class="fa-solid fa-chart-line"></i>
-          <span>Analytics</span>
-        </button>
-        <button id="nav-plan" onclick="setAppMode('plan')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent">
-          <i class="fa-solid fa-calendar-check"></i>
-          <span class="hidden sm:inline">Study Plan</span>
-        </button>
-        <button onclick="openManageQuestionsModal()" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-700 bg-slate-100 hover:bg-slate-200">
-          <i class="fa-solid fa-database"></i>
-          <span class="hidden sm:inline">QBank</span>
-        </button>
-      </nav>
+      <!-- Daily Goal Widget & Navigation -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+        
+        <!-- Daily Goal Progress Pill -->
+        <div class="bg-slate-900 text-white px-3 py-1.5 rounded-xl flex items-center gap-3 border border-slate-800 shadow-xs">
+          <div class="flex flex-col">
+            <div class="flex items-center justify-between gap-2 text-[10px] uppercase tracking-wider font-bold text-slate-400">
+              <span><i class="fa-solid fa-fire text-amber-400 mr-1"></i>Daily Target</span>
+              <span id="streak-badge" class="text-amber-300 font-mono">0d streak</span>
+            </div>
+            <div class="flex items-center gap-2 mt-0.5">
+              <span id="daily-progress-text" class="text-xs font-mono font-bold text-emerald-400">0 / 20</span>
+              <div class="w-16 bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                <div id="daily-progress-bar" class="bg-emerald-400 h-full transition-all duration-300" style="width: 0%"></div>
+              </div>
+              <select id="daily-goal-select" onchange="updateDailyGoalTarget(this.value)" class="bg-slate-800 text-[10px] font-mono text-slate-200 rounded px-1 py-0.5 border border-slate-700 focus:outline-none" title="Set Daily Question Goal">
+                <option value="10">10/day</option>
+                <option value="15">15/day</option>
+                <option value="20" selected>20/day</option>
+                <option value="25">25/day</option>
+                <option value="30">30/day</option>
+                <option value="50">50/day</option>
+              </select>
+            </div>
+          </div>
+          <button onclick="startDailyRandomDrill()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-[11px] px-2.5 py-1.5 rounded-lg transition shadow-2xs flex items-center gap-1 shrink-0" title="Launch a randomized daily session matching your target">
+            <i class="fa-solid fa-play text-[9px]"></i> Daily Drill
+          </button>
+        </div>
+
+        <!-- Main Mode Switcher -->
+        <nav class="flex items-center gap-1">
+          <button id="nav-drill" onclick="setAppMode('drill')" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all bg-blue-50 text-blue-700 border border-blue-200">
+            <i class="fa-solid fa-bolt"></i>
+            <span>QCM Drill</span>
+          </button>
+          <button id="nav-les" onclick="setAppMode('les')" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent">
+            <i class="fa-solid fa-list-check"></i>
+            <span>LES 2027 (2,115 Qs)</span>
+          </button>
+          <button id="nav-mock" onclick="setAppMode('mock')" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span class="hidden md:inline">Timed Mock</span>
+          </button>
+          <button id="nav-stats" onclick="setAppMode('stats')" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span class="hidden md:inline">Analytics</span>
+          </button>
+          <button id="nav-plan" onclick="setAppMode('plan')" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="hidden lg:inline">Roadmap</span>
+          </button>
+          <button onclick="openManageQuestionsModal()" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200">
+            <i class="fa-solid fa-code"></i>
+            <span class="hidden sm:inline">+ JSON / QBank</span>
+          </button>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <!-- ================= SUB-HEADER: FILTER / TIMER BAR ================= -->
-  <div class="bg-slate-100 border-b border-slate-200 py-2.5 px-4 sm:px-6 lg:px-8">
+  <!-- ================= SUB-HEADER: FILTER / SHUFFLE / TIMER BAR ================= -->
+  <div class="bg-slate-100 border-b border-slate-200 py-2 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
       
-      <!-- Drill Filters (Visible in Drill Mode) -->
+      <!-- Drill Controls -->
       <div id="drill-controls" class="flex flex-wrap items-center gap-2 text-xs">
         <label class="font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1">
           <i class="fa-solid fa-filter text-slate-400"></i> Topic:
         </label>
-        <select id="topic-select" onchange="filterByTopic(this.value)" class="bg-white border border-slate-300 rounded-md px-2.5 py-1 text-xs font-medium text-slate-800 focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs">
-          <option value="ALL">All Subjects (Balanced Exam Mix)</option>
-          <option value="FSA">📊 Financial Statement Analysis (Critical: 11-14%)</option>
-          <option value="FI">📈 Fixed Income (Critical: 11-14%)</option>
-          <option value="QUANT">📐 Quantitative Methods (Critical: 6-9%)</option>
-          <option value="EQUITY">🏢 Equity Investments (11-14%)</option>
-          <option value="CORP">🤝 Corporate Issuers (6-9%)</option>
-          <option value="ETHICS">⚖️ Ethical & Professional Standards (15-20%)</option>
+        <select id="topic-select" onchange="filterByTopic(this.value)" class="bg-white border border-slate-300 rounded-lg px-2.5 py-1 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-2xs">
+          <option value="ALL">All Topics (Full Shuffled Pool)</option>
+          <option value="DAILY">🎯 Current Daily Drill Batch</option>
+          <option value="FSA">📊 Financial Statement Analysis (349 LES Qs)</option>
+          <option value="FI">📈 Fixed Income (239 LES Qs)</option>
+          <option value="PM">💼 Portfolio Construction / Management (219 LES Qs)</option>
+          <option value="QUANT">📐 Quantitative Methods (191 LES Qs)</option>
+          <option value="ETHICS">⚖️ Ethical & Professional Standards (172 LES Qs)</option>
+          <option value="ECON">🌍 Economics (147 LES Qs)</option>
+          <option value="DERIV">🔄 Derivatives (125 LES Qs)</option>
+          <option value="ALT">🏗️ Alternative Investments (113 LES Qs)</option>
+          <option value="EQUITY">🏢 Equities (104 LES Qs)</option>
+          <option value="CORP">🤝 Corporate Finance / Issuers (96 LES Qs)</option>
         </select>
 
-        <span class="text-slate-300">|</span>
+        <!-- Random Shuffle Action Button -->
+        <button onclick="shuffleActiveQuestionsNow()" class="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 font-semibold transition flex items-center gap-1 shadow-2xs" title="Randomize question order using Fisher-Yates algorithm">
+          <i class="fa-solid fa-shuffle"></i> Shuffle Questions
+        </button>
 
-        <!-- Reset Button -->
-        <button onclick="resetCurrentSession()" class="text-xs text-slate-600 hover:text-slate-900 font-medium px-2 py-1 rounded bg-white border border-slate-200 hover:bg-slate-50 transition">
-          <i class="fa-solid fa-rotate-left mr-1"></i> Reset Progress
+        <!-- Shuffle A/B/C Choices Toggle -->
+        <label class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-slate-200 cursor-pointer select-none text-slate-700 font-medium hover:bg-slate-50">
+          <input type="checkbox" id="shuffle-options-toggle" onchange="toggleShuffleOptions(this.checked)" class="rounded text-blue-600 focus:ring-0">
+          <span>Shuffle A/B/C Choices</span>
+        </label>
+
+        <button onclick="resetCurrentSession()" class="text-xs text-slate-600 hover:text-rose-700 font-medium px-2 py-1 rounded-lg bg-white border border-slate-200 hover:bg-rose-50 transition">
+          <i class="fa-solid fa-rotate-left mr-1"></i> Reset Session
         </button>
       </div>
 
-      <!-- Mock Exam Controls (Visible in Mock Mode) -->
+      <!-- Mock Exam Controls -->
       <div id="mock-controls" class="hidden flex items-center gap-4 text-xs font-mono">
         <div class="flex items-center gap-2 bg-slate-900 text-white px-3 py-1 rounded-md shadow-xs">
           <i class="fa-solid fa-stopwatch text-amber-400"></i>
-          <span class="text-slate-400 text-[11px]">TIME REMAINING:</span>
-          <span id="mock-timer" class="font-bold text-amber-300 text-sm">90:00</span>
+          <span class="text-slate-400 text-[11px]">MOCK TIMER:</span>
+          <span id="mock-timer" class="font-bold text-amber-300 text-sm">45:00</span>
         </div>
         <div class="text-xs text-slate-600 font-sans">
-          CFA Pace: <strong class="text-slate-900">90 sec / question</strong>
+          CFA Official Pace: <strong class="text-slate-900">90 sec / question</strong>
         </div>
-        <button onclick="finishMockExamEarly()" class="bg-rose-600 hover:bg-rose-700 text-white px-3 py-1 rounded text-xs font-bold transition font-sans shadow-xs">
-          End Exam & Grade
+        <button onclick="finishMockExamEarly()" class="bg-rose-600 hover:bg-rose-700 text-white px-3 py-1 rounded-lg text-xs font-bold transition font-sans shadow-xs">
+          Finish & Grade Mock
         </button>
       </div>
 
-      <!-- Session Accuracy & Counter -->
-      <div class="flex items-center gap-3 text-xs">
-        <div class="bg-white border border-slate-200 px-2.5 py-1 rounded text-slate-700 font-mono">
-          <span class="text-slate-500">Attempted:</span> <span id="session-answered" class="font-bold text-slate-900">0</span>/<span id="session-total">0</span>
+      <!-- Session Live Score -->
+      <div class="flex items-center gap-2 text-xs font-mono">
+        <div class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700">
+          <span class="text-slate-400">QBank:</span> <span id="total-qbank-count" class="font-bold text-slate-900">0</span>
         </div>
-        <div class="bg-white border border-slate-200 px-2.5 py-1 rounded text-slate-700 font-mono">
-          <span class="text-slate-500">Score:</span> <span id="session-score" class="font-bold text-blue-600">0%</span>
+        <div class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700">
+          <span class="text-slate-400">Answered:</span> <span id="session-answered" class="font-bold text-slate-900">0</span>/<span id="session-total">0</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700">
+          <span class="text-slate-400">Accuracy:</span> <span id="session-score" class="font-bold text-blue-600">0%</span>
         </div>
       </div>
+
     </div>
   </div>
 
-  <!-- ================= MAIN CONTENT WRAPPER ================= -->
+  <!-- ================= MAIN CONTENT CONTAINER ================= -->
   <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
 
-    <!-- ================= VIEW 1: QUIZ & DRILL / MOCK QUESTION CANVAS ================= -->
+    <!-- Toast Notification Banner -->
+    <div id="toast-banner" class="hidden fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl border border-slate-700 flex items-center gap-3 text-xs font-medium max-w-md">
+      <i class="fa-solid fa-circle-info text-amber-400 text-base"></i>
+      <span id="toast-message">Notification</span>
+    </div>
+
+    <!-- ================= VIEW 1: QCM DRILL & MOCK EXAM SIMULATOR ================= -->
     <div id="view-exam" class="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1 items-start">
       
-      <!-- Center: Question Card (8 Cols) -->
+      <!-- Left/Center: Question Stem & Options (8 Cols) -->
       <div class="lg:col-span-8 flex flex-col gap-4">
-        
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col">
           
-          <!-- Card Header: Topic & Question Number -->
-          <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
-            <div class="flex items-center gap-2">
+          <!-- Question Header -->
+          <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex flex-wrap items-center gap-2">
               <span id="q-topic-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide bg-blue-100 text-blue-800 border border-blue-200">
-                Financial Statement Analysis
+                Topic
               </span>
-              <span class="text-xs text-slate-500 font-mono" id="q-weight-indicator">Exam Weight: 11-14%</span>
+              <span id="q-module-badge" class="text-xs text-slate-500 font-mono truncate max-w-xs">
+                CFA Level I
+              </span>
             </div>
             
             <div class="flex items-center gap-3">
-              <!-- Flag button -->
               <button id="flag-btn" onclick="toggleFlagCurrentQuestion()" class="text-slate-400 hover:text-amber-500 transition text-sm flex items-center gap-1 font-medium">
                 <i class="fa-regular fa-flag" id="flag-icon"></i>
-                <span class="text-xs hidden sm:inline" id="flag-label">Flag for review</span>
+                <span class="text-xs hidden sm:inline" id="flag-label">Flag</span>
               </button>
               <span class="text-slate-300">|</span>
-              <span class="text-xs font-bold font-mono text-slate-700" id="q-counter">Q 1 of 24</span>
+              <span class="text-xs font-bold font-mono text-slate-700" id="q-counter">Q 1 of 1</span>
             </div>
           </div>
 
-          <!-- Question Content Area -->
+          <!-- Question Body -->
           <div class="p-6 sm:p-8 space-y-6">
-            
-            <!-- Question Stem -->
             <div class="question-stem text-slate-900 text-base sm:text-lg font-medium" id="q-stem">
-              Loading question...
+              Loading CFA question bank...
             </div>
 
-            <!-- Choice Options A, B, C -->
-            <div class="space-y-3" id="options-container">
-              <!-- Rendered via JS -->
-            </div>
+            <!-- 3 Choices (A, B, C) -->
+            <div class="space-y-3" id="options-container"></div>
 
-            <!-- Action Buttons Bar -->
+            <!-- Bottom Navigation & Submit Bar -->
             <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
               <div class="flex items-center gap-2">
-                <button onclick="navigateQuestion(-1)" id="prev-btn" class="px-4 py-2 rounded-lg text-xs font-semibold border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition flex items-center gap-1">
+                <button onclick="navigateQuestion(-1)" id="prev-btn" class="px-4 py-2 rounded-xl text-xs font-semibold border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 disabled:opacity-40 transition flex items-center gap-1.5">
                   <i class="fa-solid fa-chevron-left"></i> Previous
                 </button>
-                <button onclick="navigateQuestion(1)" id="next-btn" class="px-4 py-2 rounded-lg text-xs font-semibold border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition flex items-center gap-1">
+                <button onclick="navigateQuestion(1)" id="next-btn" class="px-4 py-2 rounded-xl text-xs font-semibold border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 disabled:opacity-40 transition flex items-center gap-1.5">
                   Next <i class="fa-solid fa-chevron-right"></i>
                 </button>
-              </div>
-
-              <div id="submit-action-container">
-                <button id="submit-btn" onclick="submitCurrentAnswer()" disabled class="px-6 py-2 rounded-lg text-xs font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition shadow-xs flex items-center gap-1.5">
-                  <i class="fa-solid fa-circle-check"></i> Submit Answer
+                <button onclick="pickRandomQuestion()" class="px-3 py-2 rounded-xl text-xs font-semibold border border-indigo-200 text-indigo-700 bg-indigo-50/60 hover:bg-indigo-100 transition flex items-center gap-1.5" title="Jump to a random unanswered question">
+                  <i class="fa-solid fa-dice"></i> Random Q
                 </button>
               </div>
-            </div>
 
+              <button id="submit-btn" onclick="submitCurrentAnswer()" disabled class="px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition shadow-xs flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check"></i> Submit Answer
+              </button>
+            </div>
           </div>
 
-          <!-- Drill Explanation Drawer (Shows only in Drill Mode after submission) -->
-          <div id="explanation-drawer" class="hidden border-t-2 border-slate-200 bg-slate-900 text-slate-100 p-6 sm:p-8 space-y-5">
+          <!-- Official CFA Rationale & Trap Drawer -->
+          <div id="explanation-drawer" class="hidden border-t-2 border-slate-200 bg-slate-900 text-slate-100 p-6 sm:p-8 space-y-4">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <span id="explanation-status-icon" class="text-lg"></span>
-                <h4 id="explanation-title" class="font-bold text-sm tracking-wide uppercase">CFA Institute Official Rationales</h4>
+                <h4 id="explanation-title" class="font-bold text-sm tracking-wide uppercase">Official CFA Rationale</h4>
               </div>
-              <span class="text-xs font-mono text-slate-400">LOS & Concept Breakdown</span>
+              <span class="text-xs font-mono text-slate-400">Keyboard: [A/B/C] Select • [Enter] Submit • [→] Next</span>
             </div>
 
-            <!-- Correct Answer Summary -->
-            <div id="explanation-correct" class="p-3.5 rounded-lg bg-emerald-950/60 border border-emerald-500/30 text-emerald-200 text-sm leading-relaxed">
-              <!-- Explanation text -->
+            <div id="explanation-correct" class="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/30 text-emerald-100 text-sm leading-relaxed whitespace-pre-line"></div>
+
+            <div id="distractors-wrapper" class="space-y-1.5">
+              <h5 class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Distractor Breakdown</h5>
+              <div id="explanation-distractors" class="text-xs text-slate-300 space-y-1 pl-3 border-l-2 border-slate-700 font-mono"></div>
             </div>
 
-            <!-- Distractor Analysis (Why others are wrong) -->
-            <div class="space-y-2">
-              <h5 class="text-xs font-bold uppercase tracking-wider text-slate-400">Analysis of Distractors (Incorrect Choices)</h5>
-              <div id="explanation-distractors" class="text-xs text-slate-300 space-y-1.5 pl-2 border-l-2 border-slate-700 font-mono">
-                <!-- Distractors text -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+              <div class="bg-black/40 border border-slate-800 rounded-xl p-3 text-xs font-mono text-amber-300">
+                <div class="text-[10px] text-amber-400/80 font-bold uppercase tracking-wider mb-1">
+                  <i class="fa-solid fa-calculator mr-1"></i> Key Formula / Rule
+                </div>
+                <div id="explanation-formula"></div>
               </div>
-            </div>
-
-            <!-- Formula / Key Takeaway Box -->
-            <div class="bg-black/40 border border-slate-700 rounded-lg p-3 text-xs font-mono text-amber-300">
-              <div class="text-[10px] text-amber-400/80 font-bold uppercase tracking-wider mb-1 flex items-center gap-1">
-                <i class="fa-solid fa-calculator"></i> Key Formula / Exam Rule:
+              <div class="bg-rose-950/40 border border-rose-500/30 rounded-xl p-3 text-xs text-rose-200">
+                <div class="text-[10px] text-rose-300 font-bold uppercase tracking-wider mb-1">
+                  <i class="fa-solid fa-triangle-exclamation mr-1"></i> Exam Trap Alert
+                </div>
+                <div id="explanation-trap"></div>
               </div>
-              <div id="explanation-formula">
-                <!-- Formula -->
-              </div>
-            </div>
-
-            <!-- Common Trap Box -->
-            <div class="bg-rose-950/30 border border-rose-500/30 rounded-lg p-3 text-xs text-rose-200">
-              ⚠️ <strong class="text-rose-300">Exam Trap Alert:</strong> <span id="explanation-trap">...</span>
             </div>
           </div>
 
         </div>
-
       </div>
 
-      <!-- Right: Navigator & Questions Matrix (4 Cols) -->
+      <!-- Right Sidebar: Daily Pacing & Question Matrix (4 Cols) -->
       <div class="lg:col-span-4 flex flex-col gap-4">
         
-        <!-- Question Grid Matrix -->
-        <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+        <!-- Daily Goal Card -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+              <i class="fa-solid fa-calendar-check text-blue-600"></i> Daily Discipline Tracker
+            </h3>
+            <span id="today-date-label" class="text-[11px] font-mono text-slate-400">Today</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+            <div>
+              <div class="text-xs text-slate-500 font-medium">Completed Today</div>
+              <div class="text-2xl font-black font-mono text-slate-900 mt-0.5">
+                <span id="card-daily-done">0</span> <span class="text-sm font-normal text-slate-400">/ <span id="card-daily-target">20</span> Qs</span>
+              </div>
+            </div>
+            <button onclick="startDailyRandomDrill()" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition shadow-xs flex items-center gap-1.5">
+              <i class="fa-solid fa-bolt"></i> New Daily Batch
+            </button>
+          </div>
+
+          <p class="text-[11px] text-slate-500 leading-relaxed">
+            At <strong class="text-slate-800" id="pacing-note-target">20</strong> questions/day, you will complete <strong class="text-emerald-700" id="pacing-note-total">2,540</strong> questions before Feb 25, 2027—covering the entire 2,115 LES QBank plus error review.
+          </p>
+        </div>
+
+        <!-- Question Navigator Matrix -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs">
           <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
             <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700">Question Matrix</h3>
             <span class="text-[11px] font-mono text-slate-400" id="matrix-stats">0 Answered</span>
           </div>
 
-          <!-- Color Legends -->
           <div class="flex flex-wrap items-center gap-2 text-[10px] text-slate-500 mb-3 font-medium">
-            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-slate-100 border border-slate-300"></span> Unanswered</div>
-            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-emerald-500 text-white"></span> Correct</div>
-            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-rose-500 text-white"></span> Incorrect</div>
-            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-amber-400 text-white"></span> Flagged</div>
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-slate-100 border border-slate-300"></span> Todo</div>
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-emerald-600"></span> Correct</div>
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-rose-600"></span> Wrong</div>
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Flagged</div>
           </div>
 
-          <!-- Scrollable Matrix Grid -->
-          <div id="question-matrix-grid" class="grid grid-cols-6 sm:grid-cols-8 lg:grid-cols-6 gap-2 max-h-64 overflow-y-auto pr-1">
-            <!-- Buttons injected via JS -->
-          </div>
-        </div>
-
-        <!-- Strategy Box for Carmen -->
-        <div class="bg-slate-900 text-white rounded-xl p-5 shadow-xs border border-slate-800 space-y-3">
-          <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
-            <i class="fa-solid fa-bullseye"></i> Carmen's Strategy Note
-          </div>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Your May 2026 deficit was <strong class="text-white">110 points</strong>. Prioritize high-weight question stems in <strong>FSA (11-14%)</strong> and <strong>Fixed Income (11-14%)</strong>. Scoring over 70% in these two alone covers the gap!
-          </p>
-          <div class="text-[11px] font-mono text-slate-400 bg-black/40 p-2 rounded border border-slate-800">
-            Speed Target: 90s/q | Eliminating 1 distractor yields 50% odds.
-          </div>
+          <div id="question-matrix-grid" class="grid grid-cols-6 sm:grid-cols-8 lg:grid-cols-6 gap-2 max-h-64 overflow-y-auto pr-1"></div>
         </div>
 
       </div>
-
     </div>
 
-    <!-- ================= VIEW 2: ANALYTICS & SCORE REPORT ================= -->
-    <div id="view-stats" class="hidden flex flex-col gap-6">
+    <!-- ================= VIEW 2: OFFICIAL CFA 2027 LES CURRICULUM TRACKER (2,115 Qs) ================= -->
+    <div id="view-les" class="hidden flex flex-col gap-6">
       
-      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-xs">
+      <!-- LES Overview Header -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase bg-blue-50 text-blue-700 border border-blue-200">
+                CFA-27-02-LI-B Official Catalog
+              </span>
+              <span class="text-xs font-mono text-slate-500">101 Modules + 4 Mock Sessions</span>
+            </div>
+            <h2 class="text-xl font-extrabold text-slate-900 mt-1">CFA® 2027 Learning Ecosystem (LES) Master Tracker</h2>
+            <p class="text-xs text-slate-500 mt-0.5">
+              Check off modules as you complete them on the CFA Institute platform and send screenshots here in the chat to convert your missed questions into your <code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-800">questions.json</code> bank.
+            </p>
+          </div>
+
+          <!-- Global LES Progress Counter -->
+          <div class="flex flex-wrap items-center gap-4 bg-slate-900 text-white p-4 rounded-xl border border-slate-800 shrink-0">
+            <div>
+              <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">LES Questions Completed</div>
+              <div class="text-2xl font-black font-mono text-amber-400 mt-0.5">
+                <span id="les-completed-qs">0</span> <span class="text-xs font-normal text-slate-400">/ 2,115 Qs (<span id="les-completed-pct">0%</span>)</span>
+              </div>
+            </div>
+            <div class="h-8 w-px bg-slate-700"></div>
+            <div>
+              <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Required Daily LES Pace</div>
+              <div class="text-lg font-bold font-mono text-emerald-400 mt-0.5" id="les-daily-pace-needed">~17 Qs / day</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Filter Pills for LES -->
+        <div class="flex flex-wrap items-center gap-2 pt-4" id="les-topic-filters"></div>
+      </div>
+
+      <!-- LES Modules Accordion / Grid -->
+      <div id="les-modules-container" class="space-y-6"></div>
+    </div>
+
+    <!-- ================= VIEW 3: ANALYTICS & SCORE DIAGNOSTICS ================= -->
+    <div id="view-stats" class="hidden flex flex-col gap-6">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Performance Diagnostics</span>
-            <h2 class="text-xl font-bold text-slate-900 mt-1">Detailed Score Report vs Minimum Passing Score (MPS)</h2>
-            <p class="text-xs text-slate-500 mt-0.5">Tracking against official CFA 70% proficiency standard across all syllabus topics.</p>
+            <h2 class="text-xl font-bold text-slate-900 mt-1">Accuracy by Topic vs. 70% Minimum Passing Score (MPS)</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Comparing your live QBank accuracy with your May 2026 baseline (1490 / 1600).</p>
           </div>
           <div class="flex items-center gap-3">
             <div class="text-right">
               <div class="text-2xl font-black font-mono text-slate-900" id="stats-overall-pct">0%</div>
-              <div class="text-[10px] text-slate-400 font-semibold uppercase">Overall Accuracy</div>
+              <div class="text-[10px] text-slate-400 font-semibold uppercase">Current QBank Accuracy</div>
             </div>
             <div id="mps-badge" class="px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 border border-rose-200">
-              Below MPS (&lt;70%)
+              Target: 70%+
             </div>
           </div>
         </div>
-
-        <!-- Topic Breakdown Progress Bars -->
-        <div class="mt-6 space-y-5" id="topic-performance-bars">
-          <!-- Injected via JS -->
-        </div>
+        <div class="mt-6 space-y-4" id="topic-performance-bars"></div>
       </div>
-
     </div>
 
-    <!-- ================= VIEW 3: STUDY PLAN & COUNTDOWN ================= -->
+    <!-- ================= VIEW 4: STRATEGIC ROADMAP TO FEB 25, 2027 ================= -->
     <div id="view-plan" class="hidden flex flex-col gap-6">
-      
-      <!-- Big Countdown Banner -->
       <div class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-lg flex flex-col lg:flex-row items-center justify-between gap-6">
         <div>
           <div class="flex items-center gap-2 text-amber-400 font-semibold text-xs tracking-wider uppercase">
-            <i class="fa-solid fa-calendar-day"></i> Target Exam Date: Thursday, February 25, 2027
+            <i class="fa-solid fa-calendar-day"></i> Exam Day: Thursday, February 25, 2027
           </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold mt-2 tracking-tight">CFA® Level I Remediation Roadmap</h2>
+          <h2 class="text-2xl sm:text-3xl font-extrabold mt-2 tracking-tight">127-Day Remediation Plan (+110 Points)</h2>
           <p class="text-slate-300 text-sm mt-2 max-w-2xl leading-relaxed">
-            Personalized strategy for Carmen Guintrand to bridge the 110-point shortfall from May 2026. Focuses heavily on recovering points in FSA, Quantitative Methods, and Fixed Income while safeguarding your 70%+ mastery in Ethics.
+            Built around the <strong>2,115 official CFA Learning Ecosystem questions</strong>. By completing <strong>20 questions per day</strong> and converting every missed question into your GitHub <code class="text-amber-300">questions.json</code> deck, you systematically eliminate weak spots in FSA, Fixed Income, and Quant.
           </p>
         </div>
-
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 shrink-0">
           <div class="bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10 text-center">
             <span id="countdown-days" class="text-4xl font-black text-amber-300 font-mono leading-none">--</span>
-            <div class="text-[10px] text-slate-300 uppercase tracking-wider font-semibold mt-1">Days to Exam</div>
+            <div class="text-[10px] text-slate-300 uppercase tracking-wider font-semibold mt-1">Days Remaining</div>
           </div>
           <div class="bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10 text-center">
-            <span class="text-4xl font-black text-emerald-400 font-mono leading-none">+110</span>
-            <div class="text-[10px] text-slate-300 uppercase tracking-wider font-semibold mt-1">Points Needed</div>
+            <span class="text-4xl font-black text-emerald-400 font-mono leading-none">2,115</span>
+            <div class="text-[10px] text-slate-300 uppercase tracking-wider font-semibold mt-1">Total LES Qs</div>
           </div>
         </div>
       </div>
 
-      <!-- Roadmap 4 Strategic Phases -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- Phase 1 -->
         <div class="bg-white rounded-xl border-t-4 border-rose-500 border-x border-b border-slate-200 p-5 shadow-xs flex flex-col justify-between">
           <div>
-            <span class="text-[11px] font-bold text-rose-600 uppercase tracking-wider">Phase 1: Remediation</span>
-            <h3 class="font-bold text-slate-900 text-base mt-1">FSA & Quant Foundation</h3>
+            <span class="text-[11px] font-bold text-rose-600 uppercase tracking-wider">Oct 21 – Nov 30, 2026</span>
+            <h3 class="font-bold text-slate-900 text-base mt-1">Phase 1: FSA & Quant</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-              Drill indirect Cash Flow statements, inventory valuation (LIFO reserve adjustments), deferred tax liabilities, and BA II Plus TVM keys.
+              Complete all <strong>12 FSA modules (349 Qs)</strong> and <strong>11 Quant modules (191 Qs)</strong> on LES. Screenshot every wrong answer to build your custom JSON QBank.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 font-medium">
-            🎯 Target: Reach 65% in FSA QBank
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-mono text-slate-500">
+            Volume: 540 LES Qs (~14 Qs/day)
           </div>
         </div>
 
-        <!-- Phase 2 -->
         <div class="bg-white rounded-xl border-t-4 border-amber-500 border-x border-b border-slate-200 p-5 shadow-xs flex flex-col justify-between">
           <div>
-            <span class="text-[11px] font-bold text-amber-600 uppercase tracking-wider">Phase 2: Heavy Weights</span>
-            <h3 class="font-bold text-slate-900 text-base mt-1">Fixed Income & Equity</h3>
+            <span class="text-[11px] font-bold text-amber-600 uppercase tracking-wider">December 2026</span>
+            <h3 class="font-bold text-slate-900 text-base mt-1">Phase 2: Fixed Income & Equities</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-              Master Modified Duration, money duration, convexity calculations, G-spread vs Z-spread, Gordon Growth Model, and multi-stage DDM.
+              Complete <strong>19 Fixed Income modules (239 Qs)</strong>, <strong>12 Equity modules (104 Qs)</strong>, and <strong>10 Derivatives modules (125 Qs)</strong>.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 font-medium">
-            🎯 Target: Lock in 25% exam weight
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-mono text-slate-500">
+            Volume: 468 LES Qs (~16 Qs/day)
           </div>
         </div>
 
-        <!-- Phase 3 -->
         <div class="bg-white rounded-xl border-t-4 border-blue-500 border-x border-b border-slate-200 p-5 shadow-xs flex flex-col justify-between">
           <div>
-            <span class="text-[11px] font-bold text-blue-600 uppercase tracking-wider">Phase 3: Integration</span>
-            <h3 class="font-bold text-slate-900 text-base mt-1">Full Mocks & Speed (90s)</h3>
+            <span class="text-[11px] font-bold text-blue-600 uppercase tracking-wider">January 2027</span>
+            <h3 class="font-bold text-slate-900 text-base mt-1">Phase 3: PM, Corp, Alt & Econ</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-              Timed mock exams under real conditions (two 135-minute sessions). Speed training to avoid stalling on calculation-heavy items.
+              Complete <strong>Portfolio Construction (219 Qs)</strong>, <strong>Economics (147 Qs)</strong>, <strong>Alternative Investments (113 Qs)</strong>, and <strong>Corporate Finance (96 Qs)</strong>.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 font-medium">
-            🎯 Target: Stable 72%+ on full mocks
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-mono text-slate-500">
+            Volume: 575 LES Qs (~19 Qs/day)
           </div>
         </div>
 
-        <!-- Phase 4 -->
         <div class="bg-white rounded-xl border-t-4 border-emerald-500 border-x border-b border-slate-200 p-5 shadow-xs flex flex-col justify-between">
           <div>
-            <span class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider">Phase 4: Final Peak</span>
-            <h3 class="font-bold text-slate-900 text-base mt-1">Ethics & Formula Cram</h3>
+            <span class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider">Feb 1 – Feb 24, 2027</span>
+            <h3 class="font-bold text-slate-900 text-base mt-1">Phase 4: Ethics & 4 Mock Sessions</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-              Daily CFA Standards of Practice handbook drill. Maintain Ethics above 70% to benefit from the CFA Institute Ethics Adjustment rule.
+              Complete <strong>9 Ethics modules (172 Qs)</strong> + <strong>Mock Exams A & B (360 Qs)</strong> under strict 90s/question timing, plus daily shuffled review of your GitHub JSON deck.
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 font-medium">
-            🎯 Target: Exam Pass on 25 Feb 2027
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-mono text-slate-500">
+            Volume: 532 LES Qs (~22 Qs/day)
           </div>
         </div>
       </div>
-
     </div>
 
   </main>
 
-  <!-- ================= MODAL: QBANK MANAGER (ADD / IMPORT / EXPORT) ================= -->
+  <!-- ================= MODAL: QBANK & GITHUB JSON MANAGER ================= -->
   <div id="modal-qbank" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
       
-      <!-- Modal Header -->
       <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
         <div>
-          <h3 class="font-bold text-slate-900 text-base">QBank Manager & Importer</h3>
-          <p class="text-xs text-slate-500">Add platform QCMs or paste bulk JSON batches directly from Gemini.</p>
+          <h3 class="font-bold text-slate-900 text-base">GitHub <code class="text-blue-600">questions.json</code> & QBank Manager</h3>
+          <p class="text-xs text-slate-500">Compatible with both your GitHub <code class="font-mono">questions.json</code> schema and local browser storage.</p>
         </div>
         <button onclick="closeManageQuestionsModal()" class="text-slate-400 hover:text-slate-600 p-1">
           <i class="fa-solid fa-xmark text-lg"></i>
         </button>
       </div>
 
-      <!-- Modal Tabs: Add Single vs Bulk JSON -->
       <div class="flex border-b border-slate-200 px-6 bg-white gap-4 text-xs font-semibold">
-        <button id="modal-tab-single-btn" onclick="toggleModalTab('single')" class="py-3 border-b-2 border-blue-600 text-blue-600">
-          + Add Single Question
+        <button id="modal-tab-bulk-btn" onclick="toggleModalTab('bulk')" class="py-3 border-b-2 border-blue-600 text-blue-600">
+          <i class="fa-solid fa-code mr-1"></i> GitHub questions.json Import / Export
         </button>
-        <button id="modal-tab-bulk-btn" onclick="toggleModalTab('bulk')" class="py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800">
-          <i class="fa-solid fa-file-import mr-1"></i> Bulk JSON Import / Export
+        <button id="modal-tab-single-btn" onclick="toggleModalTab('single')" class="py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800">
+          + Add Single Question
         </button>
       </div>
 
-      <!-- Modal Body -->
       <div class="p-6 overflow-y-auto flex-1">
         
-        <!-- SUB-TAB 1: Single Question Form -->
-        <form id="single-question-form" onsubmit="handleCreateQuestion(event)" class="space-y-4">
-          <div class="grid grid-cols-2 gap-3">
+        <!-- TAB 1: BULK JSON -->
+        <div id="bulk-json-container" class="space-y-4">
+          <div class="p-3.5 rounded-xl bg-blue-50 border border-blue-200 text-xs text-blue-900 leading-relaxed">
+            <strong>How it works with GitHub:</strong> Every time this page loads, it automatically fetches <code class="font-mono font-bold">./questions.json</code> from your GitHub repository and merges it with your QBank. You can also paste new JSON blocks here or click <strong>"Download Full questions.json"</strong> to commit directly to GitHub.
+          </div>
+
+          <textarea id="bulk-json-textarea" rows="10" placeholder='Paste JSON array [ { "id": 1, "topic": "Portfolio Management", "question": "...", "options": ["A", "B", "C"], "correctIndex": 2, "explanation": "...", "trap": "..." } ]' class="w-full bg-slate-900 text-emerald-300 font-mono text-xs p-3.5 rounded-xl border border-slate-700 focus:outline-none"></textarea>
+
+          <div class="flex flex-wrap items-center justify-between gap-2 pt-2">
+            <div class="flex flex-wrap gap-2">
+              <button onclick="handleExportJSONToClipboard()" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-semibold border border-slate-300">
+                <i class="fa-solid fa-copy mr-1"></i> Copy Full JSON
+              </button>
+              <button onclick="handleDownloadQuestionsJSONFile()" class="px-3.5 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-xl text-xs font-semibold border border-indigo-200">
+                <i class="fa-solid fa-download mr-1"></i> Download questions.json
+              </button>
+            </div>
+            <button onclick="handleImportJSON()" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs">
+              <i class="fa-solid fa-file-import mr-1"></i> Merge JSON into QBank
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 2: ADD SINGLE QUESTION -->
+        <form id="single-question-form" onsubmit="handleCreateQuestion(event)" class="hidden space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Topic</label>
               <select id="new-q-topic" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-medium">
-                <option value="FSA">Financial Statement Analysis</option>
-                <option value="FI">Fixed Income</option>
-                <option value="QUANT">Quantitative Methods</option>
-                <option value="EQUITY">Equity Investments</option>
-                <option value="CORP">Corporate Issuers</option>
-                <option value="ETHICS">Ethical and Professional Standards</option>
+                <option value="Financial Statement Analysis">Financial Statement Analysis</option>
+                <option value="Fixed Income">Fixed Income</option>
+                <option value="Portfolio Management">Portfolio Construction / Management</option>
+                <option value="Quantitative Methods">Quantitative Methods</option>
+                <option value="Ethical and Professional Standards">Ethical and Professional Standards</option>
+                <option value="Economics">Economics</option>
+                <option value="Derivatives">Derivatives</option>
+                <option value="Alternative Investments">Alternative Investments</option>
+                <option value="Equity Investments">Equities</option>
+                <option value="Corporate Issuers">Corporate Finance / Issuers</option>
               </select>
             </div>
             <div>
-              <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Correct Answer</label>
+              <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Correct Choice</label>
               <select id="new-q-correct" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-bold text-emerald-700">
-                <option value="0">Choice A is Correct</option>
-                <option value="1">Choice B is Correct</option>
-                <option value="2">Choice C is Correct</option>
+                <option value="0">Choice A (Index 0)</option>
+                <option value="1">Choice B (Index 1)</option>
+                <option value="2">Choice C (Index 2)</option>
               </select>
             </div>
           </div>
 
           <div>
-            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Question Stem (Vignette)</label>
-            <textarea id="new-q-stem" rows="3" required placeholder="Paste the CFA question scenario here..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs text-slate-900 focus:ring-1 focus:ring-blue-500"></textarea>
+            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Question Stem</label>
+            <textarea id="new-q-stem" rows="3" required placeholder="Enter the CFA question in English..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs"></textarea>
           </div>
 
           <div class="space-y-2">
-            <label class="block text-xs font-bold text-slate-600 uppercase">Answer Choices (CFA 3-Choice Format)</label>
-            <div class="flex items-center gap-2">
-              <span class="w-6 font-bold text-xs text-slate-500">A.</span>
-              <input type="text" id="new-q-opt-0" required placeholder="Option A text..." class="flex-1 bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-6 font-bold text-xs text-slate-500">B.</span>
-              <input type="text" id="new-q-opt-1" required placeholder="Option B text..." class="flex-1 bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-6 font-bold text-xs text-slate-500">C.</span>
-              <input type="text" id="new-q-opt-2" required placeholder="Option C text..." class="flex-1 bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
-            </div>
+            <label class="block text-xs font-bold text-slate-600 uppercase">3 Answer Options</label>
+            <input type="text" id="new-q-opt-0" required placeholder="Option A..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+            <input type="text" id="new-q-opt-1" required placeholder="Option B..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+            <input type="text" id="new-q-opt-2" required placeholder="Option C..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
           </div>
 
           <div>
-            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Detailed Explanation (Rationales & Distractors)</label>
-            <textarea id="new-q-explanation" rows="2" required placeholder="Explain why the correct choice is right and others are incorrect..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs"></textarea>
+            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Detailed Explanation</label>
+            <textarea id="new-q-explanation" rows="2" required placeholder="Why the correct option is right and why the others fail..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs"></textarea>
           </div>
 
-          <div class="grid grid-cols-2 gap-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Formula / Takeaway (Optional)</label>
-              <input type="text" id="new-q-formula" placeholder="Formula or rule..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-mono">
+              <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Formula / Rule (Optional)</label>
+              <input type="text" id="new-q-formula" placeholder="e.g. ΔP/P ≈ -ModDur × Δy..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-mono">
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Exam Trap (Optional)</label>
-              <input type="text" id="new-q-trap" placeholder="Typical mistake..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+              <input type="text" id="new-q-trap" placeholder="Common candidate mistake..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
             </div>
           </div>
 
           <div class="pt-3 border-t border-slate-100 flex justify-end gap-2">
             <button type="button" onclick="closeManageQuestionsModal()" class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100">Cancel</button>
-            <button type="submit" class="px-5 py-2 rounded-lg text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-xs">Save Question to Bank</button>
+            <button type="submit" class="px-5 py-2 rounded-lg text-xs font-bold text-white bg-blue-600 hover:bg-blue-700">Add Question</button>
           </div>
         </form>
 
-        <!-- SUB-TAB 2: Bulk JSON Import/Export -->
-        <div id="bulk-json-container" class="hidden space-y-4">
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Whenever Gemini gives you a batch of CFA practice questions in JSON, copy and paste it into the box below and click <strong>"Import JSON Questions"</strong>. You can also export your current bank for safekeeping.
-          </p>
-
-          <textarea id="bulk-json-textarea" rows="10" placeholder='[
-  {
-    "topic": "FSA",
-    "stem": "Which of the following...",
-    "options": ["Choice A", "Choice B", "Choice C"],
-    "correctIndex": 0,
-    "explanation": "...",
-    "formula": "...",
-    "trap": "..."
-  }
-]' class="w-full bg-slate-900 text-emerald-300 font-mono text-xs p-3 rounded-lg border border-slate-700 focus:outline-none"></textarea>
-
-          <div class="flex flex-wrap items-center justify-between gap-2 pt-2">
-            <div class="flex gap-2">
-              <button onclick="handleExportJSON()" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold border border-slate-200">
-                <i class="fa-solid fa-download mr-1"></i> Copy Current Bank to Clipboard
-              </button>
-              <button onclick="handleResetDefaultBank()" class="px-3.5 py-2 bg-rose-50 hover:bg-rose-100 text-rose-700 rounded-lg text-xs font-semibold border border-rose-200">
-                Reload Default 20 Questions
-              </button>
-            </div>
-            <button onclick="handleImportJSON()" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold shadow-xs">
-              <i class="fa-solid fa-file-import mr-1"></i> Import JSON Questions
-            </button>
-          </div>
-        </div>
-
       </div>
-
     </div>
   </div>
 
-  <!-- ================= INLINE JAVASCRIPT ENGINE ================= -->
+  <!-- ================= APPLICATION JAVASCRIPT ENGINE ================= -->
   <script>
-    /* =================================================================
-       CORE CFA QUESTION BANK: Tailored precisely to Carmen's Deficit Areas
-       (FSA, Fixed Income, Quantitative Methods, Equity, Ethics)
-       ================================================================= */
+    /* =========================================================================
+       1. ALGORITHME DE MÉLANGE ALÉATOIRE UNIFORME (FISHER-YATES SHUFFLE)
+       Exactement l'algorithme demandé : garantit un tirage équiprobable sans biais
+       ========================================================================= */
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    /* =========================================================================
+       2. CATALOGUE COMPLET DU CFA 2027 LEARNING ECOSYSTEM (LES) - 2,115 QUESTIONS
+       Extrait intégralement de tes captures d'écran (10 matières + 4 Mocks)
+       ========================================================================= */
+    const CFA_2027_LES_CATALOG = [
+      {
+        code: "QUANT",
+        title: "CFA-27-02-LI-B: Quantitative Methods",
+        weight: "6-9%",
+        priority: "HIGH (May 2026 Deficit)",
+        modules: [
+          { id: "quant-m1", name: "Module 1: Returns of Financial Assets and Instruments", count: 27 },
+          { id: "quant-m2", name: "Module 2: Types of Financial Returns", count: 4 },
+          { id: "quant-m3", name: "Module 3: Benchmarking Returns", count: 21 },
+          { id: "quant-m4", name: "Module 4: The Time Value of Money in Finance", count: 15 },
+          { id: "quant-m5", name: "Module 5: Statistical Characteristics of Asset Returns", count: 25 },
+          { id: "quant-m6", name: "Module 6: Statistical Distributions for Financial Asset Prices and Returns", count: 15 },
+          { id: "quant-m7", name: "Module 7: Estimation and Hypothesis Testing", count: 34 },
+          { id: "quant-m8", name: "Module 8: The Return and Risk of a Financial Portfolio", count: 13 },
+          { id: "quant-m9", name: "Module 9: Simulation of Financial Asset Prices and Returns", count: 13 },
+          { id: "quant-m10", name: "Module 10: Applications of Simple Linear Regression in Finance", count: 17 },
+          { id: "quant-m11", name: "Module 11: Introduction to Financial Data Science", count: 7 }
+        ]
+      },
+      {
+        code: "ECON",
+        title: "CFA-27-02-LI-B: Economics",
+        weight: "6-9%",
+        priority: "STRONG (>70% in May 2026)",
+        modules: [
+          { id: "econ-m1", name: "Module 1: The Firm and Market Structures", count: 36 },
+          { id: "econ-m2", name: "Module 2: Understanding Business Cycles", count: 16 },
+          { id: "econ-m3", name: "Module 3: Fiscal Policy", count: 14 },
+          { id: "econ-m4", name: "Module 4: Monetary Policy", count: 23 },
+          { id: "econ-m5", name: "Module 5: Introduction to Geopolitics", count: 19 },
+          { id: "econ-m6", name: "Module 6: International Trade", count: 10 },
+          { id: "econ-m7", name: "Module 7: Capital Flows and the FX Market", count: 10 },
+          { id: "econ-m8", name: "Module 8: Exchange Rate Calculations", count: 19 }
+        ]
+      },
+      {
+        code: "CORP",
+        title: "CFA-27-02-LI-B: Corporate Finance",
+        weight: "6-9%",
+        priority: "MODERATE",
+        modules: [
+          { id: "corp-m1", name: "Module 1: Organizational Forms, Corporate Issuer Features, and Ownership", count: 11 },
+          { id: "corp-m2", name: "Module 2: Investors and Other Stakeholders", count: 10 },
+          { id: "corp-m3", name: "Module 3: Corporate Governance: Conflicts, Mechanisms, Risks, and Benefits", count: 12 },
+          { id: "corp-m4", name: "Module 4: Working Capital and Liquidity", count: 13 },
+          { id: "corp-m5", name: "Module 5: Capital Investments and Capital Allocation", count: 18 },
+          { id: "corp-m6", name: "Module 6: Capital Structure", count: 22 },
+          { id: "corp-m7", name: "Module 7: Business Models", count: 10 }
+        ]
+      },
+      {
+        code: "FSA",
+        title: "CFA-27-02-LI-B: Financial Statement Analysis",
+        weight: "11-14%",
+        priority: "CRITICAL (#1 Remediation Priority)",
+        modules: [
+          { id: "fsa-m1", name: "Module 1: Introduction to Financial Statement Analysis", count: 29 },
+          { id: "fsa-m2", name: "Module 2: Analyzing Income Statements", count: 37 },
+          { id: "fsa-m3", name: "Module 3: Analyzing Balance Sheets", count: 17 },
+          { id: "fsa-m4", name: "Module 4: Analyzing Statements of Cash Flows I", count: 26 },
+          { id: "fsa-m5", name: "Module 5: Analyzing Statements of Cash Flows II", count: 9 },
+          { id: "fsa-m6", name: "Module 6: Analysis of Inventories", count: 48 },
+          { id: "fsa-m7", name: "Module 7: Analysis of Long-Term Assets", count: 37 },
+          { id: "fsa-m8", name: "Module 8: Topics in Long-Term Liabilities and Equity", count: 23 },
+          { id: "fsa-m9", name: "Module 9: Analysis of Income Taxes", count: 13 },
+          { id: "fsa-m10", name: "Module 10: Financial Reporting Quality", count: 41 },
+          { id: "fsa-m11", name: "Module 11: Financial Analysis Techniques", count: 44 },
+          { id: "fsa-m12", name: "Module 12: Introduction to Financial Statement Modeling", count: 25 }
+        ]
+      },
+      {
+        code: "EQUITY",
+        title: "CFA-27-02-LI-B: Equities",
+        weight: "11-14%",
+        priority: "HIGH (High Exam Weight)",
+        modules: [
+          { id: "eq-m1", name: "Module 1: Equity Instrument Features", count: 9 },
+          { id: "eq-m2", name: "Module 2: Equity Jurisdictions, Classes, and the Voting Process", count: 5 },
+          { id: "eq-m3", name: "Module 3: Equity Issuance and Trading", count: 8 },
+          { id: "eq-m4", name: "Module 4: Sources of Equity Returns", count: 8 },
+          { id: "eq-m5", name: "Module 5: Introduction to Equity Valuation", count: 16 },
+          { id: "eq-m6", name: "Module 6: Discounted Cash Flow (DCF) and Growth Models", count: 13 },
+          { id: "eq-m7", name: "Module 7: Relative Value Equity Valuation Approaches", count: 11 },
+          { id: "eq-m8", name: "Module 8: Financial Statement Forecasting in Equity Valuation", count: 6 },
+          { id: "eq-m9", name: "Module 9: Industry and Competitive Analysis", count: 10 },
+          { id: "eq-m10", name: "Module 10: Company Analysis: Past, Present, and Future", count: 6 },
+          { id: "eq-m11", name: "Module 11: Equity Analyst Research Reports", count: 6 },
+          { id: "eq-m12", name: "Module 12: The Capital Asset Pricing Model, Market Model, and Other Factor-Based Equity Models", count: 6 }
+        ]
+      },
+      {
+        code: "FI",
+        title: "CFA-27-02-LI-B: Fixed Income",
+        weight: "11-14%",
+        priority: "CRITICAL (#2 Remediation Priority)",
+        modules: [
+          { id: "fi-m1", name: "Module 1: Fixed-Income Instrument Features", count: 8 },
+          { id: "fi-m2", name: "Module 2: Fixed-Income Cash Flows and Types", count: 11 },
+          { id: "fi-m3", name: "Module 3: Fixed-Income Issuance and Trading", count: 5 },
+          { id: "fi-m4", name: "Module 4: Fixed-Income Markets for Corporate Issuers", count: 8 },
+          { id: "fi-m5", name: "Module 5: Fixed-Income Markets for Government Issuers", count: 8 },
+          { id: "fi-m6", name: "Module 6: Fixed-Income Bond Valuation: Prices and Yields", count: 16 },
+          { id: "fi-m7", name: "Module 7: Yield and Yield Spread Measures for Fixed-Rate Bonds", count: 11 },
+          { id: "fi-m8", name: "Module 8: Yield and Yield Spread Measures for Floating-Rate Instruments", count: 11 },
+          { id: "fi-m9", name: "Module 9: The Term Structure of Interest Rates: Spot, Par, and Forward Curves", count: 15 },
+          { id: "fi-m10", name: "Module 10: Interest Rate Risk and Return", count: 16 },
+          { id: "fi-m11", name: "Module 11: Yield-Based Bond Duration Measures and Properties", count: 18 },
+          { id: "fi-m12", name: "Module 12: Yield-Based Bond Convexity and Portfolio Properties", count: 23 },
+          { id: "fi-m13", name: "Module 13: Curve-Based and Empirical Fixed-Income Risk Measures", count: 16 },
+          { id: "fi-m14", name: "Module 14: Credit Risk", count: 8 },
+          { id: "fi-m15", name: "Module 15: Credit Analysis for Government Issuers", count: 6 },
+          { id: "fi-m16", name: "Module 16: Credit Analysis for Corporate Issuers", count: 14 },
+          { id: "fi-m17", name: "Module 17: Fixed-Income Securitization", count: 11 },
+          { id: "fi-m18", name: "Module 18: Asset-Backed Security (ABS) Instrument and Market Features", count: 14 },
+          { id: "fi-m19", name: "Module 19: Mortgage-Backed Security (MBS) Instrument and Market Features", count: 20 }
+        ]
+      },
+      {
+        code: "DERIV",
+        title: "CFA-27-02-LI-B: Derivatives",
+        weight: "5-8%",
+        priority: "MODERATE",
+        modules: [
+          { id: "der-m1", name: "Module 1: Derivative Instrument and Derivative Market Features", count: 15 },
+          { id: "der-m2", name: "Module 2: Forward Commitment and Contingent Claim Features and Instruments", count: 20 },
+          { id: "der-m3", name: "Module 3: Derivative Benefits, Risks, and Issuer and Investor Uses", count: 9 },
+          { id: "der-m4", name: "Module 4: Arbitrage, Replication, and the Cost of Carry in Pricing Derivatives", count: 11 },
+          { id: "der-m5", name: "Module 5: Pricing and Valuation of Forward Contracts and for an Underlying with Varying Maturities", count: 13 },
+          { id: "der-m6", name: "Module 6: Pricing and Valuation of Futures Contracts", count: 6 },
+          { id: "der-m7", name: "Module 7: Pricing and Valuation of Interest Rate and Other Swaps", count: 9 },
+          { id: "der-m8", name: "Module 8: Pricing and Valuation of Options", count: 19 },
+          { id: "der-m9", name: "Module 9: Option Replication Using Put–Call Parity", count: 13 },
+          { id: "der-m10", name: "Module 10: Valuing a Derivative Using a One-Period Binomial Model", count: 10 }
+        ]
+      },
+      {
+        code: "ALT",
+        title: "CFA-27-02-LI-B: Alternative Investments",
+        weight: "7-10%",
+        priority: "STRONG (>70% in May 2026)",
+        modules: [
+          { id: "alt-m1", name: "Module 1: Alternative Investment Features, Methods, and Structures", count: 15 },
+          { id: "alt-m2", name: "Module 2: Alternative Investment Performance and Returns", count: 17 },
+          { id: "alt-m3", name: "Module 3: Investments in Private Capital: Equity and Debt", count: 18 },
+          { id: "alt-m4", name: "Module 4: Real Estate and Infrastructure", count: 18 },
+          { id: "alt-m5", name: "Module 5: Natural Resources", count: 12 },
+          { id: "alt-m6", name: "Module 6: Hedge Funds", count: 15 },
+          { id: "alt-m7", name: "Module 7: Introduction to Digital Assets", count: 18 }
+        ]
+      },
+      {
+        code: "PM",
+        title: "CFA-27-02-LI-B: Portfolio Construction",
+        weight: "8-12%",
+        priority: "MODERATE (In Progress)",
+        modules: [
+          { id: "pm-m1", name: "Module 1: Portfolio Risk and Return: Part I", count: 43 },
+          { id: "pm-m2", name: "Module 2: Portfolio Risk and Return: Part II", count: 66 },
+          { id: "pm-m3", name: "Module 3: Portfolio Management: An Overview", count: 26 },
+          { id: "pm-m4", name: "Module 4: Basics of Portfolio Planning and Construction", count: 33 },
+          { id: "pm-m5", name: "Module 5: The Behavioral Biases of Individuals", count: 20 },
+          { id: "pm-m6", name: "Module 6: Introduction to Risk Management", count: 31 }
+        ]
+      },
+      {
+        code: "ETHICS",
+        title: "CFA-27-02-LI-B: Ethical and Professional Standards",
+        weight: "15-20%",
+        priority: "ANCHOR STRENGTH (>75% in May 2026)",
+        modules: [
+          { id: "eth-m1", name: "Module 1: Ethics and Trust in the Investment Profession", count: 25 },
+          { id: "eth-m2", name: "Module 2: Code of Ethics and Standards of Professional Conduct", count: 21 },
+          { id: "eth-m3", name: "Module 3: Guidance for Standard I: Professionalism", count: 22 },
+          { id: "eth-m4", name: "Module 4: Guidance for Standard II: Integrity of Capital Markets", count: 14 },
+          { id: "eth-m5", name: "Module 5: Guidance for Standard III: Duties to Clients", count: 37 },
+          { id: "eth-m6", name: "Module 6: Guidance for Standard IV: Duties to Employers", count: 17 },
+          { id: "eth-m7", name: "Module 7: Guidance for Standard V: Investment Analysis, Recommendations, and Actions", count: 13 },
+          { id: "eth-m8", name: "Module 8: Guidance for Standard VI: Conflicts of Interest", count: 16 },
+          { id: "eth-m9", name: "Module 9: Guidance for Standard VII: Responsibilities as a CFA Institute Member or CFA Candidate", count: 7 }
+        ]
+      },
+      {
+        code: "MOCKS",
+        title: "CFA-27-02-LI-B: Official Mock Exams",
+        weight: "Final Readiness",
+        priority: "FEBRUARY 2027 SPRINT",
+        modules: [
+          { id: "mock-a1", name: "2027 CFA Program Level I Mock Exam A – Session 1", count: 90 },
+          { id: "mock-a2", name: "2027 CFA Program Level I Mock Exam A – Session 2", count: 90 },
+          { id: "mock-b1", name: "2027 CFA Program Level I Mock Exam B – Session 1", count: 90 },
+          { id: "mock-b2", name: "2027 CFA Program Level I Mock Exam B – Session 2", count: 90 }
+        ]
+      }
+    ];
+
+    /* =========================================================================
+       3. BANQUE DE QUESTIONS EMBARQUÉE (Inclut tes 6 questions + 14 questions ciblées)
+       Si questions.json sur GitHub contient plus de questions, elles s'ajoutent automatiquement !
+       ========================================================================= */
     const DEFAULT_QUESTION_BANK = [
-      // --- FSA (Financial Statement Analysis) ---
+      // Tes 4 questions issues de la capture vidéo du LES (Module 2: Types of Financial Returns / PM / FI)
+      {
+        id: "les-vid-1",
+        topic: "PM",
+        topicName: "Portfolio Construction",
+        module: "Returns of Financial Assets",
+        stem: "In the context of total investment risk, macro risks:",
+        options: [
+          "represent non-systematic risks.",
+          "are independent from total investment risk.",
+          "significantly influence overall investment performance."
+        ],
+        correctIndex: 2,
+        explanation: "Macro risks, also known as systematic risks, affect the entire market or a large segment of the market (economic recessions, political instability, changes in interest rates, inflation). These risks are inherent to the aggregate market and cannot be diversified away.",
+        distractors: [
+          "A is incorrect: Macro risks affect the market as a whole (systematic), not firm-specific non-systematic risk.",
+          "B is incorrect: Macro risks such as inflation risk directly affect financial market performance and total risk."
+        ],
+        formula: "Total Risk = Systematic Risk (Macro / Non-diversifiable) + Nonsystematic Risk (Idiosyncratic / Diversifiable)",
+        trap: "Do not confuse systematic (macro/market-wide, non-diversifiable) risk with unsystematic (micro/firm-specific, diversifiable) risk."
+      },
+      {
+        id: "les-vid-2",
+        topic: "PM",
+        topicName: "Portfolio Construction",
+        module: "Returns of Financial Assets",
+        stem: "A wider range of annual returns for an asset class is typically associated with:",
+        options: [
+          "lower risk and higher returns.",
+          "higher risk and lower returns.",
+          "higher risk and higher returns."
+        ],
+        correctIndex: 2,
+        explanation: "A wider dispersion or range of annual returns in an investment signifies increased variability or volatility, indicating higher risk. Under the risk-return trade-off principle, high-risk investments compensate investors with the potential for higher expected returns.",
+        distractors: [
+          "A is incorrect: A narrower range of returns typically suggests lower risk with more predictable and modest returns.",
+          "B is incorrect: Higher volatility correlates positively with higher demanded return from risk-averse investors."
+        ],
+        formula: "Range = Max Return - Min Return | Higher Volatility (σ) ↔ Higher Expected Return E(R)",
+        trap: "Avoid confusing narrow dispersion (lower volatility/risk, typically associated with lower returns) with wide dispersion."
+      },
+      {
+        id: "les-vid-3",
+        topic: "FI",
+        topicName: "Fixed Income",
+        module: "Returns of Financial Assets",
+        stem: "What does the decline in capital distribution returns in long-term government bonds over the period from the early 2000s to early 2020s indicate?",
+        options: [
+          "A shift toward higher equity investments",
+          "A decrease in market interest rates",
+          "An increase in corporate default rates"
+        ],
+        correctIndex: 1,
+        explanation: "The decline in capital distribution returns (income yields) for long-term government bonds reflects periods of lower market interest rates. This reduces the income yield on these bonds as newer issues come with lower coupon rates compared to past higher-rate periods.",
+        distractors: [
+          "A is incorrect: The shift toward equity investments does not directly impact the coupon income returns of existing long-term government bonds.",
+          "C is incorrect: Corporate default rates affect corporate bond markets and credit spreads, not sovereign government bonds."
+        ],
+        formula: "Income Return (Current Yield) = Annual Coupon / Bond Price",
+        trap: "Corporate default rates directly impact corporate credit spreads, not sovereign government bond distributions."
+      },
+      {
+        id: "les-vid-4",
+        topic: "PM",
+        topicName: "Portfolio Construction",
+        module: "Returns of Financial Assets",
+        stem: "How does the risk-return trade-off principle affect asset allocation among investors with different objectives?",
+        options: [
+          "It encourages all investors to prioritize high-risk assets for maximum returns.",
+          "It leads investors to allocate assets based on their risk tolerance and return objectives.",
+          "It suggests that low-risk assets offer the highest potential returns."
+        ],
+        correctIndex: 1,
+        explanation: "The risk-return trade-off principle leads investors to allocate assets based on their risk tolerance and return objectives, balancing between growth (capital appreciation) and income.",
+        distractors: [
+          "A is incorrect: Not all investors seek high-risk investments; risk-averse investors prefer predictable lower-risk options.",
+          "C is incorrect: Low-risk assets such as government bonds offer lower but more predictable potential returns."
+        ],
+        formula: "Utility U = E(R) - 0.5 × A × σ² (where A = risk aversion coefficient)",
+        trap: "The trade-off never mandates high-risk exposure for everyone; allocations are strictly matched to individual utility, liquidity needs, and time horizons."
+      },
+
+      // --- FSA Remediation Questions ---
       {
         id: "fsa-01",
         topic: "FSA",
         topicName: "Financial Statement Analysis",
-        weight: "11-14%",
-        stem: "During a period of steadily rising inventory acquisition costs and stable inventory quantities, a firm that transitions from FIFO to LIFO inventory accounting will most likely report:",
+        module: "Module 8: Long-Term Liabilities",
+        stem: "Under IFRS, how should a lessee account for an operating lease on its balance sheet?",
         options: [
-          "Higher net income and higher operating cash flows.",
-          "Lower gross profit margin and higher operating cash flows.",
-          "Higher inventory turnover ratio and lower working capital."
+          "Recognize a right-of-use asset and a corresponding lease liability.",
+          "Recognize only rent expense in the income statement on a straight-line basis.",
+          "Disclose future lease commitments strictly in the footnotes with no balance sheet impact."
         ],
-        correctIndex: 2,
-        explanation: "Under LIFO during inflationary periods, the most recent and higher costs are charged to Cost of Goods Sold (COGS), leading to higher COGS, lower gross profit, and lower ending inventory on the balance sheet. Consequently, Inventory Turnover (COGS / Average Inventory) increases because the numerator is higher and the denominator is lower. Working capital decreases due to the lower ending inventory value.",
+        correctIndex: 0,
+        explanation: "Under IFRS 16, almost all leases (both finance and operating) must be recognized on the balance sheet as a Right-of-Use (ROU) asset and a lease liability.",
         distractors: [
-          "A is incorrect: Net income will be lower under LIFO because COGS is higher.",
-          "B is incorrect: While gross margin is indeed lower, operating cash flow (CFO) is actually HIGHER under LIFO due to income tax savings (the LIFO conformity rule), but Choice C is the most comprehensive balance-sheet and ratio statement."
+          "B is incorrect: Operating lease treatment with no balance sheet recognition is only permitted for short-term (<12 months) or low-value leases.",
+          "C is incorrect: Footnote-only disclosure was abolished by IFRS 16."
         ],
-        formula: "Inventory Turnover = COGS / Average Inventory | LIFO Reserve = Inventory(FIFO) - Inventory(LIFO)",
-        trap: "Remember that under US GAAP, LIFO generates LOWER pretax income and thus LOWER taxes paid, resulting in HIGHER cash from operations (CFO) despite lower accounting net income!"
+        formula: "Initial Lease Liability = PV of future lease payments discounted at implicit rate",
+        trap: "Do not confuse IFRS 16 with US GAAP: while both put operating leases on the balance sheet, IFRS 16 treats all leases like finance leases (amortization + interest), whereas US GAAP keeps a single straight-line lease expense on the income statement for operating leases."
       },
       {
         id: "fsa-02",
         topic: "FSA",
         topicName: "Financial Statement Analysis",
-        weight: "11-14%",
-        stem: "Under IFRS, interest paid by a financial or non-financial corporation can be classified on the statement of cash flows under which activities?",
+        module: "Module 6: Analysis of Inventories",
+        stem: "During a period of steadily rising inventory acquisition costs and stable inventory quantities, a firm that transitions from FIFO to LIFO inventory accounting under US GAAP will most likely report:",
+        options: [
+          "Higher net income and higher operating cash flows.",
+          "Lower gross profit margin and lower ending inventory.",
+          "Lower inventory turnover ratio and higher working capital."
+        ],
+        correctIndex: 1,
+        explanation: "Under LIFO during inflationary periods, the most recent higher costs go to COGS, resulting in lower gross profit margin and lower ending inventory on the balance sheet. Because taxes paid are lower, operating cash flow (CFO) is actually higher.",
+        distractors: [
+          "A is incorrect: Net income is lower under LIFO during inflation.",
+          "C is incorrect: Inventory turnover (COGS / Avg Inventory) is HIGHER under LIFO, and working capital is lower."
+        ],
+        formula: "FIFO Inventory = LIFO Inventory + LIFO Reserve | FIFO COGS = LIFO COGS - ΔLIFO Reserve",
+        trap: "Under inflation, LIFO decreases Net Income but INCREASES Operating Cash Flow (CFO) because of lower income tax payments!"
+      },
+      {
+        id: "fsa-03",
+        topic: "FSA",
+        topicName: "Financial Statement Analysis",
+        module: "Module 4: Analyzing Cash Flows I",
+        stem: "Under IFRS, interest paid by a non-financial corporation can be classified on the statement of cash flows under which activities?",
         options: [
           "Operating activities only.",
           "Either operating or financing activities.",
           "Operating activities or investing activities."
         ],
         correctIndex: 1,
-        explanation: "Under IFRS (IAS 7), interest paid can be classified as either an operating activity (because it enters into the determination of net profit or loss) or a financing activity (because it represents a cost of obtaining financial resources). Under US GAAP, interest paid must strictly be classified as an operating cash flow.",
+        explanation: "Under IFRS (IAS 7), interest paid may be classified as either an operating cash outflow or a financing cash outflow. Under US GAAP, interest paid must strictly be classified under operating activities.",
         distractors: [
-          "A is incorrect: This is the strict requirement under US GAAP, not IFRS.",
-          "C is incorrect: Interest paid cannot be classified under investing activities under any standard."
+          "A is incorrect: Operating-only is the strict US GAAP rule.",
+          "C is incorrect: Interest paid is never an investing activity."
         ],
-        formula: "IFRS Flexibility: Interest Paid = Operating OR Financing | Interest Received = Operating OR Investing",
-        trap: "US GAAP is rigid (Interest Paid = Operating; Dividends Paid = Financing). IFRS allows discretion: both interest paid and dividends paid can be classified as Operating or Financing."
-      },
-      {
-        id: "fsa-03",
-        topic: "FSA",
-        topicName: "Financial Statement Analysis",
-        weight: "11-14%",
-        stem: "An analyst discovers that a company has recognized a valuation allowance against its deferred tax assets (DTAs). An increase in this valuation allowance will most likely result in a(n):",
-        options: [
-          "Decrease in reported net income.",
-          "Increase in operating cash flow.",
-          "Increase in total assets."
-        ],
-        correctIndex: 0,
-        explanation: "Under US GAAP, a valuation allowance is a contra-asset account established when it is 'more likely than not' (>50% probability) that some or all of the deferred tax assets will not be realized in future periods. Increasing the valuation allowance reduces the net DTA on the balance sheet and creates a corresponding charge to income tax expense in the income statement, directly decreasing reported net income.",
-        distractors: [
-          "B is incorrect: Valuation allowances are non-cash accounting adjustments and do not impact cash flow.",
-          "C is incorrect: An increase in a contra-asset reduces total assets on the balance sheet."
-        ],
-        formula: "Net DTA = Gross DTA - Valuation Allowance | Income Tax Expense = Taxes Payable + ΔDTL - ΔDTA + ΔValuation Allowance",
-        trap: "Management can use changes in valuation allowances to manipulate earnings ('cookie-jar reserves'). Decreasing the allowance boosts net income without any actual operational change!"
+        formula: "IFRS: Interest/Dividends Paid → CFO or CFF | US GAAP: Interest Paid → CFO, Dividends Paid → CFF",
+        trap: "Be careful whether the question specifies IFRS or US GAAP, and whether it asks about interest PAID (CFO/CFF) vs interest RECEIVED (CFO/CFI under IFRS)."
       },
       {
         id: "fsa-04",
         topic: "FSA",
         topicName: "Financial Statement Analysis",
-        weight: "11-14%",
-        stem: "Under IFRS 16, a lessee accounting for an equipment lease must classify the lease on its financial statements as:",
+        module: "Module 9: Analysis of Income Taxes",
+        stem: "An analyst discovers that a company has recognized an upward adjustment in the valuation allowance against its deferred tax assets (DTAs). This increase will most likely result in a(n):",
         options: [
-          "An operating lease, reporting only rental expenses on the income statement.",
-          "A right-of-use (ROU) asset and a lease liability on the balance sheet.",
-          "An off-balance-sheet commitment disclosed solely within the financial notes."
+          "Decrease in reported net income.",
+          "Increase in operating cash flow.",
+          "Increase in shareholders' equity."
         ],
-        correctIndex: 1,
-        explanation: "Under IFRS 16, lessee accounting eliminates the distinction between operating and finance leases for balance sheet recognition. Lessees must recognize a Right-of-Use (ROU) asset and a corresponding lease liability for almost all leases (except short-term <12 months or low-value assets).",
+        correctIndex: 0,
+        explanation: "A valuation allowance is a contra-asset reducing net DTA when it is more likely than not (>50%) that the DTA will not be realized. Increasing the valuation allowance increases income tax expense on the income statement, directly reducing reported net income.",
         distractors: [
-          "A is incorrect: The operating lease classification with straight-line rent expense without balance sheet asset/liability recognition is no longer permitted for lessees under IFRS 16.",
-          "C is incorrect: Off-balance-sheet treatment of leases was specifically abolished by IFRS 16 to enhance comparability."
+          "B is incorrect: Valuation allowance adjustments are non-cash items.",
+          "C is incorrect: Lower net income reduces retained earnings and shareholders' equity."
         ],
-        formula: "Lessee Balance Sheet = Right-of-Use Asset (Depreciated) & Lease Liability (Amortized via effective interest method)",
-        trap: "On the cash flow statement under IFRS 16, the principal portion of the lease payment is classified under FINANCING cash outflows, artificially inflating Operating Cash Flow (CFO) relative to the old standard!"
+        formula: "Net DTA = Gross DTA - Valuation Allowance",
+        trap: "Reversing (decreasing) a valuation allowance artificially boosts Net Income via lower tax expense—a classic earnings management signal."
       },
       {
         id: "fsa-05",
         topic: "FSA",
         topicName: "Financial Statement Analysis",
-        weight: "11-14%",
-        stem: "Using the five-component DuPont decomposition, which of the following terms correctly isolates the effect of financial leverage?",
+        module: "Module 11: Financial Analysis Techniques",
+        stem: "In the five-component DuPont decomposition of Return on Equity (ROE), which ratio explicitly measures the firm's interest burden?",
         options: [
-          "EBIT / Total Assets.",
-          "EBT / EBIT.",
-          "Average Total Assets / Average Shareholders' Equity."
+          "Net Income / EBT",
+          "EBT / EBIT",
+          "EBIT / Revenue"
         ],
-        correctIndex: 2,
-        explanation: "The 5-way DuPont system expresses ROE = (Net Income / EBT) × (EBT / EBIT) × (EBIT / Revenue) × (Revenue / Assets) × (Assets / Equity). The final term, Total Assets / Shareholders' Equity, is the equity multiplier, which directly isolates financial leverage.",
+        correctIndex: 1,
+        explanation: "The 5-way DuPont equation decomposes ROE into: (Net Income / EBT) × (EBT / EBIT) × (EBIT / Revenue) × (Revenue / Avg Assets) × (Avg Assets / Avg Equity). The term (EBT / EBIT) captures the interest burden.",
         distractors: [
-          "A is incorrect: EBIT / Total Assets represents the basic earning power or operating ROA.",
-          "B is incorrect: EBT / EBIT is the interest burden factor (reflects cost of debt borrowing)."
+          "A is incorrect: Net Income / EBT is the Tax Burden.",
+          "C is incorrect: EBIT / Revenue is the Operating Profit (EBIT) Margin."
         ],
-        formula: "ROE = Tax Burden × Interest Burden × EBIT Margin × Asset Turnover × Financial Leverage Multiplier",
-        trap: "Remember that 'Tax Burden' is defined as (Net Income / EBT). Therefore, a HIGHER ratio means the firm pays LESS tax!"
+        formula: "ROE = Tax Burden × Interest Burden × EBIT Margin × Asset Turnover × Leverage",
+        trap: "Higher EBT/EBIT (closer to 1.0) means LESS interest expense and therefore a lighter interest burden."
       },
 
-      // --- FIXED INCOME ---
+      // --- Fixed Income Remediation Questions ---
       {
         id: "fi-01",
         topic: "FI",
         topicName: "Fixed Income",
-        weight: "11-14%",
-        stem: "An 8-year, 5% annual coupon option-free corporate bond has a modified duration of 6.42 and an annual convexity of 48.60. If the bond's yield to maturity increases by 75 basis points, the estimated percentage price change is closest to:",
+        module: "Module 12: Bond Convexity",
+        stem: "An investor holds an option-free 8% annual coupon bond with a modified duration of 6.2 and convexity of 54. If yields increase by 100 bps, the estimated percentage price change is closest to:",
         options: [
-          "-4.68%.",
-          "-4.82%.",
-          "-4.95%."
+          "-6.20%",
+          "-5.93%",
+          "-6.47%"
         ],
-        correctIndex: 0,
-        explanation: "Percentage price change with convexity adjustment = [-Modified Duration × ΔYield] + [0.5 × Convexity × (ΔYield)²].\nDuration effect: -6.42 × 0.0075 = -0.04815 (-4.815%).\nConvexity effect: 0.5 × 48.60 × (0.0075)² = 0.5 × 48.60 × 0.00005625 = +0.001367 (+0.1367%).\nTotal %ΔPrice = -0.04815 + 0.001367 = -0.04678, or -4.68%.",
+        correctIndex: 1,
+        explanation: "ΔP/P ≈ (-ModDur × Δy) + [0.5 × Convexity × (Δy)²]. Here: (-6.2 × 0.01) + [0.5 × 54 × (0.01)²] = -0.0620 + 0.0027 = -0.0593 (-5.93%).",
         distractors: [
-          "B is incorrect: -4.82% is the linear duration-only approximation (-6.42 × 0.0075) without the positive convexity adjustment.",
-          "C is incorrect: This results from subtracting the convexity effect rather than adding it."
+          "A is incorrect: -6.20% ignores the convexity adjustment.",
+          "C is incorrect: -6.47% subtracts the convexity term instead of adding it."
         ],
-        formula: "%ΔPrice ≈ (-ModDur × ΔY) + [0.5 × Convexity × (ΔY)²]",
-        trap: "For option-free bonds, convexity is ALWAYS positive. Thus, the convexity adjustment is ALWAYS added, mitigating price declines when yields rise and amplifying price gains when yields fall!"
+        formula: "%ΔFull Price ≈ (-ModDur × ΔYield) + [½ × Convexity × (ΔYield)²]",
+        trap: "Always remember the 0.5 multiplier for the convexity adjustment and remember that positive convexity ALWAYS helps the bondholder (softens price drops and magnifies price gains)."
       },
       {
         id: "fi-02",
         topic: "FI",
         topicName: "Fixed Income",
-        weight: "11-14%",
-        stem: "Which of the following credit spreads represents the constant spread that must be added to the benchmark spot curve to discount bond cash flows to their current market price?",
+        module: "Module 7: Yield Spread Measures",
+        stem: "Which yield spread measure represents the constant basis point spread added to each point along the benchmark government spot yield curve so that the present value of a bond's cash flows equals its market price?",
         options: [
-          "G-Spread.",
-          "I-Spread.",
-          "Z-Spread."
+          "G-spread",
+          "I-spread",
+          "Z-spread"
         ],
         correctIndex: 2,
-        explanation: "The Z-spread (Zero-volatility spread) is the constant basis point spread that, when added to each spot rate on the government benchmark spot curve, equates the present value of the bond's cash flows to its observed clean market price.",
+        explanation: "The Z-spread (zero-volatility spread) is the constant spread added to the implied spot yield curve that equates the discounted value of a bond's cash flows to its current market price.",
         distractors: [
-          "A is incorrect: G-spread is the yield difference between the bond's YTM and the YTM of an interpolated on-the-run government bond of matching maturity.",
-          "B is incorrect: I-spread (interpolated spread) uses the interest rate swap curve (e.g., SOFR/Euribor swap rates) rather than the government spot curve."
+          "A is incorrect: G-spread is the flat difference against an interpolated government bond YTM.",
+          "B is incorrect: I-spread uses swap rates as the benchmark."
         ],
-        formula: "Bond Price = Σ [CF_t / (1 + Spot_t + Z)^t]",
-        trap: "If the government spot yield curve is upward-sloping, the Z-spread will be greater than the G-spread if the bond pays coupons before maturity."
-      },
-      {
-        id: "fi-03",
-        topic: "FI",
-        topicName: "Fixed Income",
-        weight: "11-14%",
-        stem: "An investor holds a callable corporate bond. As interest rates decline significantly, the bond's effective duration will most likely:",
-        options: [
-          "Increase.",
-          "Decrease.",
-          "Remain unchanged."
-        ],
-        correctIndex: 1,
-        explanation: "As interest rates fall, the likelihood that the issuer will exercise the call option increases. The price of the callable bond becomes capped near the call price (price compression). Because price sensitivity to further rate declines is muted, effective duration decreases and convexity turns negative.",
-        distractors: [
-          "A is incorrect: An option-free bond's duration increases as yields decline, but for a callable bond, the embedded short call option shortens its duration.",
-          "C is incorrect: Duration changes dynamically as the embedded option moves deeper into the money."
-        ],
-        formula: "Effective Duration = (P_down - P_up) / (2 × P_0 × ΔCurve)",
-        trap: "Callable bonds exhibit NEGATIVE convexity at low interest rates. Effective duration drops sharply because the bond's expected maturity contracts to the call date."
+        formula: "Price = Σ CF_t / (1 + z_t + Z-spread)^t",
+        trap: "For a callable bond, OAS = Z-spread - Option Value (in bps). Because the issuer owns the call, Option Value > 0, so OAS < Z-spread!"
       },
 
-      // --- QUANTITATIVE METHODS ---
+      // --- Quantitative Methods Questions ---
       {
         id: "quant-01",
         topic: "QUANT",
         topicName: "Quantitative Methods",
-        weight: "6-9%",
-        stem: "A researcher wants to test the hypothesis that the mean return of a hedge fund strategy equals zero. The return sample has 25 observations, is approximately normally distributed, and the population standard deviation is unknown. The most appropriate test statistic is the:",
+        module: "Module 7: Hypothesis Testing",
+        stem: "In hypothesis testing, the probability of correctly rejecting a false null hypothesis is known as the:",
         options: [
-          "z-test.",
-          "t-test with 24 degrees of freedom.",
-          "Chi-square test with 25 degrees of freedom."
+          "significance level (alpha).",
+          "power of the test (1 - beta).",
+          "p-value of the test statistic."
         ],
         correctIndex: 1,
-        explanation: "When testing a single population mean from a normally distributed population where the population variance is unknown, the Student's t-distribution with (n - 1) degrees of freedom must be used. Here, df = 25 - 1 = 24.",
+        explanation: "A Type II error (β) occurs when one fails to reject a false null hypothesis. Therefore, the probability of correctly rejecting a false null hypothesis is 1 - β, defined as the power of the test.",
         distractors: [
-          "A is incorrect: The z-test requires known population variance or a very large sample under the Central Limit Theorem.",
-          "C is incorrect: The Chi-square test is utilized to test hypotheses regarding the variance of a normally distributed population, not its mean."
+          "A is incorrect: Alpha (α) is the probability of a Type I error (rejecting a true null).",
+          "C is incorrect: The p-value is the smallest level of significance at which the null hypothesis can be rejected."
         ],
-        formula: "t-statistic = (x̄ - μ₀) / (s / √n) with df = n - 1",
-        trap: "Remember: Unknown population variance + small sample (n < 30) = MUST use t-test!"
+        formula: "Power of Test = 1 - P(Type II Error) = 1 - β",
+        trap: "Don't mix up Type I error (α = rejecting a true null) with Power (1 - β = rejecting a false null)."
       },
       {
         id: "quant-02",
         topic: "QUANT",
         topicName: "Quantitative Methods",
-        weight: "6-9%",
-        stem: "In hypothesis testing, a Type I error occurs when the analyst:",
+        module: "Module 4: Time Value of Money",
+        stem: "A bank quotes a stated annual interest rate of 8.0% compounded quarterly. The effective annual rate (EAR) is closest to:",
         options: [
-          "Rejects a true null hypothesis.",
-          "Fails to reject a false null hypothesis.",
-          "Selects an incorrect level of significance (alpha)."
-        ],
-        correctIndex: 0,
-        explanation: "A Type I error is defined as the rejection of the null hypothesis (H₀) when it is actually true. The probability of committing a Type I error is equal to the significance level, alpha (α).",
-        distractors: [
-          "B is incorrect: Failing to reject a false null hypothesis is a Type II error (beta).",
-          "C is incorrect: Alpha is chosen by the researcher and is the threshold, not the definition of an error."
-        ],
-        formula: "P(Type I Error) = α | P(Type II Error) = β | Power of Test = 1 - β",
-        trap: "A handy mnemonic: Type I is a False Positive (convicting an innocent person). Type II is a False Negative (letting a guilty person walk free)."
-      },
-      {
-        id: "quant-03",
-        topic: "QUANT",
-        topicName: "Quantitative Methods",
-        weight: "6-9%",
-        stem: "An investor deposits €10,000 in an account paying a nominal stated annual rate of 6% compounded monthly. What is the effective annual rate (EAR)?",
-        options: [
-          "6.00%.",
-          "6.17%.",
-          "6.24%."
+          "8.00%",
+          "8.24%",
+          "8.30%"
         ],
         correctIndex: 1,
-        explanation: "EAR = (1 + r / m)^m - 1 = (1 + 0.06 / 12)^12 - 1 = (1 + 0.005)^12 - 1 = (1.061678) - 1 ≈ 6.17%.",
+        explanation: "EAR = (1 + Stated Rate / m)^m - 1 = (1 + 0.08 / 4)^4 - 1 = (1.02)^4 - 1 = 0.082432 or 8.24%.",
         distractors: [
-          "A is incorrect: 6.00% is the nominal periodic rate without intra-year compounding.",
-          "C is incorrect: 6.24% assumes daily compounding or an incorrect formula."
+          "A is incorrect: Ignores quarterly compounding.",
+          "C is incorrect: 8.30% corresponds to monthly compounding (m = 12)."
         ],
-        formula: "EAR = (1 + Periodic Rate)^m - 1 | BA II Plus key: [2nd] [ICONV] NOM=6, C/Y=12, compute EFF=6.1678%",
-        trap: "On your BA II Plus, use the ICONV worksheet (2nd + 2). Enter NOM = 6, scroll to C/Y = 12, scroll to EFF and hit [CPT]!"
+        formula: "EAR = (1 + r_s / m)^m - 1",
+        trap: "As compounding frequency m increases, EAR increases. Continuous compounding uses EAR = e^r - 1."
       },
 
-      // --- EQUITY INVESTMENTS ---
+      // --- Equities & Corporate Finance Questions ---
       {
         id: "eq-01",
         topic: "EQUITY",
-        topicName: "Equity Investments",
-        weight: "11-14%",
-        stem: "An equity analyst is valuing shares of Alpha Corp. The company just paid an annual dividend of $2.40 per share (D₀). Dividends are projected to grow at a constant sustainable rate of 4.5% indefinitely. If the required return on equity is 9.0%, the intrinsic value per share using the Gordon Growth Model is closest to:",
+        topicName: "Equities",
+        module: "Module 6: DCF and Growth Models",
+        stem: "A company just paid an annual dividend of €3.00 per share. Dividends are expected to grow at a constant rate of 4% per year indefinitely. If the required rate of return on equity is 10%, the intrinsic value of the stock is closest to:",
         options: [
-          "$53.33.",
-          "$55.73.",
-          "$58.20."
+          "€50.00",
+          "€52.00",
+          "€54.08"
         ],
         correctIndex: 1,
-        explanation: "First compute the expected forward dividend: D₁ = D₀ × (1 + g) = $2.40 × (1 + 0.045) = $2.508.\nThen apply Gordon Growth Model: P₀ = D₁ / (r - g) = 2.508 / (0.09 - 0.045) = 2.508 / 0.045 = $55.73.",
+        explanation: "Using the Gordon Growth Model: D₁ = D₀ × (1 + g) = 3.00 × 1.04 = €3.12. Intrinsic value V₀ = D₁ / (r - g) = 3.12 / (0.10 - 0.04) = 3.12 / 0.06 = €52.00.",
         distractors: [
-          "A is incorrect: $53.33 is computed by mistakenly using D₀ instead of D₁ ($2.40 / 0.045 = $53.33).",
-          "C is incorrect: $58.20 erroneously multiplies D₀ by (1 + g)²."
+          "A is incorrect: €50.00 mistakenly uses D₀ (€3.00 / 0.06) instead of D₁.",
+          "C is incorrect: €54.08 compounds the dividend twice."
         ],
-        formula: "P₀ = D₁ / (r - g) = [D₀ × (1 + g)] / (r - g)",
-        trap: "CFA questions frequently state 'just paid a dividend' or 'current dividend' ($D_0$). You MUST grow it by $(1 + g)$ to get $D_1$ before discounting!"
+        formula: "V₀ = D₁ / (r - g) = [D₀ × (1 + g)] / (r - g)",
+        trap: "Look carefully for the words 'just paid' (D₀) vs 'expected to pay next year' (D₁)."
       },
       {
-        id: "eq-02",
-        topic: "EQUITY",
-        topicName: "Equity Investments",
-        weight: "11-14%",
-        stem: "Which of the following enterprise value multiples is most appropriate when comparing capital-intensive companies with significantly different debt levels and depreciation accounting methods?",
+        id: "der-01",
+        topic: "DERIV",
+        topicName: "Derivatives",
+        module: "Module 9: Put-Call Parity",
+        stem: "According to put-call parity for European options on a non-dividend-paying stock, a fiduciary call is replicated by holding a:",
         options: [
-          "Price-to-Earnings (P/E).",
-          "Price-to-Book (P/B).",
-          "Enterprise Value to EBITDA (EV/EBITDA)."
+          "long underlying stock and a long put option.",
+          "long call option and a short put option.",
+          "short underlying stock and a long risk-free bond."
         ],
-        correctIndex: 2,
-        explanation: "EV/EBITDA is capital structure neutral (EBITDA is before interest payments to debt holders, matching the enterprise-wide metric EV) and eliminates distortions caused by differing depreciation and amortization policies (D&A), making it ideal for capital-intensive firms with divergent leverage.",
+        correctIndex: 0,
+        explanation: "Put-call parity states that c + X/(1+r)^T = S₀ + p. The left side (long call + risk-free zero-coupon bond with face value X) is a fiduciary call. The right side (long stock S₀ + long put p) is a protective put.",
         distractors: [
-          "A is incorrect: P/E is heavily distorted by debt leverage (interest expense) and depreciation conventions.",
-          "B is incorrect: P/B is affected by historical cost accounting, asset ages, and share repurchases."
+          "B is incorrect: A long call + short put + risk-free bond replicates a synthetic long forward/stock.",
+          "C is incorrect: Does not match put-call parity."
         ],
-        formula: "EV = Market Cap of Common Equity + Preferred Equity + Total Debt + Minority Interest - Cash & Equivalents",
-        trap: "Never divide EV by Net Income! EV reflects claims of all capital providers (debt + equity), so the denominator must be pre-interest (e.g., EBITDA or Operating Cash Flow)."
+        formula: "c + PV(X) = S₀ + p (Fiduciary Call = Protective Put)",
+        trap: "To rearrange for any synthetic instrument, keep signs positive first, then move terms across the equal sign (minus sign = short position)."
       },
-
-      // --- CORPORATE ISSUERS ---
-      {
-        id: "corp-01",
-        topic: "CORP",
-        topicName: "Corporate Issuers",
-        weight: "6-9%",
-        stem: "When evaluating mutually exclusive capital investment projects with differing project sizes and cash flow timings, which capital budgeting metric should be the ultimate decision criterion in case of conflict?",
-        options: [
-          "Internal Rate of Return (IRR).",
-          "Net Present Value (NPV).",
-          "Profitability Index (PI)."
-        ],
-        correctIndex: 1,
-        explanation: "For mutually exclusive projects, Net Present Value (NPV) is the definitive decision rule because it directly measures the expected dollar increase in shareholder wealth. The IRR assumes cash flows can be reinvested at the internal rate of return, which can lead to suboptimal decisions when projects differ in scale or timing.",
-        distractors: [
-          "A is incorrect: IRR can produce multiple solutions or misleading rankings when projects conflict.",
-          "C is incorrect: PI is a relative ratio and ignores the total dollar magnitude of value added."
-        ],
-        formula: "NPV = Σ [CF_t / (1 + WACC)^t] - Initial Outlay",
-        trap: "Always choose NPV over IRR whenever there is a ranking conflict between mutually exclusive projects!"
-      },
-
-      // --- ETHICAL AND PROFESSIONAL STANDARDS ---
       {
         id: "eth-01",
         topic: "ETHICS",
-        topicName: "Ethical & Professional Standards",
-        weight: "15-20%",
-        stem: "Carmen, a CFA candidate and senior research analyst, receives an invitation from a publicly traded industrial supplier to tour their flagship manufacturing plant. The supplier offers to pay for Carmen's first-class airfare and luxury resort lodging. Under Standard I(B) Independence and Objectivity, Carmen must:",
+        topicName: "Ethical and Professional Standards",
+        module: "Module 5: Standard III Duties to Clients",
+        stem: "Under Standard III(B) Fair Dealing, when an investment firm changes its recommendation on a security from 'Hold' to 'Buy', it must:",
         options: [
-          "Refuse the lavish travel and hotel accommodations, paying for standard commercial transport and lodging herself or through her employer.",
-          "Accept the accommodations provided she discloses the perks fully in her final published research report.",
-          "Accept only the hotel stay, provided the company's investor relations team provides an educational itinerary."
-        ],
-        correctIndex: 0,
-        explanation: "Standard I(B) requires members and candidates to maintain independence and objectivity. Best practice dictates that analysts use commercial transport and pay for their own travel and lodging when attending corporate site visits. Accepting luxury accommodations or chartered private flights from an issuer creates an unacceptable conflict of interest that compromises perceived and actual objectivity.",
-        distractors: [
-          "B is incorrect: Mere disclosure is insufficient to remedy an explicit violation when independent commercial options are readily available.",
-          "C is incorrect: Accepting lodging is prohibited when normal hotel alternatives exist in the vicinity."
-        ],
-        formula: "Standard I(B): Independence and Objectivity — Self-fund site visits whenever commercial transport and lodging exist.",
-        trap: "Only in rare cases where a corporate facility is in an inaccessible remote location (e.g., an offshore oil rig or remote mine with no commercial flights) may an analyst accept issuer-provided transportation."
-      },
-      {
-        id: "eth-02",
-        topic: "ETHICS",
-        topicName: "Ethical & Professional Standards",
-        weight: "15-20%",
-        stem: "Standard VI(B) Priority of Transactions dictates that personal transactions by an investment professional must:",
-        options: [
-          "Never occur in the same securities held by clients.",
-          "Be executed after client and employer trades have had reasonable opportunity to be filled.",
-          "Be submitted directly to the firm's compliance officer within 30 days following trade execution."
+          "wait until all clients receive the mailed research report before executing any discretionary trades.",
+          "disseminate the recommendation change to all clients fairly and simultaneously so they have a fair opportunity to act.",
+          "give priority in trade execution to its largest institutional fee-paying accounts."
         ],
         correctIndex: 1,
-        explanation: "Under Standard VI(B), transactions for clients and employers must have absolute priority over personal transactions in which a member or candidate is the beneficial owner. Personal trades may only occur after client orders have been completely executed and the market has absorbed the flow.",
+        explanation: "Standard III(B) Fair Dealing requires members to deal fairly and objectively with all clients when disseminating investment recommendations. While 'simultaneous' distribution to every single client is not always literally possible, firms must design systems for fair, equitable dissemination without favoring large accounts over smaller ones.",
         distractors: [
-          "A is incorrect: Personal investment is permissible, provided client and employer priority rules are strictly honored.",
-          "C is incorrect: Personal trades require pre-clearance prior to execution, not just post-trade notification."
+          "A is incorrect: Discretionary accounts may be traded once equitable dissemination has been initiated.",
+          "C is incorrect: Favoring larger fee-paying accounts on core recommendation dissemination violates Fair Dealing."
         ],
-        formula: "Priority Hierarchy: 1. Clients > 2. Employers > 3. Personal Accounts",
-        trap: "Family member accounts that are fee-paying client accounts must be treated like any other client account—they must NOT be disadvantaged simply because of familial relationship!"
+        formula: "Standard III(B): Fair ≠ Equal, but no favoritism in core research dissemination.",
+        trap: "Different service levels (e.g., bespoke advisory) are allowed ONLY if disclosed to all clients, offered to all who pay for it, and do not disadvantage basic clients on primary research changes."
       }
     ];
 
-    /* =================================================================
-       APPLICATION STATE MANAGEMENT
-       ================================================================= */
+    /* =========================================================================
+       4. NORMALISATION DES SCHÉMAS JSON (Compatible à 100% avec ton questions.json)
+       ========================================================================= */
+    const TOPIC_NORMALIZER = {
+      "financial statement analysis": { code: "FSA", name: "Financial Statement Analysis" },
+      "fsa": { code: "FSA", name: "Financial Statement Analysis" },
+      "fixed income": { code: "FI", name: "Fixed Income" },
+      "fi": { code: "FI", name: "Fixed Income" },
+      "portfolio management": { code: "PM", name: "Portfolio Construction" },
+      "portfolio construction": { code: "PM", name: "Portfolio Construction" },
+      "pm": { code: "PM", name: "Portfolio Construction" },
+      "quantitative methods": { code: "QUANT", name: "Quantitative Methods" },
+      "quant": { code: "QUANT", name: "Quantitative Methods" },
+      "ethical and professional standards": { code: "ETHICS", name: "Ethical & Professional Standards" },
+      "ethics": { code: "ETHICS", name: "Ethical & Professional Standards" },
+      "economics": { code: "ECON", name: "Economics" },
+      "econ": { code: "ECON", name: "Economics" },
+      "derivatives": { code: "DERIV", name: "Derivatives" },
+      "deriv": { code: "DERIV", name: "Derivatives" },
+      "alternative investments": { code: "ALT", name: "Alternative Investments" },
+      "alt": { code: "ALT", name: "Alternative Investments" },
+      "equity investments": { code: "EQUITY", name: "Equities" },
+      "equities": { code: "EQUITY", name: "Equities" },
+      "equity": { code: "EQUITY", name: "Equities" },
+      "corporate issuers": { code: "CORP", name: "Corporate Finance" },
+      "corporate finance": { code: "CORP", name: "Corporate Finance" },
+      "corp": { code: "CORP", name: "Corporate Finance" }
+    };
+
+    function normalizeQuestionObject(raw, idx) {
+      const rawTopic = String(raw.topic || "PM").toLowerCase().trim();
+      const mapped = TOPIC_NORMALIZER[rawTopic] || { code: "PM", name: raw.topic || "General CFA" };
+      const stemText = (raw.stem || raw.question || "").trim();
+
+      return {
+        id: raw.id ? String(raw.id) : ("q-" + idx + "-" + stemText.slice(0, 12).replace(/\W+/g, '')),
+        topic: mapped.code,
+        topicName: raw.topicName || mapped.name,
+        module: raw.module || "CFA Level I Practice",
+        stem: stemText,
+        options: Array.isArray(raw.options) ? raw.options.slice(0, 3) : ["Option A", "Option B", "Option C"],
+        correctIndex: typeof raw.correctIndex === "number" ? raw.correctIndex : (typeof raw.correct === "number" ? raw.correct : 0),
+        explanation: raw.explanation || raw.rationale || "Refer to CFA Institute curriculum.",
+        distractors: Array.isArray(raw.distractors) ? raw.distractors : [],
+        formula: raw.formula || "Apply standard CFA LOS principle.",
+        trap: raw.trap || "Read the question stem carefully to avoid distractor traps."
+      };
+    }
+
+    /* =========================================================================
+       5. ÉTAT DE L'APPLICATION & CHARGEMENT AUTOMATIQUE DE questions.json
+       ========================================================================= */
     let currentQuestions = [];
+    let dailyDrillQueue = []; // Sous-ensemble aléatoire du jour
     let currentIndex = 0;
     let selectedOptionIndex = null;
-    let userAnswers = {}; // { qId: { selected: number, isCorrect: boolean, timeSpent: number } }
+    let userAnswers = {};
     let flaggedQuestions = new Set();
-    let currentMode = 'drill'; // 'drill', 'mock', 'stats', 'plan'
+    let currentMode = 'drill';
     let currentTopicFilter = 'ALL';
-    
-    // Mock Exam Timer
-    let mockTimerSeconds = 90 * 20; // 90 sec per question * 20 questions
+    let shuffleOptionsEnabled = false;
+    let currentOptionPermutation = [0, 1, 2]; // Permet de mélanger A/B/C sans fausser la correction
+
+    // Daily Goal & Streak State
+    let dailyGoalState = {
+      target: 20,
+      date: getTodayISO(),
+      completedTodayIds: [],
+      streak: 1,
+      lastCompletedDate: null
+    };
+
+    // LES Module Tracker State
+    let lesProgressState = {}; // { moduleId: { status: 'todo'|'done', completedQs: number } }
+    let lesActiveTopicFilter = 'ALL';
+
+    // Mock Timer
+    let mockTimerSeconds = 45 * 60;
     let mockInterval = null;
 
-    /* Initialize Application */
-    function initApp() {
-      loadStoredQuestions();
+    function getTodayISO() {
+      const d = new Date();
+      return d.toISOString().split('T')[0];
+    }
+
+    /* Initialisation au démarrage */
+    async function initApp() {
+      loadDailyGoalState();
+      loadLESProgressState();
+      loadLocalQBank();
+      
+      // Chargement automatique du fichier ./questions.json hébergé sur ton GitHub
+      await syncExternalQuestionsJSON(false);
+
+      // Mélange aléatoire initial via Fisher-Yates
+      shuffleArray(currentQuestions);
+
       calculateCountdown();
+      renderQuestion();
+      renderMatrix();
+      updateSessionMetrics();
+      updateDailyGoalUI();
+    }
+
+    /* Récupère automatiquement ./questions.json depuis ton dépôt GitHub */
+    async function syncExternalQuestionsJSON(showToastAlert = false) {
+      const badgeText = document.getElementById('json-sync-text');
+      try {
+        const response = await fetch('./questions.json?t=' + Date.now(), { cache: 'no-store' });
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        const externalArray = await response.json();
+
+        if (Array.isArray(externalArray) && externalArray.length > 0) {
+          const addedCount = mergeQuestionsIntoBank(externalArray);
+          badgeText.textContent = `questions.json synced (${currentQuestions.length} Qs)`;
+          if (showToastAlert) {
+            showToast(`Synced with GitHub questions.json! (${addedCount} new questions merged, ${currentQuestions.length} total)`);
+          }
+        } else {
+          badgeText.textContent = `QBank Ready (${currentQuestions.length} Qs)`;
+        }
+      } catch (err) {
+        // Fonctionne aussi hors-ligne ou avant la création de questions.json
+        badgeText.textContent = `Active QBank (${currentQuestions.length} Qs)`;
+        if (showToastAlert) {
+          showToast("Could not fetch ./questions.json from server. Using local + default QBank (" + currentQuestions.length + " Qs).");
+        }
+      }
+      document.getElementById('total-qbank-count').textContent = currentQuestions.length;
+    }
+
+    /* Fusionne sans doublon les questions de questions.json avec la banque locale */
+    function mergeQuestionsIntoBank(rawList) {
+      const existingStems = new Set(currentQuestions.map(q => q.stem.toLowerCase().trim()));
+      let added = 0;
+
+      rawList.forEach((item, index) => {
+        const norm = normalizeQuestionObject(item, currentQuestions.length + index + 1);
+        const key = norm.stem.toLowerCase().trim();
+        if (norm.stem && !existingStems.has(key)) {
+          currentQuestions.unshift(norm);
+          existingStems.add(key);
+          added++;
+        }
+      });
+
+      localStorage.setItem('cfa_qbank_carmen_v2', JSON.stringify(currentQuestions));
+      document.getElementById('total-qbank-count').textContent = currentQuestions.length;
+      return added;
+    }
+
+    function loadLocalQBank() {
+      const saved = localStorage.getItem('cfa_qbank_carmen_v2');
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          currentQuestions = parsed.map((q, i) => normalizeQuestionObject(q, i));
+        } catch (e) {
+          currentQuestions = DEFAULT_QUESTION_BANK.map((q, i) => normalizeQuestionObject(q, i));
+        }
+      } else {
+        currentQuestions = DEFAULT_QUESTION_BANK.map((q, i) => normalizeQuestionObject(q, i));
+      }
+      // S'assurer que toutes les questions par défaut sont bien présentes
+      mergeQuestionsIntoBank(DEFAULT_QUESTION_BANK);
+    }
+
+    /* =========================================================================
+       6. GESTION DE L'OBJECTIF QUOTIDIEN AUTOMATIQUE (DAILY GOAL ENGINE)
+       ========================================================================= */
+    function loadDailyGoalState() {
+      const saved = localStorage.getItem('cfa_daily_goal_carmen');
+      const today = getTodayISO();
+
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          dailyGoalState.target = parsed.target || 20;
+          dailyGoalState.streak = parsed.streak || 1;
+          dailyGoalState.lastCompletedDate = parsed.lastCompletedDate || null;
+
+          // Si on est un nouveau jour, on réinitialise le compteur du jour à 0
+          if (parsed.date === today) {
+            dailyGoalState.date = today;
+            dailyGoalState.completedTodayIds = parsed.completedTodayIds || [];
+          } else {
+            dailyGoalState.date = today;
+            dailyGoalState.completedTodayIds = [];
+          }
+        } catch (e) {}
+      }
+      document.getElementById('daily-goal-select').value = String(dailyGoalState.target);
+      saveDailyGoalState();
+    }
+
+    function saveDailyGoalState() {
+      localStorage.setItem('cfa_daily_goal_carmen', JSON.stringify(dailyGoalState));
+    }
+
+    function updateDailyGoalTarget(newTarget) {
+      dailyGoalState.target = parseInt(newTarget, 10) || 20;
+      saveDailyGoalState();
+      updateDailyGoalUI();
+      showToast(`Daily question target updated to ${dailyGoalState.target} questions/day.`);
+    }
+
+    function recordDailyQuestionAnswered(qId) {
+      const today = getTodayISO();
+      if (dailyGoalState.date !== today) {
+        dailyGoalState.date = today;
+        dailyGoalState.completedTodayIds = [];
+      }
+      if (!dailyGoalState.completedTodayIds.includes(qId)) {
+        dailyGoalState.completedTodayIds.push(qId);
+
+        // Si l'objectif quotidien vient d'être atteint aujourd'hui
+        if (dailyGoalState.completedTodayIds.length === dailyGoalState.target) {
+          if (dailyGoalState.lastCompletedDate !== today) {
+            dailyGoalState.streak = (dailyGoalState.streak || 0) + 1;
+            dailyGoalState.lastCompletedDate = today;
+          }
+          showToast(`🎉 Daily Goal Achieved (${dailyGoalState.target}/${dailyGoalState.target})! Keep up the momentum for Feb 25!`);
+        }
+        saveDailyGoalState();
+        updateDailyGoalUI();
+      }
+    }
+
+    function updateDailyGoalUI() {
+      const done = dailyGoalState.completedTodayIds.length;
+      const target = dailyGoalState.target;
+      const pct = Math.min(100, Math.round((done / target) * 100));
+
+      document.getElementById('daily-progress-text').textContent = `${done} / ${target}`;
+      document.getElementById('daily-progress-bar').style.width = `${pct}%`;
+      document.getElementById('streak-badge').textContent = `${dailyGoalState.streak}d streak`;
+
+      document.getElementById('card-daily-done').textContent = done;
+      document.getElementById('card-daily-target').textContent = target;
+      document.getElementById('today-date-label').textContent = dailyGoalState.date;
+
+      // Calcul de projection jusqu'au 25 février 2027
+      const examDate = new Date('2027-02-25T09:00:00');
+      const now = new Date();
+      const daysLeft = Math.max(1, Math.ceil((examDate - now) / (1000 * 60 * 60 * 24)));
+      const projectedTotal = daysLeft * target;
+
+      document.getElementById('pacing-note-target').textContent = target;
+      document.getElementById('pacing-note-total').textContent = projectedTotal.toLocaleString();
+    }
+
+    /* Lance une série aléatoire calibrée sur l'objectif quotidien */
+    function startDailyRandomDrill() {
+      const targetCount = dailyGoalState.target;
+      
+      // Priorité aux questions non répondues ou ratées, mélangées avec Fisher-Yates
+      const unansweredOrWrong = currentQuestions.filter(q => !userAnswers[q.id] || !userAnswers[q.id].isCorrect);
+      const answeredCorrectly = currentQuestions.filter(q => userAnswers[q.id] && userAnswers[q.id].isCorrect);
+
+      shuffleArray(unansweredOrWrong);
+      shuffleArray(answeredCorrectly);
+
+      const combinedPool = [...unansweredOrWrong, ...answeredCorrectly];
+      dailyDrillQueue = combinedPool.slice(0, Math.min(targetCount, combinedPool.length));
+
+      currentTopicFilter = 'DAILY';
+      document.getElementById('topic-select').value = 'DAILY';
+      currentIndex = 0;
+      selectedOptionIndex = null;
+
       setAppMode('drill');
       renderQuestion();
       renderMatrix();
       updateSessionMetrics();
+      showToast(`🎲 Generated a randomized Daily Drill of ${dailyDrillQueue.length} questions!`);
     }
 
-    /* Load or Restore QBank */
-    function loadStoredQuestions() {
-      const stored = localStorage.getItem('cfa_qbank_carmen');
-      if (stored) {
-        try {
-          currentQuestions = JSON.parse(stored);
-        } catch (e) {
-          currentQuestions = [...DEFAULT_QUESTION_BANK];
-        }
+    /* Mélange immédiatement les questions actives avec Fisher-Yates */
+    function shuffleActiveQuestionsNow() {
+      if (currentTopicFilter === 'DAILY' && dailyDrillQueue.length > 0) {
+        shuffleArray(dailyDrillQueue);
       } else {
-        currentQuestions = [...DEFAULT_QUESTION_BANK];
-        localStorage.setItem('cfa_qbank_carmen', JSON.stringify(currentQuestions));
+        shuffleArray(currentQuestions);
       }
-    }
-
-    /* Countdown to Feb 25, 2027 */
-    function calculateCountdown() {
-      const examDate = new Date('2027-02-25T09:00:00');
-      const now = new Date();
-      const diffMs = examDate - now;
-      const days = Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
-      
-      const bannerDays = document.getElementById('countdown-days');
-      const miniDays = document.getElementById('countdown-mini');
-      if (bannerDays) bannerDays.textContent = days;
-      if (miniDays) miniDays.textContent = days + " days remaining";
-    }
-
-    /* Mode Switcher */
-    function setAppMode(mode) {
-      currentMode = mode;
-      
-      // Update Tab Styles
-      ['drill', 'mock', 'stats', 'plan'].forEach(m => {
-        const btn = document.getElementById('nav-' + m);
-        if (btn) {
-          if (m === mode) {
-            btn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all bg-blue-50 text-blue-700 border border-blue-200";
-          } else {
-            btn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent";
-          }
-        }
-      });
-
-      // Show/Hide Top Control Strips
-      const drillControls = document.getElementById('drill-controls');
-      const mockControls = document.getElementById('mock-controls');
-      
-      if (mode === 'drill') {
-        drillControls.classList.remove('hidden');
-        mockControls.classList.add('hidden');
-        stopMockTimer();
-      } else if (mode === 'mock') {
-        drillControls.classList.add('hidden');
-        mockControls.classList.remove('hidden');
-        startMockTimer();
-      } else {
-        drillControls.classList.add('hidden');
-        mockControls.classList.add('hidden');
-        stopMockTimer();
-      }
-
-      // Views toggling
-      const examView = document.getElementById('view-exam');
-      const statsView = document.getElementById('view-stats');
-      const planView = document.getElementById('view-plan');
-
-      if (mode === 'drill' || mode === 'mock') {
-        examView.classList.remove('hidden');
-        statsView.classList.add('hidden');
-        planView.classList.add('hidden');
-        renderQuestion();
-      } else if (mode === 'stats') {
-        examView.classList.add('hidden');
-        statsView.classList.remove('hidden');
-        planView.classList.add('hidden');
-        renderAnalyticsView();
-      } else if (mode === 'plan') {
-        examView.classList.add('hidden');
-        statsView.classList.add('hidden');
-        planView.classList.remove('hidden');
-      }
-    }
-
-    /* Filter by Topic */
-    function filterByTopic(topic) {
-      currentTopicFilter = topic;
       currentIndex = 0;
       selectedOptionIndex = null;
       renderQuestion();
       renderMatrix();
+      showToast("🔀 Question order randomized using Fisher-Yates shuffle!");
     }
 
-    /* Active Question List after filter */
+    function toggleShuffleOptions(enabled) {
+      shuffleOptionsEnabled = enabled;
+      renderQuestion();
+    }
+
+    function pickRandomQuestion() {
+      const activeList = getActiveQuestions();
+      if (activeList.length <= 1) return;
+      const unansweredIndexes = activeList
+        .map((q, idx) => (!userAnswers[q.id] ? idx : -1))
+        .filter(idx => idx !== -1 && idx !== currentIndex);
+
+      if (unansweredIndexes.length > 0) {
+        const randIdx = unansweredIndexes[Math.floor(Math.random() * unansweredIndexes.length)];
+        jumpToQuestion(randIdx);
+      } else {
+        const randIdx = Math.floor(Math.random() * activeList.length);
+        jumpToQuestion(randIdx);
+      }
+    }
+
+    /* =========================================================================
+       7. MOTEUR D'AFFICHAGE ET DE RÉSOLUTION DES QCM
+       ========================================================================= */
     function getActiveQuestions() {
+      if (currentTopicFilter === 'DAILY') {
+        return dailyDrillQueue.length > 0 ? dailyDrillQueue : currentQuestions.slice(0, dailyGoalState.target);
+      }
       if (currentTopicFilter === 'ALL') {
         return currentQuestions;
       }
       return currentQuestions.filter(q => q.topic === currentTopicFilter);
     }
 
-    /* Render Current Question Stem & Choices */
     function renderQuestion() {
       const activeList = getActiveQuestions();
       const explanationDrawer = document.getElementById('explanation-drawer');
       const submitBtn = document.getElementById('submit-btn');
 
       if (!activeList || activeList.length === 0) {
-        document.getElementById('q-stem').innerHTML = "No questions found in this category. Use <strong>'QBank'</strong> to add questions.";
+        document.getElementById('q-stem').innerHTML = "No questions in this topic filter yet. Select <strong>All Topics</strong> or add questions via <strong>+ JSON / QBank</strong>.";
         document.getElementById('options-container').innerHTML = "";
         document.getElementById('q-counter').textContent = "0 of 0";
         explanationDrawer.classList.add('hidden');
@@ -1047,79 +1513,78 @@
         return;
       }
 
-      // Safety check index bounds
       if (currentIndex >= activeList.length) currentIndex = activeList.length - 1;
       if (currentIndex < 0) currentIndex = 0;
 
       const q = activeList[currentIndex];
       const existingRecord = userAnswers[q.id];
 
-      // Topic badge and weights
       document.getElementById('q-topic-badge').textContent = q.topicName || q.topic;
-      document.getElementById('q-weight-indicator').textContent = "Weight: " + (q.weight || "Exam Core");
+      document.getElementById('q-module-badge').textContent = q.module || "CFA Level I";
       document.getElementById('q-counter').textContent = `Q ${currentIndex + 1} of ${activeList.length}`;
       document.getElementById('q-stem').textContent = q.stem;
 
-      // Flag state
-      const isFlagged = flaggedQuestions.has(q.id);
-      const flagIcon = document.getElementById('flag-icon');
-      const flagLabel = document.getElementById('flag-label');
-      if (isFlagged) {
-        flagIcon.className = "fa-solid fa-flag text-amber-500";
-        flagLabel.textContent = "Flagged";
-        flagLabel.className = "text-xs font-bold text-amber-600 hidden sm:inline";
-      } else {
-        flagIcon.className = "fa-regular fa-flag text-slate-400";
-        flagLabel.textContent = "Flag for review";
-        flagLabel.className = "text-xs font-normal text-slate-500 hidden sm:inline";
+      // Gestion du mélange optionnel des réponses A, B, C
+      if (!existingRecord && selectedOptionIndex === null) {
+        currentOptionPermutation = [0, 1, 2];
+        if (shuffleOptionsEnabled) {
+          shuffleArray(currentOptionPermutation);
+        }
       }
 
-      // Render 3 CFA-style options
+      // Flag UI
+      const isFlagged = flaggedQuestions.has(q.id);
+      document.getElementById('flag-icon').className = isFlagged ? "fa-solid fa-flag text-amber-500" : "fa-regular fa-flag text-slate-400";
+      document.getElementById('flag-label').textContent = isFlagged ? "Flagged" : "Flag";
+
       const container = document.getElementById('options-container');
       container.innerHTML = "";
+      const letters = ["A", "B", "C"];
 
-      const optionLetters = ["A", "B", "C"];
-      
-      q.options.forEach((optText, idx) => {
+      currentOptionPermutation.forEach((originalOptIdx, displayPos) => {
+        const optText = q.options[originalOptIdx];
         const btn = document.createElement('button');
         btn.type = "button";
-        btn.onclick = () => selectOption(idx);
-        
+        btn.onclick = () => selectOption(originalOptIdx);
+
         let borderClass = "border-slate-200 hover:border-slate-400 bg-white";
         let letterBg = "bg-slate-100 text-slate-700";
 
-        // If previously submitted or answered
         if (existingRecord) {
-          if (idx === q.correctIndex) {
-            borderClass = "border-emerald-500 bg-emerald-50 text-emerald-950 font-semibold";
-            letterBg = "bg-emerald-600 text-white font-bold";
-          } else if (idx === existingRecord.selected && !existingRecord.isCorrect) {
-            borderClass = "border-rose-400 bg-rose-50 text-rose-950 line-through";
-            letterBg = "bg-rose-600 text-white font-bold";
+          if (currentMode === 'mock') {
+            if (originalOptIdx === existingRecord.selected) {
+              borderClass = "border-blue-600 bg-blue-50 text-blue-950 font-semibold";
+              letterBg = "bg-blue-600 text-white font-bold";
+            }
           } else {
-            borderClass = "border-slate-200 bg-slate-50 text-slate-400 opacity-60";
+            if (originalOptIdx === q.correctIndex) {
+              borderClass = "border-emerald-500 bg-emerald-50 text-emerald-950 font-semibold";
+              letterBg = "bg-emerald-600 text-white font-bold";
+            } else if (originalOptIdx === existingRecord.selected && !existingRecord.isCorrect) {
+              borderClass = "border-rose-400 bg-rose-50 text-rose-950 line-through";
+              letterBg = "bg-rose-600 text-white font-bold";
+            } else {
+              borderClass = "border-slate-200 bg-slate-50 text-slate-400 opacity-65";
+            }
           }
-        } else if (selectedOptionIndex === idx) {
-          borderClass = "border-blue-600 bg-blue-50/60 text-blue-900 shadow-xs ring-1 ring-blue-500";
+        } else if (selectedOptionIndex === originalOptIdx) {
+          borderClass = "border-blue-600 bg-blue-50/70 text-blue-900 shadow-2xs ring-1 ring-blue-500";
           letterBg = "bg-blue-600 text-white font-bold";
         }
 
-        btn.className = `option-btn w-full p-3.5 sm:p-4 rounded-xl border-2 text-left flex items-start gap-3.5 transition-all text-sm leading-relaxed ${borderClass}`;
+        btn.className = `option-btn w-full p-3.5 sm:p-4 rounded-xl border-2 text-left flex items-start gap-3.5 text-sm leading-relaxed ${borderClass}`;
         btn.innerHTML = `
-          <span class="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 font-bold text-xs ${letterBg} transition-colors">
-            ${optionLetters[idx]}
+          <span class="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 font-bold text-xs ${letterBg}">
+            ${letters[displayPos]}
           </span>
           <span class="flex-1 pt-0.5">${optText}</span>
         `;
         container.appendChild(btn);
       });
 
-      // Submit Button and Explanation Drawer state
       if (existingRecord) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = `<i class="fa-solid fa-check-double mr-1"></i> Submitted`;
-        
-        // Show explanation only in Drill Mode (Mock hides explanation until finish)
+        submitBtn.innerHTML = `<i class="fa-solid fa-check-double mr-1"></i> Answered`;
         if (currentMode === 'drill') {
           showExplanation(q, existingRecord);
         } else {
@@ -1131,27 +1596,22 @@
         explanationDrawer.classList.add('hidden');
       }
 
-      // Prev / Next button state
       document.getElementById('prev-btn').disabled = currentIndex === 0;
       document.getElementById('next-btn').disabled = currentIndex === activeList.length - 1;
     }
 
-    /* Option Selection */
-    function selectOption(idx) {
+    function selectOption(originalIdx) {
       const activeList = getActiveQuestions();
       const q = activeList[currentIndex];
-      // Prevent changing answer if already answered in drill mode
       if (userAnswers[q.id] && currentMode === 'drill') return;
 
-      selectedOptionIndex = idx;
+      selectedOptionIndex = originalIdx;
       document.getElementById('submit-btn').disabled = false;
       renderQuestion();
     }
 
-    /* Submit Answer */
     function submitCurrentAnswer() {
       if (selectedOptionIndex === null) return;
-      
       const activeList = getActiveQuestions();
       const q = activeList[currentIndex];
       const isCorrect = (selectedOptionIndex === q.correctIndex);
@@ -1162,53 +1622,271 @@
         timestamp: Date.now()
       };
 
+      recordDailyQuestionAnswered(q.id);
       selectedOptionIndex = null;
       renderQuestion();
       renderMatrix();
       updateSessionMetrics();
     }
 
-    /* Show Detailed CFA Explanations */
     function showExplanation(q, record) {
       const drawer = document.getElementById('explanation-drawer');
       drawer.classList.remove('hidden');
 
       const title = document.getElementById('explanation-title');
       const icon = document.getElementById('explanation-status-icon');
-      
+
       if (record.isCorrect) {
         icon.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400"></i>`;
-        title.textContent = "Correct! Well Done.";
+        title.textContent = "Correct Answer!";
         title.className = "font-bold text-sm tracking-wide uppercase text-emerald-400";
       } else {
-        icon.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-rose-400"></i>`;
-        title.textContent = "Incorrect. Review the LOS Rationale:";
+        icon.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-400"></i>`;
+        title.textContent = "Incorrect — Review Official Rationale:";
         title.className = "font-bold text-sm tracking-wide uppercase text-rose-400";
       }
 
-      document.getElementById('explanation-correct').textContent = q.explanation || "No explanation provided.";
-      
-      // Distractors
-      const distractorsContainer = document.getElementById('explanation-distractors');
+      document.getElementById('explanation-correct').textContent = q.explanation;
+
+      const distractorsWrapper = document.getElementById('distractors-wrapper');
+      const distractorsEl = document.getElementById('explanation-distractors');
       if (q.distractors && q.distractors.length > 0) {
-        distractorsContainer.innerHTML = q.distractors.map(d => `<div class="py-0.5">• ${d}</div>`).join('');
+        distractorsWrapper.classList.remove('hidden');
+        distractorsEl.innerHTML = q.distractors.map(d => `<div>• ${d}</div>`).join('');
       } else {
-        distractorsContainer.innerHTML = `<div class="italic text-slate-500">Distractor breakdown inherent to rationale above.</div>`;
+        distractorsWrapper.classList.add('hidden');
       }
 
-      // Formula
-      document.getElementById('explanation-formula').textContent = q.formula || "Standard valuation / accounting conventions apply.";
-      document.getElementById('explanation-trap').textContent = q.trap || "Pay close attention to wording in the question stem.";
+      document.getElementById('explanation-formula').textContent = q.formula || "Standard CFA curriculum rule applies.";
+      document.getElementById('explanation-trap').textContent = q.trap || "Watch out for subtle wording changes in the stem.";
     }
 
-    /* Question Navigation */
-    function navigateQuestion(direction) {
+    /* =========================================================================
+       8. SUIVI COMPLET DU LEARNING ECOSYSTEM (LES 2027 - 2,115 QUESTIONS)
+       ========================================================================= */
+    function loadLESProgressState() {
+      const saved = localStorage.getItem('cfa_les_2027_progress_carmen');
+      if (saved) {
+        try {
+          lesProgressState = JSON.parse(saved);
+        } catch (e) {
+          lesProgressState = {};
+        }
+      } else {
+        // Pré-cocher Module 2 de Quant (vu comme "Review Previous Attempt" sur ton screenshot !)
+        lesProgressState = {
+          "quant-m2": { done: true }
+        };
+      }
+    }
+
+    function toggleLESModuleDone(modId) {
+      if (lesProgressState[modId] && lesProgressState[modId].done) {
+        lesProgressState[modId].done = false;
+      } else {
+        lesProgressState[modId] = { done: true, timestamp: Date.now() };
+      }
+      localStorage.setItem('cfa_les_2027_progress_carmen', JSON.stringify(lesProgressState));
+      renderLESTracker();
+    }
+
+    function renderLESTracker() {
+      // Calcul du total de questions LES complétées
+      let totalQs = 0;
+      let completedQs = 0;
+
+      CFA_2027_LES_CATALOG.forEach(topic => {
+        topic.modules.forEach(m => {
+          totalQs += m.count;
+          if (lesProgressState[m.id]?.done) {
+            completedQs += m.count;
+          }
+        });
+      });
+
+      const pct = totalQs > 0 ? Math.round((completedQs / totalQs) * 100) : 0;
+      document.getElementById('les-completed-qs').textContent = completedQs.toLocaleString();
+      document.getElementById('les-completed-pct').textContent = pct + "%";
+
+      const examDate = new Date('2027-02-25T09:00:00');
+      const daysLeft = Math.max(1, Math.ceil((examDate - new Date()) / (1000 * 60 * 60 * 24)));
+      const remainingQs = Math.max(0, totalQs - completedQs);
+      const paceNeeded = Math.ceil(remainingQs / daysLeft);
+      document.getElementById('les-daily-pace-needed').textContent = `${paceNeeded} Qs / day`;
+
+      // Filtres de matières
+      const filterContainer = document.getElementById('les-topic-filters');
+      filterContainer.innerHTML = "";
+
+      const allBtn = document.createElement('button');
+      allBtn.className = `px-3 py-1.5 rounded-lg text-xs font-bold transition ${lesActiveTopicFilter === 'ALL' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`;
+      allBtn.textContent = "All 11 Areas (2,115 Qs)";
+      allBtn.onclick = () => { lesActiveTopicFilter = 'ALL'; renderLESTracker(); };
+      filterContainer.appendChild(allBtn);
+
+      CFA_2027_LES_CATALOG.forEach(t => {
+        const topicSum = t.modules.reduce((acc, m) => acc + m.count, 0);
+        const btn = document.createElement('button');
+        btn.className = `px-3 py-1.5 rounded-lg text-xs font-semibold transition ${lesActiveTopicFilter === t.code ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`;
+        btn.textContent = `${t.code} (${topicSum})`;
+        btn.onclick = () => { lesActiveTopicFilter = t.code; renderLESTracker(); };
+        filterContainer.appendChild(btn);
+      });
+
+      // Liste des modules
+      const container = document.getElementById('les-modules-container');
+      container.innerHTML = "";
+
+      const topicsToRender = lesActiveTopicFilter === 'ALL'
+        ? CFA_2027_LES_CATALOG
+        : CFA_2027_LES_CATALOG.filter(t => t.code === lesActiveTopicFilter);
+
+      topicsToRender.forEach(topic => {
+        const topicTotal = topic.modules.reduce((acc, m) => acc + m.count, 0);
+        const topicDone = topic.modules.reduce((acc, m) => acc + (lesProgressState[m.id]?.done ? m.count : 0), 0);
+        const topicPct = topicTotal > 0 ? Math.round((topicDone / topicTotal) * 100) : 0;
+
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs";
+
+        let priorityBadgeClass = "bg-slate-100 text-slate-700";
+        if (topic.priority.includes("CRITICAL")) priorityBadgeClass = "bg-rose-100 text-rose-800 border border-rose-200";
+        else if (topic.priority.includes("HIGH")) priorityBadgeClass = "bg-amber-100 text-amber-800 border border-amber-200";
+        else if (topic.priority.includes("STRONG") || topic.priority.includes("ANCHOR")) priorityBadgeClass = "bg-emerald-100 text-emerald-800 border border-emerald-200";
+
+        card.innerHTML = `
+          <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="font-bold text-slate-900 text-sm sm:text-base">${topic.title}</h3>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${priorityBadgeClass}">${topic.priority}</span>
+              </div>
+              <div class="text-xs text-slate-500 font-mono mt-0.5">
+                Exam Weight: ${topic.weight} • ${topic.modules.length} Modules • ${topicTotal} Total Questions
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="text-right font-mono">
+                <div class="text-xs font-bold text-slate-900">${topicDone} / ${topicTotal} Qs (${topicPct}%)</div>
+                <div class="w-28 bg-slate-200 h-2 rounded-full overflow-hidden mt-1">
+                  <div class="bg-blue-600 h-full transition-all" style="width: ${topicPct}%"></div>
+                </div>
+              </div>
+              <button onclick="filterByTopicAndGo('${topic.code}')" class="px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-bold border border-blue-200 transition">
+                Drill in App
+              </button>
+            </div>
+          </div>
+          <div class="divide-y divide-slate-100">
+            ${topic.modules.map(m => {
+              const isDone = lesProgressState[m.id]?.done;
+              return `
+                <div class="px-6 py-3 flex items-center justify-between gap-4 hover:bg-slate-50/80 transition ${isDone ? 'bg-emerald-50/30' : ''}">
+                  <label class="flex items-center gap-3 cursor-pointer flex-1 select-none">
+                    <input type="checkbox" ${isDone ? 'checked' : ''} onchange="toggleLESModuleDone('${m.id}')" class="w-4 h-4 rounded text-emerald-600 focus:ring-0 cursor-pointer">
+                    <span class="text-xs sm:text-sm font-medium ${isDone ? 'line-through text-slate-400' : 'text-slate-800'}">${m.name}</span>
+                  </label>
+                  <div class="flex items-center gap-3 shrink-0">
+                    <span class="text-xs font-mono font-semibold px-2.5 py-0.5 rounded-md ${isDone ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600'}">
+                      ${m.count} Questions
+                    </span>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterByTopicAndGo(topicCode) {
+      if (topicCode === 'MOCKS') {
+        setAppMode('mock');
+        return;
+      }
+      currentTopicFilter = topicCode;
+      document.getElementById('topic-select').value = topicCode;
+      currentIndex = 0;
+      selectedOptionIndex = null;
+      setAppMode('drill');
+    }
+
+    /* =========================================================================
+       9. NAVIGATION, MODES, ANALYTICS & EXPORT JSON
+       ========================================================================= */
+    function calculateCountdown() {
+      const examDate = new Date('2027-02-25T09:00:00');
+      const now = new Date();
+      const days = Math.max(0, Math.ceil((examDate - now) / (1000 * 60 * 60 * 24)));
+      const dEl = document.getElementById('countdown-days');
+      const mEl = document.getElementById('countdown-mini');
+      if (dEl) dEl.textContent = days;
+      if (mEl) mEl.textContent = `${days} days left`;
+    }
+
+    function setAppMode(mode) {
+      currentMode = mode;
+      ['drill', 'les', 'mock', 'stats', 'plan'].forEach(m => {
+        const btn = document.getElementById('nav-' + m);
+        if (btn) {
+          btn.className = (m === mode)
+            ? "px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all bg-blue-50 text-blue-700 border border-blue-200"
+            : "px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent";
+        }
+      });
+
+      const drillControls = document.getElementById('drill-controls');
+      const mockControls = document.getElementById('mock-controls');
+
+      if (mode === 'drill') {
+        drillControls.classList.remove('hidden');
+        mockControls.classList.add('hidden');
+        stopMockTimer();
+      } else if (mode === 'mock') {
+        drillControls.classList.add('hidden');
+        mockControls.classList.remove('hidden');
+        shuffleArray(currentQuestions);
+        currentIndex = 0;
+        startMockTimer();
+      } else {
+        drillControls.classList.add('hidden');
+        mockControls.classList.add('hidden');
+        stopMockTimer();
+      }
+
+      document.getElementById('view-exam').classList.toggle('hidden', !(mode === 'drill' || mode === 'mock'));
+      document.getElementById('view-les').classList.toggle('hidden', mode !== 'les');
+      document.getElementById('view-stats').classList.toggle('hidden', mode !== 'stats');
+      document.getElementById('view-plan').classList.toggle('hidden', mode !== 'plan');
+
+      if (mode === 'drill' || mode === 'mock') {
+        renderQuestion();
+        renderMatrix();
+      } else if (mode === 'les') {
+        renderLESTracker();
+      } else if (mode === 'stats') {
+        renderAnalyticsView();
+      }
+    }
+
+    function filterByTopic(topic) {
+      currentTopicFilter = topic;
+      currentIndex = 0;
+      selectedOptionIndex = null;
+      renderQuestion();
+      renderMatrix();
+      updateSessionMetrics();
+    }
+
+    function navigateQuestion(dir) {
       const activeList = getActiveQuestions();
-      const newIndex = currentIndex + direction;
-      if (newIndex >= 0 && newIndex < activeList.length) {
-        currentIndex = newIndex;
+      const nextIdx = currentIndex + dir;
+      if (nextIdx >= 0 && nextIdx < activeList.length) {
+        currentIndex = nextIdx;
         selectedOptionIndex = null;
         renderQuestion();
+        renderMatrix();
       }
     }
 
@@ -1216,29 +1894,23 @@
       currentIndex = idx;
       selectedOptionIndex = null;
       renderQuestion();
+      renderMatrix();
     }
 
-    /* Flag / Unflag Question */
     function toggleFlagCurrentQuestion() {
       const activeList = getActiveQuestions();
       if (!activeList[currentIndex]) return;
       const qId = activeList[currentIndex].id;
-
-      if (flaggedQuestions.has(qId)) {
-        flaggedQuestions.delete(qId);
-      } else {
-        flaggedQuestions.add(qId);
-      }
+      if (flaggedQuestions.has(qId)) flaggedQuestions.delete(qId);
+      else flaggedQuestions.add(qId);
       renderQuestion();
       renderMatrix();
     }
 
-    /* Render Matrix Grid */
     function renderMatrix() {
       const activeList = getActiveQuestions();
       const grid = document.getElementById('question-matrix-grid');
       grid.innerHTML = "";
-
       let answeredCount = 0;
 
       activeList.forEach((q, idx) => {
@@ -1246,67 +1918,71 @@
         btn.type = "button";
         btn.onclick = () => jumpToQuestion(idx);
 
-        const record = userAnswers[q.id];
+        const rec = userAnswers[q.id];
         const isFlagged = flaggedQuestions.has(q.id);
 
         let bg = "bg-white text-slate-700 border-slate-300 hover:border-slate-500";
-        if (record) {
+        if (rec) {
           answeredCount++;
           if (currentMode === 'mock') {
-            // In mock, do not reveal correctness until finished
             bg = "bg-blue-600 text-white border-blue-700 font-bold";
           } else {
-            bg = record.isCorrect 
-              ? "bg-emerald-600 text-white border-emerald-700 font-bold" 
+            bg = rec.isCorrect
+              ? "bg-emerald-600 text-white border-emerald-700 font-bold"
               : "bg-rose-600 text-white border-rose-700 font-bold";
           }
         }
+        if (idx === currentIndex) bg += " ring-2 ring-blue-500 ring-offset-1";
 
-        if (idx === currentIndex) {
-          bg += " ring-2 ring-blue-500 ring-offset-1";
-        }
-
-        btn.className = `h-9 rounded-lg border text-xs font-mono font-medium flex items-center justify-center relative transition-all shadow-2xs ${bg}`;
+        btn.className = `h-9 rounded-lg border text-xs font-mono font-medium flex items-center justify-center relative transition-all ${bg}`;
         btn.textContent = idx + 1;
 
         if (isFlagged) {
-          const flagPip = document.createElement('span');
-          flagPip.className = "absolute -top-1 -right-1 w-2.5 h-2.5 bg-amber-400 rounded-full border border-white";
-          btn.appendChild(flagPip);
+          const pip = document.createElement('span');
+          pip.className = "absolute -top-1 -right-1 w-2.5 h-2.5 bg-amber-400 rounded-full border border-white";
+          btn.appendChild(pip);
         }
-
         grid.appendChild(btn);
       });
 
-      document.getElementById('matrix-stats').textContent = `${answeredCount} of ${activeList.length} Answered`;
+      document.getElementById('matrix-stats').textContent = `${answeredCount} / ${activeList.length} Answered`;
     }
 
-    /* Update Top Bar Counters */
     function updateSessionMetrics() {
       const activeList = getActiveQuestions();
-      const answeredList = activeList.filter(q => userAnswers[q.id]);
-      const correctList = answeredList.filter(q => userAnswers[q.id].isCorrect);
+      const answered = activeList.filter(q => userAnswers[q.id]);
+      const correct = answered.filter(q => userAnswers[q.id].isCorrect);
 
-      document.getElementById('session-answered').textContent = answeredList.length;
+      document.getElementById('session-answered').textContent = answered.length;
       document.getElementById('session-total').textContent = activeList.length;
-
-      const pct = answeredList.length > 0 ? Math.round((correctList.length / answeredList.length) * 100) : 0;
+      const pct = answered.length > 0 ? Math.round((correct.length / answered.length) * 100) : 0;
       document.getElementById('session-score').textContent = pct + "%";
     }
 
-    /* Mock Timer Controls */
+    function resetCurrentSession() {
+      userAnswers = {};
+      flaggedQuestions.clear();
+      currentIndex = 0;
+      selectedOptionIndex = null;
+      renderQuestion();
+      renderMatrix();
+      updateSessionMetrics();
+      showToast("Session answers cleared. Daily goal progress preserved.");
+    }
+
     function startMockTimer() {
       if (mockInterval) clearInterval(mockInterval);
+      mockTimerSeconds = getActiveQuestions().length * 90;
       mockInterval = setInterval(() => {
         if (mockTimerSeconds <= 0) {
           clearInterval(mockInterval);
           finishMockExamEarly();
         } else {
           mockTimerSeconds--;
-          const minutes = Math.floor(mockTimerSeconds / 60);
-          const seconds = mockTimerSeconds % 60;
-          document.getElementById('mock-timer').textContent = 
-            `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+          const mins = Math.floor(mockTimerSeconds / 60);
+          const secs = mockTimerSeconds % 60;
+          document.getElementById('mock-timer').textContent =
+            `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
         }
       }, 1000);
     }
@@ -1320,50 +1996,25 @@
       setAppMode('stats');
     }
 
-    /* Reset Progress */
-    function resetCurrentSession() {
-      userAnswers = {};
-      flaggedQuestions.clear();
-      currentIndex = 0;
-      selectedOptionIndex = null;
-      renderQuestion();
-      renderMatrix();
-      updateSessionMetrics();
-    }
-
-    /* =================================================================
-       ANALYTICS & SCORE REPORT (MATCHING CFA INSTITUTE STANDARDS)
-       ================================================================= */
     function renderAnalyticsView() {
       const totalAttempted = Object.keys(userAnswers).length;
       const totalCorrect = Object.values(userAnswers).filter(a => a.isCorrect).length;
       const overallPct = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
 
       document.getElementById('stats-overall-pct').textContent = overallPct + "%";
-      
       const mpsBadge = document.getElementById('mps-badge');
       if (overallPct >= 70) {
-        mpsBadge.textContent = "Above MPS (Pass Zone ≥ 70%)";
+        mpsBadge.textContent = "Above MPS (≥70%)";
         mpsBadge.className = "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-300";
       } else {
-        mpsBadge.textContent = "Below MPS (< 70% Target)";
+        mpsBadge.textContent = "Below MPS (<70%)";
         mpsBadge.className = "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 border border-rose-300";
       }
-
-      // Group by topic
-      const topics = [
-        { code: 'FSA', name: 'Financial Statement Analysis', weight: '11-14%', target: 'Primary Deficit' },
-        { code: 'FI', name: 'Fixed Income', weight: '11-14%', target: 'Primary Deficit' },
-        { code: 'QUANT', name: 'Quantitative Methods', weight: '6-9%', target: 'Primary Deficit' },
-        { code: 'EQUITY', name: 'Equity Investments', weight: '11-14%', target: 'Moderate' },
-        { code: 'CORP', name: 'Corporate Issuers', weight: '6-9%', target: 'Moderate' },
-        { code: 'ETHICS', name: 'Ethical and Professional Standards', weight: '15-20%', target: 'Carmen Strong Area' },
-      ];
 
       const container = document.getElementById('topic-performance-bars');
       container.innerHTML = "";
 
-      topics.forEach(t => {
+      CFA_2027_LES_CATALOG.filter(t => t.code !== 'MOCKS').forEach(t => {
         const qInTopic = currentQuestions.filter(q => q.topic === t.code);
         const attempted = qInTopic.filter(q => userAnswers[q.id]);
         const correct = attempted.filter(q => userAnswers[q.id].isCorrect);
@@ -1374,38 +2025,30 @@
         else if (pct >= 50) barColor = "bg-amber-500";
 
         const row = document.createElement('div');
-        row.className = "p-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition-colors";
+        row.className = "p-4 rounded-xl border border-slate-200 bg-white";
         row.innerHTML = `
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-            <div class="flex items-center gap-2">
-              <span class="font-bold text-sm text-slate-900">${t.name}</span>
-              <span class="text-xs font-mono text-slate-500">(${t.weight})</span>
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <div>
+              <span class="font-bold text-sm text-slate-900">${t.title.replace('CFA-27-02-LI-B: ', '')}</span>
+              <span class="text-xs font-mono text-slate-500 ml-1">(${t.weight})</span>
             </div>
-            <div class="flex items-center gap-2 text-xs font-mono">
-              <span class="text-slate-500">${correct.length}/${attempted.length} Correct</span>
-              <span class="font-bold text-slate-900">${pct}%</span>
+            <div class="text-xs font-mono">
+              <span class="text-slate-500">${correct.length}/${attempted.length} Correct (${qInTopic.length} in QBank)</span>
+              <span class="font-bold text-slate-900 ml-2">${pct}%</span>
             </div>
           </div>
-
-          <!-- Progress Bar with 70% MPS Indicator Line -->
           <div class="w-full bg-slate-100 rounded-full h-3 relative overflow-hidden">
             <div class="${barColor} h-3 rounded-full transition-all duration-500" style="width: ${pct}%"></div>
-            <!-- Target line at 70% -->
-            <div class="absolute top-0 bottom-0 left-[70%] w-0.5 bg-slate-900 z-10" title="CFA Passing Target (70%)"></div>
-          </div>
-          <div class="flex justify-between items-center text-[10px] text-slate-400 mt-1.5 font-mono">
-            <span>0%</span>
-            <span class="text-slate-900 font-bold">▲ 70% MPS Benchmark</span>
-            <span>100%</span>
+            <div class="absolute top-0 bottom-0 left-[70%] w-0.5 bg-slate-900 z-10"></div>
           </div>
         `;
         container.appendChild(row);
       });
     }
 
-    /* =================================================================
-       MODAL & QBANK IMPORT / EXPORT
-       ================================================================= */
+    /* =========================================================================
+       10. GESTIONNAIRE JSON & AJOUT DE QUESTIONS
+       ========================================================================= */
     function openManageQuestionsModal() {
       document.getElementById('modal-qbank').classList.remove('hidden');
     }
@@ -1433,122 +2076,113 @@
       }
     }
 
-    /* Handle Creating Single Question */
     function handleCreateQuestion(e) {
       e.preventDefault();
-      
-      const topic = document.getElementById('new-q-topic').value;
-      const topicNames = {
-        'FSA': 'Financial Statement Analysis',
-        'FI': 'Fixed Income',
-        'QUANT': 'Quantitative Methods',
-        'EQUITY': 'Equity Investments',
-        'CORP': 'Corporate Issuers',
-        'ETHICS': 'Ethical and Professional Standards'
-      };
-
-      const newQ = {
-        id: "custom-" + Date.now(),
-        topic: topic,
-        topicName: topicNames[topic] || topic,
-        weight: "Candidate Custom",
-        stem: document.getElementById('new-q-stem').value.trim(),
+      const rawNew = {
+        id: currentQuestions.length + 1,
+        topic: document.getElementById('new-q-topic').value,
+        question: document.getElementById('new-q-stem').value.trim(),
         options: [
           document.getElementById('new-q-opt-0').value.trim(),
           document.getElementById('new-q-opt-1').value.trim(),
           document.getElementById('new-q-opt-2').value.trim()
         ],
-        correctIndex: parseInt(document.getElementById('new-q-correct').value),
+        correctIndex: parseInt(document.getElementById('new-q-correct').value, 10),
         explanation: document.getElementById('new-q-explanation').value.trim(),
-        distractors: ["Incorrect based on CFA curriculum guidelines."],
-        formula: document.getElementById('new-q-formula').value.trim() || "See curriculum readings.",
-        trap: document.getElementById('new-q-trap').value.trim() || "Pay close attention to key words in the stem."
+        formula: document.getElementById('new-q-formula').value.trim(),
+        trap: document.getElementById('new-q-trap').value.trim()
       };
 
-      currentQuestions.unshift(newQ);
-      localStorage.setItem('cfa_qbank_carmen', JSON.stringify(currentQuestions));
-
+      mergeQuestionsIntoBank([rawNew]);
       document.getElementById('single-question-form').reset();
       closeManageQuestionsModal();
       currentIndex = 0;
       renderQuestion();
       renderMatrix();
       updateSessionMetrics();
+      showToast("Question added to your QBank!");
     }
 
-    /* Handle Bulk JSON Import */
     function handleImportJSON() {
       const textarea = document.getElementById('bulk-json-textarea');
       try {
         const parsed = JSON.parse(textarea.value.trim());
-        if (!Array.isArray(parsed)) {
-          throw new Error("JSON must be an array of question objects.");
-        }
-
-        // Validate basic fields
-        parsed.forEach((item, index) => {
-          if (!item.stem || !item.options || item.options.length !== 3 || item.correctIndex === undefined) {
-            throw new Error(`Item at index ${index} must have 'stem', 3 'options', and 'correctIndex'.`);
-          }
-          if (!item.id) item.id = "imported-" + Date.now() + "-" + index;
-        });
-
-        currentQuestions = [...parsed, ...currentQuestions];
-        localStorage.setItem('cfa_qbank_carmen', JSON.stringify(currentQuestions));
-
-        alert(`Successfully imported ${parsed.length} questions into your CFA QBank!`);
+        const list = Array.isArray(parsed) ? parsed : [parsed];
+        const added = mergeQuestionsIntoBank(list);
         textarea.value = "";
         closeManageQuestionsModal();
-        currentIndex = 0;
         renderQuestion();
         renderMatrix();
         updateSessionMetrics();
+        showToast(`Merged ${added} new questions into your QBank! (${currentQuestions.length} total)`);
       } catch (err) {
-        alert("Error parsing JSON: " + err.message);
+        showToast("JSON Syntax Error: " + err.message);
       }
     }
 
-    /* Export JSON to Clipboard */
-    function handleExportJSON() {
-      const jsonStr = JSON.stringify(currentQuestions, null, 2);
+    function getCleanGitHubJSONString() {
+      const cleanExport = currentQuestions.map((q, idx) => ({
+        id: idx + 1,
+        topic: q.topicName || q.topic,
+        module: q.module || "CFA Level I",
+        question: q.stem,
+        options: q.options,
+        correctIndex: q.correctIndex,
+        explanation: q.explanation,
+        formula: q.formula,
+        trap: q.trap
+      }));
+      return JSON.stringify(cleanExport, null, 2);
+    }
+
+    function handleExportJSONToClipboard() {
+      const jsonStr = getCleanGitHubJSONString();
       document.getElementById('bulk-json-textarea').value = jsonStr;
-      
-      const tempInput = document.createElement("textarea");
-      tempInput.value = jsonStr;
-      document.body.appendChild(tempInput);
-      tempInput.select();
+      const temp = document.createElement("textarea");
+      temp.value = jsonStr;
+      document.body.appendChild(temp);
+      temp.select();
       document.execCommand("copy");
-      document.body.removeChild(tempInput);
-
-      alert("Full question bank JSON copied to your clipboard!");
+      document.body.removeChild(temp);
+      showToast("Full questions.json copied to clipboard! Paste it directly into GitHub.");
     }
 
-    /* Reset to Default 20 Questions */
-    function handleResetDefaultBank() {
-      if (confirm("Reset question bank to default questions? Any custom added questions will be replaced.")) {
-        currentQuestions = [...DEFAULT_QUESTION_BANK];
-        localStorage.setItem('cfa_qbank_carmen', JSON.stringify(currentQuestions));
-        closeManageQuestionsModal();
-        resetCurrentSession();
-      }
+    function handleDownloadQuestionsJSONFile() {
+      const jsonStr = getCleanGitHubJSONString();
+      const blob = new Blob([jsonStr], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "questions.json";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Downloaded questions.json!");
     }
 
-    /* Keyboard navigation: A, B, C to select; Enter to submit; Left/Right arrows */
+    function showToast(msg) {
+      const banner = document.getElementById('toast-banner');
+      document.getElementById('toast-message').textContent = msg;
+      banner.classList.remove('hidden');
+      setTimeout(() => banner.classList.add('hidden'), 4200);
+    }
+
+    /* Raccourcis clavier (A, B, C, Entrée, Flèches) */
     document.addEventListener('keydown', (e) => {
-      // Don't trigger if user is typing in form or textarea
       const tag = document.activeElement.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      if (currentMode !== 'drill' && currentMode !== 'mock') return;
 
-      if (e.key === 'a' || e.key === 'A') selectOption(0);
-      if (e.key === 'b' || e.key === 'B') selectOption(1);
-      if (e.key === 'c' || e.key === 'C') selectOption(2);
+      if (e.key === 'a' || e.key === 'A') selectOption(currentOptionPermutation[0]);
+      if (e.key === 'b' || e.key === 'B') selectOption(currentOptionPermutation[1]);
+      if (e.key === 'c' || e.key === 'C') selectOption(currentOptionPermutation[2]);
       if (e.key === 'Enter') submitCurrentAnswer();
       if (e.key === 'ArrowRight') navigateQuestion(1);
       if (e.key === 'ArrowLeft') navigateQuestion(-1);
       if (e.key === 'f' || e.key === 'F') toggleFlagCurrentQuestion();
     });
 
-    // Start on page load
     window.onload = function() {
       initApp();
     };
