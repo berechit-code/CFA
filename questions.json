@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "topic": "Financial Statement Analysis",
+    "question": "Under IFRS, how should a lessee account for an operating lease on its balance sheet?",
+    "options": [
+      "Recognize a right-of-use asset and a corresponding lease liability.",
+      "Recognize only rent expense in the income statement on a straight-line basis.",
+      "Disclose future lease commitments strictly in the footnotes with no balance sheet impact."
+    ],
+    "correctIndex": 0,
+    "explanation": "Under IFRS 16, almost all leases (both finance and operating) must be recognized on the balance sheet as a Right-of-Use (ROU) asset and a lease liability.",
+    "trap": "Do not confuse IFRS 16 with old IAS 17 rules. Only short-term leases (<12 months) and low-value assets are exempt."
+  },
+  {
+    "id": 2,
+    "topic": "Fixed Income",
+    "question": "An investor holds an option-free 8% annual coupon bond with a modified duration of 6.2 and convexity of 54. If yields increase by 100 bps, the estimated percentage price change is closest to:",
+    "options": [
+      "-6.20%",
+      "-5.93%",
+      "-6.47%"
+    ],
+    "correctIndex": 1,
+    "explanation": "ΔP/P ≈ -ModDur * Δy + 0.5 * Convexity * (Δy)^2. Here: -6.2 * 0.01 + 0.5 * 54 * (0.01)^2 = -0.0620 + 0.0027 = -0.0593 (-5.93%).",
+    "trap": "Always remember the 0.5 multiplier for the convexity adjustment and keep signs straight."
+  }
+]
