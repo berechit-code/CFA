@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CFA® Level I Exam Simulator - Target Feb 25, 2027 | Carmen Guintrand</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Fonts: Inter & JetBrains Mono for financial figures -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Merriweather', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            cfa: {
+              navy: '#0b192c',
+              midnight: '#051329',
+              accent: '#2563eb',
+              gold: '#d97706',
+              amber: '#f59e0b',
+              emerald: '#059669',
+              rose: '#e11d48',
+              slate: '#1e293b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Clean custom scrollbars */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    
+    .question-stem {
+      line-height: 1.65;
+    }
+    
+    /* Option button transition */
+    .option-btn {
+      transition: all 0.15s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-full flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900 antialiased">
+
+  <!-- ================= TOP NAVIGATION BAR ================= -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Candidate Title -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 font-bold text-sm tracking-widest shadow-inner">
+          CFA
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-sm font-bold text-slate-900 tracking-tight">CFA® L1 Practice & Mock Engine</h1>
+            <span class="text-[10px] font-semibold uppercase bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded-full">
+              Carmen Guintrand
+            </span>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+            <span>Target: 25 Feb 2027</span>
+            <span>•</span>
+            <span class="text-emerald-700 font-semibold">MPS Target: 70%+</span>
+            <span>•</span>
+            <span id="countdown-mini" class="text-slate-600">-- days remaining</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- App Mode Switcher -->
+      <nav class="flex items-center gap-1 sm:gap-2">
+        <button id="nav-drill" onclick="setAppMode('drill')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all bg-blue-50 text-blue-700 border border-blue-200">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Quiz & Drill</span>
+        </button>
+        <button id="nav-mock" onclick="setAppMode('mock')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent">
+          <i class="fa-solid fa-stopwatch"></i>
+          <span>Timed Mock</span>
+        </button>
+        <button id="nav-stats" onclick="setAppMode('stats')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Analytics</span>
+        </button>
+        <button id="nav-plan" onclick="setAppMode('plan')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span class="hidden sm:inline">Study Plan</span>
+        </button>
+        <button onclick="openManageQuestionsModal()" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-700 bg-slate-100 hover:bg-slate-200">
+          <i class="fa-solid fa-database"></i>
+          <span class="hidden sm:inline">QBank</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= SUB-HEADER: FILTER / TIMER BAR ================= -->
+  <div class="bg-slate-100 border-b border-slate-200 py-2.5 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Drill Filters (Visible in Drill Mode) -->
+      <div id="drill-controls" class="flex flex-wrap items-center gap-2 text-xs">
+        <label class="font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1">
+          <i class="fa-solid fa-filter text-slate-400"></i> Topic:
+        </label>
+        <select id="topic-select" onchange="filterByTopic(this.value)" class="bg-white border border-slate-300 rounded-md px-2.5 py-1 text-xs font-medium text-slate-800 focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-xs">
+          <option value="ALL">All Subjects (Balanced Exam Mix)</option>
+          <option value="FSA">📊 Financial Statement Analysis (Critical: 11-14%)</option>
+          <option value="FI">📈 Fixed Income (Critical: 11-14%)</option>
+          <option value="QUANT">📐 Quantitative Methods (Critical: 6-9%)</option>
+          <option value="EQUITY">🏢 Equity Investments (11-14%)</option>
+          <option value="CORP">🤝 Corporate Issuers (6-9%)</option>
+          <option value="ETHICS">⚖️ Ethical & Professional Standards (15-20%)</option>
+        </select>
+
+        <span class="text-slate-300">|</span>
+
+        <!-- Reset Button -->
+        <button onclick="resetCurrentSession()" class="text-xs text-slate-600 hover:text-slate-900 font-medium px-2 py-1 rounded bg-white border border-slate-200 hover:bg-slate-50 transition">
+          <i class="fa-solid fa-rotate-left mr-1"></i> Reset Progress
+        </button>
+      </div>
+
+      <!-- Mock Exam Controls (Visible in Mock Mode) -->
+      <div id="mock-controls" class="hidden flex items-center gap-4 text-xs font-mono">
+        <div class="flex items-center gap-2 bg-slate-900 text-white px-3 py-1 rounded-md shadow-xs">
+          <i class="fa-solid fa-stopwatch text-amber-400"></i>
+          <span class="text-slate-400 text-[11px]">TIME REMAINING:</span>
+          <span id="mock-timer" class="font-bold text-amber-300 text-sm">90:00</span>
+        </div>
+        <div class="text-xs text-slate-600 font-sans">
+          CFA Pace: <strong class="text-slate-900">90 sec / question</strong>
+        </div>
+        <button onclick="finishMockExamEarly()" class="bg-rose-600 hover:bg-rose-700 text-white px-3 py-1 rounded text-xs font-bold transition font-sans shadow-xs">
+          End Exam & Grade
+        </button>
+      </div>
+
+      <!-- Session Accuracy & Counter -->
+      <div class="flex items-center gap-3 text-xs">
+        <div class="bg-white border border-slate-200 px-2.5 py-1 rounded text-slate-700 font-mono">
+          <span class="text-slate-500">Attempted:</span> <span id="session-answered" class="font-bold text-slate-900">0</span>/<span id="session-total">0</span>
+        </div>
+        <div class="bg-white border border-slate-200 px-2.5 py-1 rounded text-slate-700 font-mono">
+          <span class="text-slate-500">Score:</span> <span id="session-score" class="font-bold text-blue-600">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN CONTENT WRAPPER ================= -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
+
+    <!-- ================= VIEW 1: QUIZ & DRILL / MOCK QUESTION CANVAS ================= -->
+    <div id="view-exam" class="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1 items-start">
+      
+      <!-- Center: Question Card (8 Cols) -->
+      <div class="lg:col-span-8 flex flex-col gap-4">
+        
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+          
+          <!-- Card Header: Topic & Question Number -->
+          <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span id="q-topic-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide bg-blue-100 text-blue-800 border border-blue-200">
+                Financial Statement Analysis
+              </span>
+              <span class="text-xs text-slate-500 font-mono" id="q-weight-indicator">Exam Weight: 11-14%</span>
+            </div>
+            
+            <div class="flex items-center gap-3">
+              <!-- Flag button -->
+              <button id="flag-btn" onclick="toggleFlagCurrentQuestion()" class="text-slate-400 hover:text-amber-500 transition text-sm flex items-center gap-1 font-medium">
+                <i class="fa-regular fa-flag" id="flag-icon"></i>
+                <span class="text-xs hidden sm:inline" id="flag-label">Flag for review</span>
+              </button>
+              <span class="text-slate-300">|</span>
+              <span class="text-xs font-bold font-mono text-slate-700" id="q-counter">Q 1 of 24</span>
+            </div>
+          </div>
+
+          <!-- Question Content Area -->
+          <div class="p-6 sm:p-8 space-y-6">
+            
+            <!-- Question Stem -->
+            <div class="question-stem text-slate-900 text-base sm:text-lg font-medium" id="q-stem">
+              Loading question...
+            </div>
+
+            <!-- Choice Options A, B, C -->
+            <div class="space-y-3" id="options-container">
+              <!-- Rendered via JS -->
+            </div>
+
+            <!-- Action Buttons Bar -->
+            <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-2">
+                <button onclick="navigateQuestion(-1)" id="prev-btn" class="px-4 py-2 rounded-lg text-xs font-semibold border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition flex items-center gap-1">
+                  <i class="fa-solid fa-chevron-left"></i> Previous
+                </button>
+                <button onclick="navigateQuestion(1)" id="next-btn" class="px-4 py-2 rounded-lg text-xs font-semibold border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition flex items-center gap-1">
+                  Next <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+
+              <div id="submit-action-container">
+                <button id="submit-btn" onclick="submitCurrentAnswer()" disabled class="px-6 py-2 rounded-lg text-xs font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition shadow-xs flex items-center gap-1.5">
+                  <i class="fa-solid fa-circle-check"></i> Submit Answer
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Drill Explanation Drawer (Shows only in Drill Mode after submission) -->
+          <div id="explanation-drawer" class="hidden border-t-2 border-slate-200 bg-slate-900 text-slate-100 p-6 sm:p-8 space-y-5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span id="explanation-status-icon" class="text-lg"></span>
+                <h4 id="explanation-title" class="font-bold text-sm tracking-wide uppercase">CFA Institute Official Rationales</h4>
+              </div>
+              <span class="text-xs font-mono text-slate-400">LOS & Concept Breakdown</span>
+            </div>
+
+            <!-- Correct Answer Summary -->
+            <div id="explanation-correct" class="p-3.5 rounded-lg bg-emerald-950/60 border border-emerald-500/30 text-emerald-200 text-sm leading-relaxed">
+              <!-- Explanation text -->
+            </div>
+
+            <!-- Distractor Analysis (Why others are wrong) -->
+            <div class="space-y-2">
+              <h5 class="text-xs font-bold uppercase tracking-wider text-slate-400">Analysis of Distractors (Incorrect Choices)</h5>
+              <div id="explanation-distractors" class="text-xs text-slate-300 space-y-1.5 pl-2 border-l-2 border-slate-700 font-mono">
+                <!-- Distractors text -->
+              </div>
+            </div>
+
+            <!-- Formula / Key Takeaway Box -->
+            <div class="bg-black/40 border border-slate-700 rounded-lg p-3 text-xs font-mono text-amber-300">
+              <div class="text-[10px] text-amber-400/80 font-bold uppercase tracking-wider mb-1 flex items-center gap-1">
+                <i class="fa-solid fa-calculator"></i> Key Formula / Exam Rule:
+              </div>
+              <div id="explanation-formula">
+                <!-- Formula -->
+              </div>
+            </div>
+
+            <!-- Common Trap Box -->
+            <div class="bg-rose-950/30 border border-rose-500/30 rounded-lg p-3 text-xs text-rose-200">
+              ⚠️ <strong class="text-rose-300">Exam Trap Alert:</strong> <span id="explanation-trap">...</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right: Navigator & Questions Matrix (4 Cols) -->
+      <div class="lg:col-span-4 flex flex-col gap-4">
+        
+        <!-- Question Grid Matrix -->
+        <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700">Question Matrix</h3>
+            <span class="text-[11px] font-mono text-slate-400" id="matrix-stats">0 Answered</span>
+          </div>
+
+          <!-- Color Legends -->
+          <div class="flex flex-wrap items-center gap-2 text-[10px] text-slate-500 mb-3 font-medium">
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-slate-100 border border-slate-300"></span> Unanswered</div>
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-emerald-500 text-white"></span> Correct</div>
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-rose-500 text-white"></span> Incorrect</div>
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-xs bg-amber-400 text-white"></span> Flagged</div>
+          </div>
+
+          <!-- Scrollable Matrix Grid -->
+          <div id="question-matrix-grid" class="grid grid-cols-6 sm:grid-cols-8 lg:grid-cols-6 gap-2 max-h-64 overflow-y-auto pr-1">
+            <!-- Buttons injected via JS -->
+          </div>
+        </div>
+
+        <!-- Strategy Box for Carmen -->
+        <div class="bg-slate-900 text-white rounded-xl p-5 shadow-xs border border-slate-800 space-y-3">
+          <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-bullseye"></i> Carmen's Strategy Note
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Your May 2026 deficit was <strong class="text-white">110 points</strong>. Prioritize high-weight question stems in <strong>FSA (11-14%)</strong> and <strong>Fixed Income (11-14%)</strong>. Scoring over 70% in these two alone covers the gap!
+          </p>
+          <div class="text-[11px] font-mono text-slate-400 bg-black/40 p-2 rounded border border-slate-800">
+            Speed Target: 90s/q | Eliminating 1 distractor yields 50% odds.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= VIEW 2: ANALYTICS & SCORE REPORT ================= -->
+    <div id="view-stats" class="hidden flex flex-col gap-6">
+      
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-xs">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Performance Diagnostics</span>
+            <h2 class="text-xl font-bold text-slate-900 mt-1">Detailed Score Report vs Minimum Passing Score (MPS)</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Tracking against official CFA 70% proficiency standard across all syllabus topics.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="text-right">
+              <div class="text-2xl font-black font-mono text-slate-900" id="stats-overall-pct">0%</div>
+              <div class="text-[10px] text-slate-400 font-semibold uppercase">Overall Accuracy</div>
+            </div>
+            <div id="mps-badge" class="px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 border border-rose-200">
+              Below MPS (&lt;70%)
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Breakdown Progress Bars -->
+        <div class="mt-6 space-y-5" id="topic-performance-bars">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= VIEW 3: STUDY PLAN & COUNTDOWN ================= -->
+    <div id="view-plan" class="hidden flex flex-col gap-6">
+      
+      <!-- Big Countdown Banner -->
+      <div class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-lg flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div>
+          <div class="flex items-center gap-2 text-amber-400 font-semibold text-xs tracking-wider uppercase">
+            <i class="fa-solid fa-calendar-day"></i> Target Exam Date: Thursday, February 25, 2027
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold mt-2 tracking-tight">CFA® Level I Remediation Roadmap</h2>
+          <p class="text-slate-300 text-sm mt-2 max-w-2xl leading-relaxed">
+            Personalized strategy for Carmen Guintrand to bridge the 110-point shortfall from May 2026. Focuses heavily on recovering points in FSA, Quantitative Methods, and Fixed Income while safeguarding your 70%+ mastery in Ethics.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10 text-center">
+            <span id="countdown-days" class="text-4xl font-black text-amber-300 font-mono leading-none">--</span>
+            <div class="text-[10px] text-slate-300 uppercase tracking-wider font-semibold mt-1">Days to Exam</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10 text-center">
+            <span class="text-4xl font-black text-emerald-400 font-mono leading-none">+110</span>
+            <div class="text-[10px] text-slate-300 uppercase tracking-wider font-semibold mt-1">Points Needed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Roadmap 4 Strategic Phases -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Phase 1 -->
+        <div class="bg-white rounded-xl border-t-4 border-rose-500 border-x border-b border-slate-200 p-5 shadow-xs flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-bold text-rose-600 uppercase tracking-wider">Phase 1: Remediation</span>
+            <h3 class="font-bold text-slate-900 text-base mt-1">FSA & Quant Foundation</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Drill indirect Cash Flow statements, inventory valuation (LIFO reserve adjustments), deferred tax liabilities, and BA II Plus TVM keys.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 font-medium">
+            🎯 Target: Reach 65% in FSA QBank
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="bg-white rounded-xl border-t-4 border-amber-500 border-x border-b border-slate-200 p-5 shadow-xs flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-bold text-amber-600 uppercase tracking-wider">Phase 2: Heavy Weights</span>
+            <h3 class="font-bold text-slate-900 text-base mt-1">Fixed Income & Equity</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Master Modified Duration, money duration, convexity calculations, G-spread vs Z-spread, Gordon Growth Model, and multi-stage DDM.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 font-medium">
+            🎯 Target: Lock in 25% exam weight
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="bg-white rounded-xl border-t-4 border-blue-500 border-x border-b border-slate-200 p-5 shadow-xs flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-bold text-blue-600 uppercase tracking-wider">Phase 3: Integration</span>
+            <h3 class="font-bold text-slate-900 text-base mt-1">Full Mocks & Speed (90s)</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Timed mock exams under real conditions (two 135-minute sessions). Speed training to avoid stalling on calculation-heavy items.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 font-medium">
+            🎯 Target: Stable 72%+ on full mocks
+          </div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="bg-white rounded-xl border-t-4 border-emerald-500 border-x border-b border-slate-200 p-5 shadow-xs flex flex-col justify-between">
+          <div>
+            <span class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider">Phase 4: Final Peak</span>
+            <h3 class="font-bold text-slate-900 text-base mt-1">Ethics & Formula Cram</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Daily CFA Standards of Practice handbook drill. Maintain Ethics above 70% to benefit from the CFA Institute Ethics Adjustment rule.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 font-medium">
+            🎯 Target: Exam Pass on 25 Feb 2027
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ================= MODAL: QBANK MANAGER (ADD / IMPORT / EXPORT) ================= -->
+  <div id="modal-qbank" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div>
+          <h3 class="font-bold text-slate-900 text-base">QBank Manager & Importer</h3>
+          <p class="text-xs text-slate-500">Add platform QCMs or paste bulk JSON batches directly from Gemini.</p>
+        </div>
+        <button onclick="closeManageQuestionsModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Modal Tabs: Add Single vs Bulk JSON -->
+      <div class="flex border-b border-slate-200 px-6 bg-white gap-4 text-xs font-semibold">
+        <button id="modal-tab-single-btn" onclick="toggleModalTab('single')" class="py-3 border-b-2 border-blue-600 text-blue-600">
+          + Add Single Question
+        </button>
+        <button id="modal-tab-bulk-btn" onclick="toggleModalTab('bulk')" class="py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800">
+          <i class="fa-solid fa-file-import mr-1"></i> Bulk JSON Import / Export
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 overflow-y-auto flex-1">
+        
+        <!-- SUB-TAB 1: Single Question Form -->
+        <form id="single-question-form" onsubmit="handleCreateQuestion(event)" class="space-y-4">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Topic</label>
+              <select id="new-q-topic" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-medium">
+                <option value="FSA">Financial Statement Analysis</option>
+                <option value="FI">Fixed Income</option>
+                <option value="QUANT">Quantitative Methods</option>
+                <option value="EQUITY">Equity Investments</option>
+                <option value="CORP">Corporate Issuers</option>
+                <option value="ETHICS">Ethical and Professional Standards</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Correct Answer</label>
+              <select id="new-q-correct" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-bold text-emerald-700">
+                <option value="0">Choice A is Correct</option>
+                <option value="1">Choice B is Correct</option>
+                <option value="2">Choice C is Correct</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Question Stem (Vignette)</label>
+            <textarea id="new-q-stem" rows="3" required placeholder="Paste the CFA question scenario here..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs text-slate-900 focus:ring-1 focus:ring-blue-500"></textarea>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold text-slate-600 uppercase">Answer Choices (CFA 3-Choice Format)</label>
+            <div class="flex items-center gap-2">
+              <span class="w-6 font-bold text-xs text-slate-500">A.</span>
+              <input type="text" id="new-q-opt-0" required placeholder="Option A text..." class="flex-1 bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-6 font-bold text-xs text-slate-500">B.</span>
+              <input type="text" id="new-q-opt-1" required placeholder="Option B text..." class="flex-1 bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-6 font-bold text-xs text-slate-500">C.</span>
+              <input type="text" id="new-q-opt-2" required placeholder="Option C text..." class="flex-1 bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Detailed Explanation (Rationales & Distractors)</label>
+            <textarea id="new-q-explanation" rows="2" required placeholder="Explain why the correct choice is right and others are incorrect..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs"></textarea>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Formula / Takeaway (Optional)</label>
+              <input type="text" id="new-q-formula" placeholder="Formula or rule..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-mono">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Exam Trap (Optional)</label>
+              <input type="text" id="new-q-trap" placeholder="Typical mistake..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex justify-end gap-2">
+            <button type="button" onclick="closeManageQuestionsModal()" class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100">Cancel</button>
+            <button type="submit" class="px-5 py-2 rounded-lg text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-xs">Save Question to Bank</button>
+          </div>
+        </form>
+
+        <!-- SUB-TAB 2: Bulk JSON Import/Export -->
+        <div id="bulk-json-container" class="hidden space-y-4">
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Whenever Gemini gives you a batch of CFA practice questions in JSON, copy and paste it into the box below and click <strong>"Import JSON Questions"</strong>. You can also export your current bank for safekeeping.
+          </p>
+
+          <textarea id="bulk-json-textarea" rows="10" placeholder='[
+  {
+    "topic": "FSA",
+    "stem": "Which of the following...",
+    "options": ["Choice A", "Choice B", "Choice C"],
+    "correctIndex": 0,
+    "explanation": "...",
+    "formula": "...",
+    "trap": "..."
+  }
+]' class="w-full bg-slate-900 text-emerald-300 font-mono text-xs p-3 rounded-lg border border-slate-700 focus:outline-none"></textarea>
+
+          <div class="flex flex-wrap items-center justify-between gap-2 pt-2">
+            <div class="flex gap-2">
+              <button onclick="handleExportJSON()" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold border border-slate-200">
+                <i class="fa-solid fa-download mr-1"></i> Copy Current Bank to Clipboard
+              </button>
+              <button onclick="handleResetDefaultBank()" class="px-3.5 py-2 bg-rose-50 hover:bg-rose-100 text-rose-700 rounded-lg text-xs font-semibold border border-rose-200">
+                Reload Default 20 Questions
+              </button>
+            </div>
+            <button onclick="handleImportJSON()" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold shadow-xs">
+              <i class="fa-solid fa-file-import mr-1"></i> Import JSON Questions
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= INLINE JAVASCRIPT ENGINE ================= -->
+  <script>
+    /* =================================================================
+       CORE CFA QUESTION BANK: Tailored precisely to Carmen's Deficit Areas
+       (FSA, Fixed Income, Quantitative Methods, Equity, Ethics)
+       ================================================================= */
+    const DEFAULT_QUESTION_BANK = [
+      // --- FSA (Financial Statement Analysis) ---
+      {
+        id: "fsa-01",
+        topic: "FSA",
+        topicName: "Financial Statement Analysis",
+        weight: "11-14%",
+        stem: "During a period of steadily rising inventory acquisition costs and stable inventory quantities, a firm that transitions from FIFO to LIFO inventory accounting will most likely report:",
+        options: [
+          "Higher net income and higher operating cash flows.",
+          "Lower gross profit margin and higher operating cash flows.",
+          "Higher inventory turnover ratio and lower working capital."
+        ],
+        correctIndex: 2,
+        explanation: "Under LIFO during inflationary periods, the most recent and higher costs are charged to Cost of Goods Sold (COGS), leading to higher COGS, lower gross profit, and lower ending inventory on the balance sheet. Consequently, Inventory Turnover (COGS / Average Inventory) increases because the numerator is higher and the denominator is lower. Working capital decreases due to the lower ending inventory value.",
+        distractors: [
+          "A is incorrect: Net income will be lower under LIFO because COGS is higher.",
+          "B is incorrect: While gross margin is indeed lower, operating cash flow (CFO) is actually HIGHER under LIFO due to income tax savings (the LIFO conformity rule), but Choice C is the most comprehensive balance-sheet and ratio statement."
+        ],
+        formula: "Inventory Turnover = COGS / Average Inventory | LIFO Reserve = Inventory(FIFO) - Inventory(LIFO)",
+        trap: "Remember that under US GAAP, LIFO generates LOWER pretax income and thus LOWER taxes paid, resulting in HIGHER cash from operations (CFO) despite lower accounting net income!"
+      },
+      {
+        id: "fsa-02",
+        topic: "FSA",
+        topicName: "Financial Statement Analysis",
+        weight: "11-14%",
+        stem: "Under IFRS, interest paid by a financial or non-financial corporation can be classified on the statement of cash flows under which activities?",
+        options: [
+          "Operating activities only.",
+          "Either operating or financing activities.",
+          "Operating activities or investing activities."
+        ],
+        correctIndex: 1,
+        explanation: "Under IFRS (IAS 7), interest paid can be classified as either an operating activity (because it enters into the determination of net profit or loss) or a financing activity (because it represents a cost of obtaining financial resources). Under US GAAP, interest paid must strictly be classified as an operating cash flow.",
+        distractors: [
+          "A is incorrect: This is the strict requirement under US GAAP, not IFRS.",
+          "C is incorrect: Interest paid cannot be classified under investing activities under any standard."
+        ],
+        formula: "IFRS Flexibility: Interest Paid = Operating OR Financing | Interest Received = Operating OR Investing",
+        trap: "US GAAP is rigid (Interest Paid = Operating; Dividends Paid = Financing). IFRS allows discretion: both interest paid and dividends paid can be classified as Operating or Financing."
+      },
+      {
+        id: "fsa-03",
+        topic: "FSA",
+        topicName: "Financial Statement Analysis",
+        weight: "11-14%",
+        stem: "An analyst discovers that a company has recognized a valuation allowance against its deferred tax assets (DTAs). An increase in this valuation allowance will most likely result in a(n):",
+        options: [
+          "Decrease in reported net income.",
+          "Increase in operating cash flow.",
+          "Increase in total assets."
+        ],
+        correctIndex: 0,
+        explanation: "Under US GAAP, a valuation allowance is a contra-asset account established when it is 'more likely than not' (>50% probability) that some or all of the deferred tax assets will not be realized in future periods. Increasing the valuation allowance reduces the net DTA on the balance sheet and creates a corresponding charge to income tax expense in the income statement, directly decreasing reported net income.",
+        distractors: [
+          "B is incorrect: Valuation allowances are non-cash accounting adjustments and do not impact cash flow.",
+          "C is incorrect: An increase in a contra-asset reduces total assets on the balance sheet."
+        ],
+        formula: "Net DTA = Gross DTA - Valuation Allowance | Income Tax Expense = Taxes Payable + ΔDTL - ΔDTA + ΔValuation Allowance",
+        trap: "Management can use changes in valuation allowances to manipulate earnings ('cookie-jar reserves'). Decreasing the allowance boosts net income without any actual operational change!"
+      },
+      {
+        id: "fsa-04",
+        topic: "FSA",
+        topicName: "Financial Statement Analysis",
+        weight: "11-14%",
+        stem: "Under IFRS 16, a lessee accounting for an equipment lease must classify the lease on its financial statements as:",
+        options: [
+          "An operating lease, reporting only rental expenses on the income statement.",
+          "A right-of-use (ROU) asset and a lease liability on the balance sheet.",
+          "An off-balance-sheet commitment disclosed solely within the financial notes."
+        ],
+        correctIndex: 1,
+        explanation: "Under IFRS 16, lessee accounting eliminates the distinction between operating and finance leases for balance sheet recognition. Lessees must recognize a Right-of-Use (ROU) asset and a corresponding lease liability for almost all leases (except short-term <12 months or low-value assets).",
+        distractors: [
+          "A is incorrect: The operating lease classification with straight-line rent expense without balance sheet asset/liability recognition is no longer permitted for lessees under IFRS 16.",
+          "C is incorrect: Off-balance-sheet treatment of leases was specifically abolished by IFRS 16 to enhance comparability."
+        ],
+        formula: "Lessee Balance Sheet = Right-of-Use Asset (Depreciated) & Lease Liability (Amortized via effective interest method)",
+        trap: "On the cash flow statement under IFRS 16, the principal portion of the lease payment is classified under FINANCING cash outflows, artificially inflating Operating Cash Flow (CFO) relative to the old standard!"
+      },
+      {
+        id: "fsa-05",
+        topic: "FSA",
+        topicName: "Financial Statement Analysis",
+        weight: "11-14%",
+        stem: "Using the five-component DuPont decomposition, which of the following terms correctly isolates the effect of financial leverage?",
+        options: [
+          "EBIT / Total Assets.",
+          "EBT / EBIT.",
+          "Average Total Assets / Average Shareholders' Equity."
+        ],
+        correctIndex: 2,
+        explanation: "The 5-way DuPont system expresses ROE = (Net Income / EBT) × (EBT / EBIT) × (EBIT / Revenue) × (Revenue / Assets) × (Assets / Equity). The final term, Total Assets / Shareholders' Equity, is the equity multiplier, which directly isolates financial leverage.",
+        distractors: [
+          "A is incorrect: EBIT / Total Assets represents the basic earning power or operating ROA.",
+          "B is incorrect: EBT / EBIT is the interest burden factor (reflects cost of debt borrowing)."
+        ],
+        formula: "ROE = Tax Burden × Interest Burden × EBIT Margin × Asset Turnover × Financial Leverage Multiplier",
+        trap: "Remember that 'Tax Burden' is defined as (Net Income / EBT). Therefore, a HIGHER ratio means the firm pays LESS tax!"
+      },
+
+      // --- FIXED INCOME ---
+      {
+        id: "fi-01",
+        topic: "FI",
+        topicName: "Fixed Income",
+        weight: "11-14%",
+        stem: "An 8-year, 5% annual coupon option-free corporate bond has a modified duration of 6.42 and an annual convexity of 48.60. If the bond's yield to maturity increases by 75 basis points, the estimated percentage price change is closest to:",
+        options: [
+          "-4.68%.",
+          "-4.82%.",
+          "-4.95%."
+        ],
+        correctIndex: 0,
+        explanation: "Percentage price change with convexity adjustment = [-Modified Duration × ΔYield] + [0.5 × Convexity × (ΔYield)²].\nDuration effect: -6.42 × 0.0075 = -0.04815 (-4.815%).\nConvexity effect: 0.5 × 48.60 × (0.0075)² = 0.5 × 48.60 × 0.00005625 = +0.001367 (+0.1367%).\nTotal %ΔPrice = -0.04815 + 0.001367 = -0.04678, or -4.68%.",
+        distractors: [
+          "B is incorrect: -4.82% is the linear duration-only approximation (-6.42 × 0.0075) without the positive convexity adjustment.",
+          "C is incorrect: This results from subtracting the convexity effect rather than adding it."
+        ],
+        formula: "%ΔPrice ≈ (-ModDur × ΔY) + [0.5 × Convexity × (ΔY)²]",
+        trap: "For option-free bonds, convexity is ALWAYS positive. Thus, the convexity adjustment is ALWAYS added, mitigating price declines when yields rise and amplifying price gains when yields fall!"
+      },
+      {
+        id: "fi-02",
+        topic: "FI",
+        topicName: "Fixed Income",
+        weight: "11-14%",
+        stem: "Which of the following credit spreads represents the constant spread that must be added to the benchmark spot curve to discount bond cash flows to their current market price?",
+        options: [
+          "G-Spread.",
+          "I-Spread.",
+          "Z-Spread."
+        ],
+        correctIndex: 2,
+        explanation: "The Z-spread (Zero-volatility spread) is the constant basis point spread that, when added to each spot rate on the government benchmark spot curve, equates the present value of the bond's cash flows to its observed clean market price.",
+        distractors: [
+          "A is incorrect: G-spread is the yield difference between the bond's YTM and the YTM of an interpolated on-the-run government bond of matching maturity.",
+          "B is incorrect: I-spread (interpolated spread) uses the interest rate swap curve (e.g., SOFR/Euribor swap rates) rather than the government spot curve."
+        ],
+        formula: "Bond Price = Σ [CF_t / (1 + Spot_t + Z)^t]",
+        trap: "If the government spot yield curve is upward-sloping, the Z-spread will be greater than the G-spread if the bond pays coupons before maturity."
+      },
+      {
+        id: "fi-03",
+        topic: "FI",
+        topicName: "Fixed Income",
+        weight: "11-14%",
+        stem: "An investor holds a callable corporate bond. As interest rates decline significantly, the bond's effective duration will most likely:",
+        options: [
+          "Increase.",
+          "Decrease.",
+          "Remain unchanged."
+        ],
+        correctIndex: 1,
+        explanation: "As interest rates fall, the likelihood that the issuer will exercise the call option increases. The price of the callable bond becomes capped near the call price (price compression). Because price sensitivity to further rate declines is muted, effective duration decreases and convexity turns negative.",
+        distractors: [
+          "A is incorrect: An option-free bond's duration increases as yields decline, but for a callable bond, the embedded short call option shortens its duration.",
+          "C is incorrect: Duration changes dynamically as the embedded option moves deeper into the money."
+        ],
+        formula: "Effective Duration = (P_down - P_up) / (2 × P_0 × ΔCurve)",
+        trap: "Callable bonds exhibit NEGATIVE convexity at low interest rates. Effective duration drops sharply because the bond's expected maturity contracts to the call date."
+      },
+
+      // --- QUANTITATIVE METHODS ---
+      {
+        id: "quant-01",
+        topic: "QUANT",
+        topicName: "Quantitative Methods",
+        weight: "6-9%",
+        stem: "A researcher wants to test the hypothesis that the mean return of a hedge fund strategy equals zero. The return sample has 25 observations, is approximately normally distributed, and the population standard deviation is unknown. The most appropriate test statistic is the:",
+        options: [
+          "z-test.",
+          "t-test with 24 degrees of freedom.",
+          "Chi-square test with 25 degrees of freedom."
+        ],
+        correctIndex: 1,
+        explanation: "When testing a single population mean from a normally distributed population where the population variance is unknown, the Student's t-distribution with (n - 1) degrees of freedom must be used. Here, df = 25 - 1 = 24.",
+        distractors: [
+          "A is incorrect: The z-test requires known population variance or a very large sample under the Central Limit Theorem.",
+          "C is incorrect: The Chi-square test is utilized to test hypotheses regarding the variance of a normally distributed population, not its mean."
+        ],
+        formula: "t-statistic = (x̄ - μ₀) / (s / √n) with df = n - 1",
+        trap: "Remember: Unknown population variance + small sample (n < 30) = MUST use t-test!"
+      },
+      {
+        id: "quant-02",
+        topic: "QUANT",
+        topicName: "Quantitative Methods",
+        weight: "6-9%",
+        stem: "In hypothesis testing, a Type I error occurs when the analyst:",
+        options: [
+          "Rejects a true null hypothesis.",
+          "Fails to reject a false null hypothesis.",
+          "Selects an incorrect level of significance (alpha)."
+        ],
+        correctIndex: 0,
+        explanation: "A Type I error is defined as the rejection of the null hypothesis (H₀) when it is actually true. The probability of committing a Type I error is equal to the significance level, alpha (α).",
+        distractors: [
+          "B is incorrect: Failing to reject a false null hypothesis is a Type II error (beta).",
+          "C is incorrect: Alpha is chosen by the researcher and is the threshold, not the definition of an error."
+        ],
+        formula: "P(Type I Error) = α | P(Type II Error) = β | Power of Test = 1 - β",
+        trap: "A handy mnemonic: Type I is a False Positive (convicting an innocent person). Type II is a False Negative (letting a guilty person walk free)."
+      },
+      {
+        id: "quant-03",
+        topic: "QUANT",
+        topicName: "Quantitative Methods",
+        weight: "6-9%",
+        stem: "An investor deposits €10,000 in an account paying a nominal stated annual rate of 6% compounded monthly. What is the effective annual rate (EAR)?",
+        options: [
+          "6.00%.",
+          "6.17%.",
+          "6.24%."
+        ],
+        correctIndex: 1,
+        explanation: "EAR = (1 + r / m)^m - 1 = (1 + 0.06 / 12)^12 - 1 = (1 + 0.005)^12 - 1 = (1.061678) - 1 ≈ 6.17%.",
+        distractors: [
+          "A is incorrect: 6.00% is the nominal periodic rate without intra-year compounding.",
+          "C is incorrect: 6.24% assumes daily compounding or an incorrect formula."
+        ],
+        formula: "EAR = (1 + Periodic Rate)^m - 1 | BA II Plus key: [2nd] [ICONV] NOM=6, C/Y=12, compute EFF=6.1678%",
+        trap: "On your BA II Plus, use the ICONV worksheet (2nd + 2). Enter NOM = 6, scroll to C/Y = 12, scroll to EFF and hit [CPT]!"
+      },
+
+      // --- EQUITY INVESTMENTS ---
+      {
+        id: "eq-01",
+        topic: "EQUITY",
+        topicName: "Equity Investments",
+        weight: "11-14%",
+        stem: "An equity analyst is valuing shares of Alpha Corp. The company just paid an annual dividend of $2.40 per share (D₀). Dividends are projected to grow at a constant sustainable rate of 4.5% indefinitely. If the required return on equity is 9.0%, the intrinsic value per share using the Gordon Growth Model is closest to:",
+        options: [
+          "$53.33.",
+          "$55.73.",
+          "$58.20."
+        ],
+        correctIndex: 1,
+        explanation: "First compute the expected forward dividend: D₁ = D₀ × (1 + g) = $2.40 × (1 + 0.045) = $2.508.\nThen apply Gordon Growth Model: P₀ = D₁ / (r - g) = 2.508 / (0.09 - 0.045) = 2.508 / 0.045 = $55.73.",
+        distractors: [
+          "A is incorrect: $53.33 is computed by mistakenly using D₀ instead of D₁ ($2.40 / 0.045 = $53.33).",
+          "C is incorrect: $58.20 erroneously multiplies D₀ by (1 + g)²."
+        ],
+        formula: "P₀ = D₁ / (r - g) = [D₀ × (1 + g)] / (r - g)",
+        trap: "CFA questions frequently state 'just paid a dividend' or 'current dividend' ($D_0$). You MUST grow it by $(1 + g)$ to get $D_1$ before discounting!"
+      },
+      {
+        id: "eq-02",
+        topic: "EQUITY",
+        topicName: "Equity Investments",
+        weight: "11-14%",
+        stem: "Which of the following enterprise value multiples is most appropriate when comparing capital-intensive companies with significantly different debt levels and depreciation accounting methods?",
+        options: [
+          "Price-to-Earnings (P/E).",
+          "Price-to-Book (P/B).",
+          "Enterprise Value to EBITDA (EV/EBITDA)."
+        ],
+        correctIndex: 2,
+        explanation: "EV/EBITDA is capital structure neutral (EBITDA is before interest payments to debt holders, matching the enterprise-wide metric EV) and eliminates distortions caused by differing depreciation and amortization policies (D&A), making it ideal for capital-intensive firms with divergent leverage.",
+        distractors: [
+          "A is incorrect: P/E is heavily distorted by debt leverage (interest expense) and depreciation conventions.",
+          "B is incorrect: P/B is affected by historical cost accounting, asset ages, and share repurchases."
+        ],
+        formula: "EV = Market Cap of Common Equity + Preferred Equity + Total Debt + Minority Interest - Cash & Equivalents",
+        trap: "Never divide EV by Net Income! EV reflects claims of all capital providers (debt + equity), so the denominator must be pre-interest (e.g., EBITDA or Operating Cash Flow)."
+      },
+
+      // --- CORPORATE ISSUERS ---
+      {
+        id: "corp-01",
+        topic: "CORP",
+        topicName: "Corporate Issuers",
+        weight: "6-9%",
+        stem: "When evaluating mutually exclusive capital investment projects with differing project sizes and cash flow timings, which capital budgeting metric should be the ultimate decision criterion in case of conflict?",
+        options: [
+          "Internal Rate of Return (IRR).",
+          "Net Present Value (NPV).",
+          "Profitability Index (PI)."
+        ],
+        correctIndex: 1,
+        explanation: "For mutually exclusive projects, Net Present Value (NPV) is the definitive decision rule because it directly measures the expected dollar increase in shareholder wealth. The IRR assumes cash flows can be reinvested at the internal rate of return, which can lead to suboptimal decisions when projects differ in scale or timing.",
+        distractors: [
+          "A is incorrect: IRR can produce multiple solutions or misleading rankings when projects conflict.",
+          "C is incorrect: PI is a relative ratio and ignores the total dollar magnitude of value added."
+        ],
+        formula: "NPV = Σ [CF_t / (1 + WACC)^t] - Initial Outlay",
+        trap: "Always choose NPV over IRR whenever there is a ranking conflict between mutually exclusive projects!"
+      },
+
+      // --- ETHICAL AND PROFESSIONAL STANDARDS ---
+      {
+        id: "eth-01",
+        topic: "ETHICS",
+        topicName: "Ethical & Professional Standards",
+        weight: "15-20%",
+        stem: "Carmen, a CFA candidate and senior research analyst, receives an invitation from a publicly traded industrial supplier to tour their flagship manufacturing plant. The supplier offers to pay for Carmen's first-class airfare and luxury resort lodging. Under Standard I(B) Independence and Objectivity, Carmen must:",
+        options: [
+          "Refuse the lavish travel and hotel accommodations, paying for standard commercial transport and lodging herself or through her employer.",
+          "Accept the accommodations provided she discloses the perks fully in her final published research report.",
+          "Accept only the hotel stay, provided the company's investor relations team provides an educational itinerary."
+        ],
+        correctIndex: 0,
+        explanation: "Standard I(B) requires members and candidates to maintain independence and objectivity. Best practice dictates that analysts use commercial transport and pay for their own travel and lodging when attending corporate site visits. Accepting luxury accommodations or chartered private flights from an issuer creates an unacceptable conflict of interest that compromises perceived and actual objectivity.",
+        distractors: [
+          "B is incorrect: Mere disclosure is insufficient to remedy an explicit violation when independent commercial options are readily available.",
+          "C is incorrect: Accepting lodging is prohibited when normal hotel alternatives exist in the vicinity."
+        ],
+        formula: "Standard I(B): Independence and Objectivity — Self-fund site visits whenever commercial transport and lodging exist.",
+        trap: "Only in rare cases where a corporate facility is in an inaccessible remote location (e.g., an offshore oil rig or remote mine with no commercial flights) may an analyst accept issuer-provided transportation."
+      },
+      {
+        id: "eth-02",
+        topic: "ETHICS",
+        topicName: "Ethical & Professional Standards",
+        weight: "15-20%",
+        stem: "Standard VI(B) Priority of Transactions dictates that personal transactions by an investment professional must:",
+        options: [
+          "Never occur in the same securities held by clients.",
+          "Be executed after client and employer trades have had reasonable opportunity to be filled.",
+          "Be submitted directly to the firm's compliance officer within 30 days following trade execution."
+        ],
+        correctIndex: 1,
+        explanation: "Under Standard VI(B), transactions for clients and employers must have absolute priority over personal transactions in which a member or candidate is the beneficial owner. Personal trades may only occur after client orders have been completely executed and the market has absorbed the flow.",
+        distractors: [
+          "A is incorrect: Personal investment is permissible, provided client and employer priority rules are strictly honored.",
+          "C is incorrect: Personal trades require pre-clearance prior to execution, not just post-trade notification."
+        ],
+        formula: "Priority Hierarchy: 1. Clients > 2. Employers > 3. Personal Accounts",
+        trap: "Family member accounts that are fee-paying client accounts must be treated like any other client account—they must NOT be disadvantaged simply because of familial relationship!"
+      }
+    ];
+
+    /* =================================================================
+       APPLICATION STATE MANAGEMENT
+       ================================================================= */
+    let currentQuestions = [];
+    let currentIndex = 0;
+    let selectedOptionIndex = null;
+    let userAnswers = {}; // { qId: { selected: number, isCorrect: boolean, timeSpent: number } }
+    let flaggedQuestions = new Set();
+    let currentMode = 'drill'; // 'drill', 'mock', 'stats', 'plan'
+    let currentTopicFilter = 'ALL';
+    
+    // Mock Exam Timer
+    let mockTimerSeconds = 90 * 20; // 90 sec per question * 20 questions
+    let mockInterval = null;
+
+    /* Initialize Application */
+    function initApp() {
+      loadStoredQuestions();
+      calculateCountdown();
+      setAppMode('drill');
+      renderQuestion();
+      renderMatrix();
+      updateSessionMetrics();
+    }
+
+    /* Load or Restore QBank */
+    function loadStoredQuestions() {
+      const stored = localStorage.getItem('cfa_qbank_carmen');
+      if (stored) {
+        try {
+          currentQuestions = JSON.parse(stored);
+        } catch (e) {
+          currentQuestions = [...DEFAULT_QUESTION_BANK];
+        }
+      } else {
+        currentQuestions = [...DEFAULT_QUESTION_BANK];
+        localStorage.setItem('cfa_qbank_carmen', JSON.stringify(currentQuestions));
+      }
+    }
+
+    /* Countdown to Feb 25, 2027 */
+    function calculateCountdown() {
+      const examDate = new Date('2027-02-25T09:00:00');
+      const now = new Date();
+      const diffMs = examDate - now;
+      const days = Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
+      
+      const bannerDays = document.getElementById('countdown-days');
+      const miniDays = document.getElementById('countdown-mini');
+      if (bannerDays) bannerDays.textContent = days;
+      if (miniDays) miniDays.textContent = days + " days remaining";
+    }
+
+    /* Mode Switcher */
+    function setAppMode(mode) {
+      currentMode = mode;
+      
+      // Update Tab Styles
+      ['drill', 'mock', 'stats', 'plan'].forEach(m => {
+        const btn = document.getElementById('nav-' + m);
+        if (btn) {
+          if (m === mode) {
+            btn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all bg-blue-50 text-blue-700 border border-blue-200";
+          } else {
+            btn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-600 hover:bg-slate-100 border border-transparent";
+          }
+        }
+      });
+
+      // Show/Hide Top Control Strips
+      const drillControls = document.getElementById('drill-controls');
+      const mockControls = document.getElementById('mock-controls');
+      
+      if (mode === 'drill') {
+        drillControls.classList.remove('hidden');
+        mockControls.classList.add('hidden');
+        stopMockTimer();
+      } else if (mode === 'mock') {
+        drillControls.classList.add('hidden');
+        mockControls.classList.remove('hidden');
+        startMockTimer();
+      } else {
+        drillControls.classList.add('hidden');
+        mockControls.classList.add('hidden');
+        stopMockTimer();
+      }
+
+      // Views toggling
+      const examView = document.getElementById('view-exam');
+      const statsView = document.getElementById('view-stats');
+      const planView = document.getElementById('view-plan');
+
+      if (mode === 'drill' || mode === 'mock') {
+        examView.classList.remove('hidden');
+        statsView.classList.add('hidden');
+        planView.classList.add('hidden');
+        renderQuestion();
+      } else if (mode === 'stats') {
+        examView.classList.add('hidden');
+        statsView.classList.remove('hidden');
+        planView.classList.add('hidden');
+        renderAnalyticsView();
+      } else if (mode === 'plan') {
+        examView.classList.add('hidden');
+        statsView.classList.add('hidden');
+        planView.classList.remove('hidden');
+      }
+    }
+
+    /* Filter by Topic */
+    function filterByTopic(topic) {
+      currentTopicFilter = topic;
+      currentIndex = 0;
+      selectedOptionIndex = null;
+      renderQuestion();
+      renderMatrix();
+    }
+
+    /* Active Question List after filter */
+    function getActiveQuestions() {
+      if (currentTopicFilter === 'ALL') {
+        return currentQuestions;
+      }
+      return currentQuestions.filter(q => q.topic === currentTopicFilter);
+    }
+
+    /* Render Current Question Stem & Choices */
+    function renderQuestion() {
+      const activeList = getActiveQuestions();
+      const explanationDrawer = document.getElementById('explanation-drawer');
+      const submitBtn = document.getElementById('submit-btn');
+
+      if (!activeList || activeList.length === 0) {
+        document.getElementById('q-stem').innerHTML = "No questions found in this category. Use <strong>'QBank'</strong> to add questions.";
+        document.getElementById('options-container').innerHTML = "";
+        document.getElementById('q-counter').textContent = "0 of 0";
+        explanationDrawer.classList.add('hidden');
+        submitBtn.disabled = true;
+        return;
+      }
+
+      // Safety check index bounds
+      if (currentIndex >= activeList.length) currentIndex = activeList.length - 1;
+      if (currentIndex < 0) currentIndex = 0;
+
+      const q = activeList[currentIndex];
+      const existingRecord = userAnswers[q.id];
+
+      // Topic badge and weights
+      document.getElementById('q-topic-badge').textContent = q.topicName || q.topic;
+      document.getElementById('q-weight-indicator').textContent = "Weight: " + (q.weight || "Exam Core");
+      document.getElementById('q-counter').textContent = `Q ${currentIndex + 1} of ${activeList.length}`;
+      document.getElementById('q-stem').textContent = q.stem;
+
+      // Flag state
+      const isFlagged = flaggedQuestions.has(q.id);
+      const flagIcon = document.getElementById('flag-icon');
+      const flagLabel = document.getElementById('flag-label');
+      if (isFlagged) {
+        flagIcon.className = "fa-solid fa-flag text-amber-500";
+        flagLabel.textContent = "Flagged";
+        flagLabel.className = "text-xs font-bold text-amber-600 hidden sm:inline";
+      } else {
+        flagIcon.className = "fa-regular fa-flag text-slate-400";
+        flagLabel.textContent = "Flag for review";
+        flagLabel.className = "text-xs font-normal text-slate-500 hidden sm:inline";
+      }
+
+      // Render 3 CFA-style options
+      const container = document.getElementById('options-container');
+      container.innerHTML = "";
+
+      const optionLetters = ["A", "B", "C"];
+      
+      q.options.forEach((optText, idx) => {
+        const btn = document.createElement('button');
+        btn.type = "button";
+        btn.onclick = () => selectOption(idx);
+        
+        let borderClass = "border-slate-200 hover:border-slate-400 bg-white";
+        let letterBg = "bg-slate-100 text-slate-700";
+
+        // If previously submitted or answered
+        if (existingRecord) {
+          if (idx === q.correctIndex) {
+            borderClass = "border-emerald-500 bg-emerald-50 text-emerald-950 font-semibold";
+            letterBg = "bg-emerald-600 text-white font-bold";
+          } else if (idx === existingRecord.selected && !existingRecord.isCorrect) {
+            borderClass = "border-rose-400 bg-rose-50 text-rose-950 line-through";
+            letterBg = "bg-rose-600 text-white font-bold";
+          } else {
+            borderClass = "border-slate-200 bg-slate-50 text-slate-400 opacity-60";
+          }
+        } else if (selectedOptionIndex === idx) {
+          borderClass = "border-blue-600 bg-blue-50/60 text-blue-900 shadow-xs ring-1 ring-blue-500";
+          letterBg = "bg-blue-600 text-white font-bold";
+        }
+
+        btn.className = `option-btn w-full p-3.5 sm:p-4 rounded-xl border-2 text-left flex items-start gap-3.5 transition-all text-sm leading-relaxed ${borderClass}`;
+        btn.innerHTML = `
+          <span class="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 font-bold text-xs ${letterBg} transition-colors">
+            ${optionLetters[idx]}
+          </span>
+          <span class="flex-1 pt-0.5">${optText}</span>
+        `;
+        container.appendChild(btn);
+      });
+
+      // Submit Button and Explanation Drawer state
+      if (existingRecord) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i class="fa-solid fa-check-double mr-1"></i> Submitted`;
+        
+        // Show explanation only in Drill Mode (Mock hides explanation until finish)
+        if (currentMode === 'drill') {
+          showExplanation(q, existingRecord);
+        } else {
+          explanationDrawer.classList.add('hidden');
+        }
+      } else {
+        submitBtn.disabled = selectedOptionIndex === null;
+        submitBtn.innerHTML = `<i class="fa-solid fa-circle-check mr-1"></i> Submit Answer`;
+        explanationDrawer.classList.add('hidden');
+      }
+
+      // Prev / Next button state
+      document.getElementById('prev-btn').disabled = currentIndex === 0;
+      document.getElementById('next-btn').disabled = currentIndex === activeList.length - 1;
+    }
+
+    /* Option Selection */
+    function selectOption(idx) {
+      const activeList = getActiveQuestions();
+      const q = activeList[currentIndex];
+      // Prevent changing answer if already answered in drill mode
+      if (userAnswers[q.id] && currentMode === 'drill') return;
+
+      selectedOptionIndex = idx;
+      document.getElementById('submit-btn').disabled = false;
+      renderQuestion();
+    }
+
+    /* Submit Answer */
+    function submitCurrentAnswer() {
+      if (selectedOptionIndex === null) return;
+      
+      const activeList = getActiveQuestions();
+      const q = activeList[currentIndex];
+      const isCorrect = (selectedOptionIndex === q.correctIndex);
+
+      userAnswers[q.id] = {
+        selected: selectedOptionIndex,
+        isCorrect: isCorrect,
+        timestamp: Date.now()
+      };
+
+      selectedOptionIndex = null;
+      renderQuestion();
+      renderMatrix();
+      updateSessionMetrics();
+    }
+
+    /* Show Detailed CFA Explanations */
+    function showExplanation(q, record) {
+      const drawer = document.getElementById('explanation-drawer');
+      drawer.classList.remove('hidden');
+
+      const title = document.getElementById('explanation-title');
+      const icon = document.getElementById('explanation-status-icon');
+      
+      if (record.isCorrect) {
+        icon.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400"></i>`;
+        title.textContent = "Correct! Well Done.";
+        title.className = "font-bold text-sm tracking-wide uppercase text-emerald-400";
+      } else {
+        icon.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-rose-400"></i>`;
+        title.textContent = "Incorrect. Review the LOS Rationale:";
+        title.className = "font-bold text-sm tracking-wide uppercase text-rose-400";
+      }
+
+      document.getElementById('explanation-correct').textContent = q.explanation || "No explanation provided.";
+      
+      // Distractors
+      const distractorsContainer = document.getElementById('explanation-distractors');
+      if (q.distractors && q.distractors.length > 0) {
+        distractorsContainer.innerHTML = q.distractors.map(d => `<div class="py-0.5">• ${d}</div>`).join('');
+      } else {
+        distractorsContainer.innerHTML = `<div class="italic text-slate-500">Distractor breakdown inherent to rationale above.</div>`;
+      }
+
+      // Formula
+      document.getElementById('explanation-formula').textContent = q.formula || "Standard valuation / accounting conventions apply.";
+      document.getElementById('explanation-trap').textContent = q.trap || "Pay close attention to wording in the question stem.";
+    }
+
+    /* Question Navigation */
+    function navigateQuestion(direction) {
+      const activeList = getActiveQuestions();
+      const newIndex = currentIndex + direction;
+      if (newIndex >= 0 && newIndex < activeList.length) {
+        currentIndex = newIndex;
+        selectedOptionIndex = null;
+        renderQuestion();
+      }
+    }
+
+    function jumpToQuestion(idx) {
+      currentIndex = idx;
+      selectedOptionIndex = null;
+      renderQuestion();
+    }
+
+    /* Flag / Unflag Question */
+    function toggleFlagCurrentQuestion() {
+      const activeList = getActiveQuestions();
+      if (!activeList[currentIndex]) return;
+      const qId = activeList[currentIndex].id;
+
+      if (flaggedQuestions.has(qId)) {
+        flaggedQuestions.delete(qId);
+      } else {
+        flaggedQuestions.add(qId);
+      }
+      renderQuestion();
+      renderMatrix();
+    }
+
+    /* Render Matrix Grid */
+    function renderMatrix() {
+      const activeList = getActiveQuestions();
+      const grid = document.getElementById('question-matrix-grid');
+      grid.innerHTML = "";
+
+      let answeredCount = 0;
+
+      activeList.forEach((q, idx) => {
+        const btn = document.createElement('button');
+        btn.type = "button";
+        btn.onclick = () => jumpToQuestion(idx);
+
+        const record = userAnswers[q.id];
+        const isFlagged = flaggedQuestions.has(q.id);
+
+        let bg = "bg-white text-slate-700 border-slate-300 hover:border-slate-500";
+        if (record) {
+          answeredCount++;
+          if (currentMode === 'mock') {
+            // In mock, do not reveal correctness until finished
+            bg = "bg-blue-600 text-white border-blue-700 font-bold";
+          } else {
+            bg = record.isCorrect 
+              ? "bg-emerald-600 text-white border-emerald-700 font-bold" 
+              : "bg-rose-600 text-white border-rose-700 font-bold";
+          }
+        }
+
+        if (idx === currentIndex) {
+          bg += " ring-2 ring-blue-500 ring-offset-1";
+        }
+
+        btn.className = `h-9 rounded-lg border text-xs font-mono font-medium flex items-center justify-center relative transition-all shadow-2xs ${bg}`;
+        btn.textContent = idx + 1;
+
+        if (isFlagged) {
+          const flagPip = document.createElement('span');
+          flagPip.className = "absolute -top-1 -right-1 w-2.5 h-2.5 bg-amber-400 rounded-full border border-white";
+          btn.appendChild(flagPip);
+        }
+
+        grid.appendChild(btn);
+      });
+
+      document.getElementById('matrix-stats').textContent = `${answeredCount} of ${activeList.length} Answered`;
+    }
+
+    /* Update Top Bar Counters */
+    function updateSessionMetrics() {
+      const activeList = getActiveQuestions();
+      const answeredList = activeList.filter(q => userAnswers[q.id]);
+      const correctList = answeredList.filter(q => userAnswers[q.id].isCorrect);
+
+      document.getElementById('session-answered').textContent = answeredList.length;
+      document.getElementById('session-total').textContent = activeList.length;
+
+      const pct = answeredList.length > 0 ? Math.round((correctList.length / answeredList.length) * 100) : 0;
+      document.getElementById('session-score').textContent = pct + "%";
+    }
+
+    /* Mock Timer Controls */
+    function startMockTimer() {
+      if (mockInterval) clearInterval(mockInterval);
+      mockInterval = setInterval(() => {
+        if (mockTimerSeconds <= 0) {
+          clearInterval(mockInterval);
+          finishMockExamEarly();
+        } else {
+          mockTimerSeconds--;
+          const minutes = Math.floor(mockTimerSeconds / 60);
+          const seconds = mockTimerSeconds % 60;
+          document.getElementById('mock-timer').textContent = 
+            `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+      }, 1000);
+    }
+
+    function stopMockTimer() {
+      if (mockInterval) clearInterval(mockInterval);
+    }
+
+    function finishMockExamEarly() {
+      stopMockTimer();
+      setAppMode('stats');
+    }
+
+    /* Reset Progress */
+    function resetCurrentSession() {
+      userAnswers = {};
+      flaggedQuestions.clear();
+      currentIndex = 0;
+      selectedOptionIndex = null;
+      renderQuestion();
+      renderMatrix();
+      updateSessionMetrics();
+    }
+
+    /* =================================================================
+       ANALYTICS & SCORE REPORT (MATCHING CFA INSTITUTE STANDARDS)
+       ================================================================= */
+    function renderAnalyticsView() {
+      const totalAttempted = Object.keys(userAnswers).length;
+      const totalCorrect = Object.values(userAnswers).filter(a => a.isCorrect).length;
+      const overallPct = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
+
+      document.getElementById('stats-overall-pct').textContent = overallPct + "%";
+      
+      const mpsBadge = document.getElementById('mps-badge');
+      if (overallPct >= 70) {
+        mpsBadge.textContent = "Above MPS (Pass Zone ≥ 70%)";
+        mpsBadge.className = "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-300";
+      } else {
+        mpsBadge.textContent = "Below MPS (< 70% Target)";
+        mpsBadge.className = "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 border border-rose-300";
+      }
+
+      // Group by topic
+      const topics = [
+        { code: 'FSA', name: 'Financial Statement Analysis', weight: '11-14%', target: 'Primary Deficit' },
+        { code: 'FI', name: 'Fixed Income', weight: '11-14%', target: 'Primary Deficit' },
+        { code: 'QUANT', name: 'Quantitative Methods', weight: '6-9%', target: 'Primary Deficit' },
+        { code: 'EQUITY', name: 'Equity Investments', weight: '11-14%', target: 'Moderate' },
+        { code: 'CORP', name: 'Corporate Issuers', weight: '6-9%', target: 'Moderate' },
+        { code: 'ETHICS', name: 'Ethical and Professional Standards', weight: '15-20%', target: 'Carmen Strong Area' },
+      ];
+
+      const container = document.getElementById('topic-performance-bars');
+      container.innerHTML = "";
+
+      topics.forEach(t => {
+        const qInTopic = currentQuestions.filter(q => q.topic === t.code);
+        const attempted = qInTopic.filter(q => userAnswers[q.id]);
+        const correct = attempted.filter(q => userAnswers[q.id].isCorrect);
+        const pct = attempted.length > 0 ? Math.round((correct.length / attempted.length) * 100) : 0;
+
+        let barColor = "bg-rose-500";
+        if (pct >= 70) barColor = "bg-emerald-500";
+        else if (pct >= 50) barColor = "bg-amber-500";
+
+        const row = document.createElement('div');
+        row.className = "p-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition-colors";
+        row.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-sm text-slate-900">${t.name}</span>
+              <span class="text-xs font-mono text-slate-500">(${t.weight})</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-mono">
+              <span class="text-slate-500">${correct.length}/${attempted.length} Correct</span>
+              <span class="font-bold text-slate-900">${pct}%</span>
+            </div>
+          </div>
+
+          <!-- Progress Bar with 70% MPS Indicator Line -->
+          <div class="w-full bg-slate-100 rounded-full h-3 relative overflow-hidden">
+            <div class="${barColor} h-3 rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+            <!-- Target line at 70% -->
+            <div class="absolute top-0 bottom-0 left-[70%] w-0.5 bg-slate-900 z-10" title="CFA Passing Target (70%)"></div>
+          </div>
+          <div class="flex justify-between items-center text-[10px] text-slate-400 mt-1.5 font-mono">
+            <span>0%</span>
+            <span class="text-slate-900 font-bold">▲ 70% MPS Benchmark</span>
+            <span>100%</span>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    /* =================================================================
+       MODAL & QBANK IMPORT / EXPORT
+       ================================================================= */
+    function openManageQuestionsModal() {
+      document.getElementById('modal-qbank').classList.remove('hidden');
+    }
+
+    function closeManageQuestionsModal() {
+      document.getElementById('modal-qbank').classList.add('hidden');
+    }
+
+    function toggleModalTab(tab) {
+      const singleBtn = document.getElementById('modal-tab-single-btn');
+      const bulkBtn = document.getElementById('modal-tab-bulk-btn');
+      const singleForm = document.getElementById('single-question-form');
+      const bulkContainer = document.getElementById('bulk-json-container');
+
+      if (tab === 'single') {
+        singleBtn.className = "py-3 border-b-2 border-blue-600 text-blue-600";
+        bulkBtn.className = "py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800";
+        singleForm.classList.remove('hidden');
+        bulkContainer.classList.add('hidden');
+      } else {
+        singleBtn.className = "py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800";
+        bulkBtn.className = "py-3 border-b-2 border-blue-600 text-blue-600";
+        singleForm.classList.add('hidden');
+        bulkContainer.classList.remove('hidden');
+      }
+    }
+
+    /* Handle Creating Single Question */
+    function handleCreateQuestion(e) {
+      e.preventDefault();
+      
+      const topic = document.getElementById('new-q-topic').value;
+      const topicNames = {
+        'FSA': 'Financial Statement Analysis',
+        'FI': 'Fixed Income',
+        'QUANT': 'Quantitative Methods',
+        'EQUITY': 'Equity Investments',
+        'CORP': 'Corporate Issuers',
+        'ETHICS': 'Ethical and Professional Standards'
+      };
+
+      const newQ = {
+        id: "custom-" + Date.now(),
+        topic: topic,
+        topicName: topicNames[topic] || topic,
+        weight: "Candidate Custom",
+        stem: document.getElementById('new-q-stem').value.trim(),
+        options: [
+          document.getElementById('new-q-opt-0').value.trim(),
+          document.getElementById('new-q-opt-1').value.trim(),
+          document.getElementById('new-q-opt-2').value.trim()
+        ],
+        correctIndex: parseInt(document.getElementById('new-q-correct').value),
+        explanation: document.getElementById('new-q-explanation').value.trim(),
+        distractors: ["Incorrect based on CFA curriculum guidelines."],
+        formula: document.getElementById('new-q-formula').value.trim() || "See curriculum readings.",
+        trap: document.getElementById('new-q-trap').value.trim() || "Pay close attention to key words in the stem."
+      };
+
+      currentQuestions.unshift(newQ);
+      localStorage.setItem('cfa_qbank_carmen', JSON.stringify(currentQuestions));
+
+      document.getElementById('single-question-form').reset();
+      closeManageQuestionsModal();
+      currentIndex = 0;
+      renderQuestion();
+      renderMatrix();
+      updateSessionMetrics();
+    }
+
+    /* Handle Bulk JSON Import */
+    function handleImportJSON() {
+      const textarea = document.getElementById('bulk-json-textarea');
+      try {
+        const parsed = JSON.parse(textarea.value.trim());
+        if (!Array.isArray(parsed)) {
+          throw new Error("JSON must be an array of question objects.");
+        }
+
+        // Validate basic fields
+        parsed.forEach((item, index) => {
+          if (!item.stem || !item.options || item.options.length !== 3 || item.correctIndex === undefined) {
+            throw new Error(`Item at index ${index} must have 'stem', 3 'options', and 'correctIndex'.`);
+          }
+          if (!item.id) item.id = "imported-" + Date.now() + "-" + index;
+        });
+
+        currentQuestions = [...parsed, ...currentQuestions];
+        localStorage.setItem('cfa_qbank_carmen', JSON.stringify(currentQuestions));
+
+        alert(`Successfully imported ${parsed.length} questions into your CFA QBank!`);
+        textarea.value = "";
+        closeManageQuestionsModal();
+        currentIndex = 0;
+        renderQuestion();
+        renderMatrix();
+        updateSessionMetrics();
+      } catch (err) {
+        alert("Error parsing JSON: " + err.message);
+      }
+    }
+
+    /* Export JSON to Clipboard */
+    function handleExportJSON() {
+      const jsonStr = JSON.stringify(currentQuestions, null, 2);
+      document.getElementById('bulk-json-textarea').value = jsonStr;
+      
+      const tempInput = document.createElement("textarea");
+      tempInput.value = jsonStr;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+
+      alert("Full question bank JSON copied to your clipboard!");
+    }
+
+    /* Reset to Default 20 Questions */
+    function handleResetDefaultBank() {
+      if (confirm("Reset question bank to default questions? Any custom added questions will be replaced.")) {
+        currentQuestions = [...DEFAULT_QUESTION_BANK];
+        localStorage.setItem('cfa_qbank_carmen', JSON.stringify(currentQuestions));
+        closeManageQuestionsModal();
+        resetCurrentSession();
+      }
+    }
+
+    /* Keyboard navigation: A, B, C to select; Enter to submit; Left/Right arrows */
+    document.addEventListener('keydown', (e) => {
+      // Don't trigger if user is typing in form or textarea
+      const tag = document.activeElement.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+
+      if (e.key === 'a' || e.key === 'A') selectOption(0);
+      if (e.key === 'b' || e.key === 'B') selectOption(1);
+      if (e.key === 'c' || e.key === 'C') selectOption(2);
+      if (e.key === 'Enter') submitCurrentAnswer();
+      if (e.key === 'ArrowRight') navigateQuestion(1);
+      if (e.key === 'ArrowLeft') navigateQuestion(-1);
+      if (e.key === 'f' || e.key === 'F') toggleFlagCurrentQuestion();
+    });
+
+    // Start on page load
+    window.onload = function() {
+      initApp();
+    };
+  </script>
+</body>
+</html>
