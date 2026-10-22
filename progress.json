@@ -31,14 +31,20 @@
       ]
     },
     "2026-10-22": {
-      "count": 16,
-      "correct": 8,
+      "count": 17,
+      "correct": 9,
       "answeredIds": [
-        21
+        21,
+        17
       ]
     }
   },
   "answeredMap": {
+    "17": {
+      "selectedIndex": 2,
+      "isCorrect": true,
+      "timestamp": 1792697819095
+    },
     "21": {
       "selectedIndex": 0,
       "isCorrect": true,
@@ -52,5 +58,5 @@
     "Quantitative Methods__1": true,
     "Quantitative Methods__3": true
   },
-  "lastUpdated": 1792697805978
+  "lastUpdated": 1792697819095
 }
