@@ -45,8 +45,8 @@
       ]
     },
     "2026-10-23": {
-      "count": 16,
-      "correct": 16,
+      "count": 17,
+      "correct": 17,
       "answeredIds": [
         5,
         19,
@@ -63,7 +63,8 @@
         11,
         20,
         2,
-        16
+        16,
+        15
       ],
       "responses": {
         "1": {
@@ -113,6 +114,11 @@
         "14": {
           "selectedIndex": 1,
           "isCorrect": true
+        },
+        "15": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1792760141115
         },
         "16": {
           "selectedIndex": 1,
@@ -208,7 +214,8 @@
     "15": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "timestamp": 1792698008479
+      "dateISO": "2026-10-23",
+      "timestamp": 1792760141115
     },
     "16": {
       "selectedIndex": 1,
@@ -450,14 +457,19 @@
       ]
     },
     "15": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-22",
+      "lastAnsweredDate": "2026-10-23",
       "history": [
         {
           "date": "2026-10-22",
+          "isCorrect": true,
+          "topic": "Portfolio Construction"
+        },
+        {
+          "date": "2026-10-23",
           "isCorrect": true,
           "topic": "Portfolio Construction"
         }
@@ -589,5 +601,5 @@
     "Quantitative Methods__3": true,
     "Economics__5": true
   },
-  "lastUpdated": 1792760115666
+  "lastUpdated": 1792760141115
 }
