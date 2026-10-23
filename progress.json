@@ -2,7 +2,7 @@
   "dailyTarget": 20,
   "dailyHistory": {
     "2026-10-21": {
-      "count": 23,
+      "count": 24,
       "correct": 17,
       "answeredIds": [
         1,
@@ -43,6 +43,13 @@
         3,
         6
       ]
+    },
+    "2026-10-23": {
+      "count": 1,
+      "correct": 1,
+      "answeredIds": [
+        5
+      ]
     }
   },
   "answeredMap": {
@@ -50,6 +57,11 @@
       "selectedIndex": 0,
       "isCorrect": true,
       "timestamp": 1792698061362
+    },
+    "5": {
+      "selectedIndex": 0,
+      "isCorrect": true,
+      "timestamp": 1792740995437
     },
     "6": {
       "selectedIndex": 2,
@@ -74,7 +86,7 @@
     "18": {
       "selectedIndex": 0,
       "isCorrect": false,
-      "timestamp": 1792697983049
+      "timestamp": 1792602342536
     },
     "21": {
       "selectedIndex": 0,
@@ -94,5 +106,5 @@
     "Quantitative Methods__1": true,
     "Quantitative Methods__3": true
   },
-  "lastUpdated": 1792698077262
+  "lastUpdated": 1792740995437
 }
