@@ -64,17 +64,16 @@
             </select>
           </div>
         </div>
-        <button onclick="startDailyBatch()" class="px-2.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition shadow-sm whitespace-nowrap">
+        <button onclick="startDailyBatch(true)" class="px-2.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition shadow-sm whitespace-nowrap" title="Generate or resume today's weighted drill">
           ▶ Daily Drill
         </button>
       </div>
 
-      <!-- View Tabs -->
+      <!-- View Tabs (Mock Tab Removed) -->
       <div class="flex items-center gap-1 overflow-x-auto max-w-full py-0.5">
         <button onclick="switchTab('drill')" id="tab-drill" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white transition whitespace-nowrap">⚡ QCM Drill</button>
-        <button onclick="switchTab('calendar')" id="tab-calendar" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">📅 Calendar & Streak</button>
+        <button onclick="switchTab('calendar')" id="tab-calendar" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">📅 Calendar & Analytics</button>
         <button onclick="switchTab('les')" id="tab-les" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">📚 LES (2,115)</button>
-        <button onclick="switchTab('mock')" id="tab-mock" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">⏱ Mock</button>
         <button onclick="openQBankModal()" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-emerald-700 text-white hover:bg-emerald-600 transition whitespace-nowrap">+ Add Qs</button>
         <button onclick="openCloudModal()" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition whitespace-nowrap">☁️ Sync</button>
       </div>
@@ -86,21 +85,25 @@
     <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2 flex flex-wrap items-center justify-between gap-2">
       <div class="flex flex-wrap items-center gap-2">
         <select id="topicSelect" onchange="filterByTopic(this.value)" class="text-xs font-semibold bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 text-slate-800 focus:outline-none focus:border-blue-600">
+          <option value="DAILY">🎯 Smart Daily Drill (Exam-Weighted + Errors & Least Seen)</option>
           <option value="ALL">All Topics (Full QBank)</option>
-          <option value="DAILY">🎯 Current Daily Drill Batch</option>
-          <option value="UNANSWERED">🆕 Unanswered Questions Only</option>
-          <option value="WRONG">❌ Incorrect Questions Only</option>
-          <option value="Financial Statement Analysis">Financial Statement Analysis (FSA)</option>
-          <option value="Fixed Income">Fixed Income</option>
-          <option value="Quantitative Methods">Quantitative Methods</option>
-          <option value="Equities">Equities</option>
-          <option value="Portfolio Construction">Portfolio Construction / Management</option>
-          <option value="Corporate Finance">Corporate Finance</option>
-          <option value="Derivatives">Derivatives</option>
-          <option value="Alternative Investments">Alternative Investments</option>
-          <option value="Economics">Economics</option>
-          <option value="Ethical and Professional Standards">Ethical & Professional Standards</option>
+          <option value="UNANSWERED">🆕 Never Seen Questions Only</option>
+          <option value="WRONG">❌ Previously Incorrect Questions Only</option>
+          <option value="Ethical and Professional Standards">S1 · Ethical & Professional Standards (10–15%)</option>
+          <option value="Quantitative Methods">S1 · Quantitative Methods (11–14%)</option>
+          <option value="Economics">S1 · Economics (6–9%)</option>
+          <option value="Financial Statement Analysis">S1 · Financial Statement Analysis (11–14%)</option>
+          <option value="Corporate Finance">S1 · Corporate Finance (6–9%)</option>
+          <option value="Equities">S2 · Equities (11–14%)</option>
+          <option value="Fixed Income">S2 · Fixed Income (11–14%)</option>
+          <option value="Derivatives">S2 · Derivatives & Risk Management (6–9%)</option>
+          <option value="Alternative Investments">S2 · Alternative Investments (6–9%)</option>
+          <option value="Portfolio Construction">S2 · Portfolio Construction (8–12%)</option>
         </select>
+
+        <button onclick="rebuildSmartDailyQueue()" class="text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-200 transition" title="Fill remaining daily quota with prioritized questions">
+          🔄 Top-Up Daily Batch
+        </button>
 
         <button onclick="shuffleCurrentQueue()" class="text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 transition">
           🔀 Shuffle
@@ -115,7 +118,7 @@
       <div class="flex items-center gap-2 text-xs">
         <span class="px-2 py-1 rounded bg-slate-100 text-slate-700 font-medium">QBank: <strong id="totalPoolCount" class="mono">0</strong></span>
         <span class="px-2 py-1 rounded bg-slate-100 text-slate-700 font-medium">Today: <strong id="todayAccuracyText" class="mono text-emerald-600">--%</strong></span>
-        <span class="px-2 py-1 rounded bg-slate-100 text-slate-700 font-medium">Global Acc: <strong id="sessionScore" class="mono text-blue-600">--%</strong></span>
+        <span class="px-2 py-1 rounded bg-slate-100 text-slate-700 font-medium">14d Acc: <strong id="sessionScore" class="mono text-blue-600">--%</strong></span>
       </div>
     </div>
   </div>
@@ -123,20 +126,19 @@
   <!-- MAIN CONTENT -->
   <main class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-5">
 
-    <!-- ==================== VIEW 1: QCM DRILL & MOCK ==================== -->
+    <!-- ==================== VIEW 1: QCM DRILL ==================== -->
     <div id="view-quiz" class="grid grid-cols-1 lg:grid-cols-12 gap-5">
       <div class="lg:col-span-8 flex flex-col gap-4">
         <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
           <!-- Question Meta Header -->
           <div class="bg-slate-50 px-4 sm:px-6 py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
-            <div class="flex items-center gap-2">
+            <div class="flex flex-wrap items-center gap-2">
               <span id="qTopicBadge" class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-blue-100 text-blue-800">Topic</span>
-              <span id="qModuleBadge" class="text-[11px] font-mono text-slate-500 truncate max-w-[200px] sm:max-w-xs">Module</span>
+              <span id="qWeightBadge" class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-slate-200 text-slate-700">Weight: --%</span>
+              <span id="qModuleBadge" class="text-[11px] font-mono text-slate-500 truncate max-w-[180px] sm:max-w-xs">Module</span>
             </div>
-            <div class="flex items-center gap-3">
-              <div id="mockTimerBox" class="hidden items-center gap-1.5 bg-slate-900 text-white px-2.5 py-1 rounded-md text-xs mono">
-                <span>⏱</span><span id="timerDisplay">01:30</span>
-              </div>
+            <div class="flex items-center gap-2">
+              <span id="qHistoryBadge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">New</span>
               <button onclick="toggleFlagCurrent()" id="flagBtn" class="text-xs font-medium px-2 py-1 rounded border border-slate-200 text-slate-500 hover:bg-slate-100 transition">⚑ Flag</button>
               <span class="text-xs font-bold text-slate-600 mono">Q <span id="qCurrentIndex">1</span> / <span id="qTotalIndex">1</span></span>
             </div>
@@ -152,7 +154,7 @@
               <div class="flex items-center gap-2">
                 <button onclick="prevQuestion()" id="prevBtn" class="px-3.5 py-2 rounded-xl border border-slate-300 text-slate-700 font-semibold text-xs hover:bg-slate-50 transition">← Prev</button>
                 <button onclick="nextQuestion()" id="nextBtn" class="px-3.5 py-2 rounded-xl border border-slate-300 text-slate-700 font-semibold text-xs hover:bg-slate-50 transition">Next →</button>
-                <button onclick="pickRandomQuestion()" class="px-3 py-2 rounded-xl border border-indigo-200 bg-indigo-50 text-indigo-700 font-semibold text-xs hover:bg-indigo-100 transition">🎲 Random</button>
+                <button onclick="jumpToNextUnansweredToday()" class="px-3 py-2 rounded-xl border border-amber-300 bg-amber-50 text-amber-900 font-semibold text-xs hover:bg-amber-100 transition">⏭ Next Todo Today</button>
               </div>
               <button onclick="submitAnswer()" id="submitBtn" class="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs tracking-wide shadow-sm transition">
                 Submit Answer
@@ -183,7 +185,7 @@
         </div>
       </div>
 
-      <!-- Right Sidebar: Today's Performance + Mini Calendar + Question Matrix -->
+      <!-- Right Sidebar: Today's Performance + Question Matrix -->
       <div class="lg:col-span-4 space-y-4">
         <!-- Today's Live Card -->
         <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm">
@@ -205,42 +207,82 @@
               <span id="cardStreakCount" class="text-lg font-extrabold text-amber-500 mono">1 🔥</span>
             </div>
           </div>
-          <div class="mt-3 flex items-center justify-between gap-2">
-            <button onclick="switchTab('calendar')" class="w-full py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition">
-              📅 View Full Performance Calendar →
+          <div class="mt-3 flex flex-col gap-2">
+            <button onclick="switchTab('calendar')" class="w-full py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition">
+              📊 View 14-Day Topic Report & Calendar →
             </button>
           </div>
         </div>
 
         <!-- Question Navigator Matrix -->
         <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm">
-          <div class="flex items-center justify-between mb-2.5">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">Question Matrix</h3>
-            <span id="matrixProgressText" class="text-xs font-mono text-slate-500">0 / 0</span>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">Today's Drill Matrix</h3>
+            <span id="matrixProgressText" class="text-xs font-mono text-slate-500">0 / 20 Done Today</span>
           </div>
-          <div class="flex items-center gap-3 text-[11px] text-slate-500 mb-3">
-            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-slate-100 border border-slate-300 inline-block"></span> Todo</span>
-            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-emerald-500 inline-block"></span> Correct</span>
-            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-rose-500 inline-block"></span> Wrong</span>
+          <p class="text-[11px] text-slate-500 mb-2.5">
+            Questions answered on previous days are <strong>unlocked (gray)</strong> so you can complete your full daily quota today!
+          </p>
+          <div class="flex flex-wrap items-center gap-3 text-[11px] text-slate-500 mb-3">
+            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-slate-100 border border-slate-300 inline-block"></span> Todo Today</span>
+            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-emerald-500 inline-block"></span> Correct Today</span>
+            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-rose-500 inline-block"></span> Wrong Today</span>
+            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-amber-100 border border-amber-400 inline-block"></span> Past Error</span>
           </div>
-          <div id="navigatorGrid" class="grid grid-cols-6 sm:grid-cols-8 lg:grid-cols-6 gap-1.5 max-h-60 overflow-y-auto pr-1"></div>
+          <div id="navigatorGrid" class="grid grid-cols-5 sm:grid-cols-8 lg:grid-cols-5 gap-1.5 max-h-64 overflow-y-auto pr-1"></div>
         </div>
       </div>
     </div>
 
-    <!-- ==================== VIEW 2: CALENDAR & STREAK HEATMAP ==================== -->
+    <!-- ==================== VIEW 2: TOPIC REPORT + CALENDAR HEATMAP ==================== -->
     <div id="view-calendar" class="hidden space-y-6">
-      <!-- Top Summary KPIs -->
+
+      <!-- NEW: 14-DAY TOPIC PERFORMANCE & WEIGHT REPORT TABLE -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-[10px] uppercase">Rolling 14-Day Diagnostic</span>
+              <h2 class="text-base sm:text-lg font-extrabold text-slate-900">Global Topic Performance vs. Official CFA 2027 Exam Weights</h2>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">
+              Calculated over your last 14 days of training. <strong class="text-rose-600">Red (&lt;60%)</strong> = Priority Remediation · <strong class="text-amber-600">Orange (60–69%)</strong> = Borderline · <strong class="text-emerald-600">Green (≥70%)</strong> = Passing Standard.
+            </p>
+          </div>
+          <button onclick="startWeakestTopicsDrill()" class="px-3.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs transition shadow-sm">
+            🎯 Drill Red/Orange Topics Now
+          </button>
+        </div>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="border-b border-slate-200 text-[11px] uppercase tracking-wider text-slate-400 font-bold bg-slate-50">
+                <th class="py-2.5 px-3">Session</th>
+                <th class="py-2.5 px-3">CFA Topic</th>
+                <th class="py-2.5 px-3 text-center">Official Weight</th>
+                <th class="py-2.5 px-3 text-center">Daily Target Share</th>
+                <th class="py-2.5 px-3 text-center">QBank Pool</th>
+                <th class="py-2.5 px-3 text-center">Last 14d Answered</th>
+                <th class="py-2.5 px-3 text-center">14d Accuracy</th>
+                <th class="py-2.5 px-3 text-right">Status / Action</th>
+              </tr>
+            </thead>
+            <tbody id="topicReportTableBody" class="divide-y divide-slate-100"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Top Summary KPIs + Calendar Heatmap -->
       <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
         <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
           <div>
             <h2 class="text-lg font-extrabold text-slate-900">Daily Streak & Performance Heatmap Calendar</h2>
             <p class="text-xs text-slate-500">Every day from October 2026 to Exam Day (Thursday, Feb 25, 2027) is colored by your daily completion & accuracy.</p>
           </div>
-          <!-- Manual Backfill / Fix Today Button -->
           <div class="flex items-center gap-2">
             <button onclick="openLogPastDayModal()" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition">
-              ✏️ Edit / Backfill a Day (e.g. Oct 21: 23 Qs)
+              ✏️ Edit / Backfill a Day
             </button>
           </div>
         </div>
@@ -249,7 +291,7 @@
           <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200">
             <span class="text-[11px] font-bold uppercase text-amber-800">Current Daily Streak</span>
             <div id="calKpiStreak" class="text-2xl font-extrabold text-amber-600 mono mt-0.5">1 Day 🔥</div>
-            <span class="text-[11px] text-amber-700">Days hitting daily goal</span>
+            <span class="text-[11px] text-amber-700">Consecutive active days</span>
           </div>
           <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200">
             <span class="text-[11px] font-bold uppercase text-emerald-800">Active Study Days</span>
@@ -271,7 +313,7 @@
         <!-- Legend -->
         <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs">
           <div class="flex flex-wrap items-center gap-3">
-            <span class="font-bold text-slate-600">Color Code:</span>
+            <span class="font-bold text-slate-600">Calendar Color Code:</span>
             <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-emerald-500 inline-block"></span> <strong>Green:</strong> Goal Met + Acc ≥ 70%</span>
             <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-amber-400 inline-block"></span> <strong>Gold:</strong> Goal Met + Acc 50–69%</span>
             <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-rose-500 inline-block"></span> <strong>Red:</strong> Acc &lt; 50% (Review!)</span>
@@ -284,8 +326,8 @@
       <!-- Selected Day Inspector -->
       <div id="selectedDayBanner" class="hidden bg-slate-900 text-white rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3">
         <div>
-          <span id="selDayTitle" class="text-xs font-mono uppercase text-amber-400">2026-10-21</span>
-          <h4 id="selDaySummary" class="text-sm font-bold mt-0.5">23 Questions Completed · 17 Correct (74% Accuracy)</h4>
+          <span id="selDayTitle" class="text-xs font-mono uppercase text-amber-400">2026-10-23</span>
+          <h4 id="selDaySummary" class="text-sm font-bold mt-0.5">--</h4>
         </div>
         <button onclick="openLogPastDayModal(selectedCalendarDate)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-xs font-semibold">
           Edit This Day's Log
@@ -320,14 +362,14 @@
       <div class="bg-slate-900 text-white px-5 py-4 flex items-center justify-between">
         <div>
           <h3 class="font-bold text-sm">☁️ Cross-Device Cloud Sync (Mac ↔ iPhone)</h3>
-          <p class="text-[11px] text-slate-400">Syncs your daily streak, calendar colors, answered questions & QBank via your GitHub repo</p>
+          <p class="text-[11px] text-slate-400">Syncs your daily streak, calendar colors, 14-day topic report & QBank via your GitHub repo</p>
         </div>
         <button onclick="closeCloudModal()" class="text-slate-400 hover:text-white text-sm">✕</button>
       </div>
       <div class="p-5 space-y-4 text-xs text-slate-700">
         <div class="p-3.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 space-y-1.5">
           <p class="font-bold">How it works in 1 click:</p>
-          <p>By entering a GitHub Personal Access Token (with <code class="mono bg-blue-100 px-1 rounded">repo</code> scope), the app automatically reads and writes a <code class="mono bg-blue-100 px-1 rounded">progress.json</code> file and <code class="mono bg-blue-100 px-1 rounded">questions.json</code> directly inside your repository <strong>berechit-code/CFA</strong>.</p>
+          <p>By entering a GitHub Personal Access Token (with <code class="mono bg-blue-100 px-1 rounded">repo</code> scope), the app automatically reads and writes <code class="mono bg-blue-100 px-1 rounded">progress.json</code> directly inside your repository <strong>berechit-code/CFA</strong>.</p>
         </div>
 
         <div class="grid grid-cols-2 gap-2">
@@ -344,7 +386,7 @@
         <div>
           <label class="font-bold text-slate-700 block mb-1">GitHub Personal Access Token (classic `ghp_...`)</label>
           <input id="ghTokenInput" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" class="w-full border border-slate-300 rounded-lg px-2.5 py-2 mono text-xs" />
-          <p class="text-[11px] text-slate-400 mt-1">Stored strictly in your device's local browser storage. Never shared anywhere else.</p>
+          <p class="text-[11px] text-slate-400 mt-1">Stored strictly in your device's local browser storage.</p>
         </div>
 
         <div id="cloudFeedbackMsg" class="hidden p-2.5 rounded-lg text-xs font-semibold"></div>
@@ -370,7 +412,7 @@
         <button onclick="closeLogPastDayModal()" class="text-slate-400 hover:text-white text-sm">✕</button>
       </div>
       <div class="p-5 space-y-3 text-xs">
-        <p class="text-slate-500">Did 23 questions on your computer earlier today? Set the exact count and correct answers for any date so your calendar and streak stay 100% accurate:</p>
+        <p class="text-slate-500">Adjust the exact number of questions completed and correct answers for any date so your calendar and streak stay 100% accurate:</p>
         <div>
           <label class="font-bold text-slate-700 block mb-1">Date</label>
           <input id="logDateInput" type="date" class="w-full border border-slate-300 rounded-lg px-2.5 py-2 mono text-xs" />
@@ -378,11 +420,11 @@
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="font-bold text-slate-700 block mb-1">Questions Answered</label>
-            <input id="logCountInput" type="number" min="0" value="23" class="w-full border border-slate-300 rounded-lg px-2.5 py-2 mono text-xs" />
+            <input id="logCountInput" type="number" min="0" value="20" class="w-full border border-slate-300 rounded-lg px-2.5 py-2 mono text-xs" />
           </div>
           <div>
             <label class="font-bold text-slate-700 block mb-1">Correct Answers</label>
-            <input id="logCorrectInput" type="number" min="0" value="17" class="w-full border border-slate-300 rounded-lg px-2.5 py-2 mono text-xs" />
+            <input id="logCorrectInput" type="number" min="0" value="15" class="w-full border border-slate-300 rounded-lg px-2.5 py-2 mono text-xs" />
           </div>
         </div>
         <div class="pt-3 flex justify-end gap-2">
@@ -397,11 +439,11 @@
   <div id="qbankModal" class="hidden fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-2xl w-full border border-slate-200 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
       <div class="bg-slate-900 text-white px-5 py-3.5 flex items-center justify-between">
-        <h3 class="font-bold text-sm">+ Add / Import CFA Questions (Auto-syncs to GitHub)</h3>
+        <h3 class="font-bold text-sm">+ Add / Import CFA Questions</h3>
         <button onclick="closeQBankModal()" class="text-slate-400 hover:text-white text-sm">✕</button>
       </div>
       <div class="p-5 overflow-y-auto space-y-4 text-xs">
-        <p class="text-slate-600">Paste a JSON array of new questions below and click <strong>Import & Merge</strong>. If Cloud Sync is enabled, it will also update <code class="mono">questions.json</code> on your GitHub automatically!</p>
+        <p class="text-slate-600">Paste a JSON array of new questions below and click <strong>Import & Merge</strong>.</p>
         <textarea id="bulkJsonTextarea" rows="8" placeholder='[{"topic":"Quantitative Methods","question":"...","options":["A","B","C"],"correctIndex":0,"explanation":"..."}]' class="w-full border border-slate-300 rounded-xl p-3 mono text-[11px] bg-slate-50"></textarea>
         <div class="flex flex-wrap items-center justify-between gap-2">
           <button onclick="importBulkJSON()" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold">Import & Merge JSON</button>
@@ -413,7 +455,44 @@
 
   <script>
     // =========================================================================
-    // 1. EMBEDDED 23 QUESTIONS (INCLUDING YOUR MODULE 11 & PORTFOLIO QUESTIONS)
+    // 1. OFFICIAL 2027 CFA LEVEL I TOPIC WEIGHTS (FROM YOUR SCREENSHOT)
+    // =========================================================================
+    const CFA_TOPIC_WEIGHTS = [
+      { topic: "Ethical and Professional Standards", session: 1, range: "10–15%", midpoint: 12.5 },
+      { topic: "Quantitative Methods",               session: 1, range: "11–14%", midpoint: 12.5 },
+      { topic: "Economics",                          session: 1, range: "6–9%",   midpoint: 7.5  },
+      { topic: "Financial Statement Analysis",       session: 1, range: "11–14%", midpoint: 12.5 },
+      { topic: "Corporate Finance",                  session: 1, range: "6–9%",   midpoint: 7.5  },
+      { topic: "Equities",                           session: 2, range: "11–14%", midpoint: 12.5 },
+      { topic: "Fixed Income",                       session: 2, range: "11–14%", midpoint: 12.5 },
+      { topic: "Derivatives",                        session: 2, range: "6–9%",   midpoint: 7.5, displayName: "Derivatives and Risk Management" },
+      { topic: "Alternative Investments",            session: 2, range: "6–9%",   midpoint: 7.5  },
+      { topic: "Portfolio Construction",             session: 2, range: "8–12%",  midpoint: 10.0 }
+    ];
+
+    function normalizeTopicName(rawTopic) {
+      if (!rawTopic) return "Quantitative Methods";
+      const t = rawTopic.toLowerCase();
+      if (t.includes("ethic")) return "Ethical and Professional Standards";
+      if (t.includes("quant")) return "Quantitative Methods";
+      if (t.includes("econ")) return "Economics";
+      if (t.includes("financial statement") || t.includes("fsa")) return "Financial Statement Analysis";
+      if (t.includes("corporate")) return "Corporate Finance";
+      if (t.includes("equit")) return "Equities";
+      if (t.includes("fixed")) return "Fixed Income";
+      if (t.includes("deriv")) return "Derivatives";
+      if (t.includes("alternat")) return "Alternative Investments";
+      if (t.includes("portfolio")) return "Portfolio Construction";
+      return rawTopic;
+    }
+
+    function getTopicMeta(topicName) {
+      const norm = normalizeTopicName(topicName);
+      return CFA_TOPIC_WEIGHTS.find(x => x.topic === norm) || { topic: norm, session: 1, range: "8–12%", midpoint: 10.0 };
+    }
+
+    // =========================================================================
+    // 2. EMBEDDED 47 QUESTIONS (YOUR FULL QBANK UP TO MODULE 4 TVM & MODULE 5 FSA)
     // =========================================================================
     const DEFAULT_QUESTIONS = [
       {
@@ -546,7 +625,7 @@
       {
         id: 10,
         topic: "Quantitative Methods",
-        module: "Module 4: Time Value of Money",
+        module: "Module 4: The Time Value of Money in Finance",
         question: "A bank quotes a stated annual interest rate of 8.0% compounded quarterly. The effective annual rate (EAR) is closest to:",
         options: ["8.00%", "8.24%", "8.30%"],
         correctIndex: 1,
@@ -732,11 +811,299 @@
         explanation: "D₁ = 3.00 × 1.04 = €3.12. V₀ = 3.12 / (0.10 - 0.04) = €52.00.",
         formula: "V₀ = D₁ / (r - g)",
         trap: "Always multiply D₀ ('just paid') by (1 + g) to get D₁."
+      },
+      {
+        id: 24,
+        topic: "Financial Statement Analysis",
+        module: "Module 5: Analyzing Statements of Cash Flows II",
+        question: "One appropriate method of preparing a common-size cash flow statement is to show each line item:",
+        options: [
+          "of revenue and expense as a percentage of net revenue.",
+          "on the cash flow statement as a percentage of net revenue.",
+          "on the cash flow statement as a percentage of total cash outflows."
+        ],
+        correctIndex: 1,
+        explanation: "An appropriate method to prepare a common-size cash flow statement is to show each line item on the cash flow statement as a percentage of net revenue.",
+        formula: "Common-Size CF Method 1 = Line Item / Net Revenue",
+        trap: "Only cash outflows (not every line item) are expressed as a percentage of total cash outflows."
+      },
+      {
+        id: 25,
+        topic: "Financial Statement Analysis",
+        module: "Module 5: Analyzing Statements of Cash Flows II",
+        question: "Which of the following is an appropriate method of computing free cash flow to the firm?",
+        options: [
+          "Add operating cash flows to capital expenditures and deduct after-tax interest payments.",
+          "Add operating cash flows to after-tax interest payments and deduct capital expenditures.",
+          "Deduct both after-tax interest payments and capital expenditures from operating cash flows."
+        ],
+        correctIndex: 1,
+        explanation: "Free cash flow to the firm (FCFF) can be computed as operating cash flows (CFO) plus after-tax interest expense less capital expenditures (FCInv).",
+        formula: "FCFF = CFO + Int × (1 - Tax Rate) - FCInv",
+        trap: "Interest paid deducted from CFO must be added back on an after-tax basis."
+      },
+      {
+        id: 26,
+        topic: "Financial Statement Analysis",
+        module: "Module 5: Analyzing Statements of Cash Flows II",
+        question: "The first step in cash flow statement analysis should be to:",
+        options: [
+          "evaluate consistency of cash flows.",
+          "determine operating cash flow drivers.",
+          "identify the major sources and uses of cash."
+        ],
+        correctIndex: 2,
+        explanation: "An overall assessment of the major sources and uses of cash should be the first step in evaluating a cash flow statement.",
+        formula: "Step 1: Identify Major Sources & Uses of Cash",
+        trap: "Always start with high-level sources and uses across CFO, CFI, and CFF."
+      },
+      {
+        id: 27,
+        topic: "Financial Statement Analysis",
+        module: "Module 5: Analyzing Statements of Cash Flows II",
+        question: "An analyst has calculated a ratio using as the numerator the sum of operating cash flow, interest, and taxes and as the denominator the amount of interest. What is this ratio, what does it measure, and what does it indicate?",
+        options: [
+          "This ratio is an interest coverage ratio, measuring a company's ability to meet its interest obligations and indicating a company's solvency.",
+          "This ratio is an effective tax ratio, measuring the amount of a company's operating cash flow used for taxes and indicating a company's efficiency in tax management.",
+          "This ratio is an operating profitability ratio, measuring the operating cash flow generated accounting for taxes and interest and indicating a company's liquidity."
+        ],
+        correctIndex: 0,
+        explanation: "This ratio is a cash-flow-based interest coverage ratio measuring a company's ability to meet its interest obligations and indicating solvency.",
+        formula: "Cash Interest Coverage = (CFO + Interest Paid + Taxes Paid) / Interest Paid",
+        trap: "Interest coverage measures SOLVENCY, not liquidity or profitability."
+      },
+      {
+        id: 28,
+        topic: "Financial Statement Analysis",
+        module: "Module 5: Analyzing Statements of Cash Flows II",
+        question: "A common-size cash flow statement shows Inflows (% of Total Inflows, 2016 vs. 2015): Cash received from customers (88.1% vs. 97.4%), Proceeds from disposal of PP&E (0.3% vs. 0.3%), Proceeds from issuance of bonds (11.6% vs. 2.3%). Outflows (% of Total Outflows, 2016 vs. 2015): Cash paid to suppliers/employees (71.0% vs. 70.7%), Payments for PP&E (10.5% vs. 10.6%), Payments for financial instruments (2.0% vs. 0.2%), Payments for investments in companies (0.1% vs. 2.9%), Transactions with equity holders (8.8% vs. 9.0%), Repayments of loans/bonds (7.6% vs. 6.6%). Compared with 2015, which statement about 2016 is most accurate? The company:",
+        options: [
+          "had a positive net operating cash flow.",
+          "directed a larger portion of cash outflows to investing activities.",
+          "relied more heavily on financing activities to generate cash inflows."
+        ],
+        correctIndex: 2,
+        explanation: "Cash inflows from financing activities in 2016 are 11.6% from bonds, up from 2.3% in 2015.",
+        formula: "Investing Outflow % = 10.5% + 2.0% + 0.1% = 12.6% (down from 13.7% in 2015)",
+        trap: "Without absolute currency totals, you cannot know if CFO was positive or negative."
+      },
+      {
+        id: 29,
+        topic: "Financial Statement Analysis",
+        module: "Module 5: Analyzing Statements of Cash Flows II",
+        question: "The following financial statement data are available for a company ($ thousands): Operating income = 3,390; Net income = 2,210; Operating assets = 3,850; Change in cash and cash equivalents = 1,010; Cash flow from operating activities (CFO) = 1,750; Free cash flow to the firm (FCFF) = 2,240. The company's cash-to-income ratio is closest to:",
+        options: ["0.52.", "0.66.", "0.79."],
+        correctIndex: 0,
+        explanation: "Cash-to-income ratio = CFO / Operating income = 1,750 / 3,390 = 0.52.",
+        formula: "Cash-to-Income = CFO / Operating Income",
+        trap: "Do not use FCFF in numerator or Net Income in denominator."
+      },
+      {
+        id: 30,
+        topic: "Financial Statement Analysis",
+        module: "Module 5: Analyzing Statements of Cash Flows II",
+        question: "A firm reported the following financial statement items (€ millions): Net income = 2,100; Non-cash charges = 400; Interest expense = 300; Capital expenditures = 210; Working capital expenditures = 0; Net borrowing = 1,600; Tax rate = 40%. The free cash flow to the firm (FCFF) is closest to:",
+        options: ["€2,110.", "€2,470.", "€2,590."],
+        correctIndex: 1,
+        explanation: "FCFF = 2,100 + 400 + 300 × (1 - 0.40) - 210 - 0 = €2,470 million.",
+        formula: "FCFF = NI + NCC + Int(1 - t) - FCInv - WCInv",
+        trap: "Ignore Net Borrowing when computing FCFF (only used for FCFE)."
+      },
+      {
+        id: 31,
+        topic: "Financial Statement Analysis",
+        module: "Module 5: Analyzing Statements of Cash Flows II",
+        question: "A partial common-size cash flow statement (% of Net Revenues, Year 2) shows: Net cash from operating activities (CFO) = 28.5%; Net cash used in investing activities = (16.5%); Net cash used in financing activities = (4.7%); Cash paid for long-term assets = (13.4%); Dividends paid = (8.5%). Year 1 Cash Flow Coverage Ratios were: Dividend payment = 3.69; Investing and financing = 0.82; Reinvestment = 2.18. Compared with Year 1, the most appropriate conclusion about Year 2 is that the company's ability to use operating cash flows to:",
+        options: [
+          "acquire assets improved.",
+          "pay dividends decreased.",
+          "acquire assets, pay debts, and make distributions to owners decreased."
+        ],
+        correctIndex: 1,
+        explanation: "Dividend payment coverage in Year 2 = 28.5 / 8.5 = 3.35, down from 3.69 in Year 1.",
+        formula: "Dividend Coverage = CFO / Dividends Paid",
+        trap: "Reinvestment ratio worsened slightly (28.5/13.4 = 2.13 vs 2.18)."
+      },
+      {
+        id: 32,
+        topic: "Financial Statement Analysis",
+        module: "Module 5: Analyzing Statements of Cash Flows II",
+        question: "An analyst gathers the following information (in € thousands) about a company: Cash flow from operating activities (CFO) = 120; Capital expenditures = 50; Depreciation = 15; Interest paid and expensed = 4. If interest paid is classified as a cash flow from financing activities and the income tax rate is 25%, FCFF (in € thousands) is:",
+        options: ["70.", "73.", "85."],
+        correctIndex: 0,
+        explanation: "Because interest paid was classified under financing activities (CFF), it was never deducted from CFO. Thus FCFF = CFO - FCInv = 120 - 50 = 70.",
+        formula: "If Interest Paid in CFF: FCFF = CFO - FCInv",
+        trap: "Do not add back Int(1-t) if interest was classified in CFF!"
+      },
+      {
+        id: 33,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "A two-year Swedish government bond is issued with a 2.5% annual coupon rate, a par value of SEK5,000, and a yield-to-maturity of 2.418%. One year later, interest rates have risen to 3.61%. The value of the bond is now:",
+        options: ["SEK4,946.", "SEK5,000.", "SEK5,004."],
+        correctIndex: 0,
+        explanation: "With 1 year left: Price = (125 + 5,000) / 1.0361 = SEK4,946.44.",
+        formula: "P₁ = (Coupon + Par) / (1 + YTM₁)",
+        trap: "Discount at the new market yield (3.61%), not the old yield at issuance (2.418%)."
+      },
+      {
+        id: 34,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "Mr. and Mrs. Schmidt invest CHF1,000,000 in an annuity that makes annual payments for 20 years at a 3% annual return. How much can they expect to withdraw annually?",
+        options: ["CHF51,589", "CHF66,551", "CHF67,215"],
+        correctIndex: 2,
+        explanation: "PMT = (1,000,000 × 0.03) / [1 - 1.03^(-20)] = CHF67,215.71.",
+        formula: "PMT = (PV × r) / [1 - (1 + r)^(-N)]",
+        trap: "Keep compounding annual (do not divide by 12)."
+      },
+      {
+        id: 35,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "What is the expected one-year return on MOL Rt shares with a current price of HUF2,810, a one-year dividend growth of 17%, and a dividend yield of 13% when the interest rate is 12%?",
+        options: ["29%", "30%", "32%"],
+        correctIndex: 1,
+        explanation: "Expected return r = Dividend Yield + Dividend Growth = 13% + 17% = 30%.",
+        formula: "r = (D₁ / P₀) + g",
+        trap: "Ignore the 12% nominal interest rate distractor."
+      },
+      {
+        id: 36,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "LVMH Moët Hennessy Louis Vuitton pays an annual dividend of EUR12.50 per share. The dividend is expected to grow by 10% annually for the next two years due to increasing global demand for luxury goods. Thereafter, the dividend growth rate is projected to stabilize at 7% indefinitely. If the market's required rate of return is 11%, what is the intrinsic value of LVMH equity per share?",
+        options: ["EUR320", "EUR353", "EUR405"],
+        correctIndex: 1,
+        explanation: "D₁ = 13.75; D₂ = 15.125; V₂ = (15.125 × 1.07)/(0.11 - 0.07) = 404.59. P₀ = 13.75/1.11 + (15.125 + 404.59)/1.11² = EUR353.04.",
+        formula: "P₀ = D₁/(1+r) + (D₂ + V₂)/(1+r)²",
+        trap: "Discount V₂ by 2 periods (1.11²), not 3 periods!"
+      },
+      {
+        id: 37,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "Based on the following observed annual interest rates for government debt of the Republic of South Africa (12 months: 8.2%; 24 months: 7.8%; 36 months: 7.7%), what is the best estimate of the two-year forward rate one year from today?",
+        options: ["6.71%", "7.45%", "16.24%"],
+        correctIndex: 1,
+        explanation: "F_{1,2} = [(1.077)³ / 1.082]^(1/2) - 1 = 7.45%.",
+        formula: "(1 + S₃)³ = (1 + S₁)(1 + F_{1,2})²",
+        trap: "Use S₁ (8.2%) and S₃ (7.7%) and take the square root."
+      },
+      {
+        id: 38,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "Given a 5% required return, are the investment opportunities in the following table equivalent? Opportunity 1 Cash Flows (in thousands, t=0 to t=4): -700, 215, 210, 205, 200. Opportunity 2 Cash Flows (in thousands, t=0 to t=4): -700, 200, 205, 210, 215.",
+        options: ["No, Opportunity 1 is preferable.", "No, Opportunity 2 is preferable.", "Yes."],
+        correctIndex: 0,
+        explanation: "Opportunity 1 pays larger cash flows earlier, giving a higher NPV ($36.87k vs $34.70k).",
+        formula: "NPV(Opp 1) - NPV(Opp 2) = +$2.16k",
+        trap: "Earlier cash inflows have a higher present value when r > 0."
+      },
+      {
+        id: 39,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "If the current exchange rate between the Swedish krona and the US dollar is USD/SEK10.500 and the one-year risk-free interest rates are 3.457% for the Swedish krona and 4.982% for the US dollar, what is the no-arbitrage one-year USD/SEK forward rate?",
+        options: ["USD/SEK9.990", "USD/SEK10.3403", "USD/SEK10.6613"],
+        correctIndex: 1,
+        explanation: "F = 10.50 × e^(0.03457 - 0.04982) = 10.3403.",
+        formula: "F_{P/B} = S_{P/B} × e^(r_P - r_B)",
+        trap: "In USD/SEK, SEK is the price currency and USD is the base currency."
+      },
+      {
+        id: 40,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "An investor deposits £2,000 into an account that pays 6% per annum compounded continuously. The value of the account at the end of four years is closest to:",
+        options: ["£2,525.", "£2,542.", "£2,854."],
+        correctIndex: 1,
+        explanation: "FV = 2,000 × e^(0.06 × 4) = £2,542.50.",
+        formula: "FV = PV × e^(r × N)",
+        trap: "£2,525 uses annual discrete compounding instead of continuous compounding."
+      },
+      {
+        id: 41,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "A consumer purchases an automobile using a loan. The amount borrowed is €30,000, and the terms of the loan call for the loan to be repaid over five years using equal monthly payments with an annual nominal interest rate of 8% and monthly compounding. The monthly payment is closest to:",
+        options: ["€608.29.", "€626.14.", "€700.00."],
+        correctIndex: 0,
+        explanation: "N = 60, I/Y = 8/12 = 0.6667%, PV = 30,000, FV = 0 → PMT = €608.29.",
+        formula: "N = 60, r_m = 0.08 / 12",
+        trap: "Do not compute annual payment and divide by 12."
+      },
+      {
+        id: 42,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "A financial contract offers to pay €1,200 per month for five years with the first payment made immediately. Assuming an annual discount rate of 6.5%, compounded monthly, the present value of the contract is closest to:",
+        options: ["€61,330.", "€61,663.", "€63,731."],
+        correctIndex: 1,
+        explanation: "Annuity due (BGN mode): N = 60, I/Y = 6.5/12, PMT = 1,200, FV = 0 → PV = €61,662.62.",
+        formula: "PV_Due = PV_Ordinary × (1 + r/m)",
+        trap: "First payment immediately = BGN mode (€61,663), not END mode (€61,330)."
+      },
+      {
+        id: 43,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "If the price of a stock goes from $15.00 to $16.20 in one year, the continuously compounded rate of return is closest to:",
+        options: ["7.70%.", "8.00%.", "8.33%."],
+        correctIndex: 0,
+        explanation: "r_cc = ln(16.20 / 15.00) = ln(1.08) = 7.70%.",
+        formula: "r_cc = ln(P₁ / P₀)",
+        trap: "8.00% is the discrete holding period return."
+      },
+      {
+        id: 44,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "An individual wants to be able to spend €80,000 per year for an anticipated 25 years in retirement. To fund this retirement account, he will make annual deposits of €6,608 at the end of each of his working years. He can earn 6% compounded annually on all investments. The minimum number of deposits that are needed to reach his retirement goal is closest to:",
+        options: ["28.", "40.", "51."],
+        correctIndex: 1,
+        explanation: "PV needed at retirement = €1,022,668. Solving for N with FV = 1,022,668, PMT = -6,608, I/Y = 6 gives N = 40.",
+        formula: "Step 1: PV_R = 1,022,668 → Step 2: FV = 1,022,668, PMT = -6,608 → N = 40",
+        trap: "Enter €1,022,668 as FV (not PV) in the accumulation step."
+      },
+      {
+        id: 45,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "An annuity makes seven annual payments of $10,000 each, with the first payment occurring five years from today. If the discount rate is 6% per year, the value of the annuity today is closest to:",
+        options: ["$41,715.", "$44,218.", "$55,824."],
+        correctIndex: 1,
+        explanation: "PV at t=4 is $55,823.81. Discounting back 4 years to t=0: 55,823.81 / 1.06⁴ = $44,218.",
+        formula: "PV₀ = PV₄ / (1 + r)⁴",
+        trap: "First payment at t=5 means END-mode PV is at t=4 (discount 4 years, not 5)."
+      },
+      {
+        id: 46,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "Using a discount rate of 5%, compounded monthly, the present value (PV) of $5,000 to be received three years from today is closest to:",
+        options: ["$4,250.", "$4,305.", "$4,319."],
+        correctIndex: 1,
+        explanation: "PV = 5,000 × (1 + 0.05/12)^(-36) = $4,304.88 ≈ $4,305.",
+        formula: "PV = FV × (1 + r/12)^(-36)",
+        trap: "$4,319 ignores monthly compounding."
+      },
+      {
+        id: 47,
+        topic: "Quantitative Methods",
+        module: "Module 4: The Time Value of Money in Finance",
+        question: "A consultant starts a project today that will last for three years. Her compensation package includes the following end-of-year payments: Year 1 = $100,000; Year 2 = $150,000; Year 3 = $200,000. If she expects to invest these amounts at an annual interest rate of 3%, compounded annually until her retirement 10 years from now, the value at the end of 10 years is closest to:",
+        options: ["$460,590.", "$566,466.", "$618,996."],
+        correctIndex: 1,
+        explanation: "FV₁₀ = 100,000(1.03)⁹ + 150,000(1.03)⁸ + 200,000(1.03)⁷ = $566,466.",
+        formula: "FV₁₀ = CF₁(1+r)⁹ + CF₂(1+r)⁸ + CF₃(1+r)⁷",
+        trap: "10 years from today means t=10 (not 10 years after Year 3)."
       }
     ];
 
     // =========================================================================
-    // 2. LES 2027 STRUCTURE (2,115 OFFICIAL QUESTIONS)
+    // 3. LES 2027 STRUCTURE (2,115 OFFICIAL QUESTIONS)
     // =========================================================================
     const LES_DATA = [
       { topic: "Quantitative Methods", count: 191, modules: ["M1: Returns of Financial Assets (27)", "M2: Types of Financial Returns (4)", "M3: Benchmarking Returns (21)", "M4: Time Value of Money (15)", "M5: Statistical Characteristics (25)", "M6: Statistical Distributions (15)", "M7: Estimation & Hypothesis Testing (34)", "M8: Return & Risk of Portfolio (13)", "M9: Simulation of Asset Prices (13)", "M10: Simple Linear Regression (17)", "M11: Intro to Financial Data Science (7)"] },
@@ -753,7 +1120,7 @@
     ];
 
     // =========================================================================
-    // 3. STATE & PERSISTENT PROGRESS STRUCTURE
+    // 4. STATE & PERSISTENT PROGRESS STRUCTURE (SEPARATES TODAY vs PAST DAYS)
     // =========================================================================
     const STORAGE_KEY = "carmen_cfa_v3_state";
     const GH_CONFIG_KEY = "carmen_cfa_gh_config";
@@ -774,41 +1141,44 @@
     let optionPermutations = {};
     let selectedCalendarDate = getTodayISO();
 
-    // Persistent State (synced locally AND via GitHub progress.json)
     let appState = {
       dailyTarget: 20,
-      // Pre-seeded with your 23 completed questions on Oct 21, 2026 so your phone shows it right away!
       dailyHistory: {
-        "2026-10-21": { count: 23, correct: 17, answeredIds: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23] }
+        "2026-10-21": { count: 23, correct: 17, answeredIds: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23], responses: {} },
+        "2026-10-22": { count: 24, correct: 12, answeredIds: [24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47], responses: {} }
       },
-      answeredMap: {}, // { questionId: { selectedIndex, isCorrect, timestamp } }
+      // Legacy answeredMap + rich questionStats per ID:
+      // questionStats[id] = { attempts, wrongCount, lastIsCorrect, lastSelectedIndex, lastAnsweredDate, history: [{date, isCorrect, topic}] }
+      answeredMap: {},
+      questionStats: {},
       flaggedIds: [],
       lesChecked: {
-        "Quantitative Methods__10": true // Module 11 checked off!
+        "Quantitative Methods__3": true,  // M4 TVM
+        "Quantitative Methods__10": true, // M11 Data Science
+        "Financial Statement Analysis__4": true // M5 Cash Flows II
       },
       lastUpdated: Date.now()
     };
 
-    // =========================================================================
-    // 4. FISHER-YATES UNIFORM SHUFFLE ALGORITHM
-    // =========================================================================
     function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        [arr[i], arr[j]] = [arr[j], arr[i]];
       }
-      return array;
+      return arr;
     }
 
     // =========================================================================
-    // 5. INITIALIZATION & SYNC WITH GITHUB
+    // 5. INITIALIZATION & MIGRATION OF PAST ANSWERS
     // =========================================================================
     window.addEventListener("DOMContentLoaded", async () => {
       loadLocalState();
       updateCountdownHeader();
       await fetchQuestionsJson();
       await pullProgressFromGitHub(false);
-      initQueue("ALL");
+      migrateLegacyState();
+      initQueue("DAILY");
       renderAllUI();
       renderLESAccordion();
       renderCalendarMonths();
@@ -820,10 +1190,6 @@
         if (raw) {
           const parsed = JSON.parse(raw);
           appState = { ...appState, ...parsed };
-          // Ensure Oct 21 has at least the 23 questions if phone was empty
-          if (!appState.dailyHistory["2026-10-21"] || appState.dailyHistory["2026-10-21"].count === 0) {
-            appState.dailyHistory["2026-10-21"] = { count: 23, correct: 17, answeredIds: [] };
-          }
         }
         document.getElementById("dailyTargetSelect").value = String(appState.dailyTarget || 20);
       } catch (e) {
@@ -832,10 +1198,75 @@
       updateCloudBadgeUI();
     }
 
+    // Ensures questions answered yesterday are NOT falsely locked as "answered today",
+    // while preserving all your stats & today's 15 answers!
+    function migrateLegacyState() {
+      if (!appState.questionStats) appState.questionStats = {};
+      const today = getTodayISO();
+      const todayEntry = appState.dailyHistory[today] || { count: 0, correct: 0, answeredIds: [], responses: {} };
+      if (!todayEntry.answeredIds) todayEntry.answeredIds = [];
+      if (!todayEntry.responses) todayEntry.responses = {};
+
+      // Convert any legacy answeredMap entries into questionStats
+      for (const [qIdStr, ansObj] of Object.entries(appState.answeredMap || {})) {
+        const qId = Number(qIdStr);
+        const q = questions.find(x => x.id === qId);
+        if (!q || !ansObj) continue;
+
+        const ansDate = ansObj.dateISO || (ansObj.timestamp ? new Date(ansObj.timestamp).toISOString().slice(0, 10) : "2026-10-22");
+        if (!appState.questionStats[qId]) {
+          appState.questionStats[qId] = {
+            attempts: 1,
+            wrongCount: ansObj.isCorrect ? 0 : 1,
+            lastIsCorrect: !!ansObj.isCorrect,
+            lastSelectedIndex: ansObj.selectedIndex ?? 0,
+            lastAnsweredDate: ansDate,
+            history: [{ date: ansDate, isCorrect: !!ansObj.isCorrect, topic: normalizeTopicName(q.topic) }]
+          };
+        }
+        // Only mark as answered TODAY if it was actually answered today and within today's count
+        if (ansDate === today && todayEntry.answeredIds.includes(qId)) {
+          todayEntry.responses[qId] = {
+            selectedIndex: ansObj.selectedIndex,
+            isCorrect: !!ansObj.isCorrect
+          };
+        }
+      }
+
+      // If todayEntry has answeredIds (e.g. 15 done today) but responses wasn't populated yet:
+      if (todayEntry.count > 0 && Object.keys(todayEntry.responses).length === 0) {
+        // Keep only up to todayEntry.count (e.g. 15) so surplus from yesterday doesn't lock today's remaining 5 slots
+        const validTodayIds = todayEntry.answeredIds.slice(0, todayEntry.count);
+        todayEntry.answeredIds = validTodayIds;
+        validTodayIds.forEach(qId => {
+          const legacy = appState.answeredMap[qId];
+          todayEntry.responses[qId] = {
+            selectedIndex: legacy ? legacy.selectedIndex : 0,
+            isCorrect: legacy ? !!legacy.isCorrect : true
+          };
+        });
+      }
+
+      appState.dailyHistory[today] = todayEntry;
+    }
+
+    function isAnsweredToday(qId) {
+      const today = getTodayISO();
+      const todayEntry = appState.dailyHistory[today];
+      if (!todayEntry) return false;
+      if (todayEntry.responses && todayEntry.responses[qId]) return true;
+      return false;
+    }
+
+    function getTodayResponse(qId) {
+      const today = getTodayISO();
+      return appState.dailyHistory[today]?.responses?.[qId] || null;
+    }
+
     function saveState() {
       appState.lastUpdated = Date.now();
       localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
-      pushProgressToGitHub(false); // Automatic background cloud sync if token configured
+      pushProgressToGitHub(false);
     }
 
     async function fetchQuestionsJson() {
@@ -847,9 +1278,7 @@
             mergeQuestionsIntoBank(remoteQs);
           }
         }
-      } catch (e) {
-        // Fallback to embedded questions
-      }
+      } catch (e) {}
     }
 
     function mergeQuestionsIntoBank(newQs) {
@@ -860,7 +1289,7 @@
         if (!existingByStem.has(key)) {
           existingByStem.set(key, {
             id: existingByStem.size + 1,
-            topic: item.topic || "Quantitative Methods",
+            topic: normalizeTopicName(item.topic),
             module: item.module || "CFA Level I",
             question: item.question,
             options: item.options,
@@ -871,168 +1300,164 @@
           });
         }
       });
-      questions = Array.from(existingByStem.values()).map((q, idx) => ({ ...q, id: idx + 1 }));
+      questions = Array.from(existingByStem.values()).map((q, idx) => ({
+        ...q,
+        id: idx + 1,
+        topic: normalizeTopicName(q.topic)
+      }));
     }
 
     // =========================================================================
-    // 6. GITHUB API CLOUD SYNC (PROGRESS.JSON & QUESTIONS.JSON)
+    // 6. SMART EXAM-WEIGHTED & ERROR/FREQUENCY PRIORITIZED DAILY DRILL ENGINE
     // =========================================================================
-    function getGHConfig() {
-      try {
-        return JSON.parse(localStorage.getItem(GH_CONFIG_KEY) || "null");
-      } catch {
-        return null;
-      }
-    }
+    // Priority Score:
+    // 1. Questions NOT answered today come first.
+    // 2. Questions answered INCORRECTLY last time (+1000 priority) + higher wrongCount (+250 each).
+    // 3. Questions LEAST frequently asked (attempts === 0 gets +500, otherwise -120 * attempts).
+    // 4. Random tie-breaker for variety.
+    function computeQuestionPriority(q) {
+      const st = appState.questionStats[q.id];
+      const doneToday = isAnsweredToday(q.id);
+      if (doneToday) return -10000; // Already done today
 
-    function updateCloudBadgeUI(status = null) {
-      const cfg = getGHConfig();
-      const dot = document.getElementById("cloudDot");
-      const txt = document.getElementById("cloudStatusText");
-      if (!cfg || !cfg.token) {
-        dot.className = "w-1.5 h-1.5 rounded-full bg-amber-400";
-        txt.textContent = "Local Only (Tap to Sync)";
-      } else if (status === "syncing") {
-        dot.className = "w-1.5 h-1.5 rounded-full bg-blue-400 animate-ping";
-        txt.textContent = "Syncing Cloud...";
-      } else if (status === "error") {
-        dot.className = "w-1.5 h-1.5 rounded-full bg-rose-500";
-        txt.textContent = "Sync Error (Check Token)";
+      let score = Math.random() * 25; // subtle tie-breaker
+      if (!st || st.attempts === 0) {
+        score += 600; // Never asked before -> high priority for diversification
       } else {
-        dot.className = "w-1.5 h-1.5 rounded-full bg-emerald-400";
-        txt.textContent = "Cloud Synced ✓";
+        if (!st.lastIsCorrect) score += 1200; // Last attempt was WRONG -> top priority!
+        score += (st.wrongCount || 0) * 300;   // Frequent errors -> boost priority
+        score -= (st.attempts || 0) * 140;     // Less frequently asked -> higher priority
       }
+      return score;
     }
 
-    async function pullProgressFromGitHub(showFeedback = false) {
-      const cfg = getGHConfig();
-      if (!cfg || !cfg.token) {
-        // Even without token, try public fetch of progress.json if it exists on the repo
-        try {
-          const pubRes = await fetch("./progress.json?t=" + Date.now());
-          if (pubRes.ok) {
-            const remoteState = await pubRes.json();
-            mergeRemoteProgress(remoteState);
+    function buildSmartDailyQueue(targetSize) {
+      const today = getTodayISO();
+      const todayEntry = appState.dailyHistory[today] || { count: 0, correct: 0, answeredIds: [], responses: {} };
+      const alreadyDoneTodayIds = Object.keys(todayEntry.responses || {}).map(Number);
+
+      // Keep questions already answered today in the queue so your matrix shows 15/20 Done + 5 Todo!
+      const remainingSlots = Math.max(0, targetSize - alreadyDoneTodayIds.length);
+      if (remainingSlots === 0) {
+        return alreadyDoneTodayIds.slice(0, targetSize);
+      }
+
+      const candidatePool = questions.filter(q => !alreadyDoneTodayIds.includes(q.id));
+
+      // Group candidates by normalized topic and sort each topic by priority (Errors & Least Seen first)
+      const byTopic = {};
+      CFA_TOPIC_WEIGHTS.forEach(w => { byTopic[w.topic] = []; });
+      candidatePool.forEach(q => {
+        const t = normalizeTopicName(q.topic);
+        if (!byTopic[t]) byTopic[t] = [];
+        byTopic[t].push(q);
+      });
+      for (const t of Object.keys(byTopic)) {
+        byTopic[t].sort((a, b) => computeQuestionPriority(b) - computeQuestionPriority(a));
+      }
+
+      // Compute desired topic quotas for the full targetSize based on official CFA exam weights
+      const totalMidpoint = CFA_TOPIC_WEIGHTS.reduce((acc, w) => acc + w.midpoint, 0); // 102.5
+      const selectedNewIds = [];
+
+      // Count how many of each topic were already done today
+      const topicDoneTodayCount = {};
+      alreadyDoneTodayIds.forEach(id => {
+        const q = questions.find(x => x.id === id);
+        if (q) {
+          const t = normalizeTopicName(q.topic);
+          topicDoneTodayCount[t] = (topicDoneTodayCount[t] || 0) + 1;
+        }
+      });
+
+      // Pass 1: Allocate proportional to CFA 2027 Exam Weights
+      CFA_TOPIC_WEIGHTS.forEach(w => {
+        const idealForTopic = Math.max(1, Math.round((w.midpoint / totalMidpoint) * targetSize));
+        const neededForTopic = Math.max(0, idealForTopic - (topicDoneTodayCount[w.topic] || 0));
+        const available = byTopic[w.topic] || [];
+        for (let i = 0; i < neededForTopic && i < available.length; i++) {
+          if (selectedNewIds.length < remainingSlots) {
+            selectedNewIds.push(available[i].id);
           }
-        } catch (e) {}
-        return;
+        }
+      });
+
+      // Pass 2: If some topics in QBank don't have enough questions yet, fill remaining slots
+      // with highest-priority remaining questions across all topics (errors & least seen first)
+      if (selectedNewIds.length < remainingSlots) {
+        const leftover = candidatePool
+          .filter(q => !selectedNewIds.includes(q.id))
+          .sort((a, b) => computeQuestionPriority(b) - computeQuestionPriority(a));
+
+        for (const q of leftover) {
+          if (selectedNewIds.length >= remainingSlots) break;
+          selectedNewIds.push(q.id);
+        }
       }
 
-      updateCloudBadgeUI("syncing");
-      try {
-        const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/progress.json`;
-        const res = await fetch(url, {
-          headers: {
-            "Authorization": `token ${cfg.token}`,
-            "Accept": "application/vnd.github.v3+json"
-          }
-        });
-        if (res.ok) {
-          const data = await res.json();
-          const decoded = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ""))));
-          const remoteState = JSON.parse(decoded);
-          mergeRemoteProgress(remoteState);
-          updateCloudBadgeUI("ok");
-          if (showFeedback) showCloudMessage("✅ Pulled latest progress from GitHub!", "emerald");
-        } else if (res.status === 404) {
-          await pushProgressToGitHub(showFeedback);
-        } else {
-          updateCloudBadgeUI("error");
-          if (showFeedback) showCloudMessage("❌ GitHub API error: check your token permissions.", "rose");
-        }
-      } catch (err) {
-        updateCloudBadgeUI("error");
-      }
+      return [...alreadyDoneTodayIds, ...selectedNewIds];
     }
 
-    function mergeRemoteProgress(remote) {
-      if (!remote) return;
-      // Merge dailyHistory taking the max count for each day so no progress is ever lost
-      const mergedHistory = { ...(appState.dailyHistory || {}) };
-      if (remote.dailyHistory) {
-        for (const [dateKey, rDay] of Object.entries(remote.dailyHistory)) {
-          const lDay = mergedHistory[dateKey];
-          if (!lDay || (rDay.count || 0) >= (lDay.count || 0)) {
-            mergedHistory[dateKey] = rDay;
-          }
-        }
-      }
-      appState.dailyHistory = mergedHistory;
-      appState.answeredMap = { ...(remote.answeredMap || {}), ...(appState.answeredMap || {}) };
-      appState.lesChecked = { ...(remote.lesChecked || {}), ...(appState.lesChecked || {}) };
-      if (remote.dailyTarget) appState.dailyTarget = remote.dailyTarget;
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
-      renderAllUI();
-      renderCalendarMonths();
-      renderLESAccordion();
-    }
-
-    async function pushProgressToGitHub(showFeedback = false) {
-      const cfg = getGHConfig();
-      if (!cfg || !cfg.token) return;
-      updateCloudBadgeUI("syncing");
-      try {
-        const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/progress.json`;
-        let sha = null;
-        const getRes = await fetch(url, {
-          headers: { "Authorization": `token ${cfg.token}`, "Accept": "application/vnd.github.v3+json" }
-        });
-        if (getRes.ok) {
-          const existing = await getRes.json();
-          sha = existing.sha;
-        }
-        const contentStr = JSON.stringify(appState, null, 2);
-        const base64Content = btoa(unescape(encodeURIComponent(contentStr)));
-        const body = {
-          message: `sync: update CFA study progress (${getTodayISO()})`,
-          content: base64Content,
-          ...(sha ? { sha } : {})
-        };
-        const putRes = await fetch(url, {
-          method: "PUT",
-          headers: {
-            "Authorization": `token ${cfg.token}`,
-            "Accept": "application/vnd.github.v3+json",
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(body)
-        });
-        if (putRes.ok) {
-          updateCloudBadgeUI("ok");
-          if (showFeedback) showCloudMessage("✅ Progress saved to GitHub Cloud (progress.json)!", "emerald");
-        } else {
-          updateCloudBadgeUI("error");
-          if (showFeedback) showCloudMessage("❌ Could not write to repo. Ensure token has 'repo' scope.", "rose");
-        }
-      } catch (e) {
-        updateCloudBadgeUI("error");
-      }
-    }
-
-    // =========================================================================
-    // 7. QUIZ ENGINE & DAILY GOAL TRACKER
-    // =========================================================================
-    function initQueue(mode = "ALL") {
+    function initQueue(mode = "DAILY") {
+      const target = appState.dailyTarget || 20;
       if (mode === "DAILY") {
-        const unanswered = questions.filter(q => !appState.answeredMap[q.id]);
-        const wrong = questions.filter(q => appState.answeredMap[q.id] && !appState.answeredMap[q.id].isCorrect);
-        const rest = questions.filter(q => appState.answeredMap[q.id] && appState.answeredMap[q.id].isCorrect);
-        const combined = [...shuffleArray(unanswered), ...shuffleArray(wrong), ...shuffleArray(rest)];
-        activeQueue = combined.slice(0, appState.dailyTarget || 20).map(q => q.id);
+        activeQueue = buildSmartDailyQueue(target);
       } else if (mode === "UNANSWERED") {
-        activeQueue = shuffleArray(questions.filter(q => !appState.answeredMap[q.id]).map(q => q.id));
+        activeQueue = questions
+          .filter(q => !appState.questionStats[q.id] || appState.questionStats[q.id].attempts === 0)
+          .sort((a, b) => computeQuestionPriority(b) - computeQuestionPriority(a))
+          .map(q => q.id);
       } else if (mode === "WRONG") {
-        activeQueue = shuffleArray(questions.filter(q => appState.answeredMap[q.id] && !appState.answeredMap[q.id].isCorrect).map(q => q.id));
+        activeQueue = questions
+          .filter(q => {
+            const st = appState.questionStats[q.id];
+            return st && (!st.lastIsCorrect || st.wrongCount > 0);
+          })
+          .sort((a, b) => computeQuestionPriority(b) - computeQuestionPriority(a))
+          .map(q => q.id);
       } else if (mode === "ALL") {
-        activeQueue = shuffleArray(questions.map(q => q.id));
+        activeQueue = questions
+          .slice()
+          .sort((a, b) => computeQuestionPriority(b) - computeQuestionPriority(a))
+          .map(q => q.id);
       } else {
-        activeQueue = shuffleArray(questions.filter(q => q.topic.toLowerCase().includes(mode.toLowerCase())).map(q => q.id));
+        activeQueue = questions
+          .filter(q => normalizeTopicName(q.topic).toLowerCase().includes(mode.toLowerCase()))
+          .sort((a, b) => computeQuestionPriority(b) - computeQuestionPriority(a))
+          .map(q => q.id);
       }
-      if (activeQueue.length === 0) activeQueue = questions.map(q => q.id);
-      currentPos = 0;
+
+      if (activeQueue.length === 0) {
+        activeQueue = questions.map(q => q.id);
+      }
+
+      // Automatically position cursor on the first question NOT yet answered today!
+      const firstTodoIdx = activeQueue.findIndex(id => !isAnsweredToday(id));
+      currentPos = firstTodoIdx !== -1 ? firstTodoIdx : 0;
       selectedChoice = null;
     }
 
+    function rebuildSmartDailyQueue() {
+      document.getElementById("topicSelect").value = "DAILY";
+      initQueue("DAILY");
+      renderAllUI();
+    }
+
+    function jumpToNextUnansweredToday() {
+      const nextIdx = activeQueue.findIndex((id, idx) => idx > currentPos && !isAnsweredToday(id));
+      if (nextIdx !== -1) {
+        currentPos = nextIdx;
+      } else {
+        const anyIdx = activeQueue.findIndex(id => !isAnsweredToday(id));
+        if (anyIdx !== -1) currentPos = anyIdx;
+      }
+      selectedChoice = null;
+      renderAllUI();
+    }
+
+    // =========================================================================
+    // 7. RENDER QUIZ & SUBMIT ANSWER (DAILY-AWARE)
+    // =========================================================================
     function getCurrentQuestion() {
       const qId = activeQueue[currentPos] || questions[0].id;
       return questions.find(q => q.id === qId) || questions[0];
@@ -1042,19 +1467,36 @@
       const q = getCurrentQuestion();
       if (!q) return;
 
-      document.getElementById("qTopicBadge").textContent = q.topic;
+      const meta = getTopicMeta(q.topic);
+      document.getElementById("qTopicBadge").textContent = meta.displayName || meta.topic;
+      document.getElementById("qWeightBadge").textContent = `S${meta.session} · Weight: ${meta.range}`;
       document.getElementById("qModuleBadge").textContent = q.module || "CFA Level I";
       document.getElementById("qCurrentIndex").textContent = currentPos + 1;
       document.getElementById("qTotalIndex").textContent = activeQueue.length;
       document.getElementById("qStem").textContent = q.question;
       document.getElementById("totalPoolCount").textContent = questions.length;
 
-      // Option Permutations if Shuffle A/B/C enabled
+      // Question History Badge (Shows Attempts & Past Error Status)
+      const st = appState.questionStats[q.id];
+      const histBadge = document.getElementById("qHistoryBadge");
+      if (!st || st.attempts === 0) {
+        histBadge.textContent = "🆕 Never Seen";
+        histBadge.className = "text-[10px] font-mono px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200";
+      } else {
+        const lastStatus = st.lastIsCorrect ? "✓ Last Correct" : "⚠️ Past Error";
+        histBadge.textContent = `Seen ${st.attempts}x · ${lastStatus}`;
+        histBadge.className = st.lastIsCorrect
+          ? "text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200"
+          : "text-[10px] font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-900 border border-amber-300 font-bold";
+      }
+
       if (!optionPermutations[q.id]) {
         optionPermutations[q.id] = shuffleChoicesEnabled ? shuffleArray([0, 1, 2]) : [0, 1, 2];
       }
       const perm = shuffleChoicesEnabled ? optionPermutations[q.id] : [0, 1, 2];
-      const existingAns = appState.answeredMap[q.id];
+
+      // Key fix: Only lock the question if it was answered TODAY!
+      const todayAns = getTodayResponse(q.id);
 
       const container = document.getElementById("optionsContainer");
       container.innerHTML = "";
@@ -1065,12 +1507,12 @@
         let stateClass = "border-slate-200 bg-white";
         let badgeClass = "bg-slate-100 text-slate-700";
 
-        if (existingAns) {
+        if (todayAns) {
           card.classList.add("disabled", "cursor-default");
           if (origIdx === q.correctIndex) {
             stateClass = "option-correct";
             badgeClass = "bg-emerald-600 text-white";
-          } else if (origIdx === existingAns.selectedIndex && !existingAns.isCorrect) {
+          } else if (origIdx === todayAns.selectedIndex && !todayAns.isCorrect) {
             stateClass = "option-wrong";
             badgeClass = "bg-rose-600 text-white";
           }
@@ -1094,13 +1536,12 @@
         container.appendChild(card);
       });
 
-      // Rationale Panel
       const ratPanel = document.getElementById("rationalePanel");
       const submitBtn = document.getElementById("submitBtn");
-      if (existingAns) {
+      if (todayAns) {
         ratPanel.classList.remove("hidden");
         const banner = document.getElementById("rationaleBanner");
-        if (existingAns.isCorrect) {
+        if (todayAns.isCorrect) {
           banner.textContent = "✓ Correct Answer";
           banner.className = "text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300";
         } else {
@@ -1110,7 +1551,7 @@
         document.getElementById("rationaleText").textContent = q.explanation;
         document.getElementById("rationaleFormula").textContent = q.formula || "Apply standard CFA LOS principle.";
         document.getElementById("rationaleTrap").textContent = q.trap || "Watch out for distractor wording.";
-        submitBtn.textContent = "✓ Answered (Click to Retry)";
+        submitBtn.textContent = "🔄 Re-attempt Question";
         submitBtn.className = "px-5 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs transition";
       } else {
         ratPanel.classList.add("hidden");
@@ -1124,9 +1565,11 @@
 
     function submitAnswer() {
       const q = getCurrentQuestion();
-      if (appState.answeredMap[q.id]) {
-        // Allow retry
-        delete appState.answeredMap[q.id];
+      const today = getTodayISO();
+
+      // If already answered today, clicking button unlocks it to re-practice without double-counting
+      if (isAnsweredToday(q.id)) {
+        delete appState.dailyHistory[today].responses[q.id];
         selectedChoice = null;
         renderAllUI();
         return;
@@ -1134,30 +1577,189 @@
       if (selectedChoice === null) return;
 
       const isCorrect = selectedChoice === q.correctIndex;
-      appState.answeredMap[q.id] = {
+
+      // 1. Update Today's Log
+      if (!appState.dailyHistory[today]) {
+        appState.dailyHistory[today] = { count: 0, correct: 0, answeredIds: [], responses: {} };
+      }
+      const todayEntry = appState.dailyHistory[today];
+      if (!todayEntry.responses) todayEntry.responses = {};
+      if (!todayEntry.answeredIds) todayEntry.answeredIds = [];
+
+      // Increment daily counter only once per unique question answered today
+      if (!todayEntry.answeredIds.includes(q.id)) {
+        todayEntry.count += 1;
+        if (isCorrect) todayEntry.correct += 1;
+        todayEntry.answeredIds.push(q.id);
+      }
+      todayEntry.responses[q.id] = {
         selectedIndex: selectedChoice,
         isCorrect,
         timestamp: Date.now()
       };
 
-      // Log to Today's Calendar History
-      const today = getTodayISO();
-      if (!appState.dailyHistory[today]) {
-        appState.dailyHistory[today] = { count: 0, correct: 0, answeredIds: [] };
+      // 2. Update Global Question Frequency & Error Stats (for 14-day table & smart queue)
+      if (!appState.questionStats[q.id]) {
+        appState.questionStats[q.id] = {
+          attempts: 0,
+          wrongCount: 0,
+          lastIsCorrect: isCorrect,
+          lastSelectedIndex: selectedChoice,
+          lastAnsweredDate: today,
+          history: []
+        };
       }
-      appState.dailyHistory[today].count += 1;
-      if (isCorrect) appState.dailyHistory[today].correct += 1;
-      if (!appState.dailyHistory[today].answeredIds.includes(q.id)) {
-        appState.dailyHistory[today].answeredIds.push(q.id);
-      }
+      const st = appState.questionStats[q.id];
+      st.attempts += 1;
+      if (!isCorrect) st.wrongCount += 1;
+      st.lastIsCorrect = isCorrect;
+      st.lastSelectedIndex = selectedChoice;
+      st.lastAnsweredDate = today;
+      if (!st.history) st.history = [];
+      st.history.push({
+        date: today,
+        isCorrect,
+        topic: normalizeTopicName(q.topic)
+      });
+
+      // Keep legacy answeredMap updated for backward compatibility
+      appState.answeredMap[q.id] = {
+        selectedIndex: selectedChoice,
+        isCorrect,
+        dateISO: today,
+        timestamp: Date.now()
+      };
 
       saveState();
       renderAllUI();
       renderCalendarMonths();
     }
 
-    function computeCurrentStreak() {
+    // =========================================================================
+    // 8. 14-DAY ROLLING TOPIC PERFORMANCE REPORT & CALENDAR HEATMAP
+    // =========================================================================
+    function get14DayCutoffISO() {
+      const d = new Date();
+      d.setDate(d.getDate() - 14);
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      return `${yyyy}-${mm}-${dd}`;
+    }
+
+    function compute14DayTopicStats() {
+      const cutoff = get14DayCutoffISO();
+      const statsByTopic = {};
+      CFA_TOPIC_WEIGHTS.forEach(w => {
+        statsByTopic[w.topic] = { attempts: 0, correct: 0, poolSize: 0 };
+      });
+
+      questions.forEach(q => {
+        const t = normalizeTopicName(q.topic);
+        if (!statsByTopic[t]) statsByTopic[t] = { attempts: 0, correct: 0, poolSize: 0 };
+        statsByTopic[t].poolSize += 1;
+
+        const st = appState.questionStats[q.id];
+        if (st && Array.isArray(st.history)) {
+          st.history.forEach(h => {
+            if (!h.date || h.date >= cutoff) {
+              statsByTopic[t].attempts += 1;
+              if (h.isCorrect) statsByTopic[t].correct += 1;
+            }
+          });
+        }
+      });
+
+      return statsByTopic;
+    }
+
+    function renderTopicReportTable() {
+      const tbody = document.getElementById("topicReportTableBody");
+      if (!tbody) return;
+      tbody.innerHTML = "";
+
+      const statsByTopic = compute14DayTopicStats();
       const target = appState.dailyTarget || 20;
+      const totalMidpoint = CFA_TOPIC_WEIGHTS.reduce((a, b) => a + b.midpoint, 0);
+
+      CFA_TOPIC_WEIGHTS.forEach(w => {
+        const data = statsByTopic[w.topic] || { attempts: 0, correct: 0, poolSize: 0 };
+        const acc = data.attempts > 0 ? Math.round((data.correct / data.attempts) * 100) : null;
+        const dailyShare = Math.max(1, Math.round((w.midpoint / totalMidpoint) * target));
+
+        let rowClass = "bg-white hover:bg-slate-50";
+        let badgeHtml = `<span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-semibold">No 14d Data Yet</span>`;
+        let accHtml = `<span class="mono text-slate-400">--%</span>`;
+
+        if (acc !== null) {
+          if (acc < 60) {
+            rowClass = "bg-rose-50/70 hover:bg-rose-100/70";
+            badgeHtml = `<span class="px-2.5 py-1 rounded-md bg-rose-600 text-white font-bold text-[11px]">🔴 Priority Work (&lt;60%)</span>`;
+            accHtml = `<span class="mono font-extrabold text-rose-700 text-sm">${acc}%</span>`;
+          } else if (acc < 70) {
+            rowClass = "bg-amber-50/70 hover:bg-amber-100/70";
+            badgeHtml = `<span class="px-2.5 py-1 rounded-md bg-amber-500 text-slate-950 font-bold text-[11px]">🟠 Borderline (60–69%)</span>`;
+            accHtml = `<span class="mono font-extrabold text-amber-700 text-sm">${acc}%</span>`;
+          } else {
+            rowClass = "bg-emerald-50/70 hover:bg-emerald-100/70";
+            badgeHtml = `<span class="px-2.5 py-1 rounded-md bg-emerald-600 text-white font-bold text-[11px]">🟢 Strong (≥70% MPS)</span>`;
+            accHtml = `<span class="mono font-extrabold text-emerald-700 text-sm">${acc}%</span>`;
+          }
+        }
+
+        const tr = document.createElement("tr");
+        tr.className = `${rowClass} transition`;
+        tr.innerHTML = `
+          <td class="py-3 px-3 font-mono font-bold text-slate-600">Session ${w.session}</td>
+          <td class="py-3 px-3 font-bold text-slate-900">${w.displayName || w.topic}</td>
+          <td class="py-3 px-3 text-center font-mono font-bold text-slate-700">${w.range}</td>
+          <td class="py-3 px-3 text-center font-mono text-slate-600">~${dailyShare} Qs/day</td>
+          <td class="py-3 px-3 text-center font-mono text-slate-600">${data.poolSize} Qs</td>
+          <td class="py-3 px-3 text-center font-mono font-semibold text-slate-800">${data.correct} / ${data.attempts}</td>
+          <td class="py-3 px-3 text-center">${accHtml}</td>
+          <td class="py-3 px-3 text-right">
+            <button onclick="drillSpecificTopic('${w.topic}')" class="inline-flex items-center gap-1.5 hover:opacity-90">
+              ${badgeHtml}
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function drillSpecificTopic(topicName) {
+      document.getElementById("topicSelect").value = topicName;
+      initQueue(topicName);
+      switchTab("drill");
+      renderAllUI();
+    }
+
+    function startWeakestTopicsDrill() {
+      const statsByTopic = compute14DayTopicStats();
+      const weakTopics = CFA_TOPIC_WEIGHTS
+        .map(w => {
+          const d = statsByTopic[w.topic];
+          const acc = d && d.attempts > 0 ? (d.correct / d.attempts) * 100 : 55;
+          return { topic: w.topic, acc };
+        })
+        .filter(x => x.acc < 70)
+        .map(x => x.topic);
+
+      const pool = questions
+        .filter(q => weakTopics.includes(normalizeTopicName(q.topic)))
+        .sort((a, b) => computeQuestionPriority(b) - computeQuestionPriority(a));
+
+      activeQueue = (pool.length > 0 ? pool : questions).slice(0, appState.dailyTarget || 20).map(q => q.id);
+      currentPos = 0;
+      selectedChoice = null;
+      switchTab("drill");
+      renderAllUI();
+    }
+
+    // =========================================================================
+    // 9. DAILY WIDGETS, MATRIX & CALENDAR RENDERERS
+    // =========================================================================
+    function computeCurrentStreak() {
       let streak = 0;
       const d = new Date();
       for (let i = 0; i < 150; i++) {
@@ -1193,29 +1795,33 @@
       document.getElementById("todayAccuracyText").textContent = todayAcc;
       document.getElementById("cardStreakCount").textContent = `${streak} 🔥`;
 
-      // Global accuracy
-      const ansValues = Object.values(appState.answeredMap);
-      if (ansValues.length > 0) {
-        const corr = ansValues.filter(a => a.isCorrect).length;
-        document.getElementById("sessionScore").textContent = Math.round((corr / ansValues.length) * 100) + "%";
-      } else {
-        document.getElementById("sessionScore").textContent = todayAcc;
-      }
+      // 14-day rolling accuracy in header
+      const stats14 = compute14DayTopicStats();
+      let totA = 0, totC = 0;
+      Object.values(stats14).forEach(v => { totA += v.attempts; totC += v.correct; });
+      document.getElementById("sessionScore").textContent = totA > 0 ? Math.round((totC / totA) * 100) + "%" : todayAcc;
     }
 
     function renderMatrix() {
       const grid = document.getElementById("navigatorGrid");
       grid.innerHTML = "";
-      let answeredInQueue = 0;
+      let answeredTodayInQueue = 0;
 
       activeQueue.forEach((qId, idx) => {
-        const ans = appState.answeredMap[qId];
-        if (ans) answeredInQueue++;
+        const todayAns = getTodayResponse(qId);
+        const pastStats = appState.questionStats[qId];
+        if (todayAns) answeredTodayInQueue++;
+
         const btn = document.createElement("button");
         let color = "bg-slate-100 text-slate-700 border border-slate-300";
-        if (ans) {
-          color = ans.isCorrect ? "bg-emerald-500 text-white font-bold" : "bg-rose-500 text-white font-bold";
+
+        if (todayAns) {
+          color = todayAns.isCorrect ? "bg-emerald-500 text-white font-bold" : "bg-rose-500 text-white font-bold";
+        } else if (pastStats && !pastStats.lastIsCorrect) {
+          // Highlight past errors in amber so you know it's a priority remediation question, but UNLOCKED for today!
+          color = "bg-amber-100 text-amber-900 border border-amber-400 font-bold";
         }
+
         const ring = idx === currentPos ? "ring-2 ring-blue-600 ring-offset-1" : "";
         btn.className = `h-8 rounded-lg text-xs mono flex items-center justify-center transition ${color} ${ring}`;
         btn.textContent = idx + 1;
@@ -1226,12 +1832,9 @@
         };
         grid.appendChild(btn);
       });
-      document.getElementById("matrixProgressText").textContent = `${answeredInQueue} / ${activeQueue.length}`;
+      document.getElementById("matrixProgressText").textContent = `${answeredTodayInQueue} / ${activeQueue.length} Done Today`;
     }
 
-    // =========================================================================
-    // 8. HEATMAP CALENDAR (OCTOBER 2026 -> FEBRUARY 2027)
-    // =========================================================================
     const STUDY_MONTHS = [
       { year: 2026, month: 9, name: "October 2026" },
       { year: 2026, month: 10, name: "November 2026" },
@@ -1241,6 +1844,7 @@
     ];
 
     function renderCalendarMonths() {
+      renderTopicReportTable();
       const container = document.getElementById("calendarMonthsContainer");
       if (!container) return;
       container.innerHTML = "";
@@ -1248,7 +1852,6 @@
       const target = appState.dailyTarget || 20;
       const todayISO = getTodayISO();
 
-      // Compute Global Calendar KPIs
       let activeDays = 0;
       let totalLoggedQs = 0;
       let totalLoggedCorrect = 0;
@@ -1270,7 +1873,6 @@
 
         const firstDay = new Date(mObj.year, mObj.month, 1);
         const daysInMonth = new Date(mObj.year, mObj.month + 1, 0).getDate();
-        // Monday-first offset (0 = Mon, ..., 6 = Sun)
         const startOffset = (firstDay.getDay() + 6) % 7;
 
         let html = `
@@ -1346,7 +1948,7 @@
 
     function openLogPastDayModal(defaultDate = null) {
       const dateStr = defaultDate || getTodayISO();
-      const existing = appState.dailyHistory[dateStr] || { count: 23, correct: 17 };
+      const existing = appState.dailyHistory[dateStr] || { count: 20, correct: 15 };
       document.getElementById("logDateInput").value = dateStr;
       document.getElementById("logCountInput").value = existing.count;
       document.getElementById("logCorrectInput").value = existing.correct;
@@ -1366,7 +1968,8 @@
       appState.dailyHistory[dateStr] = {
         count,
         correct,
-        answeredIds: appState.dailyHistory[dateStr]?.answeredIds || []
+        answeredIds: appState.dailyHistory[dateStr]?.answeredIds || [],
+        responses: appState.dailyHistory[dateStr]?.responses || {}
       };
       saveState();
       renderAllUI();
@@ -1376,8 +1979,140 @@
     }
 
     // =========================================================================
-    // 9. LES ACCORDION & NAVIGATION HELPERS
+    // 10. GITHUB CLOUD SYNC & NAVIGATION HELPERS
     // =========================================================================
+    function getGHConfig() {
+      try {
+        return JSON.parse(localStorage.getItem(GH_CONFIG_KEY) || "null");
+      } catch {
+        return null;
+      }
+    }
+
+    function updateCloudBadgeUI(status = null) {
+      const cfg = getGHConfig();
+      const dot = document.getElementById("cloudDot");
+      const txt = document.getElementById("cloudStatusText");
+      if (!cfg || !cfg.token) {
+        dot.className = "w-1.5 h-1.5 rounded-full bg-amber-400";
+        txt.textContent = "Local Only (Tap to Sync)";
+      } else if (status === "syncing") {
+        dot.className = "w-1.5 h-1.5 rounded-full bg-blue-400 animate-ping";
+        txt.textContent = "Syncing Cloud...";
+      } else if (status === "error") {
+        dot.className = "w-1.5 h-1.5 rounded-full bg-rose-500";
+        txt.textContent = "Sync Error (Check Token)";
+      } else {
+        dot.className = "w-1.5 h-1.5 rounded-full bg-emerald-400";
+        txt.textContent = "Cloud Synced ✓";
+      }
+    }
+
+    async function pullProgressFromGitHub(showFeedback = false) {
+      const cfg = getGHConfig();
+      if (!cfg || !cfg.token) {
+        try {
+          const pubRes = await fetch("./progress.json?t=" + Date.now());
+          if (pubRes.ok) {
+            const remoteState = await pubRes.json();
+            mergeRemoteProgress(remoteState);
+          }
+        } catch (e) {}
+        return;
+      }
+
+      updateCloudBadgeUI("syncing");
+      try {
+        const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/progress.json`;
+        const res = await fetch(url, {
+          headers: {
+            "Authorization": `token ${cfg.token}`,
+            "Accept": "application/vnd.github.v3+json"
+          }
+        });
+        if (res.ok) {
+          const data = await res.json();
+          const decoded = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ""))));
+          const remoteState = JSON.parse(decoded);
+          mergeRemoteProgress(remoteState);
+          updateCloudBadgeUI("ok");
+          if (showFeedback) showCloudMessage("✅ Pulled latest progress from GitHub!", "emerald");
+        } else if (res.status === 404) {
+          await pushProgressToGitHub(showFeedback);
+        } else {
+          updateCloudBadgeUI("error");
+          if (showFeedback) showCloudMessage("❌ GitHub API error: check your token permissions.", "rose");
+        }
+      } catch (err) {
+        updateCloudBadgeUI("error");
+      }
+    }
+
+    function mergeRemoteProgress(remote) {
+      if (!remote) return;
+      const mergedHistory = { ...(appState.dailyHistory || {}) };
+      if (remote.dailyHistory) {
+        for (const [dateKey, rDay] of Object.entries(remote.dailyHistory)) {
+          const lDay = mergedHistory[dateKey];
+          if (!lDay || (rDay.count || 0) >= (lDay.count || 0)) {
+            mergedHistory[dateKey] = rDay;
+          }
+        }
+      }
+      appState.dailyHistory = mergedHistory;
+      appState.answeredMap = { ...(remote.answeredMap || {}), ...(appState.answeredMap || {}) };
+      appState.questionStats = { ...(remote.questionStats || {}), ...(appState.questionStats || {}) };
+      appState.lesChecked = { ...(remote.lesChecked || {}), ...(appState.lesChecked || {}) };
+      if (remote.dailyTarget) appState.dailyTarget = remote.dailyTarget;
+      migrateLegacyState();
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+      renderAllUI();
+      renderCalendarMonths();
+      renderLESAccordion();
+    }
+
+    async function pushProgressToGitHub(showFeedback = false) {
+      const cfg = getGHConfig();
+      if (!cfg || !cfg.token) return;
+      updateCloudBadgeUI("syncing");
+      try {
+        const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/progress.json`;
+        let sha = null;
+        const getRes = await fetch(url, {
+          headers: { "Authorization": `token ${cfg.token}`, "Accept": "application/vnd.github.v3+json" }
+        });
+        if (getRes.ok) {
+          const existing = await getRes.json();
+          sha = existing.sha;
+        }
+        const contentStr = JSON.stringify(appState, null, 2);
+        const base64Content = btoa(unescape(encodeURIComponent(contentStr)));
+        const body = {
+          message: `sync: update CFA study progress (${getTodayISO()})`,
+          content: base64Content,
+          ...(sha ? { sha } : {})
+        };
+        const putRes = await fetch(url, {
+          method: "PUT",
+          headers: {
+            "Authorization": `token ${cfg.token}`,
+            "Accept": "application/vnd.github.v3+json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(body)
+        });
+        if (putRes.ok) {
+          updateCloudBadgeUI("ok");
+          if (showFeedback) showCloudMessage("✅ Progress saved to GitHub Cloud (progress.json)!", "emerald");
+        } else {
+          updateCloudBadgeUI("error");
+          if (showFeedback) showCloudMessage("❌ Could not write to repo. Ensure token has 'repo' scope.", "rose");
+        }
+      } catch (e) {
+        updateCloudBadgeUI("error");
+      }
+    }
+
     function renderLESAccordion() {
       const acc = document.getElementById("lesTopicsAccordion");
       if (!acc) return;
@@ -1433,14 +2168,8 @@
       }
     }
 
-    function pickRandomQuestion() {
-      currentPos = Math.floor(Math.random() * activeQueue.length);
-      selectedChoice = null;
-      renderAllUI();
-    }
-
     function shuffleCurrentQueue() {
-      shuffleArray(activeQueue);
+      activeQueue = shuffleArray(activeQueue);
       currentPos = 0;
       selectedChoice = null;
       renderAllUI();
@@ -1459,6 +2188,7 @@
 
     function updateDailyTarget(val) {
       appState.dailyTarget = parseInt(val, 10) || 20;
+      initQueue("DAILY");
       saveState();
       renderAllUI();
       renderCalendarMonths();
@@ -1484,14 +2214,14 @@
       ["quiz", "calendar", "les"].forEach(v => {
         document.getElementById(`view-${v}`).classList.add("hidden");
       });
-      ["drill", "calendar", "les", "mock"].forEach(t => {
+      ["drill", "calendar", "les"].forEach(t => {
         const btn = document.getElementById(`tab-${t}`);
         if (btn) btn.className = "px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap";
       });
 
-      if (tab === "drill" || tab === "mock") {
+      if (tab === "drill") {
         document.getElementById("view-quiz").classList.remove("hidden");
-        document.getElementById(`tab-${tab}`).className = "px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white transition whitespace-nowrap";
+        document.getElementById("tab-drill").className = "px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white transition whitespace-nowrap";
       } else if (tab === "calendar") {
         document.getElementById("view-calendar").classList.remove("hidden");
         document.getElementById("tab-calendar").className = "px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white transition whitespace-nowrap";
@@ -1510,7 +2240,6 @@
       document.getElementById("daysRemainingHeader").textContent = `${diff} days left`;
     }
 
-    // Cloud Modal Helpers
     function openCloudModal() {
       const cfg = getGHConfig();
       if (cfg) {
@@ -1537,7 +2266,6 @@
       el.textContent = msg;
     }
 
-    // QBank Modal Helpers
     function openQBankModal() {
       document.getElementById("qbankModal").classList.remove("hidden");
     }
@@ -1550,7 +2278,7 @@
         const parsed = JSON.parse(raw);
         const arr = Array.isArray(parsed) ? parsed : [parsed];
         mergeQuestionsIntoBank(arr);
-        initQueue("ALL");
+        initQueue("DAILY");
         renderAllUI();
         alert(`Successfully merged! Total QBank is now ${questions.length} questions.`);
         closeQBankModal();
