@@ -45,8 +45,8 @@
       ]
     },
     "2026-10-23": {
-      "count": 14,
-      "correct": 14,
+      "count": 15,
+      "correct": 15,
       "answeredIds": [
         5,
         19,
@@ -61,7 +61,8 @@
         1,
         23,
         11,
-        20
+        20,
+        2
       ]
     }
   },
@@ -70,6 +71,11 @@
       "selectedIndex": 2,
       "isCorrect": true,
       "timestamp": 1792741185088
+    },
+    "2": {
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "timestamp": 1792741290282
     },
     "3": {
       "selectedIndex": 0,
@@ -184,5 +190,5 @@
     "Quantitative Methods__1": true,
     "Quantitative Methods__3": true
   },
-  "lastUpdated": 1792741284492
+  "lastUpdated": 1792741290282
 }
