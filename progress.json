@@ -158,8 +158,8 @@
       }
     },
     "2026-10-24": {
-      "count": 18,
-      "correct": 13,
+      "count": 19,
+      "correct": 14,
       "answeredIds": [
         16,
         46,
@@ -178,7 +178,8 @@
         29,
         35,
         32,
-        27
+        27,
+        44
       ],
       "responses": {
         "9": {
@@ -265,6 +266,11 @@
           "selectedIndex": 1,
           "isCorrect": false,
           "timestamp": 1792852905362
+        },
+        "44": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1792854105664
         },
         "46": {
           "selectedIndex": 2,
@@ -468,6 +474,12 @@
       "isCorrect": false,
       "dateISO": "2026-10-24",
       "timestamp": 1792852905362
+    },
+    "44": {
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "dateISO": "2026-10-24",
+      "timestamp": 1792854105664
     },
     "46": {
       "selectedIndex": 2,
@@ -1022,6 +1034,20 @@
         }
       ]
     },
+    "44": {
+      "attempts": 1,
+      "wrongCount": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-10-24",
+      "history": [
+        {
+          "date": "2026-10-24",
+          "isCorrect": true,
+          "topic": "Quantitative Methods"
+        }
+      ]
+    },
     "46": {
       "attempts": 1,
       "wrongCount": 1,
@@ -1045,5 +1071,5 @@
     "Quantitative Methods__3": true,
     "Economics__5": true
   },
-  "lastUpdated": 1792853998476
+  "lastUpdated": 1792854105664
 }
