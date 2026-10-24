@@ -156,6 +156,20 @@
           "timestamp": 1792760606977
         }
       }
+    },
+    "2026-10-24": {
+      "count": 1,
+      "correct": 1,
+      "answeredIds": [
+        16
+      ],
+      "responses": {
+        "16": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1792852509935
+        }
+      }
     }
   },
   "answeredMap": {
@@ -232,14 +246,13 @@
     "15": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-23",
-      "timestamp": 1792760141115
+      "timestamp": 1792698008479
     },
     "16": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-23",
-      "timestamp": 1792760115666
+      "dateISO": "2026-10-24",
+      "timestamp": 1792852509935
     },
     "17": {
       "selectedIndex": 2,
@@ -247,10 +260,9 @@
       "timestamp": 1792697819095
     },
     "18": {
-      "selectedIndex": 1,
-      "isCorrect": true,
-      "dateISO": "2026-10-23",
-      "timestamp": 1792760185181
+      "selectedIndex": 0,
+      "isCorrect": false,
+      "timestamp": 1792602342536
     },
     "19": {
       "selectedIndex": 2,
@@ -507,11 +519,11 @@
       ]
     },
     "16": {
-      "attempts": 2,
+      "attempts": 3,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-23",
+      "lastAnsweredDate": "2026-10-24",
       "history": [
         {
           "date": "2026-10-22",
@@ -520,6 +532,11 @@
         },
         {
           "date": "2026-10-23",
+          "isCorrect": true,
+          "topic": "Ethical and Professional Standards"
+        },
+        {
+          "date": "2026-10-24",
           "isCorrect": true,
           "topic": "Ethical and Professional Standards"
         }
@@ -665,5 +682,5 @@
     "Quantitative Methods__3": true,
     "Economics__5": true
   },
-  "lastUpdated": 1792760606977
+  "lastUpdated": 1792852509935
 }
