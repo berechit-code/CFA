@@ -158,7 +158,7 @@
       }
     },
     "2026-10-24": {
-      "count": 8,
+      "count": 9,
       "correct": 6,
       "answeredIds": [
         16,
@@ -168,9 +168,15 @@
         24,
         23,
         18,
-        11
+        11,
+        9
       ],
       "responses": {
+        "9": {
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timestamp": 1792853312072
+        },
         "11": {
           "selectedIndex": 1,
           "isCorrect": true,
@@ -256,9 +262,10 @@
       "timestamp": 1792741088865
     },
     "9": {
-      "selectedIndex": 0,
-      "isCorrect": true,
-      "timestamp": 1792741109884
+      "selectedIndex": 1,
+      "isCorrect": false,
+      "dateISO": "2026-10-24",
+      "timestamp": 1792853312072
     },
     "10": {
       "selectedIndex": 1,
@@ -485,15 +492,20 @@
       ]
     },
     "9": {
-      "attempts": 1,
-      "wrongCount": 0,
-      "lastIsCorrect": true,
-      "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-23",
+      "attempts": 2,
+      "wrongCount": 1,
+      "lastIsCorrect": false,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-10-24",
       "history": [
         {
           "date": "2026-10-23",
           "isCorrect": true,
+          "topic": "Derivatives"
+        },
+        {
+          "date": "2026-10-24",
+          "isCorrect": false,
           "topic": "Derivatives"
         }
       ]
@@ -822,5 +834,5 @@
     "Quantitative Methods__3": true,
     "Economics__5": true
   },
-  "lastUpdated": 1792853306288
+  "lastUpdated": 1792853312072
 }
