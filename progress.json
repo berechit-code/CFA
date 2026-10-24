@@ -158,21 +158,27 @@
       }
     },
     "2026-10-24": {
-      "count": 6,
-      "correct": 4,
+      "count": 7,
+      "correct": 5,
       "answeredIds": [
         16,
         46,
         41,
         25,
         24,
-        23
+        23,
+        18
       ],
       "responses": {
         "16": {
           "selectedIndex": 1,
           "isCorrect": true,
           "timestamp": 1792852509935
+        },
+        "18": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1792853295533
         },
         "23": {
           "selectedIndex": 1,
@@ -290,9 +296,10 @@
       "timestamp": 1792697819095
     },
     "18": {
-      "selectedIndex": 0,
-      "isCorrect": false,
-      "timestamp": 1792602342536
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "dateISO": "2026-10-24",
+      "timestamp": 1792853295533
     },
     "19": {
       "selectedIndex": 2,
@@ -612,11 +619,11 @@
       ]
     },
     "18": {
-      "attempts": 2,
+      "attempts": 3,
       "wrongCount": 1,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-23",
+      "lastAnsweredDate": "2026-10-24",
       "history": [
         {
           "date": "2026-10-22",
@@ -625,6 +632,11 @@
         },
         {
           "date": "2026-10-23",
+          "isCorrect": true,
+          "topic": "Fixed Income"
+        },
+        {
+          "date": "2026-10-24",
           "isCorrect": true,
           "topic": "Fixed Income"
         }
@@ -798,5 +810,5 @@
     "Quantitative Methods__3": true,
     "Economics__5": true
   },
-  "lastUpdated": 1792853233323
+  "lastUpdated": 1792853295533
 }
