@@ -286,8 +286,8 @@
       }
     },
     "2026-10-25": {
-      "count": 10,
-      "correct": 7,
+      "count": 20,
+      "correct": 14,
       "answeredIds": [],
       "responses": {}
     }
@@ -1103,5 +1103,5 @@
     "Quantitative Methods__3": true,
     "Economics__5": true
   },
-  "lastUpdated": 1792966256427
+  "lastUpdated": 1792966266386
 }
