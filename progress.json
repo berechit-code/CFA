@@ -292,8 +292,8 @@
       "responses": {}
     },
     "2026-10-26": {
-      "count": 8,
-      "correct": 6,
+      "count": 21,
+      "correct": 14,
       "answeredIds": [],
       "responses": {}
     }
@@ -1067,5 +1067,5 @@
     "Fixed Income__0": true,
     "Ethical and Professional Standards__6": true
   },
-  "lastUpdated": 1793027993067
+  "lastUpdated": 1793028030218
 }
