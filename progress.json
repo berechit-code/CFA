@@ -292,14 +292,20 @@
       "responses": {}
     },
     "2026-10-26": {
-      "count": 24,
-      "correct": 16,
+      "count": 25,
+      "correct": 17,
       "answeredIds": [
         56,
         57,
-        41
+        41,
+        35
       ],
       "responses": {
+        "35": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1793028420649
+        },
         "41": {
           "selectedIndex": 1,
           "isCorrect": false,
@@ -492,10 +498,10 @@
       "timestamp": 1792853552360
     },
     "35": {
-      "selectedIndex": 0,
-      "isCorrect": false,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853907752
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "dateISO": "2026-10-26",
+      "timestamp": 1793028420650
     },
     "39": {
       "selectedIndex": 1,
@@ -1005,15 +1011,20 @@
       ]
     },
     "35": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 1,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-24",
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-10-26",
       "history": [
         {
           "date": "2026-10-24",
           "isCorrect": false,
+          "topic": "Quantitative Methods"
+        },
+        {
+          "date": "2026-10-26",
+          "isCorrect": true,
           "topic": "Quantitative Methods"
         }
       ]
@@ -1132,5 +1143,5 @@
     "Fixed Income__0": true,
     "Ethical and Professional Standards__6": true
   },
-  "lastUpdated": 1793028314099
+  "lastUpdated": 1793028420650
 }
