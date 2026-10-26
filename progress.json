@@ -290,6 +290,12 @@
       "correct": 14,
       "answeredIds": [],
       "responses": {}
+    },
+    "2026-10-26": {
+      "count": 0,
+      "correct": 0,
+      "answeredIds": [],
+      "responses": {}
     }
   },
   "answeredMap": {
@@ -336,8 +342,7 @@
     "9": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853326036
+      "timestamp": 1792741109884
     },
     "10": {
       "selectedIndex": 1,
@@ -347,14 +352,12 @@
     "11": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853306287
+      "timestamp": 1792741245731
     },
     "12": {
       "selectedIndex": 2,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853336720
+      "timestamp": 1792741033018
     },
     "13": {
       "selectedIndex": 0,
@@ -369,25 +372,25 @@
     "15": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "timestamp": 1792698008479
+      "dateISO": "2026-10-23",
+      "timestamp": 1792760141115
     },
     "16": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792852509935
+      "dateISO": "2026-10-23",
+      "timestamp": 1792760115666
     },
     "17": {
       "selectedIndex": 2,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853349537
+      "timestamp": 1792697819095
     },
     "18": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853295533
+      "dateISO": "2026-10-23",
+      "timestamp": 1792760185181
     },
     "19": {
       "selectedIndex": 2,
@@ -412,8 +415,7 @@
     "23": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853233323
+      "timestamp": 1792741230056
     },
     "24": {
       "selectedIndex": 1,
@@ -620,24 +622,14 @@
       ]
     },
     "9": {
-      "attempts": 3,
-      "wrongCount": 1,
+      "attempts": 1,
+      "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-23",
       "history": [
         {
           "date": "2026-10-23",
-          "isCorrect": true,
-          "topic": "Derivatives"
-        },
-        {
-          "date": "2026-10-24",
-          "isCorrect": false,
-          "topic": "Derivatives"
-        },
-        {
-          "date": "2026-10-24",
           "isCorrect": true,
           "topic": "Derivatives"
         }
@@ -658,38 +650,28 @@
       ]
     },
     "11": {
-      "attempts": 2,
+      "attempts": 1,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-23",
       "history": [
         {
           "date": "2026-10-23",
-          "isCorrect": true,
-          "topic": "Fixed Income"
-        },
-        {
-          "date": "2026-10-24",
           "isCorrect": true,
           "topic": "Fixed Income"
         }
       ]
     },
     "12": {
-      "attempts": 2,
+      "attempts": 1,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-23",
       "history": [
         {
           "date": "2026-10-23",
-          "isCorrect": true,
-          "topic": "Portfolio Construction"
-        },
-        {
-          "date": "2026-10-24",
           "isCorrect": true,
           "topic": "Portfolio Construction"
         }
@@ -743,11 +725,11 @@
       ]
     },
     "16": {
-      "attempts": 3,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-23",
       "history": [
         {
           "date": "2026-10-22",
@@ -758,39 +740,29 @@
           "date": "2026-10-23",
           "isCorrect": true,
           "topic": "Ethical and Professional Standards"
-        },
-        {
-          "date": "2026-10-24",
-          "isCorrect": true,
-          "topic": "Ethical and Professional Standards"
         }
       ]
     },
     "17": {
-      "attempts": 2,
+      "attempts": 1,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-22",
       "history": [
         {
           "date": "2026-10-22",
-          "isCorrect": true,
-          "topic": "Portfolio Construction"
-        },
-        {
-          "date": "2026-10-24",
           "isCorrect": true,
           "topic": "Portfolio Construction"
         }
       ]
     },
     "18": {
-      "attempts": 3,
+      "attempts": 2,
       "wrongCount": 1,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-23",
       "history": [
         {
           "date": "2026-10-22",
@@ -799,11 +771,6 @@
         },
         {
           "date": "2026-10-23",
-          "isCorrect": true,
-          "topic": "Fixed Income"
-        },
-        {
-          "date": "2026-10-24",
           "isCorrect": true,
           "topic": "Fixed Income"
         }
@@ -866,19 +833,14 @@
       ]
     },
     "23": {
-      "attempts": 2,
+      "attempts": 1,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-23",
       "history": [
         {
           "date": "2026-10-23",
-          "isCorrect": true,
-          "topic": "Equities"
-        },
-        {
-          "date": "2026-10-24",
           "isCorrect": true,
           "topic": "Equities"
         }
@@ -1101,7 +1063,8 @@
     "Financial Statement Analysis__4": true,
     "Quantitative Methods__1": true,
     "Quantitative Methods__3": true,
-    "Economics__5": true
+    "Economics__5": true,
+    "Fixed Income__0": true
   },
-  "lastUpdated": 1792966266386
+  "lastUpdated": 1793027845001
 }
