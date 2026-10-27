@@ -342,8 +342,8 @@
       }
     },
     "2026-10-27": {
-      "count": 14,
-      "correct": 10,
+      "count": 15,
+      "correct": 11,
       "answeredIds": [
         41,
         42,
@@ -353,7 +353,8 @@
         23,
         18,
         19,
-        9
+        9,
+        17
       ],
       "responses": {
         "8": {
@@ -368,6 +369,11 @@
         "16": {
           "selectedIndex": 1,
           "isCorrect": true
+        },
+        "17": {
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timestamp": 1793137804515
         },
         "18": {
           "selectedIndex": 2,
@@ -484,7 +490,8 @@
     "17": {
       "selectedIndex": 2,
       "isCorrect": true,
-      "timestamp": 1792697819095
+      "dateISO": "2026-10-27",
+      "timestamp": 1793137804515
     },
     "18": {
       "selectedIndex": 2,
@@ -885,14 +892,19 @@
       ]
     },
     "17": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-10-22",
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-22",
+          "isCorrect": true,
+          "topic": "Portfolio Construction"
+        },
+        {
+          "date": "2026-10-27",
           "isCorrect": true,
           "topic": "Portfolio Construction"
         }
@@ -1326,5 +1338,5 @@
     "Ethical and Professional Standards__6": true,
     "Equities__1": true
   },
-  "lastUpdated": 1793137795765
+  "lastUpdated": 1793137804515
 }
