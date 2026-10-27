@@ -367,7 +367,7 @@
         "18": {
           "selectedIndex": 2,
           "isCorrect": false,
-          "timestamp": 1793126972778
+          "timestamp": 1793126987294
         },
         "23": {
           "selectedIndex": 1,
@@ -483,7 +483,7 @@
       "selectedIndex": 2,
       "isCorrect": false,
       "dateISO": "2026-10-27",
-      "timestamp": 1793126972778
+      "timestamp": 1793126987294
     },
     "19": {
       "selectedIndex": 2,
@@ -886,8 +886,8 @@
       ]
     },
     "18": {
-      "attempts": 3,
-      "wrongCount": 2,
+      "attempts": 4,
+      "wrongCount": 3,
       "lastIsCorrect": false,
       "lastSelectedIndex": 2,
       "lastAnsweredDate": "2026-10-27",
@@ -900,6 +900,11 @@
         {
           "date": "2026-10-23",
           "isCorrect": true,
+          "topic": "Fixed Income"
+        },
+        {
+          "date": "2026-10-27",
+          "isCorrect": false,
           "topic": "Fixed Income"
         },
         {
@@ -1292,5 +1297,5 @@
     "Ethical and Professional Standards__6": true,
     "Equities__1": true
   },
-  "lastUpdated": 1793126972778
+  "lastUpdated": 1793126987294
 }
