@@ -438,14 +438,15 @@
       }
     },
     "2026-10-28": {
-      "count": 5,
-      "correct": 5,
+      "count": 6,
+      "correct": 6,
       "answeredIds": [
         16,
         36,
         66,
         60,
-        53
+        53,
+        90
       ],
       "responses": {
         "16": {
@@ -471,6 +472,11 @@
           "selectedIndex": 0,
           "isCorrect": true,
           "timestamp": 1793172060451
+        },
+        "90": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1793172214167
         }
       }
     }
@@ -755,6 +761,12 @@
       "isCorrect": true,
       "dateISO": "2026-10-28",
       "timestamp": 1793172060451
+    },
+    "90": {
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "dateISO": "2026-10-28",
+      "timestamp": 1793172214167
     }
   },
   "questionStats": {
@@ -1553,6 +1565,20 @@
           "topic": "Quantitative Methods"
         }
       ]
+    },
+    "90": {
+      "attempts": 1,
+      "wrongCount": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-10-28",
+      "history": [
+        {
+          "date": "2026-10-28",
+          "isCorrect": true,
+          "topic": "Financial Statement Analysis"
+        }
+      ]
     }
   },
   "questionEdits": {
@@ -1577,5 +1603,5 @@
     "Ethical and Professional Standards__6": true,
     "Equities__1": true
   },
-  "lastUpdated": 1793172076917
+  "lastUpdated": 1793172214167
 }
