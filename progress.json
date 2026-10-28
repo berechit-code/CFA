@@ -438,7 +438,7 @@
       }
     },
     "2026-10-28": {
-      "count": 14,
+      "count": 15,
       "correct": 13,
       "answeredIds": [
         16,
@@ -454,7 +454,8 @@
         42,
         68,
         71,
-        74
+        74,
+        47
       ],
       "responses": {
         "16": {
@@ -480,6 +481,11 @@
           "selectedIndex": 1,
           "isCorrect": true,
           "timestamp": 1793172478581
+        },
+        "47": {
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timestamp": 1793172632781
         },
         "53": {
           "selectedIndex": 0,
@@ -785,6 +791,12 @@
       "isCorrect": true,
       "dateISO": "2026-10-27",
       "timestamp": 1793137894814
+    },
+    "47": {
+      "selectedIndex": 0,
+      "isCorrect": false,
+      "dateISO": "2026-10-28",
+      "timestamp": 1793172632781
     },
     "53": {
       "selectedIndex": 0,
@@ -1609,6 +1621,20 @@
         }
       ]
     },
+    "47": {
+      "attempts": 1,
+      "wrongCount": 1,
+      "lastIsCorrect": false,
+      "lastSelectedIndex": 0,
+      "lastAnsweredDate": "2026-10-28",
+      "history": [
+        {
+          "date": "2026-10-28",
+          "isCorrect": false,
+          "topic": "Fixed Income"
+        }
+      ]
+    },
     "53": {
       "attempts": 1,
       "wrongCount": 0,
@@ -1786,5 +1812,5 @@
     "Ethical and Professional Standards__6": true,
     "Equities__1": true
   },
-  "lastUpdated": 1793172487281
+  "lastUpdated": 1793172632781
 }
