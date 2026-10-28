@@ -446,8 +446,7 @@
       "responses": {
         "16": {
           "selectedIndex": 1,
-          "isCorrect": true,
-          "timestamp": 1793171432041
+          "isCorrect": true
         }
       }
     }
@@ -1474,5 +1473,5 @@
     "Ethical and Professional Standards__6": true,
     "Equities__1": true
   },
-  "lastUpdated": 1793171537239
+  "lastUpdated": 1793171598821
 }
