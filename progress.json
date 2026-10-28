@@ -438,15 +438,16 @@
       }
     },
     "2026-10-28": {
-      "count": 6,
-      "correct": 6,
+      "count": 7,
+      "correct": 7,
       "answeredIds": [
         16,
         36,
         66,
         60,
         53,
-        90
+        90,
+        84
       ],
       "responses": {
         "16": {
@@ -472,6 +473,11 @@
           "selectedIndex": 0,
           "isCorrect": true,
           "timestamp": 1793172060451
+        },
+        "84": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1793172279448
         },
         "90": {
           "selectedIndex": 1,
@@ -761,6 +767,12 @@
       "isCorrect": true,
       "dateISO": "2026-10-28",
       "timestamp": 1793172060451
+    },
+    "84": {
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "dateISO": "2026-10-28",
+      "timestamp": 1793172279448
     },
     "90": {
       "selectedIndex": 1,
@@ -1566,6 +1578,20 @@
         }
       ]
     },
+    "84": {
+      "attempts": 1,
+      "wrongCount": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-10-28",
+      "history": [
+        {
+          "date": "2026-10-28",
+          "isCorrect": true,
+          "topic": "Financial Statement Analysis"
+        }
+      ]
+    },
     "90": {
       "attempts": 1,
       "wrongCount": 0,
@@ -1603,5 +1629,5 @@
     "Ethical and Professional Standards__6": true,
     "Equities__1": true
   },
-  "lastUpdated": 1793172214167
+  "lastUpdated": 1793172279448
 }
