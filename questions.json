@@ -759,5 +759,901 @@
     "formula": "Affirmative Covenant = Administrative duties required | Negative Covenant = Restrictions / Prohibitions",
     "trap": "Paying what is legally required (interest/principal) is always classified as an affirmative/positive covenant, whereas limits on financial ratios are negative covenants.",
     "image": ""
+  },
+  {
+    "id": 50,
+    "topic": "Economics",
+    "module": "Module 6: International Trade",
+    "question": "Which of the following statements best describes the benefits of international trade?",
+    "options": [
+      "Countries gain from exchange and specialization.",
+      "Countries receive lower prices for their exports and pay higher prices for imports.",
+      "Countries gain from trade because all individuals and companies benefit in the long term."
+    ],
+    "correctIndex": 0,
+    "explanation": "Countries gain from exchange when trade enables each country to receive a higher price for exported goods or pay a lower price for imported goods. This leads to more efficient resource allocation and allows consumption of a larger variety of goods.",
+    "formula": "Gains from Trade = Higher Export Prices + Lower Import Prices + Specialization & Economies of Scale",
+    "trap": "Trade increases aggregate national welfare, but it does NOT benefit every single individual or company (import-competing industries and low-skilled workers in scarce factors may lose).",
+    "image": ""
+  },
+  {
+    "id": 51,
+    "topic": "Economics",
+    "module": "Module 6: International Trade",
+    "question": "Which of the following statements best describes the costs of international trade?",
+    "options": [
+      "Countries without an absolute advantage in producing a good cannot benefit significantly from international trade.",
+      "Resources may need to be allocated into or out of an industry and less-efficient companies may be forced to exit an industry, which in turn may lead to higher unemployment.",
+      "Loss of manufacturing jobs in developed countries as a result of import competition means that developed countries benefit far less than developing countries from trade."
+    ],
+    "correctIndex": 1,
+    "explanation": "Resources may need to be reallocated into or out of an industry, depending on whether that industry is an exporting sector or an import-competing sector of that economy. As a result of this adjustment process, less-efficient companies may be forced to exit the industry, which in turn may lead to higher unemployment and the need for retraining so that displaced workers may find jobs in expanding industries.",
+    "formula": "Comparative Advantage (Opportunity Cost) drives trade, NOT Absolute Advantage.",
+    "trap": "Even a country with NO absolute advantage in anything still benefits from trade by specializing in the good where it has the lowest opportunity cost (comparative advantage).",
+    "image": ""
+  },
+  {
+    "id": 52,
+    "topic": "Economics",
+    "module": "Module 6: International Trade",
+    "question": "Suppose the cost of producing tea relative to copper is lower in Tealand than in Copperland. With trade, the copper industry in Copperland would most likely:",
+    "options": [
+      "expand.",
+      "contract.",
+      "remain stable."
+    ],
+    "correctIndex": 0,
+    "explanation": "Because the cost of producing tea relative to copper is lower in Tealand than in Copperland, the opportunity cost of producing copper relative to tea is lower in Copperland than in Tealand. Copperland has a comparative advantage in copper, so it will export copper and its copper industry will expand.",
+    "formula": "Opp. Cost(Tea in Tealand) < Opp. Cost(Tea in Copperland) ↔ Opp. Cost(Copper in Copperland) < Opp. Cost(Copper in Tealand)",
+    "trap": "Comparative advantage is strictly reciprocal in a two-country, two-good model: if Tealand has a lower relative cost in tea, Copperland automatically has a lower relative cost in copper!",
+    "image": ""
+  },
+  {
+    "id": 53,
+    "topic": "Economics",
+    "module": "Module 6: International Trade",
+    "question": "Which type of trade restriction would most likely increase domestic government revenue?",
+    "options": [
+      "Tariff",
+      "Import quota",
+      "Export subsidy"
+    ],
+    "correctIndex": 0,
+    "explanation": "The imposition of a tariff will most likely increase domestic government revenue. A tariff is a tax on imports collected directly by the importing country's government.",
+    "formula": "Government Revenue from Tariff = Tariff per Unit × Quantity of Imports",
+    "trap": "An import quota only generates government revenue if import licenses are auctioned off for a fee; otherwise, quota rents go to foreign exporters or domestic license holders. Export subsidies COST the government money.",
+    "image": ""
+  },
+  {
+    "id": 54,
+    "topic": "Economics",
+    "module": "Module 6: International Trade",
+    "question": "Which of the following trade restrictions is likely to result in the greatest welfare loss for the importing country?",
+    "options": [
+      "A tariff",
+      "An import quota",
+      "A voluntary export restraint"
+    ],
+    "correctIndex": 2,
+    "explanation": "With a voluntary export restraint (VER), the price increase induced by restricting the quantity of imports (= quota rent for equivalent quota = tariff revenue for equivalent tariff) accrues entirely to foreign exporters or the foreign government rather than the domestic government or domestic license holders.",
+    "formula": "Domestic Welfare Loss: VER > Import Quota ≥ Tariff",
+    "trap": "You missed this one! Remember the hierarchy of domestic welfare loss: Tariff (least bad, gov keeps revenue) < Quota (mixed, depends on who gets quota rents) < VER (worst, 100% of quota rent is captured by foreign exporters).",
+    "image": ""
+  },
+  {
+    "id": 55,
+    "topic": "Economics",
+    "module": "Module 6: International Trade",
+    "question": "A large country can:",
+    "options": [
+      "benefit by imposing a tariff.",
+      "benefit with an export subsidy.",
+      "not benefit from any trade restriction."
+    ],
+    "correctIndex": 0,
+    "explanation": "By definition, a large country is big enough to affect the world price of its imports and exports. A large country can benefit by imposing a tariff if its terms of trade improve by enough (forcing foreign exporters to lower their pre-tariff price) to outweigh the domestic deadweight welfare loss arising from inefficient allocation of resources.",
+    "formula": "Large Country Net Welfare Gain if: Terms-of-Trade Gain > Deadweight Loss (assuming no foreign retaliation)",
+    "trap": "A SMALL country is a price-taker and ALWAYS suffers a net welfare loss from tariffs, quotas, or subsidies. A LARGE country can theoretically gain from a tariff, but NEVER from an export subsidy (which worsens its terms of trade).",
+    "image": ""
+  },
+  {
+    "id": 56,
+    "topic": "Economics",
+    "module": "Module 6: International Trade",
+    "question": "If Brazil and South Africa have free trade with each other, a common trade policy against all other countries, but no free movement of factors of production between them, then Brazil and South Africa are part of a(n):",
+    "options": [
+      "customs union.",
+      "common market.",
+      "FTA."
+    ],
+    "correctIndex": 0,
+    "explanation": "A customs union extends a Free Trade Area (FTA) by not only allowing free movement of goods and services among members, but also by creating a common trade policy (common external barriers) against non-members. Unlike a more integrated common market, a customs union does not allow free movement of factors of production (labor and capital) among members.",
+    "formula": "FTA (Free Trade) → + Common External Tariffs = Customs Union → + Free Movement of Labor/Capital = Common Market → + Common Institutions/Economic Policy = Economic Union",
+    "trap": "You picked Common Market by mistake! Memorize the exact ladder: (1) FTA = own external tariffs; (2) Customs Union = common external tariffs, NO factor mobility; (3) Common Market = adds free movement of labor & capital.",
+    "image": ""
+  },
+  {
+    "id": 57,
+    "topic": "Economics",
+    "module": "Module 6: International Trade",
+    "question": "Which of the following factors best explains why regional trading agreements are more popular than larger multilateral trade agreements?",
+    "options": [
+      "Minimal displacement costs",
+      "Trade diversions benefit members",
+      "Quicker and easier policy coordination"
+    ],
+    "correctIndex": 2,
+    "explanation": "Regional trading agreements are politically less contentious and quicker to establish than multilateral trade negotiations (e.g., under the World Trade Organization). Policy coordination and harmonization is easier among a smaller group of countries.",
+    "formula": "Regional Trade Agreements (RTAs) = Faster Negotiation & Easier Policy Harmonization than Multilateral WTO Deals",
+    "trap": "Trade diversion (replacing lower-cost non-member imports with higher-cost member imports) is a COST/DRAWBACK of regional integration, not a benefit!",
+    "image": ""
+  },
+  {
+    "id": 58,
+    "topic": "Economics",
+    "module": "Module 6: International Trade",
+    "question": "A small country has a comparative advantage in the production of pencils. The government establishes an export subsidy for pencils to promote economic growth. Which of the following will be the most likely result of this policy?",
+    "options": [
+      "As new domestic producers enter the pencils market, supply will increase and domestic prices will decline.",
+      "The increase in the domestic producer surplus will exceed the sum of the subsidy and the decrease in the domestic consumer surplus.",
+      "Although domestic producers will receive a net benefit, the policy will give rise to inefficiencies that cause a deadweight loss to the national welfare."
+    ],
+    "correctIndex": 2,
+    "explanation": "Export subsidies interfere with the functioning of the free market and result in a deadweight loss to society. Because producers shift output from the domestic to the export market to capture the subsidy, the domestic price rises to equal the world price plus the subsidy. National welfare declines because the increase in producer surplus is less than the combined cost to domestic consumers and the government.",
+    "formula": "Export Subsidy (Small Country): Domestic Price ↑ (P_world + Subsidy) | Producer Surplus ↑ | Consumer Surplus ↓ | Gov Spending ↑ | Net National Welfare ↓",
+    "trap": "An export subsidy RAISES the domestic price (does not lower it!), because domestic consumers must pay the international price plus the subsidy to keep producers from exporting 100% of their output.",
+    "image": ""
+  },
+  {
+    "id": 59,
+    "topic": "Economics",
+    "module": "Module 6: International Trade",
+    "question": "Four countries operate within a customs union. One country proposes moving to a common market structure. What additional level of economic integration between the countries would most likely arise if this change took place? They would:",
+    "options": [
+      "establish common trade barriers against non-members.",
+      "begin to allow free movement of the factors of production.",
+      "establish common economic institutions and coordination of economic policies."
+    ],
+    "correctIndex": 1,
+    "explanation": "A common market structure incorporates all aspects of the customs union (free trade among members + common external trade barriers) and extends it by allowing free movement of factors of production (labor and capital) among members.",
+    "formula": "Customs Union + Free Movement of Factors of Production (Labor & Capital) = Common Market",
+    "trap": "Option A is already present in a Customs Union; Option C is the next step up (Economic Union).",
+    "image": ""
+  },
+  {
+    "id": 60,
+    "topic": "Quantitative Methods",
+    "module": "Module 11: Introduction to Financial Data Science",
+    "question": "Which of the following errors would most likely be a result of overfitting a machine learning model?",
+    "options": [
+      "Inability to recognize relationships within the training data",
+      "A predictive model that treats true parameters as if they are noise",
+      "The discovery of unsubstantiated patterns that lead to prediction errors"
+    ],
+    "correctIndex": 2,
+    "explanation": "Overfitting a model leads to the discovery of unsubstantiated patterns (memorizing random noise in the training set) that lead to prediction errors and incorrect output forecasts out-of-sample.",
+    "formula": "Apply standard CFA LOS principle.",
+    "trap": "Options A and B are the exact definitions of UNDERFITTING (failing to recognize relationships in training data and treating true parameters as noise).",
+    "image": ""
+  },
+  {
+    "id": 61,
+    "topic": "Quantitative Methods",
+    "module": "Module 11: Introduction to Financial Data Science",
+    "question": "An analyst creating a dataset composed largely of product reviews would most likely classify the data sources as generated by:",
+    "options": [
+      "sensors.",
+      "individuals.",
+      "business processes."
+    ],
+    "correctIndex": 1,
+    "explanation": "Product reviews, social media posts, blogs, and online searches are unstructured alternative data generated directly by individuals.",
+    "formula": "Apply standard CFA LOS principle.",
+    "trap": "Alternative data sources are classified into 3 categories: Individuals (reviews, social media), Business processes (credit card transactions, corporate exhaust), and Sensors (satellites, geolocation, IoT).",
+    "image": ""
+  },
+  {
+    "id": 62,
+    "topic": "Quantitative Methods",
+    "module": "Module 11: Introduction to Financial Data Science",
+    "question": "'Fintech' is best described as:",
+    "options": [
+      "technology-driven innovation in the financial service industry.",
+      "the collection of large quantities of financial data from a variety of sources in multiple formats.",
+      "the use of technical models to describe patterns in financial markets and make trading decisions."
+    ],
+    "correctIndex": 0,
+    "explanation": "In its broadest sense, the term 'fintech' generally refers to technology-driven innovation occurring in the financial service industry.",
+    "formula": "Apply standard CFA LOS principle.",
+    "trap": "Option B describes 'Big Data', while Option C describes 'Technical Analysis'.",
+    "image": ""
+  },
+  {
+    "id": 63,
+    "topic": "Quantitative Methods",
+    "module": "Module 11: Introduction to Financial Data Science",
+    "question": "Which of the following best describes how financial data science differs from general data science?",
+    "options": [
+      "Financial data science focuses exclusively on quantitative data analysis.",
+      "Financial data science relies solely on machine learning algorithms for all analyses.",
+      "Financial data science applies data science principles specifically to financial data and contexts."
+    ],
+    "correctIndex": 2,
+    "explanation": "Financial data science is a specialized branch of data science that applies its principles specifically to financial data and involves analyzing various types of financial data, integrating both quantitative and qualitative information.",
+    "formula": "Apply standard CFA LOS principle.",
+    "trap": "Watch out for extreme absolutes like 'exclusively' or 'solely' in CFA distractors—financial data science integrates qualitative info and uses tools beyond just ML.",
+    "image": ""
+  },
+  {
+    "id": 64,
+    "topic": "Quantitative Methods",
+    "module": "Module 11: Introduction to Financial Data Science",
+    "question": "Text analytics are appropriate for application to:",
+    "options": [
+      "economic trend analysis.",
+      "large, structured datasets.",
+      "public but not private information."
+    ],
+    "correctIndex": 0,
+    "explanation": "In the analysis of economic trends, models using NLP text analysis are able to incorporate non-traditional, unstructured data, such as the opinions and preferences expressed in social media.",
+    "formula": "Apply standard CFA LOS principle.",
+    "trap": "Text analytics are mainly used for unstructured or semi-structured data (social media, chat logs, emails), NOT large structured datasets (which suit traditional data analysis). Text analytics apply to both public and private information.",
+    "image": ""
+  },
+  {
+    "id": 65,
+    "topic": "Quantitative Methods",
+    "module": "Module 11: Introduction to Financial Data Science",
+    "question": "In the use of machine learning:",
+    "options": [
+      "some techniques are called 'black box' due to data biases.",
+      "human judgment is not needed because algorithms continuously learn from data.",
+      "training data can be learned too precisely, resulting in inaccurate predictions when used with different datasets."
+    ],
+    "correctIndex": 2,
+    "explanation": "Overfitting occurs when the ML model learns the input and target dataset too precisely. In this case, the model has been 'over-trained' on the data and treats noise in the data as true parameters. An overfitted ML model is not able to accurately predict outcomes using a different dataset.",
+    "formula": "Apply standard CFA LOS principle.",
+    "trap": "ML models are called 'black boxes' due to their complexity and lack of interpretability, not because of data biases. Also, human judgment remains essential in operating and interpreting ML-based models.",
+    "image": ""
+  },
+  {
+    "id": 66,
+    "topic": "Quantitative Methods",
+    "module": "Module 11: Introduction to Financial Data Science",
+    "question": "Which of the following statements is most characteristic of big data?",
+    "options": [
+      "Big data involve formats with diverse structures.",
+      "One of big data's traditional sources is business processes.",
+      "Real-time communication of big data is uncommon due to vast content."
+    ],
+    "correctIndex": 0,
+    "explanation": "Big data are collected from many different sources and in a variety of formats, including structured data (e.g., SQL tables or CSV files), semi-structured data (e.g., HTML code), and unstructured data (e.g., video messages). Although business processes generate large volumes of data, they do not generate alternative data and do not fully represent the volume, variety, and velocity characteristics of big data.",
+    "formula": "Apply standard CFA LOS principle.",
+    "trap": "Remember the 3 Vs of Big Data: Volume, Variety (diverse formats: structured, semi-structured, unstructured), and Velocity (real-time or near-real-time processing is common, not uncommon).",
+    "image": ""
+  },
+  {
+    "id": 67,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 6: Analysis of Inventories",
+    "question": "During a period of steadily rising inventory acquisition costs and stable inventory quantities, a firm that transitions from FIFO to LIFO inventory accounting under US GAAP will most likely report:",
+    "options": [
+      "Higher net income and higher operating cash flows.",
+      "Lower gross profit margin and lower ending inventory.",
+      "Lower inventory turnover ratio and higher working capital."
+    ],
+    "correctIndex": 1,
+    "explanation": "Under LIFO during inflationary periods, the most recent higher costs go to COGS, resulting in lower gross profit margin and lower ending inventory on the balance sheet. Because taxes paid are lower, operating cash flow (CFO) is actually higher.",
+    "formula": "FIFO Inventory = LIFO Inventory + LIFO Reserve | FIFO COGS = LIFO COGS - ΔLIFO Reserve",
+    "trap": "Under inflation, LIFO decreases Net Income but INCREASES Operating Cash Flow (CFO) because of lower income tax payments!",
+    "image": ""
+  },
+  {
+    "id": 68,
+    "topic": "Derivatives",
+    "module": "Module 9: Put-Call Parity",
+    "question": "According to put-call parity for European options on a non-dividend-paying stock, a fiduciary call is replicated by holding a:",
+    "options": [
+      "long underlying stock and a long put option.",
+      "long call option and a short put option.",
+      "short underlying stock and a long risk-free bond."
+    ],
+    "correctIndex": 0,
+    "explanation": "Put-call parity states that c + X/(1+r)^T = S₀ + p. The left side (long call + risk-free zero-coupon bond with face value X) is a fiduciary call. The right side (long stock S₀ + long put p) is a protective put.",
+    "formula": "c + PV(X) = S₀ + p (Fiduciary Call = Protective Put)",
+    "trap": "To rearrange for any synthetic instrument, keep signs positive first, then move terms across the equal sign (minus sign = short position).",
+    "image": ""
+  },
+  {
+    "id": 69,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "A bank quotes a stated annual interest rate of 8.0% compounded quarterly. The effective annual rate (EAR) is closest to:",
+    "options": [
+      "8.00%",
+      "8.24%",
+      "8.30%"
+    ],
+    "correctIndex": 1,
+    "explanation": "EAR = (1 + Stated Rate / m)^m - 1 = (1 + 0.08 / 4)^4 - 1 = (1.02)^4 - 1 = 0.082432 or 8.24%.",
+    "formula": "EAR = (1 + r_s / m)^m - 1",
+    "trap": "As compounding frequency m increases, EAR increases. Continuous compounding uses EAR = e^r - 1.",
+    "image": ""
+  },
+  {
+    "id": 70,
+    "topic": "Fixed Income",
+    "module": "Returns of Financial Assets",
+    "question": "What does the decline in capital distribution returns in long-term government bonds over the period from the early 2000s to early 2020s indicate?",
+    "options": [
+      "A shift toward higher equity investments",
+      "A decrease in market interest rates",
+      "An increase in corporate default rates"
+    ],
+    "correctIndex": 1,
+    "explanation": "The decline in capital distribution returns (income yields) for long-term government bonds reflects periods of lower market interest rates. This reduces the income yield on these bonds as newer issues come with lower coupon rates compared to past higher-rate periods.",
+    "formula": "Income Return (Current Yield) = Annual Coupon / Bond Price",
+    "trap": "Corporate default rates directly impact corporate credit spreads, not sovereign government bond distributions.",
+    "image": ""
+  },
+  {
+    "id": 71,
+    "topic": "Portfolio Construction",
+    "module": "Returns of Financial Assets",
+    "question": "In the context of total investment risk, macro risks:",
+    "options": [
+      "represent non-systematic risks.",
+      "are independent from total investment risk.",
+      "significantly influence overall investment performance."
+    ],
+    "correctIndex": 2,
+    "explanation": "Macro risks, also known as systematic risks, affect the entire market or a large segment of the market (economic recessions, political instability, changes in interest rates, inflation). These risks are inherent to the aggregate market and cannot be diversified away.",
+    "formula": "Total Risk = Systematic Risk (Macro / Non-diversifiable) + Nonsystematic Risk (Idiosyncratic / Diversifiable)",
+    "trap": "Do not confuse systematic (macro/market-wide, non-diversifiable) risk with unsystematic (micro/firm-specific, diversifiable) risk.",
+    "image": ""
+  },
+  {
+    "id": 72,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 8: Long-Term Liabilities",
+    "question": "Under IFRS, how should a lessee account for an operating lease on its balance sheet?",
+    "options": [
+      "Recognize a right-of-use asset and a corresponding lease liability.",
+      "Recognize only rent expense in the income statement on a straight-line basis.",
+      "Disclose future lease commitments strictly in the footnotes with no balance sheet impact."
+    ],
+    "correctIndex": 0,
+    "explanation": "Under IFRS 16, almost all leases (both finance and operating) must be recognized on the balance sheet as a Right-of-Use (ROU) asset and a lease liability.",
+    "formula": "Initial Lease Liability = PV of future lease payments discounted at implicit rate",
+    "trap": "Do not confuse IFRS 16 with US GAAP: while both put operating leases on the balance sheet, IFRS 16 treats all leases like finance leases (amortization + interest), whereas US GAAP keeps a single straight-line lease expense on the income statement for operating leases.",
+    "image": ""
+  },
+  {
+    "id": 73,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 11: Financial Analysis Techniques",
+    "question": "In the five-component DuPont decomposition of Return on Equity (ROE), which ratio explicitly measures the firm's interest burden?",
+    "options": [
+      "Net Income / EBT",
+      "EBT / EBIT",
+      "EBIT / Revenue"
+    ],
+    "correctIndex": 1,
+    "explanation": "The 5-way DuPont equation decomposes ROE into: (Net Income / EBT) × (EBT / EBIT) × (EBIT / Revenue) × (Revenue / Avg Assets) × (Avg Assets / Avg Equity). The term (EBT / EBIT) captures the interest burden.",
+    "formula": "ROE = Tax Burden × Interest Burden × EBIT Margin × Asset Turnover × Leverage",
+    "trap": "Higher EBT/EBIT (closer to 1.0) means LESS interest expense and therefore a lighter interest burden.",
+    "image": ""
+  },
+  {
+    "id": 74,
+    "topic": "Portfolio Construction",
+    "module": "Returns of Financial Assets",
+    "question": "How does the risk-return trade-off principle affect asset allocation among investors with different objectives?",
+    "options": [
+      "It encourages all investors to prioritize high-risk assets for maximum returns.",
+      "It leads investors to allocate assets based on their risk tolerance and return objectives.",
+      "It suggests that low-risk assets offer the highest potential returns."
+    ],
+    "correctIndex": 1,
+    "explanation": "The risk-return trade-off principle leads investors to allocate assets based on their risk tolerance and return objectives, balancing between growth (capital appreciation) and income.",
+    "formula": "Utility U = E(R) - 0.5 × A × σ² (where A = risk aversion coefficient)",
+    "trap": "The trade-off never mandates high-risk exposure for everyone; allocations are strictly matched to individual utility, liquidity needs, and time horizons.",
+    "image": ""
+  },
+  {
+    "id": 75,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 5: Standard III Duties to Clients",
+    "question": "Under Standard III(B) Fair Dealing, when an investment firm changes its recommendation on a security from 'Hold' to 'Buy', it must:",
+    "options": [
+      "wait until all clients receive the mailed research report before executing any discretionary trades.",
+      "disseminate the recommendation change to all clients fairly and simultaneously so they have a fair opportunity to act.",
+      "give priority in trade execution to its largest institutional fee-paying accounts."
+    ],
+    "correctIndex": 1,
+    "explanation": "Standard III(B) Fair Dealing requires members to deal fairly and objectively with all clients when disseminating investment recommendations. While 'simultaneous' distribution to every single client is not always literally possible, firms must design systems for fair, equitable dissemination without favoring large accounts over smaller ones.",
+    "formula": "Standard III(B): Fair ≠ Equal, but no favoritism in core research dissemination.",
+    "trap": "Different service levels (e.g., bespoke advisory) are allowed ONLY if disclosed to all clients, offered to all who pay for it, and do not disadvantage basic clients on primary research changes.",
+    "image": ""
+  },
+  {
+    "id": 76,
+    "topic": "Portfolio Construction",
+    "module": "Returns of Financial Assets",
+    "question": "A wider range of annual returns for an asset class is typically associated with:",
+    "options": [
+      "lower risk and higher returns.",
+      "higher risk and lower returns.",
+      "higher risk and higher returns."
+    ],
+    "correctIndex": 2,
+    "explanation": "A wider dispersion or range of annual returns in an investment signifies increased variability or volatility, indicating higher risk. Under the risk-return trade-off principle, high-risk investments compensate investors with the potential for higher expected returns.",
+    "formula": "Range = Max Return - Min Return | Higher Volatility (σ) ↔ Higher Expected Return E(R)",
+    "trap": "Avoid confusing narrow dispersion (lower volatility/risk, typically associated with lower returns) with wide dispersion.",
+    "image": ""
+  },
+  {
+    "id": 77,
+    "topic": "Fixed Income",
+    "module": "Module 12: Bond Convexity",
+    "question": "An investor holds an option-free 8% annual coupon bond with a modified duration of 6.2 and convexity of 54. If yields increase by 100 bps, the estimated percentage price change is closest to:",
+    "options": [
+      "-6.20%",
+      "-5.93%",
+      "-6.47%"
+    ],
+    "correctIndex": 1,
+    "explanation": "ΔP/P ≈ (-ModDur × Δy) + [0.5 × Convexity × (Δy)²]. Here: (-6.2 × 0.01) + [0.5 × 54 × (0.01)²] = -0.0620 + 0.0027 = -0.0593 (-5.93%).",
+    "formula": "%ΔFull Price ≈ (-ModDur × ΔYield) + [½ × Convexity × (ΔYield)²]",
+    "trap": "Always remember the 0.5 multiplier for the convexity adjustment and remember that positive convexity ALWAYS helps the bondholder (softens price drops and magnifies price gains).",
+    "image": ""
+  },
+  {
+    "id": 78,
+    "topic": "Fixed Income",
+    "module": "Module 7: Yield Spread Measures",
+    "question": "Which yield spread measure represents the constant basis point spread added to each point along the benchmark government spot yield curve so that the present value of a bond's cash flows equals its market price?",
+    "options": [
+      "G-spread",
+      "I-spread",
+      "Z-spread"
+    ],
+    "correctIndex": 2,
+    "explanation": "The Z-spread (zero-volatility spread) is the constant spread added to the implied spot yield curve that equates the discounted value of a bond's cash flows to its current market price.",
+    "formula": "Price = Σ CF_t / (1 + z_t + Z-spread)^t",
+    "trap": "For a callable bond, OAS = Z-spread - Option Value (in bps). Because the issuer owns the call, Option Value > 0, so OAS < Z-spread!",
+    "image": ""
+  },
+  {
+    "id": 79,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 4: Analyzing Cash Flows I",
+    "question": "Under IFRS, interest paid by a non-financial corporation can be classified on the statement of cash flows under which activities?",
+    "options": [
+      "Operating activities only.",
+      "Either operating or financing activities.",
+      "Operating activities or investing activities."
+    ],
+    "correctIndex": 1,
+    "explanation": "Under IFRS (IAS 7), interest paid may be classified as either an operating cash outflow or a financing cash outflow. Under US GAAP, interest paid must strictly be classified under operating activities.",
+    "formula": "IFRS: Interest/Dividends Paid → CFO or CFF | US GAAP: Interest Paid → CFO, Dividends Paid → CFF",
+    "trap": "Be careful whether the question specifies IFRS or US GAAP, and whether it asks about interest PAID (CFO/CFF) vs interest RECEIVED (CFO/CFI under IFRS).",
+    "image": ""
+  },
+  {
+    "id": 80,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 9: Analysis of Income Taxes",
+    "question": "An analyst discovers that a company has recognized an upward adjustment in the valuation allowance against its deferred tax assets (DTAs). This increase will most likely result in a(n):",
+    "options": [
+      "Decrease in reported net income.",
+      "Increase in operating cash flow.",
+      "Increase in shareholders' equity."
+    ],
+    "correctIndex": 0,
+    "explanation": "A valuation allowance is a contra-asset reducing net DTA when it is more likely than not (>50%) that the DTA will not be realized. Increasing the valuation allowance increases income tax expense on the income statement, directly reducing reported net income.",
+    "formula": "Net DTA = Gross DTA - Valuation Allowance",
+    "trap": "Reversing (decreasing) a valuation allowance artificially boosts Net Income via lower tax expense—a classic earnings management signal.",
+    "image": ""
+  },
+  {
+    "id": 81,
+    "topic": "Quantitative Methods",
+    "module": "Module 7: Hypothesis Testing",
+    "question": "In hypothesis testing, the probability of correctly rejecting a false null hypothesis is known as the:",
+    "options": [
+      "significance level (alpha).",
+      "power of the test (1 - beta).",
+      "p-value of the test statistic."
+    ],
+    "correctIndex": 1,
+    "explanation": "A Type II error (β) occurs when one fails to reject a false null hypothesis. Therefore, the probability of correctly rejecting a false null hypothesis is 1 - β, defined as the power of the test.",
+    "formula": "Power of Test = 1 - P(Type II Error) = 1 - β",
+    "trap": "Don't mix up Type I error (α = rejecting a true null) with Power (1 - β = rejecting a false null).",
+    "image": ""
+  },
+  {
+    "id": 82,
+    "topic": "Equities",
+    "module": "Module 6: DCF and Growth Models",
+    "question": "A company just paid an annual dividend of €3.00 per share. Dividends are expected to grow at a constant rate of 4% per year indefinitely. If the required rate of return on equity is 10%, the intrinsic value of the stock is closest to:",
+    "options": [
+      "€50.00",
+      "€52.00",
+      "€54.08"
+    ],
+    "correctIndex": 1,
+    "explanation": "Using the Gordon Growth Model: D₁ = D₀ × (1 + g) = 3.00 × 1.04 = €3.12. Intrinsic value V₀ = D₁ / (r - g) = 3.12 / (0.10 - 0.04) = 3.12 / 0.06 = €52.00.",
+    "formula": "V₀ = D₁ / (r - g) = [D₀ × (1 + g)] / (r - g)",
+    "trap": "Look carefully for the words 'just paid' (D₀) vs 'expected to pay next year' (D₁).",
+    "image": ""
+  },
+  {
+    "id": 83,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 5: Analyzing Statements of Cash Flows II",
+    "question": "One appropriate method of preparing a common-size cash flow statement is to show each line item:",
+    "options": [
+      "of revenue and expense as a percentage of net revenue.",
+      "on the cash flow statement as a percentage of net revenue.",
+      "on the cash flow statement as a percentage of total cash outflows."
+    ],
+    "correctIndex": 1,
+    "explanation": "An appropriate method to prepare a common-size cash flow statement is to show each line item on the cash flow statement as a percentage of net revenue. An alternative way is to show each item of cash inflow as a percentage of total inflows and each item of cash outflows as a percentage of total outflows.",
+    "formula": "Common-Size CF Method 1 = Line Item / Net Revenue | Method 2 = Inflow / Total Inflows & Outflow / Total Outflows",
+    "trap": "Option C is incorrect because only cash outflows (not every line item, which includes inflows) are expressed as a percentage of total cash outflows.",
+    "image": ""
+  },
+  {
+    "id": 84,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 5: Analyzing Statements of Cash Flows II",
+    "question": "Which of the following is an appropriate method of computing free cash flow to the firm?",
+    "options": [
+      "Add operating cash flows to capital expenditures and deduct after-tax interest payments.",
+      "Add operating cash flows to after-tax interest payments and deduct capital expenditures.",
+      "Deduct both after-tax interest payments and capital expenditures from operating cash flows."
+    ],
+    "correctIndex": 1,
+    "explanation": "Free cash flow to the firm (FCFF) can be computed as operating cash flows (CFO) plus after-tax interest expense less capital expenditures (FCInv).",
+    "formula": "FCFF = CFO + Int × (1 - Tax Rate) - FCInv",
+    "trap": "Because FCFF is the cash flow available to ALL capital providers (both debt and equity holders), interest paid—which was deducted to arrive at CFO under US GAAP—must be added back on an after-tax basis.",
+    "image": ""
+  },
+  {
+    "id": 85,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 5: Analyzing Statements of Cash Flows II",
+    "question": "The first step in cash flow statement analysis should be to:",
+    "options": [
+      "evaluate consistency of cash flows.",
+      "determine operating cash flow drivers.",
+      "identify the major sources and uses of cash."
+    ],
+    "correctIndex": 2,
+    "explanation": "An overall assessment of the major sources and uses of cash across operating, investing, and financing activities should be the very first step in evaluating a cash flow statement.",
+    "formula": "Step 1: Major Sources & Uses of Cash → Step 2: Drivers of CFO → Step 3: Consistency & Coverage",
+    "trap": "Before diving into granular working capital or operating drivers, always establish the high-level cash flow profile (operating vs. investing vs. financing).",
+    "image": ""
+  },
+  {
+    "id": 86,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 5: Analyzing Statements of Cash Flows II",
+    "question": "An analyst has calculated a ratio using as the numerator the sum of operating cash flow, interest, and taxes and as the denominator the amount of interest. What is this ratio, what does it measure, and what does it indicate?",
+    "options": [
+      "This ratio is an interest coverage ratio, measuring a company's ability to meet its interest obligations and indicating a company's solvency.",
+      "This ratio is an effective tax ratio, measuring the amount of a company's operating cash flow used for taxes and indicating a company's efficiency in tax management.",
+      "This ratio is an operating profitability ratio, measuring the operating cash flow generated accounting for taxes and interest and indicating a company's liquidity."
+    ],
+    "correctIndex": 0,
+    "explanation": "This ratio is a cash-flow-based interest coverage ratio: (CFO + Interest Paid + Taxes Paid) / Interest Paid. It measures a company's ability to meet its interest obligations and indicates a company's solvency.",
+    "formula": "Cash Interest Coverage = (CFO + Interest Paid + Taxes Paid) / Interest Paid",
+    "trap": "Interest coverage is a SOLVENCY indicator (long-term debt-servicing ability), not a profitability or liquidity ratio.",
+    "image": ""
+  },
+  {
+    "id": 87,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 5: Analyzing Statements of Cash Flows II",
+    "question": "A common-size cash flow statement shows Inflows (% of Total Inflows, 2016 vs. 2015): Cash received from customers (88.1% vs. 97.4%), Proceeds from disposal of PP&E (0.3% vs. 0.3%), Proceeds from issuance of bonds (11.6% vs. 2.3%). Outflows (% of Total Outflows, 2016 vs. 2015): Cash paid to suppliers/employees (71.0% vs. 70.7%), Payments for PP&E (10.5% vs. 10.6%), Payments for financial instruments (2.0% vs. 0.2%), Payments for investments in companies (0.1% vs. 2.9%), Transactions with equity holders (8.8% vs. 9.0%), Repayments of loans/bonds (7.6% vs. 6.6%). Compared with 2015, which statement about 2016 is most accurate? The company:",
+    "options": [
+      "had a positive net operating cash flow.",
+      "directed a larger portion of cash outflows to investing activities.",
+      "relied more heavily on financing activities to generate cash inflows."
+    ],
+    "correctIndex": 2,
+    "explanation": "The cash inflows from financing activities in 2016 are 11.6% from bonds, which is greater than the 2.3% in 2015. Because total inflows and outflows in currency terms are unknown, we cannot determine whether net operating cash flow was positive or negative. Total investing outflows actually decreased from 13.7% (10.6 + 0.2 + 2.9) in 2015 to 12.6% (10.5 + 2.0 + 0.1) in 2016.",
+    "formula": "Investing Outflow % = PP&E (10.5%) + Fin Instruments (2.0%) + Acquisitions (0.1%) = 12.6% (vs. 13.7% in 2015)",
+    "trap": "In an inflows/outflows percentage common-size cash flow statement, absolute dollar amounts are unknown—so you can NEVER conclude whether CFO is positive or negative just by comparing 88.1% of inflows to 71.0% of outflows!",
+    "image": ""
+  },
+  {
+    "id": 88,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 5: Analyzing Statements of Cash Flows II",
+    "question": "The following financial statement data are available for a company ($ thousands): Operating income = 3,390; Net income = 2,210; Operating assets = 3,850; Change in cash and cash equivalents = 1,010; Cash flow from operating activities (CFO) = 1,750; Free cash flow to the firm (FCFF) = 2,240. The company's cash-to-income ratio is closest to:",
+    "options": [
+      "0.52.",
+      "0.66.",
+      "0.79."
+    ],
+    "correctIndex": 0,
+    "explanation": "Cash-to-income ratio = Cash flow from operating activities (CFO) / Operating income = 1,750 / 3,390 = 0.5162 ≈ 0.52.",
+    "formula": "Cash-to-Income Ratio = CFO / Operating Income",
+    "trap": "Do not use FCFF (2,240 / 3,390 = 0.66) in the numerator or Net Income (1,750 / 2,210 = 0.79) in the denominator—Cash-to-Income strictly compares CFO to Operating Income (EBIT).",
+    "image": ""
+  },
+  {
+    "id": 89,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 5: Analyzing Statements of Cash Flows II",
+    "question": "A firm reported the following financial statement items (€ millions): Net income = 2,100; Non-cash charges = 400; Interest expense = 300; Capital expenditures = 210; Working capital expenditures = 0; Net borrowing = 1,600; Tax rate = 40%. The free cash flow to the firm (FCFF) is closest to:",
+    "options": [
+      "€2,110.",
+      "€2,470.",
+      "€2,590."
+    ],
+    "correctIndex": 1,
+    "explanation": "FCFF = NI + NCC + Int × (1 - Tax rate) - FCInv - WCInv = 2,100 + 400 + 300 × (1 - 0.40) - 210 - 0 = 2,100 + 400 + 180 - 210 = €2,470 million.",
+    "formula": "FCFF = NI + NCC + Int × (1 - t) - FCInv - WCInv",
+    "trap": "Always multiply interest expense by (1 - tax rate) when starting from Net Income or CFO, and ignore 'Net borrowing' (1,600), which is only used for FCFE!",
+    "image": ""
+  },
+  {
+    "id": 90,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 5: Analyzing Statements of Cash Flows II",
+    "question": "A partial common-size cash flow statement (% of Net Revenues, Year 2) shows: Net cash from operating activities (CFO) = 28.5%; Net cash used in investing activities = (16.5%); Net cash used in financing activities = (4.7%); Cash paid for long-term assets = (13.4%); Dividends paid = (8.5%). Year 1 Cash Flow Coverage Ratios were: Dividend payment = 3.69; Investing and financing = 0.82; Reinvestment = 2.18. Compared with Year 1, the most appropriate conclusion about Year 2 is that the company's ability to use operating cash flows to:",
+    "options": [
+      "acquire assets improved.",
+      "pay dividends decreased.",
+      "acquire assets, pay debts, and make distributions to owners decreased."
+    ],
+    "correctIndex": 1,
+    "explanation": "In Year 2: Dividend payment coverage ratio = CFO / Dividends paid = 28.5 / 8.5 = 3.35 (decreased/worsened from 3.69 in Year 1). Reinvestment coverage ratio = CFO / Cash paid for long-term assets = 28.5 / 13.4 = 2.13 (worsened from 2.18 in Year 1). Investing and financing coverage ratio = CFO / Outflows for investing and financing = 28.5 / (16.5 + 4.7) = 28.5 / 21.2 = 1.34 (improved from 0.82 in Year 1).",
+    "formula": "Dividend Coverage = CFO / Dividends Paid | Reinvestment Ratio = CFO / Cash Paid for LT Assets",
+    "trap": "Since all items are already expressed as a % of Net Revenue, you can divide the percentages directly to compute Year 2 coverage ratios!",
+    "image": ""
+  },
+  {
+    "id": 91,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 5: Analyzing Statements of Cash Flows II",
+    "question": "An analyst gathers the following information (in € thousands) about a company: Cash flow from operating activities (CFO) = 120; Capital expenditures = 50; Depreciation = 15; Interest paid and expensed = 4. If interest paid is classified as a cash flow from financing activities and the income tax rate is 25%, FCFF (in € thousands) is:",
+    "options": [
+      "70.",
+      "73.",
+      "85."
+    ],
+    "correctIndex": 0,
+    "explanation": "Under IFRS, if interest paid is classified as a financing cash outflow (CFF) rather than an operating cash outflow (CFO), interest was never deducted from CFO. Therefore, CFO does NOT need to be adjusted for Int × (1 - Tax rate). Accordingly, FCFF = CFO - FCInv = 120 - 50 = 70.",
+    "formula": "If Interest Paid is in CFF (IFRS): FCFF = CFO - FCInv | If Interest Paid is in CFO: FCFF = CFO + Int(1 - t) - FCInv",
+    "trap": "Classic CFA exam trap! Also do NOT add back depreciation (15) when starting from CFO, because depreciation was already added back to arrive at CFO.",
+    "image": ""
+  },
+  {
+    "id": 92,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "A two-year Swedish government bond is issued with a 2.5% annual coupon rate, a par value of SEK5,000, and a yield-to-maturity of 2.418%. One year later, interest rates have risen to 3.61%. The value of the bond is now:",
+    "options": [
+      "SEK4,946.",
+      "SEK5,000.",
+      "SEK5,004."
+    ],
+    "correctIndex": 0,
+    "explanation": "One year later, there is 1 year remaining to maturity and the bond makes one final coupon payment of SEK5,000 × 0.025 = SEK125 plus par value of SEK5,000. Discounted at the new yield of 3.61%: Price = (125 + 5,000) / (1 + 0.0361) = 5,125 / 1.0361 = SEK4,946.44 ≈ SEK4,946.",
+    "formula": "Price_1 = (Coupon + Par Value) / (1 + New YTM)^1",
+    "trap": "Ignore the initial YTM at issuance (2.418%) when pricing the bond one year later—always discount remaining cash flows at the current market YTM (3.61%)!",
+    "image": ""
+  },
+  {
+    "id": 93,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "Mr. and Mrs. Schmidt invest CHF1,000,000 in an annuity that makes annual payments for 20 years at a 3% annual return. How much can they expect to withdraw annually?",
+    "options": [
+      "CHF51,589",
+      "CHF66,551",
+      "CHF67,215"
+    ],
+    "correctIndex": 2,
+    "explanation": "Using the annuity payment formula on a present value PV = CHF1,000,000, r = 3%, N = 20: PMT = (PV × r) / [1 - (1 + r)^(-N)] = (1,000,000 × 0.03) / [1 - (1.03)^(-20)] = 30,000 / (1 - 0.553676) = 30,000 / 0.446324 = CHF67,215.71.",
+    "formula": "PMT = (PV × r) / [1 - (1 + r)^(-N)] | BA II Plus: N=20, I/Y=3, PV=-1,000,000, FV=0 → CPT PMT",
+    "trap": "Make sure your calculator is in END mode and annual compounding (do not divide I/Y by 12 when payments are annual).",
+    "image": ""
+  },
+  {
+    "id": 94,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "What is the expected one-year return on MOL Rt shares with a current price of HUF2,810, a one-year dividend growth of 17%, and a dividend yield of 13% when the interest rate is 12%?",
+    "options": [
+      "29%",
+      "30%",
+      "32%"
+    ],
+    "correctIndex": 1,
+    "explanation": "From the Gordon Growth (constant growth DDM) reorganization, the expected one-year rate of return on a stock is the sum of the expected dividend yield (D₁ / P₀) and the dividend growth rate (g): r = 13% + 17% = 30%.",
+    "formula": "r = (D₁ / P₀) + g = Dividend Yield + Dividend Growth Rate",
+    "trap": "The 12% interest rate and HUF2,810 share price are distractors—do not add the interest rate (12% + 17% = 29%) or multiply (1.13 × 1.17 - 1 = 32%).",
+    "image": ""
+  },
+  {
+    "id": 95,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "LVMH Moët Hennessy Louis Vuitton pays an annual dividend of EUR12.50 per share. The dividend is expected to grow by 10% annually for the next two years due to increasing global demand for luxury goods. Thereafter, the dividend growth rate is projected to stabilize at 7% indefinitely. If the market's required rate of return is 11%, what is the intrinsic value of LVMH equity per share?",
+    "options": [
+      "EUR320",
+      "EUR353",
+      "EUR405"
+    ],
+    "correctIndex": 1,
+    "explanation": "Using the two-stage DDM: D₁ = 12.50 × 1.10 = EUR13.75; D₂ = 12.50 × (1.10)² = EUR15.125; D₃ = 15.125 × 1.07 = EUR16.18375. Terminal value at t=2: V₂ = D₃ / (r - g_L) = 16.18375 / (0.11 - 0.07) = EUR404.59375. Discounting to t=0 at 11%: P₀ = 13.75 / 1.11 + (15.125 + 404.59375) / (1.11)² = 12.3874 + 340.6532 = EUR353.04 ≈ EUR353.",
+    "formula": "P₀ = D₁/(1+r) + D₂/(1+r)² + [D₂(1+g_L)/(r - g_L)] / (1+r)²",
+    "trap": "The terminal value V₂ = D₃/(r - g_L) is already at t=2, so discount it back by 2 years (1.11)², NOT 3 years (1.11)³ (which gives EUR320.50)!",
+    "image": ""
+  },
+  {
+    "id": 96,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "Based on the following observed annual interest rates for government debt of the Republic of South Africa (12 months: 8.2%; 24 months: 7.8%; 36 months: 7.7%), what is the best estimate of the two-year forward rate one year from today?",
+    "options": [
+      "6.71%",
+      "7.45%",
+      "16.24%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Using the no-arbitrage forward rate relation: (1 + S₃)³ = (1 + S₁) × (1 + F_{1,2})². Solving for the 2-year forward rate starting 1 year from now: F_{1,2} = [(1 + 0.077)³ / (1 + 0.082)]^(1/2) - 1 = [1.24924 / 1.082]^(1/2) - 1 = (1.154565)^(1/2) - 1 = 1.074507 - 1 = 7.45%.",
+    "formula": "(1 + S₃)³ = (1 + S₁)¹ × (1 + F_{1,2})² → F_{1,2} = [(1 + S₃)³ / (1 + S₁)]^(1/2) - 1",
+    "trap": "Read carefully: 'two-year forward rate one year from today' means F_{1,2} (uses S₃ and S₁, taking the square root), NOT the 1-year forward rate 2 years from today F_{2,1} = (1+S₃)³/(1+S₂)² - 1 = 7.50% or 6.71%.",
+    "image": ""
+  },
+  {
+    "id": 97,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "Given a 5% required return, are the investment opportunities in the following table equivalent? Opportunity 1 Cash Flows (in thousands, t=0 to t=4): -700, 215, 210, 205, 200. Opportunity 2 Cash Flows (in thousands, t=0 to t=4): -700, 200, 205, 210, 215.",
+    "options": [
+      "No, Opportunity 1 is preferable.",
+      "No, Opportunity 2 is preferable.",
+      "Yes."
+    ],
+    "correctIndex": 0,
+    "explanation": "Although both opportunities have the exact same undiscounted sum of cash flows, Opportunity 1 delivers larger cash inflows earlier (215 at t=1 and 210 at t=2 vs. 200 and 205). At a 5% discount rate, NPV(Opportunity 1) = USD36.87k vs. NPV(Opportunity 2) = USD34.70k (difference of USD2.16k). Thus Opportunity 1 is preferable.",
+    "formula": "NPV(Opp 1 - Opp 2) = 15/1.05 + 5/1.05² - 5/1.05³ - 15/1.05⁴ = +$2.16k > 0",
+    "trap": "Because of the time value of money (positive discount rate r = 5%), receiving higher cash inflows earlier always yields a higher Present Value!",
+    "image": ""
+  },
+  {
+    "id": 98,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "If the current exchange rate between the Swedish krona and the US dollar is USD/SEK10.500 and the one-year risk-free interest rates are 3.457% for the Swedish krona and 4.982% for the US dollar, what is the no-arbitrage one-year USD/SEK forward rate?",
+    "options": [
+      "USD/SEK9.990",
+      "USD/SEK10.3403",
+      "USD/SEK10.6613"
+    ],
+    "correctIndex": 1,
+    "explanation": "Under covered interest rate parity with continuous compounding (where USD/SEK = 10.500 means 1 USD = 10.500 SEK, so SEK is the price currency and USD is the base currency): F = S × e^(r_SEK - r_USD) = (10.50 × e^0.03457) / e^0.04982 = 10.869 / 1.0511 = 10.3406 ≈ USD/SEK10.3403.",
+    "formula": "F_{P/B} = S_{P/B} × e^((r_P - r_B) × T) = 10.50 × e^(0.03457 - 0.04982)",
+    "trap": "In CFA notation, USD/SEK10.500 means Base = USD, Price = SEK (10.50 SEK per 1 USD). Since r_USD (4.982%) > r_SEK (3.457%), the USD must depreciate forward against the SEK (F < 10.50)!",
+    "image": ""
+  },
+  {
+    "id": 99,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "An investor deposits £2,000 into an account that pays 6% per annum compounded continuously. The value of the account at the end of four years is closest to:",
+    "options": [
+      "£2,525.",
+      "£2,542.",
+      "£2,854."
+    ],
+    "correctIndex": 1,
+    "explanation": "Future value under continuous compounding: FV = PV × e^(r × N) = £2,000 × e^(0.06 × 4) = £2,000 × e^0.24 = £2,000 × 1.271249 = £2,542.50 ≈ £2,542.",
+    "formula": "FV_N = PV × e^(r_s × N)",
+    "trap": "Do not use discrete annual compounding: £2,000 × (1.06)^4 = £2,524.95 (£2,525 is the classic distractor!).",
+    "image": ""
+  },
+  {
+    "id": 100,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "A consumer purchases an automobile using a loan. The amount borrowed is €30,000, and the terms of the loan call for the loan to be repaid over five years using equal monthly payments with an annual nominal interest rate of 8% and monthly compounding. The monthly payment is closest to:",
+    "options": [
+      "€608.29.",
+      "€626.14.",
+      "€700.00."
+    ],
+    "correctIndex": 0,
+    "explanation": "With monthly payments over 5 years: N = 5 × 12 = 60 months; monthly rate I/Y = 8% / 12 = 0.66667% per month; PV = 30,000; FV = 0. Solving for PMT yields €608.29.",
+    "formula": "BA II Plus: N = 60, I/Y = 8/12 = 0.6667, PV = 30,000, FV = 0 → CPT PMT = -608.29",
+    "trap": "Do not compute the annual payment first (N=5, I/Y=8 → PMT=7,513.69) and divide by 12 (€626.14)—you must match N=60 and I/Y=8/12 to the monthly payment frequency!",
+    "image": ""
+  },
+  {
+    "id": 101,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "If the price of a stock goes from $15.00 to $16.20 in one year, the continuously compounded rate of return is closest to:",
+    "options": [
+      "7.70%.",
+      "8.00%.",
+      "8.33%."
+    ],
+    "correctIndex": 0,
+    "explanation": "The continuously compounded rate of return is the natural logarithm of the price relative (1 + HPR): r_{0,1} = ln(S₁ / S₀) = ln(16.20 / 15.00) = ln(1.08) = 0.076961 ≈ 7.70%.",
+    "formula": "r_cc = ln(P₁ / P₀) = ln(1 + HPR)",
+    "trap": "8.00% is the discrete holding period return (16.20/15.00 - 1). Because continuous compounding compounds infinitely often, r_cc (7.70%) is always slightly LESS than the discrete HPR (8.00%).",
+    "image": ""
+  },
+  {
+    "id": 102,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "An individual wants to be able to spend €80,000 per year for an anticipated 25 years in retirement. To fund this retirement account, he will make annual deposits of €6,608 at the end of each of his working years. He can earn 6% compounded annually on all investments. The minimum number of deposits that are needed to reach his retirement goal is closest to:",
+    "options": [
+      "28.",
+      "40.",
+      "51."
+    ],
+    "correctIndex": 1,
+    "explanation": "Step 1: Find the PV needed at retirement (time R) for a 25-year ordinary annuity of €80,000 at 6%: N = 25, I/Y = 6, PMT = -80,000, FV = 0 → PV_R = €1,022,668. Step 2: Solve for N during the accumulation phase where FV = €1,022,668, PMT = -€6,608, I/Y = 6, PV = 0 → N = 40 deposits.",
+    "formula": "Step 1: PV_R = 80,000 × [1 - 1.06^(-25)] / 0.06 = 1,022,668 | Step 2: FV = 1,022,668, PMT = -6,608, I/Y = 6 → CPT N = 40",
+    "trap": "In Step 2, enter PV_R (+1,022,668) as the Future Value (FV), NOT as PV (which gives 28.4)!",
+    "image": ""
+  },
+  {
+    "id": 103,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "An annuity makes seven annual payments of $10,000 each, with the first payment occurring five years from today. If the discount rate is 6% per year, the value of the annuity today is closest to:",
+    "options": [
+      "$41,715.",
+      "$44,218.",
+      "$55,824."
+    ],
+    "correctIndex": 1,
+    "explanation": "Step 1: Using END mode, an ordinary annuity of 7 payments starting at t = 5 has its Present Value one period before the first payment, at t = 4: N = 7, I/Y = 6, PMT = 10,000, FV = 0 → PV_4 = $55,823.81. Step 2: Discount PV_4 back 4 years to t = 0: PV_0 = 55,823.81 / (1.06)^4 = $44,217.69 ≈ $44,218.",
+    "formula": "First cash flow at t = 5 → Ordinary Annuity PV is at t = 4 → Discount back 4 periods: PV_0 = PV_4 × (1 + r)^(-4)",
+    "trap": "The #1 deferred annuity exam trap! When the first payment is at t = 5, END-mode PV lands at t = 4 (one period before t = 5), so discount by 4 years ($44,218), NOT 5 years ($41,715)!",
+    "image": ""
+  },
+  {
+    "id": 104,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "Using a discount rate of 5%, compounded monthly, the present value (PV) of $5,000 to be received three years from today is closest to:",
+    "options": [
+      "$4,250.",
+      "$4,305.",
+      "$4,319."
+    ],
+    "correctIndex": 1,
+    "explanation": "With monthly compounding over 3 years: N = 3 × 12 = 36 months; periodic rate = 5% / 12 per month. PV = $5,000 × (1 + 0.05 / 12)^(-36) = $4,304.88 ≈ $4,305.",
+    "formula": "PV = FV_N × (1 + r_s / m)^(-m × N) = 5,000 × (1 + 0.05/12)^(-36)",
+    "trap": "$4,319 ignores monthly compounding and uses annual compounding: 5,000 × (1.05)^(-3) = $4,319.19.",
+    "image": ""
+  },
+  {
+    "id": 105,
+    "topic": "Quantitative Methods",
+    "module": "Module 4: The Time Value of Money in Finance",
+    "question": "A consultant starts a project today that will last for three years. Her compensation package includes the following end-of-year payments: Year 1 = $100,000; Year 2 = $150,000; Year 3 = $200,000. If she expects to invest these amounts at an annual interest rate of 3%, compounded annually until her retirement 10 years from now, the value at the end of 10 years is closest to:",
+    "options": [
+      "$460,590.",
+      "$566,466.",
+      "$618,996."
+    ],
+    "correctIndex": 1,
+    "explanation": "A payment received at the end of Year 1 compounds for 9 years until t = 10; Year 2 compounds for 8 years; Year 3 compounds for 7 years. FV_10 = $100,000 × (1.03)^9 + $150,000 × (1.03)^8 + $200,000 × (1.03)^7 = $130,477.32 + $190,015.51 + $245,974.77 = $566,467.60 ≈ $566,466 (or via NPV at t=0 = $421,504 × 1.03^10 = $566,466).",
+    "formula": "FV_10 = CF_1(1+r)^9 + CF_2(1+r)^8 + CF_3(1+r)^7 = PV_0 × (1+r)^10",
+    "trap": "10 years from now means t = 10 (not 10 years after Year 3, which is t = 13 and gives $618,996).",
+    "image": ""
   }
 ]
