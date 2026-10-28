@@ -438,8 +438,8 @@
       }
     },
     "2026-10-28": {
-      "count": 11,
-      "correct": 10,
+      "count": 12,
+      "correct": 11,
       "answeredIds": [
         16,
         36,
@@ -451,7 +451,8 @@
         82,
         40,
         18,
-        42
+        42,
+        68
       ],
       "responses": {
         "16": {
@@ -473,11 +474,6 @@
           "isCorrect": true,
           "timestamp": 1793172313299
         },
-        "42": {
-          "selectedIndex": 2,
-          "isCorrect": false,
-          "timestamp": 1793172416598
-        },
         "53": {
           "selectedIndex": 0,
           "isCorrect": true,
@@ -492,6 +488,11 @@
           "selectedIndex": 0,
           "isCorrect": true,
           "timestamp": 1793172060451
+        },
+        "68": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1793172464731
         },
         "82": {
           "selectedIndex": 1,
@@ -797,6 +798,12 @@
       "isCorrect": true,
       "dateISO": "2026-10-28",
       "timestamp": 1793172060451
+    },
+    "68": {
+      "selectedIndex": 0,
+      "isCorrect": true,
+      "dateISO": "2026-10-28",
+      "timestamp": 1793172464731
     },
     "82": {
       "selectedIndex": 1,
@@ -1638,6 +1645,20 @@
         }
       ]
     },
+    "68": {
+      "attempts": 1,
+      "wrongCount": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 0,
+      "lastAnsweredDate": "2026-10-28",
+      "history": [
+        {
+          "date": "2026-10-28",
+          "isCorrect": true,
+          "topic": "Derivatives"
+        }
+      ]
+    },
     "82": {
       "attempts": 1,
       "wrongCount": 0,
@@ -1703,5 +1724,5 @@
     "Ethical and Professional Standards__6": true,
     "Equities__1": true
   },
-  "lastUpdated": 1793172416598
+  "lastUpdated": 1793172464731
 }
