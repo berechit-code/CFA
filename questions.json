@@ -551,5 +551,213 @@
     "formula": "Standard V(C): Record Retention = 7 Years Minimum (CFA Institute Recommendation)",
     "trap": "Do not confuse this with the 5-year requirement found in some local jurisdictions; the CFA Institute's blanket recommendation is 7 years.",
     "image": ""
+  },
+  {
+    "id": 37,
+    "topic": "Equities",
+    "module": "Module 2: Equity Jurisdictions, Classes, and the Voting Process",
+    "question": "Based on the vignette, which type of DR would MSUMC most likely own?",
+    "options": [
+      "Unsponsored DR",
+      "Sponsored DR",
+      "Either type of DR"
+    ],
+    "correctIndex": 1,
+    "explanation": "MSUMC would prefer to own sponsored DRs because the holder of sponsored receipts retains shareholder voting rights, which is necessary to fulfill their ESG and shareholder voting policies. The depository bank retains the voting rights on the company's shares in an unsponsored DR.",
+    "formula": "Sponsored DRs = Investor keeps voting rights | Unsponsored DRs = Depository bank keeps voting rights",
+    "trap": "Always link the institution's mandate to vote with the requirement for Sponsored DRs. If they didn't care about voting, they could hold either.",
+    "image": ""
+  },
+  {
+    "id": 38,
+    "topic": "Equities",
+    "module": "Module 2: Equity Jurisdictions, Classes, and the Voting Process",
+    "question": "Which one of the following statements provides the most likely reason why MSUMC would place a ban on owning shares of companies with dual class structures?",
+    "options": [
+      "Dual class structures typically provide multiple classes of traded shares with unequal voting rights.",
+      "Dual class structures typically provide unequal cash flow rights to shareholders.",
+      "Dual class structures typically provide one class of untraded shares with superior voting rights to those of traded shares."
+    ],
+    "correctIndex": 2,
+    "explanation": "MSUMC is concerned with being able to vote meaningfully. Dual class structures typically provide one class of untraded shares (held by founders/insiders) with superior voting rights compared to the publicly traded shares. Therefore, publicly traded shares lack sufficient voting power, making them unattractive for the endowment.",
+    "formula": "Dual Class Structure = Traded shares (1 vote/share) + Untraded insider shares (e.g., 10 votes/share)",
+    "trap": "Option A is incorrect because dual class structures rarely allow BOTH classes to be publicly traded. Option B is incorrect because the primary concern of MSUMC here is voting rights, not cash flow rights.",
+    "image": ""
+  },
+  {
+    "id": 39,
+    "topic": "Equities",
+    "module": "Module 2: Equity Jurisdictions, Classes, and the Voting Process",
+    "question": "Which one of the following conditions would most likely be necessary for MSUMC to vote \"yes\" on a shareholder proposal that would cause the board to encroach on day-to-day management?",
+    "options": [
+      "Management presents arguments in the proxy statement that the risk mitigation of the proposal is not material.",
+      "Management is already working on the issue underlying the proposal.",
+      "Management following the proposal would materially improve firm value."
+    ],
+    "correctIndex": 2,
+    "explanation": "In general, a shareholder proposal that, if passed, would cause the board to encroach on management's day-to-day operations is not appropriate unless the actions would have material and positive effects on firm value and/or risk mitigation.",
+    "formula": "Shareholder encroachment on management is only justified if it materially improves firm value or mitigates significant risk.",
+    "trap": "If management is already working on the issue (Option B), MSUMC would typically vote \"no\" because the proposal would be redundant and unnecessarily disruptive.",
+    "image": ""
+  },
+  {
+    "id": 40,
+    "topic": "Equities",
+    "module": "Module 2: Equity Jurisdictions, Classes, and the Voting Process",
+    "question": "Which of the following are typically correct about management and shareholder proposals?",
+    "options": [
+      "Both proposal types are shown in the company's proxy statement.",
+      "Shareholder proposals are binding if passed.",
+      "Shareholder proposals are frequently passed."
+    ],
+    "correctIndex": 0,
+    "explanation": "A company's proxy statement includes both management and shareholder proposals, including the company's voting recommendations to shareholders along with the rationales for the recommendations.",
+    "formula": "Proxy Statement = Management Proposals + Shareholder Proposals",
+    "trap": "Shareholder proposals, even if passed, are typically NON-binding (advisory) on the company and they are rarely passed.",
+    "image": ""
+  },
+  {
+    "id": 41,
+    "topic": "Equities",
+    "module": "Module 2: Equity Jurisdictions, Classes, and the Voting Process",
+    "question": "The voting rights of an unsponsored depositary receipt (DR) belong to the:",
+    "options": [
+      "depositary bank.",
+      "direct owners of the foreign common shares.",
+      "foreign company whose shares are held by the depository."
+    ],
+    "correctIndex": 0,
+    "explanation": "In the case of unsponsored DRs, the depository bank, not the investors in the DR, retains the voting rights. Investors only get voting rights in Sponsored DRs.",
+    "formula": "Unsponsored DR = Depository Bank retains voting rights",
+    "trap": "Do not confuse the direct owners of the underlying foreign shares with the DR investors. The depository bank acts as the legal owner and holds the voting power for unsponsored receipts.",
+    "image": ""
+  },
+  {
+    "id": 42,
+    "topic": "Fixed Income",
+    "module": "Module 1: Fixed-Income Instrument Features",
+    "question": "A financial contract offers to pay €1,200 per month for five years with the first payment made immediately. Assuming an annual discount rate of 6.5%, compounded monthly, the present value of the contract is closest to:",
+    "options": [
+      "Time to maturity and coupon rate",
+      "Coupon frequency and current yield",
+      "Time to maturity and contingency provision"
+    ],
+    "correctIndex": 1,
+    "explanation": "Annuity due (BGN mode): N = 60, I/Y = 6.5/12, PMT = 1,200, FV = 0 → PV = €61,662.62.",
+    "formula": "PV_Due = PV_Ordinary × (1 + r/m)",
+    "trap": "First payment immediately = BGN mode (€61,663), not END mode (€61,330).",
+    "image": "data:image/jpeg;base64,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EBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQf/2Q=="
+  },
+  {
+    "id": 43,
+    "topic": "Fixed Income",
+    "module": "Module 1: Fixed-Income Instrument Features",
+    "question": "Which of the following statements best describes the source(s) of repayment for the Antelas AG floating-rate notes?",
+    "options": [
+      "Since the notes are secured (or backed) by Antelas AG's assets, the floating-rate notes would be considered asset-backed securities.",
+      "The Antelas AG notes rely on the operating cash flows of the firm as their sole source for interest and principal payments.",
+      "The Antelas AG notes rely on the operating cash flows of the firm as their primary source for interest and principal payments, and a legal claim on assets as a secondary source of payment."
+    ],
+    "correctIndex": 2,
+    "explanation": "Secured corporate bonds rely on the operating cash flows of the firm as their primary source for interest and principal payments and a legal claim on assets as a secondary source of payment.",
+    "formula": "Secured Corporate Bond = Primary Source (Operating Cash Flows) + Secondary Source (Secured Assets Claim)",
+    "trap": "Secured corporate debt is distinct from Asset-Backed Securities (ABS), which are issued by special-purpose entities backed directly by specific receivables.",
+    "image": ""
+  },
+  {
+    "id": 44,
+    "topic": "Fixed Income",
+    "module": "Module 1: Fixed-Income Instrument Features",
+    "question": "Antelas AG's issuer-specific credit spread rises by 25 bps p.a. one year after the FRN issuance. Which of the following best describes how Antelas AG's FRN coupon would change as a result?",
+    "options": [
+      "Antelas AG's FRN coupon payment to investors will immediately increase by 25 bps p.a.",
+      "Antelas AG's FRN coupon payment to investors will increase by 25 bps p.a., but will not become effective until the next full debt coupon period begins.",
+      "Antelas AG's FRN coupon will remain unchanged."
+    ],
+    "correctIndex": 1,
+    "explanation": "For the Antelas AG FRN, the spread is fixed at 250 bps and the coupon will only change with changes in the MRR (Market Reference Rate), not with changes in the issuer's own credit spread post-issuance.",
+    "formula": "FRN Coupon = MRR + Fixed Margin (Spread doesn't float with issuer credit rating changes unless structured as a rating-dependent step-up bond).",
+    "trap": "A floating-rate note's coupon adjusts to benchmark reference rate changes, but the contractual spread margin is fixed at issuance.",
+    "image": ""
+  },
+  {
+    "id": 45,
+    "topic": "Fixed Income",
+    "module": "Module 1: Fixed-Income Instrument Features",
+    "question": "Calculate the value of Antelas's payment to bondholders on the maturity date if the MRR is 0.25% p.a. for the final interest period.",
+    "options": [
+      "EUR1,718,750",
+      "EUR251,718,750",
+      "EUR256,875,000"
+    ],
+    "correctIndex": 1,
+    "explanation": "On the maturity date, Antelas AG pays the final FRN coupon plus the bond's principal amount. FRN coupon rate = MRR + spread = 0.25% + 2.50% = 2.75%. Annual interest expense = 250,000,000 × 2.75% = 6,875,000. Quarterly interest = 6,875,000 / 4 = 1,718,750. Total Payment = Principal (250,000,000) + Final Interest (1,718,750) = EUR251,718,750.",
+    "formula": "Total Maturity Payment = Principal + [Principal × (MRR + Spread) / 4]",
+    "trap": "Do not forget to add back the principal amount to the final quarterly coupon payment when calculating total cash flow on maturity date!",
+    "image": ""
+  },
+  {
+    "id": 46,
+    "topic": "Fixed Income",
+    "module": "Module 1: Fixed-Income Instrument Features",
+    "question": "Antelas decides to raise new secured, unsubordinated debt. Which of the following best describes the priority of payments between the issuer's new debt and its existing debt?",
+    "options": [
+      "Because the Antelas AG notes existing secured, unsubordinated debt has a pari passu (or \"equal footing\") clause, which ensures that this debt obligation will be treated the same as any other secured, unsubordinated debt from this borrower.",
+      "Because the existing debt was issued earlier, it would receive priority over the new debt in terms of the payment of interest and principal.",
+      "We do not have enough information to answer this question: the necessary provisions would be provided in the indenture for new secured, unsubordinated notes."
+    ],
+    "correctIndex": 0,
+    "explanation": "Antelas AG's existing secured, unsubordinated debt has a pari passu (equal footing) clause, which ensures that this debt obligation will be treated the same as any other secured, unsubordinated debt from this borrower.",
+    "formula": "Pari Passu Clause = Equal priority / footing among debt of the same seniority rank",
+    "trap": "Chronological order of issuance does not imply seniority priority unless specified by explicit subordination clauses.",
+    "image": ""
+  },
+  {
+    "id": 47,
+    "topic": "Fixed Income",
+    "module": "Module 1: Fixed-Income Instrument Features",
+    "question": "David Smith purchased a mortgage-backed security with a coupon rate of 8% and a par value of $1,000 for $960. Coupon payments are made monthly. The monthly interest payment is closest to:",
+    "options": [
+      "$6.40.",
+      "$6.67.",
+      "$6.94."
+    ],
+    "correctIndex": 1,
+    "explanation": "Annual coupon = Coupon Rate × Par Value = 8% × $1,000 = $80. Because coupon payments are made monthly, the monthly interest payment = $80 / 12 = $6.666... ≈ $6.67.",
+    "formula": "Monthly Interest Payment = (Coupon Rate × Par Value) / 12",
+    "trap": "Always calculate annual coupon payments based on the PAR VALUE ($1,000), NOT the purchase price ($960).",
+    "image": ""
+  },
+  {
+    "id": 48,
+    "topic": "Fixed Income",
+    "module": "Module 1: Fixed-Income Instrument Features",
+    "question": "Which type of fixed-income security is most likely to have coupon payments that reset periodically?",
+    "options": [
+      "Callable bonds",
+      "Convertible bonds",
+      "Floating-rate notes"
+    ],
+    "correctIndex": 2,
+    "explanation": "Floating-rate notes (FRNs) do not have a fixed coupon rate over their life. Instead, their coupon payments reset periodically according to a benchmark reference rate.",
+    "formula": "FRN Coupon = Benchmark Index + Spread (resets every coupon period)",
+    "trap": "Convertible and callable features relate to embedded options, not periodic coupon rate resets.",
+    "image": ""
+  },
+  {
+    "id": 49,
+    "topic": "Fixed Income",
+    "module": "Module 1: Fixed-Income Instrument Features",
+    "question": "An analyst reviews a corporate bond indenture that contains these two covenants: 1. The borrower will pay interest semiannually and principal at maturity. 2. The borrower will not incur additional debt if its debt-to-capital ratio is more than 50%. What types of covenants are these?",
+    "options": [
+      "Both are affirmative covenants.",
+      "Covenant 1 is affirmative, and Covenant 2 is negative.",
+      "Covenant 1 is negative, and Covenant 2 is affirmative."
+    ],
+    "correctIndex": 1,
+    "explanation": "Covenant 1 is an affirmative (positive) covenant because it specifies administrative actions the borrower must perform (pay interest/principal). Covenant 2 is a negative covenant because it restricts certain actions (prohibits incurring debt past 50%).",
+    "formula": "Affirmative Covenant = Administrative duties required | Negative Covenant = Restrictions / Prohibitions",
+    "trap": "Paying what is legally required (interest/principal) is always classified as an affirmative/positive covenant, whereas limits on financial ratios are negative covenants.",
+    "image": ""
   }
 ]
