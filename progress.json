@@ -565,15 +565,16 @@
       }
     },
     "2026-10-29": {
-      "count": 22,
-      "correct": 14,
+      "count": 23,
+      "correct": 15,
       "answeredIds": [
         49,
         109,
         69,
         89,
         101,
-        48
+        48,
+        54
       ],
       "responses": {
         "48": {
@@ -585,6 +586,11 @@
           "selectedIndex": 1,
           "isCorrect": true,
           "timestamp": 1793281602431
+        },
+        "54": {
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timestamp": 1793281984864
         },
         "69": {
           "selectedIndex": 2,
@@ -889,6 +895,12 @@
       "isCorrect": true,
       "dateISO": "2026-10-28",
       "timestamp": 1793172076917
+    },
+    "54": {
+      "selectedIndex": 2,
+      "isCorrect": true,
+      "dateISO": "2026-10-29",
+      "timestamp": 1793281984864
     },
     "56": {
       "selectedIndex": 1,
@@ -1817,6 +1829,20 @@
         }
       ]
     },
+    "54": {
+      "attempts": 1,
+      "wrongCount": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 2,
+      "lastAnsweredDate": "2026-10-29",
+      "history": [
+        {
+          "date": "2026-10-29",
+          "isCorrect": true,
+          "topic": "Economics"
+        }
+      ]
+    },
     "56": {
       "attempts": 1,
       "wrongCount": 0,
@@ -2108,5 +2134,5 @@
     "Fixed Income__2": true,
     "Fixed Income__1": true
   },
-  "lastUpdated": 1793281967947
+  "lastUpdated": 1793281984864
 }
