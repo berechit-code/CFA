@@ -797,8 +797,8 @@
       }
     },
     "2026-10-31": {
-      "count": 9,
-      "correct": 7,
+      "count": 10,
+      "correct": 8,
       "answeredIds": [
         35,
         43,
@@ -808,7 +808,8 @@
         55,
         93,
         100,
-        97
+        97,
+        98
       ],
       "responses": {
         "35": {
@@ -849,6 +850,11 @@
           "selectedIndex": 0,
           "isCorrect": true,
           "timestamp": 1793434803825
+        },
+        "98": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1793434895639
         },
         "100": {
           "selectedIndex": 0,
@@ -1364,6 +1370,12 @@
       "isCorrect": true,
       "dateISO": "2026-10-31",
       "timestamp": 1793434803825
+    },
+    "98": {
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "dateISO": "2026-10-31",
+      "timestamp": 1793434895639
     },
     "100": {
       "selectedIndex": 0,
@@ -2768,6 +2780,20 @@
         }
       ]
     },
+    "98": {
+      "attempts": 1,
+      "wrongCount": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-10-31",
+      "history": [
+        {
+          "date": "2026-10-31",
+          "isCorrect": true,
+          "topic": "Quantitative Methods"
+        }
+      ]
+    },
     "100": {
       "attempts": 1,
       "wrongCount": 0,
@@ -2914,5 +2940,5 @@
     "Fixed Income__2": true,
     "Fixed Income__1": true
   },
-  "lastUpdated": 1793434803825
+  "lastUpdated": 1793434895639
 }
