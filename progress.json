@@ -846,9 +846,9 @@
           "timestamp": 1793433947652
         },
         "97": {
-          "selectedIndex": 1,
-          "isCorrect": false,
-          "timestamp": 1793434773767
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1793434803825
         },
         "100": {
           "selectedIndex": 0,
@@ -1360,10 +1360,10 @@
       "timestamp": 1793433947652
     },
     "97": {
-      "selectedIndex": 1,
-      "isCorrect": false,
+      "selectedIndex": 0,
+      "isCorrect": true,
       "dateISO": "2026-10-31",
-      "timestamp": 1793434773767
+      "timestamp": 1793434803825
     },
     "100": {
       "selectedIndex": 0,
@@ -2750,15 +2750,20 @@
       ]
     },
     "97": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 1,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 1,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 0,
       "lastAnsweredDate": "2026-10-31",
       "history": [
         {
           "date": "2026-10-31",
           "isCorrect": false,
+          "topic": "Quantitative Methods"
+        },
+        {
+          "date": "2026-10-31",
+          "isCorrect": true,
           "topic": "Quantitative Methods"
         }
       ]
@@ -2909,5 +2914,5 @@
     "Fixed Income__2": true,
     "Fixed Income__1": true
   },
-  "lastUpdated": 1793434773767
+  "lastUpdated": 1793434803825
 }
