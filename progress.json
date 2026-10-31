@@ -795,6 +795,20 @@
           "timestamp": 1793372828895
         }
       }
+    },
+    "2026-10-31": {
+      "count": 1,
+      "correct": 1,
+      "answeredIds": [
+        35
+      ],
+      "responses": {
+        "35": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1793433787425
+        }
+      }
     }
   },
   "answeredMap": {
@@ -987,10 +1001,10 @@
       "timestamp": 1793371691650
     },
     "35": {
-      "selectedIndex": 0,
-      "isCorrect": false,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793371596827
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "dateISO": "2026-10-31",
+      "timestamp": 1793433787425
     },
     "36": {
       "selectedIndex": 2,
@@ -1848,11 +1862,11 @@
       ]
     },
     "35": {
-      "attempts": 2,
+      "attempts": 3,
       "wrongCount": 2,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-30",
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-10-31",
       "history": [
         {
           "date": "2026-10-24",
@@ -1862,6 +1876,11 @@
         {
           "date": "2026-10-30",
           "isCorrect": false,
+          "topic": "Ethical and Professional Standards"
+        },
+        {
+          "date": "2026-10-31",
+          "isCorrect": true,
           "topic": "Ethical and Professional Standards"
         }
       ]
@@ -2683,5 +2702,5 @@
     "Fixed Income__2": true,
     "Fixed Income__1": true
   },
-  "lastUpdated": 1793372923776
+  "lastUpdated": 1793433787425
 }
