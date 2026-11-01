@@ -880,6 +880,12 @@
           "timestamp": 1793434722907
         }
       }
+    },
+    "2026-11-01": {
+      "count": 11,
+      "correct": 9,
+      "answeredIds": [],
+      "responses": {}
     }
   },
   "answeredMap": {
@@ -921,13 +927,14 @@
     "8": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "timestamp": 1792741088865
+      "dateISO": "2026-10-27",
+      "timestamp": 1793126890247
     },
     "9": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793372523883
+      "dateISO": "2026-10-27",
+      "timestamp": 1793137795765
     },
     "10": {
       "selectedIndex": 1,
@@ -937,14 +944,13 @@
     "11": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853306287
+      "timestamp": 1792741245731
     },
     "12": {
       "selectedIndex": 2,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853336720
+      "dateISO": "2026-10-27",
+      "timestamp": 1793137811165
     },
     "13": {
       "selectedIndex": 0,
@@ -959,30 +965,32 @@
     "15": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "timestamp": 1792698008479
+      "dateISO": "2026-10-23",
+      "timestamp": 1792760141115
     },
     "16": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792852509935
+      "dateISO": "2026-10-28",
+      "timestamp": 1793171432041
     },
     "17": {
       "selectedIndex": 2,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853349537
+      "dateISO": "2026-10-27",
+      "timestamp": 1793137804515
     },
     "18": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853295533
+      "dateISO": "2026-10-28",
+      "timestamp": 1793172352248
     },
     "19": {
       "selectedIndex": 2,
       "isCorrect": true,
-      "timestamp": 1792741016125
+      "dateISO": "2026-10-27",
+      "timestamp": 1793127058093
     },
     "20": {
       "selectedIndex": 1,
@@ -1002,8 +1010,8 @@
     "23": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853233323
+      "dateISO": "2026-10-27",
+      "timestamp": 1793126938746
     },
     "24": {
       "selectedIndex": 1,
@@ -1026,8 +1034,8 @@
     "27": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "dateISO": "2026-10-24",
-      "timestamp": 1792853998476
+      "dateISO": "2026-10-27",
+      "timestamp": 1793126908579
     },
     "28": {
       "selectedIndex": 2,
@@ -1066,16 +1074,16 @@
       "timestamp": 1792760606977
     },
     "34": {
-      "selectedIndex": 0,
+      "selectedIndex": 2,
       "isCorrect": true,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793371691650
+      "dateISO": "2026-10-27",
+      "timestamp": 1793138024147
     },
     "35": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-31",
-      "timestamp": 1793433787425
+      "dateISO": "2026-10-26",
+      "timestamp": 1793028420650
     },
     "36": {
       "selectedIndex": 2,
@@ -1090,10 +1098,10 @@
       "timestamp": 1793138489650
     },
     "38": {
-      "selectedIndex": 2,
+      "selectedIndex": 0,
       "isCorrect": true,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793372398821
+      "dateISO": "2026-10-27",
+      "timestamp": 1793138373464
     },
     "39": {
       "selectedIndex": 1,
@@ -1110,14 +1118,14 @@
     "41": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793372379050
+      "dateISO": "2026-10-27",
+      "timestamp": 1793125935840
     },
     "42": {
-      "selectedIndex": 0,
-      "isCorrect": false,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793372589100
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "dateISO": "2026-10-28",
+      "timestamp": 1793172478581
     },
     "43": {
       "selectedIndex": 2,
@@ -1138,16 +1146,16 @@
       "timestamp": 1793138201679
     },
     "46": {
-      "selectedIndex": 0,
-      "isCorrect": true,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793372446602
-    },
-    "47": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793372661135
+      "dateISO": "2026-10-27",
+      "timestamp": 1793137894814
+    },
+    "47": {
+      "selectedIndex": 0,
+      "isCorrect": false,
+      "dateISO": "2026-10-28",
+      "timestamp": 1793172632781
     },
     "48": {
       "selectedIndex": 2,
@@ -1240,10 +1248,10 @@
       "timestamp": 1793172464731
     },
     "69": {
-      "selectedIndex": 1,
-      "isCorrect": true,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793371719308
+      "selectedIndex": 2,
+      "isCorrect": false,
+      "dateISO": "2026-10-29",
+      "timestamp": 1793281646465
     },
     "70": {
       "selectedIndex": 1,
@@ -1254,8 +1262,8 @@
     "71": {
       "selectedIndex": 2,
       "isCorrect": true,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793372532802
+      "dateISO": "2026-10-28",
+      "timestamp": 1793172469514
     },
     "72": {
       "selectedIndex": 0,
@@ -1288,10 +1296,10 @@
       "timestamp": 1793372528708
     },
     "77": {
-      "selectedIndex": 1,
-      "isCorrect": true,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793372516792
+      "selectedIndex": 2,
+      "isCorrect": false,
+      "dateISO": "2026-10-29",
+      "timestamp": 1793282998094
     },
     "78": {
       "selectedIndex": 2,
@@ -1562,25 +1570,30 @@
       ]
     },
     "8": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-23",
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-23",
+          "isCorrect": true,
+          "topic": "Financial Statement Analysis"
+        },
+        {
+          "date": "2026-10-27",
           "isCorrect": true,
           "topic": "Financial Statement Analysis"
         }
       ]
     },
     "9": {
-      "attempts": 4,
-      "wrongCount": 1,
+      "attempts": 2,
+      "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-30",
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-23",
@@ -1588,17 +1601,7 @@
           "topic": "Derivatives"
         },
         {
-          "date": "2026-10-24",
-          "isCorrect": false,
-          "topic": "Derivatives"
-        },
-        {
-          "date": "2026-10-24",
-          "isCorrect": true,
-          "topic": "Derivatives"
-        },
-        {
-          "date": "2026-10-30",
+          "date": "2026-10-27",
           "isCorrect": true,
           "topic": "Derivatives"
         }
@@ -1619,19 +1622,14 @@
       ]
     },
     "11": {
-      "attempts": 2,
+      "attempts": 1,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-23",
       "history": [
         {
           "date": "2026-10-23",
-          "isCorrect": true,
-          "topic": "Fixed Income"
-        },
-        {
-          "date": "2026-10-24",
           "isCorrect": true,
           "topic": "Fixed Income"
         }
@@ -1642,7 +1640,7 @@
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-23",
@@ -1650,7 +1648,7 @@
           "topic": "Portfolio Construction"
         },
         {
-          "date": "2026-10-24",
+          "date": "2026-10-27",
           "isCorrect": true,
           "topic": "Portfolio Construction"
         }
@@ -1704,11 +1702,11 @@
       ]
     },
     "16": {
-      "attempts": 3,
+      "attempts": 4,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-28",
       "history": [
         {
           "date": "2026-10-22",
@@ -1721,7 +1719,12 @@
           "topic": "Ethical and Professional Standards"
         },
         {
-          "date": "2026-10-24",
+          "date": "2026-10-27",
+          "isCorrect": true,
+          "topic": "Ethical and Professional Standards"
+        },
+        {
+          "date": "2026-10-28",
           "isCorrect": true,
           "topic": "Ethical and Professional Standards"
         }
@@ -1732,7 +1735,7 @@
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-22",
@@ -1740,18 +1743,18 @@
           "topic": "Portfolio Construction"
         },
         {
-          "date": "2026-10-24",
+          "date": "2026-10-27",
           "isCorrect": true,
           "topic": "Portfolio Construction"
         }
       ]
     },
     "18": {
-      "attempts": 3,
-      "wrongCount": 1,
+      "attempts": 5,
+      "wrongCount": 3,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-28",
       "history": [
         {
           "date": "2026-10-22",
@@ -1764,21 +1767,36 @@
           "topic": "Fixed Income"
         },
         {
-          "date": "2026-10-24",
+          "date": "2026-10-27",
+          "isCorrect": false,
+          "topic": "Fixed Income"
+        },
+        {
+          "date": "2026-10-27",
+          "isCorrect": false,
+          "topic": "Fixed Income"
+        },
+        {
+          "date": "2026-10-28",
           "isCorrect": true,
           "topic": "Fixed Income"
         }
       ]
     },
     "19": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-10-23",
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-23",
+          "isCorrect": true,
+          "topic": "Fixed Income"
+        },
+        {
+          "date": "2026-10-27",
           "isCorrect": true,
           "topic": "Fixed Income"
         }
@@ -1827,11 +1845,11 @@
       ]
     },
     "23": {
-      "attempts": 2,
+      "attempts": 3,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-23",
@@ -1839,7 +1857,12 @@
           "topic": "Equities"
         },
         {
-          "date": "2026-10-24",
+          "date": "2026-10-26",
+          "isCorrect": true,
+          "topic": "Equities"
+        },
+        {
+          "date": "2026-10-27",
           "isCorrect": true,
           "topic": "Equities"
         }
@@ -1888,14 +1911,19 @@
       ]
     },
     "27": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-24",
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-24",
+          "isCorrect": true,
+          "topic": "Financial Statement Analysis"
+        },
+        {
+          "date": "2026-10-27",
           "isCorrect": true,
           "topic": "Financial Statement Analysis"
         }
@@ -1989,8 +2017,8 @@
       "attempts": 2,
       "wrongCount": 1,
       "lastIsCorrect": true,
-      "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-30",
+      "lastSelectedIndex": 2,
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-24",
@@ -1998,18 +2026,18 @@
           "topic": "Quantitative Methods"
         },
         {
-          "date": "2026-10-30",
+          "date": "2026-10-27",
           "isCorrect": true,
-          "topic": "Ethical and Professional Standards"
+          "topic": "Quantitative Methods"
         }
       ]
     },
     "35": {
-      "attempts": 3,
-      "wrongCount": 2,
+      "attempts": 2,
+      "wrongCount": 1,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-31",
+      "lastAnsweredDate": "2026-10-26",
       "history": [
         {
           "date": "2026-10-24",
@@ -2017,14 +2045,9 @@
           "topic": "Quantitative Methods"
         },
         {
-          "date": "2026-10-30",
-          "isCorrect": false,
-          "topic": "Ethical and Professional Standards"
-        },
-        {
-          "date": "2026-10-31",
+          "date": "2026-10-26",
           "isCorrect": true,
-          "topic": "Ethical and Professional Standards"
+          "topic": "Quantitative Methods"
         }
       ]
     },
@@ -2057,11 +2080,11 @@
       ]
     },
     "38": {
-      "attempts": 3,
+      "attempts": 2,
       "wrongCount": 1,
       "lastIsCorrect": true,
-      "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-10-30",
+      "lastSelectedIndex": 0,
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-27",
@@ -2072,11 +2095,6 @@
           "date": "2026-10-27",
           "isCorrect": true,
           "topic": "Quantitative Methods"
-        },
-        {
-          "date": "2026-10-30",
-          "isCorrect": true,
-          "topic": "Equities"
         }
       ]
     },
@@ -2109,11 +2127,11 @@
       ]
     },
     "41": {
-      "attempts": 2,
-      "wrongCount": 1,
+      "attempts": 3,
+      "wrongCount": 2,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-30",
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-24",
@@ -2121,18 +2139,23 @@
           "topic": "Quantitative Methods"
         },
         {
-          "date": "2026-10-30",
+          "date": "2026-10-26",
+          "isCorrect": false,
+          "topic": "Quantitative Methods"
+        },
+        {
+          "date": "2026-10-27",
           "isCorrect": true,
-          "topic": "Equities"
+          "topic": "Quantitative Methods"
         }
       ]
     },
     "42": {
-      "attempts": 2,
-      "wrongCount": 2,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-30",
+      "attempts": 4,
+      "wrongCount": 3,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-10-28",
       "history": [
         {
           "date": "2026-10-24",
@@ -2140,8 +2163,18 @@
           "topic": "Quantitative Methods"
         },
         {
-          "date": "2026-10-30",
+          "date": "2026-10-27",
           "isCorrect": false,
+          "topic": "Quantitative Methods"
+        },
+        {
+          "date": "2026-10-28",
+          "isCorrect": false,
+          "topic": "Fixed Income"
+        },
+        {
+          "date": "2026-10-28",
+          "isCorrect": true,
           "topic": "Fixed Income"
         }
       ]
@@ -2192,8 +2225,8 @@
       "attempts": 2,
       "wrongCount": 1,
       "lastIsCorrect": true,
-      "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-30",
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-10-27",
       "history": [
         {
           "date": "2026-10-24",
@@ -2201,27 +2234,22 @@
           "topic": "Quantitative Methods"
         },
         {
-          "date": "2026-10-30",
+          "date": "2026-10-27",
           "isCorrect": true,
-          "topic": "Fixed Income"
+          "topic": "Quantitative Methods"
         }
       ]
     },
     "47": {
-      "attempts": 2,
+      "attempts": 1,
       "wrongCount": 1,
-      "lastIsCorrect": true,
-      "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-30",
+      "lastIsCorrect": false,
+      "lastSelectedIndex": 0,
+      "lastAnsweredDate": "2026-10-28",
       "history": [
         {
           "date": "2026-10-28",
           "isCorrect": false,
-          "topic": "Fixed Income"
-        },
-        {
-          "date": "2026-10-30",
-          "isCorrect": true,
           "topic": "Fixed Income"
         }
       ]
@@ -2437,20 +2465,15 @@
       ]
     },
     "69": {
-      "attempts": 2,
+      "attempts": 1,
       "wrongCount": 1,
-      "lastIsCorrect": true,
-      "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-30",
+      "lastIsCorrect": false,
+      "lastSelectedIndex": 2,
+      "lastAnsweredDate": "2026-10-29",
       "history": [
         {
           "date": "2026-10-29",
           "isCorrect": false,
-          "topic": "Quantitative Methods"
-        },
-        {
-          "date": "2026-10-30",
-          "isCorrect": true,
           "topic": "Quantitative Methods"
         }
       ]
@@ -2470,19 +2493,14 @@
       ]
     },
     "71": {
-      "attempts": 2,
+      "attempts": 1,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-10-30",
+      "lastAnsweredDate": "2026-10-28",
       "history": [
         {
           "date": "2026-10-28",
-          "isCorrect": true,
-          "topic": "Portfolio Construction"
-        },
-        {
-          "date": "2026-10-30",
           "isCorrect": true,
           "topic": "Portfolio Construction"
         }
@@ -2559,30 +2577,15 @@
       ]
     },
     "77": {
-      "attempts": 4,
-      "wrongCount": 3,
-      "lastIsCorrect": true,
-      "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-30",
+      "attempts": 1,
+      "wrongCount": 1,
+      "lastIsCorrect": false,
+      "lastSelectedIndex": 2,
+      "lastAnsweredDate": "2026-10-29",
       "history": [
         {
           "date": "2026-10-29",
           "isCorrect": false,
-          "topic": "Fixed Income"
-        },
-        {
-          "date": "2026-10-30",
-          "isCorrect": false,
-          "topic": "Fixed Income"
-        },
-        {
-          "date": "2026-10-30",
-          "isCorrect": false,
-          "topic": "Fixed Income"
-        },
-        {
-          "date": "2026-10-30",
-          "isCorrect": true,
           "topic": "Fixed Income"
         }
       ]
@@ -3018,5 +3021,5 @@
     "Fixed Income__2": true,
     "Fixed Income__1": true
   },
-  "lastUpdated": 1793435178679
+  "lastUpdated": 1793557655554
 }
