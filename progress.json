@@ -882,15 +882,16 @@
       }
     },
     "2026-11-01": {
-      "count": 17,
-      "correct": 15,
+      "count": 18,
+      "correct": 16,
       "answeredIds": [
         34,
         96,
         69,
         52,
         67,
-        13
+        13,
+        41
       ],
       "responses": {
         "13": {
@@ -902,6 +903,11 @@
           "selectedIndex": 0,
           "isCorrect": true,
           "timestamp": 1793557711720
+        },
+        "41": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1793557846417
         },
         "52": {
           "selectedIndex": 0,
@@ -1157,8 +1163,8 @@
     "41": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "dateISO": "2026-10-27",
-      "timestamp": 1793125935840
+      "dateISO": "2026-11-01",
+      "timestamp": 1793557846417
     },
     "42": {
       "selectedIndex": 1,
@@ -2182,11 +2188,11 @@
       ]
     },
     "41": {
-      "attempts": 3,
+      "attempts": 4,
       "wrongCount": 2,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-27",
+      "lastAnsweredDate": "2026-11-01",
       "history": [
         {
           "date": "2026-10-24",
@@ -2202,6 +2208,11 @@
           "date": "2026-10-27",
           "isCorrect": true,
           "topic": "Quantitative Methods"
+        },
+        {
+          "date": "2026-11-01",
+          "isCorrect": true,
+          "topic": "Equities"
         }
       ]
     },
@@ -3105,5 +3116,5 @@
     "Fixed Income__2": true,
     "Fixed Income__1": true
   },
-  "lastUpdated": 1793557836467
+  "lastUpdated": 1793557846417
 }
