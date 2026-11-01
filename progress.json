@@ -882,16 +882,22 @@
       }
     },
     "2026-11-01": {
-      "count": 16,
-      "correct": 14,
+      "count": 17,
+      "correct": 15,
       "answeredIds": [
         34,
         96,
         69,
         52,
-        67
+        67,
+        13
       ],
       "responses": {
+        "13": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1793557836467
+        },
         "34": {
           "selectedIndex": 0,
           "isCorrect": true,
@@ -987,7 +993,8 @@
     "13": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "timestamp": 1792741045828
+      "dateISO": "2026-11-01",
+      "timestamp": 1793557836467
     },
     "14": {
       "selectedIndex": 1,
@@ -1693,14 +1700,19 @@
       ]
     },
     "13": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-23",
+      "lastAnsweredDate": "2026-11-01",
       "history": [
         {
           "date": "2026-10-23",
+          "isCorrect": true,
+          "topic": "Financial Statement Analysis"
+        },
+        {
+          "date": "2026-11-01",
           "isCorrect": true,
           "topic": "Financial Statement Analysis"
         }
@@ -3093,5 +3105,5 @@
     "Fixed Income__2": true,
     "Fixed Income__1": true
   },
-  "lastUpdated": 1793557830518
+  "lastUpdated": 1793557836467
 }
