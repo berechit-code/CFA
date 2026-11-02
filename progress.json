@@ -882,8 +882,8 @@
       }
     },
     "2026-11-01": {
-      "count": 21,
-      "correct": 19,
+      "count": 20,
+      "correct": 9,
       "answeredIds": [
         34,
         96,
@@ -3151,5 +3151,5 @@
     "Corporate Finance__0": true,
     "Portfolio Construction__4": true
   },
-  "lastUpdated": 1793657887460
+  "lastUpdated": 1793657896287
 }
