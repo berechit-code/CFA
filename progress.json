@@ -950,11 +950,12 @@
       }
     },
     "2026-11-02": {
-      "count": 2,
-      "correct": 1,
+      "count": 3,
+      "correct": 2,
       "answeredIds": [
         35,
-        111
+        111,
+        113
       ],
       "responses": {
         "35": {
@@ -966,6 +967,11 @@
           "selectedIndex": 0,
           "isCorrect": false,
           "timestamp": 1793657943420
+        },
+        "113": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1793657958554
         }
       }
     }
@@ -1557,6 +1563,12 @@
       "isCorrect": false,
       "dateISO": "2026-11-02",
       "timestamp": 1793657943420
+    },
+    "113": {
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "dateISO": "2026-11-02",
+      "timestamp": 1793657958554
     },
     "121": {
       "selectedIndex": 2,
@@ -3146,6 +3158,20 @@
         }
       ]
     },
+    "113": {
+      "attempts": 1,
+      "wrongCount": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-11-02",
+      "history": [
+        {
+          "date": "2026-11-02",
+          "isCorrect": true,
+          "topic": "Corporate Finance"
+        }
+      ]
+    },
     "121": {
       "attempts": 1,
       "wrongCount": 0,
@@ -3196,5 +3222,5 @@
     "Corporate Finance__0": true,
     "Portfolio Construction__4": true
   },
-  "lastUpdated": 1793657943420
+  "lastUpdated": 1793657958554
 }
