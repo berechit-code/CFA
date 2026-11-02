@@ -950,14 +950,15 @@
       }
     },
     "2026-11-02": {
-      "count": 5,
+      "count": 6,
       "correct": 4,
       "answeredIds": [
         35,
         111,
         113,
         24,
-        65
+        65,
+        58
       ],
       "responses": {
         "24": {
@@ -969,6 +970,11 @@
           "selectedIndex": 1,
           "isCorrect": true,
           "timestamp": 1793657919736
+        },
+        "58": {
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timestamp": 1793658203036
         },
         "65": {
           "selectedIndex": 2,
@@ -1317,6 +1323,12 @@
       "isCorrect": true,
       "dateISO": "2026-10-26",
       "timestamp": 1793028090134
+    },
+    "58": {
+      "selectedIndex": 0,
+      "isCorrect": false,
+      "dateISO": "2026-11-02",
+      "timestamp": 1793658203036
     },
     "59": {
       "selectedIndex": 1,
@@ -2554,6 +2566,20 @@
         }
       ]
     },
+    "58": {
+      "attempts": 1,
+      "wrongCount": 1,
+      "lastIsCorrect": false,
+      "lastSelectedIndex": 0,
+      "lastAnsweredDate": "2026-11-02",
+      "history": [
+        {
+          "date": "2026-11-02",
+          "isCorrect": false,
+          "topic": "Economics"
+        }
+      ]
+    },
     "59": {
       "attempts": 1,
       "wrongCount": 0,
@@ -3259,5 +3285,5 @@
     "Corporate Finance__0": true,
     "Portfolio Construction__4": true
   },
-  "lastUpdated": 1793658172868
+  "lastUpdated": 1793658203036
 }
