@@ -950,8 +950,8 @@
       }
     },
     "2026-11-02": {
-      "count": 8,
-      "correct": 6,
+      "count": 9,
+      "correct": 7,
       "answeredIds": [
         35,
         111,
@@ -960,7 +960,8 @@
         65,
         58,
         21,
-        80
+        80,
+        41
       ],
       "responses": {
         "21": {
@@ -977,6 +978,11 @@
           "selectedIndex": 1,
           "isCorrect": true,
           "timestamp": 1793657919736
+        },
+        "41": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1793658233603
         },
         "58": {
           "selectedIndex": 0,
@@ -1238,8 +1244,8 @@
     "41": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "dateISO": "2026-11-01",
-      "timestamp": 1793557846417
+      "dateISO": "2026-11-02",
+      "timestamp": 1793658233603
     },
     "42": {
       "selectedIndex": 1,
@@ -2307,11 +2313,11 @@
       ]
     },
     "41": {
-      "attempts": 4,
+      "attempts": 5,
       "wrongCount": 2,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-11-01",
+      "lastAnsweredDate": "2026-11-02",
       "history": [
         {
           "date": "2026-10-24",
@@ -2330,6 +2336,11 @@
         },
         {
           "date": "2026-11-01",
+          "isCorrect": true,
+          "topic": "Equities"
+        },
+        {
+          "date": "2026-11-02",
           "isCorrect": true,
           "topic": "Equities"
         }
@@ -3308,5 +3319,5 @@
     "Corporate Finance__0": true,
     "Portfolio Construction__4": true
   },
-  "lastUpdated": 1793658228818
+  "lastUpdated": 1793658233603
 }
