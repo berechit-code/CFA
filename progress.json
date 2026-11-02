@@ -948,6 +948,20 @@
           "timestamp": 1793557757452
         }
       }
+    },
+    "2026-11-02": {
+      "count": 1,
+      "correct": 1,
+      "answeredIds": [
+        35
+      ],
+      "responses": {
+        "35": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1793657919736
+        }
+      }
     }
   },
   "answeredMap": {
@@ -1145,8 +1159,8 @@
     "35": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-26",
-      "timestamp": 1793028420650
+      "dateISO": "2026-11-02",
+      "timestamp": 1793657919736
     },
     "36": {
       "selectedIndex": 2,
@@ -2112,11 +2126,11 @@
       ]
     },
     "35": {
-      "attempts": 2,
+      "attempts": 3,
       "wrongCount": 1,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-26",
+      "lastAnsweredDate": "2026-11-02",
       "history": [
         {
           "date": "2026-10-24",
@@ -2127,6 +2141,11 @@
           "date": "2026-10-26",
           "isCorrect": true,
           "topic": "Quantitative Methods"
+        },
+        {
+          "date": "2026-11-02",
+          "isCorrect": true,
+          "topic": "Ethical and Professional Standards"
         }
       ]
     },
@@ -3151,5 +3170,5 @@
     "Corporate Finance__0": true,
     "Portfolio Construction__4": true
   },
-  "lastUpdated": 1793657896287
+  "lastUpdated": 1793657919736
 }
