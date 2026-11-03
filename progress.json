@@ -1012,8 +1012,8 @@
       }
     },
     "2026-11-03": {
-      "count": 10,
-      "correct": 10,
+      "count": 11,
+      "correct": 11,
       "answeredIds": [
         64,
         99,
@@ -1024,7 +1024,8 @@
         3,
         4,
         5,
-        6
+        6,
+        7
       ],
       "responses": {
         "1": {
@@ -1056,6 +1057,11 @@
           "selectedIndex": 2,
           "isCorrect": true,
           "timestamp": 1793715987532
+        },
+        "7": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1793715995448
         },
         "62": {
           "selectedIndex": 0,
@@ -1116,7 +1122,8 @@
     "7": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "timestamp": 1792741063469
+      "dateISO": "2026-11-03",
+      "timestamp": 1793715995448
     },
     "8": {
       "selectedIndex": 1,
@@ -1842,14 +1849,19 @@
       ]
     },
     "7": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-23",
+      "lastAnsweredDate": "2026-11-03",
       "history": [
         {
           "date": "2026-10-23",
+          "isCorrect": true,
+          "topic": "Quantitative Methods"
+        },
+        {
+          "date": "2026-11-03",
           "isCorrect": true,
           "topic": "Quantitative Methods"
         }
@@ -3519,5 +3531,5 @@
     "Corporate Finance__0": true,
     "Portfolio Construction__4": true
   },
-  "lastUpdated": 1793715987532
+  "lastUpdated": 1793715995448
 }
