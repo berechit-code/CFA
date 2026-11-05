@@ -1154,10 +1154,18 @@
       }
     },
     "2026-11-05": {
-      "count": 22,
-      "correct": 20,
-      "answeredIds": [],
-      "responses": {}
+      "count": 23,
+      "correct": 21,
+      "answeredIds": [
+        111
+      ],
+      "responses": {
+        "111": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1793911823857
+        }
+      }
     },
     "2026-11-04": {
       "count": 14,
@@ -1803,9 +1811,9 @@
     },
     "111": {
       "selectedIndex": 0,
-      "isCorrect": false,
-      "dateISO": "2026-11-02",
-      "timestamp": 1793657943420
+      "isCorrect": true,
+      "dateISO": "2026-11-05",
+      "timestamp": 1793911823857
     },
     "113": {
       "selectedIndex": 1,
@@ -3601,16 +3609,21 @@
       ]
     },
     "111": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 1,
-      "lastIsCorrect": false,
+      "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-11-02",
+      "lastAnsweredDate": "2026-11-05",
       "history": [
         {
           "date": "2026-11-02",
           "isCorrect": false,
           "topic": "Corporate Finance"
+        },
+        {
+          "date": "2026-11-05",
+          "isCorrect": true,
+          "topic": "Ethical and Professional Standards"
         }
       ]
     },
@@ -3678,5 +3691,5 @@
     "Corporate Finance__0": true,
     "Portfolio Construction__4": true
   },
-  "lastUpdated": 1793911817756
+  "lastUpdated": 1793911823857
 }
