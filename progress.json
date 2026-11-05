@@ -1154,8 +1154,8 @@
       }
     },
     "2026-11-05": {
-      "count": 8,
-      "correct": 8,
+      "count": 9,
+      "correct": 9,
       "answeredIds": [
         1,
         2,
@@ -1164,7 +1164,8 @@
         5,
         6,
         7,
-        8
+        8,
+        9
       ],
       "responses": {
         "1": {
@@ -1206,6 +1207,11 @@
           "selectedIndex": 1,
           "isCorrect": true,
           "timestamp": 1793904648093
+        },
+        "9": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1793904650790
         }
       }
     }
@@ -1262,8 +1268,8 @@
     "9": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "dateISO": "2026-10-30",
-      "timestamp": 1793372523883
+      "dateISO": "2026-11-05",
+      "timestamp": 1793904650790
     },
     "10": {
       "selectedIndex": 1,
@@ -2012,11 +2018,11 @@
       ]
     },
     "9": {
-      "attempts": 4,
+      "attempts": 5,
       "wrongCount": 1,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-30",
+      "lastAnsweredDate": "2026-11-05",
       "history": [
         {
           "date": "2026-10-23",
@@ -2035,6 +2041,11 @@
         },
         {
           "date": "2026-10-30",
+          "isCorrect": true,
+          "topic": "Derivatives"
+        },
+        {
+          "date": "2026-11-05",
           "isCorrect": true,
           "topic": "Derivatives"
         }
@@ -3606,5 +3617,5 @@
     "Corporate Finance__0": true,
     "Portfolio Construction__4": true
   },
-  "lastUpdated": 1793904648093
+  "lastUpdated": 1793904650790
 }
