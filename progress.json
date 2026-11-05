@@ -1154,8 +1154,8 @@
       }
     },
     "2026-11-05": {
-      "count": 12,
-      "correct": 11,
+      "count": 14,
+      "correct": 13,
       "answeredIds": [
         1,
         2,
@@ -1168,7 +1168,9 @@
         9,
         10,
         11,
-        12
+        12,
+        13,
+        14
       ],
       "responses": {
         "1": {
@@ -1230,6 +1232,16 @@
           "selectedIndex": 2,
           "isCorrect": true,
           "timestamp": 1793904672543
+        },
+        "13": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1793904674904
+        },
+        "14": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1793904676768
         }
       }
     }
@@ -1310,12 +1322,14 @@
     "13": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "timestamp": 1792741045828
+      "dateISO": "2026-11-05",
+      "timestamp": 1793904674904
     },
     "14": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "timestamp": 1792741055597
+      "dateISO": "2026-11-05",
+      "timestamp": 1793904676768
     },
     "15": {
       "selectedIndex": 1,
@@ -2143,28 +2157,38 @@
       ]
     },
     "13": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-10-23",
+      "lastAnsweredDate": "2026-11-05",
       "history": [
         {
           "date": "2026-10-23",
+          "isCorrect": true,
+          "topic": "Financial Statement Analysis"
+        },
+        {
+          "date": "2026-11-05",
           "isCorrect": true,
           "topic": "Financial Statement Analysis"
         }
       ]
     },
     "14": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-23",
+      "lastAnsweredDate": "2026-11-05",
       "history": [
         {
           "date": "2026-10-23",
+          "isCorrect": true,
+          "topic": "Financial Statement Analysis"
+        },
+        {
+          "date": "2026-11-05",
           "isCorrect": true,
           "topic": "Financial Statement Analysis"
         }
@@ -3656,5 +3680,5 @@
     "Corporate Finance__0": true,
     "Portfolio Construction__4": true
   },
-  "lastUpdated": 1793904672543
+  "lastUpdated": 1793904676768
 }
