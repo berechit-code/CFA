@@ -2334,5 +2334,437 @@
     "formula": "Representativeness Bias → Base-Rate Neglect & The Halo Effect",
     "trap": "Bubbles and crashes are most closely identified with Overconfidence/Self-attribution. Momentum is linked to Availability and Regret Aversion.",
     "image": ""
+  },
+  {
+    "id": 147,
+    "topic": "Corporate Finance",
+    "module": "Module 1: Organizational Forms",
+    "question": "[DAG Vignette] DAG Inc. owns 80% of DAG LP (which owns 100% of timber assets). The Dee family owns 30% of DAG Inc. What percentage of the timber and forest assets are effectively owned by the Dee family members?",
+    "options": [
+      "24%",
+      "30%",
+      "80%"
+    ],
+    "correctIndex": 0,
+    "explanation": "The Dee family effectively owns 24% of the timber and forest assets. They own 30% of the shares of DAG Inc. (the publicly traded corporation), and DAG Inc. owns 80% of the limited partnership (DAG LP) which holds the assets. Therefore: 30% × 80% = 24%.",
+    "formula": "Effective Ownership = % Owned in Parent × % Parent Owns in Subsidiary",
+    "trap": "Don't just pick the ownership stake in the parent company (30%). You must multiply through the ownership chain.",
+    "image": ""
+  },
+  {
+    "id": 148,
+    "topic": "Corporate Finance",
+    "module": "Module 1: Organizational Forms",
+    "question": "[DAG Vignette] DAG Inc. is organized as a special corporate form that does not pay corporate income taxes if it distributes all net income to shareholders. DAG LP is a limited partnership. Which of the following best describes their taxation?",
+    "options": [
+      "DAG LP pays tax based on its pre-tax income.",
+      "Shareholders of DAG Inc. pay tax based on dividend income.",
+      "DAG Inc. pays tax based on its pre-tax income."
+    ],
+    "correctIndex": 1,
+    "explanation": "Both entities act as pass-throughs. DAG LP (a limited partnership) passes income directly to partners. DAG Inc. is a special tax-exempt corporation that passes income to shareholders as dividends. Thus, neither entity pays corporate income tax; instead, the shareholders of DAG Inc. pay tax on dividend income.",
+    "formula": "Pass-Through Entity → No Entity-Level Tax → Taxed at Owner/Shareholder Level",
+    "trap": "Normally, corporations face double taxation, but this vignette explicitly states DAG Inc. uses a special corporate form to avoid entity-level taxes.",
+    "image": ""
+  },
+  {
+    "id": 149,
+    "topic": "Corporate Finance",
+    "module": "Module 1: Organizational Forms",
+    "question": "[DAG Vignette] DAG Inc. is the General Partner (GP) of DAG LP. Which of the following best describes their liability profiles?",
+    "options": [
+      "Neither DAG LP nor DAG Inc. is managed by a majority owner.",
+      "DAG Inc. has limits to its ability to raise new capital because of the dividend requirement on its corporate form.",
+      "DAG Inc. faces unlimited liability as the general partner, while DAG Inc.'s status as a corporation implies that its shareholders face limited liability."
+    ],
+    "correctIndex": 2,
+    "explanation": "DAG Inc. is the general partner of DAG LP, meaning DAG Inc. (the entity) has unlimited liability for the partnership's debts. However, because DAG Inc. itself is structured as a corporation, its own shareholders (including the Dee family) have limited liability, protecting their personal assets.",
+    "formula": "General Partner (GP) = Unlimited Liability | Corporation Shareholders = Limited Liability",
+    "trap": "A corporation can act as a General Partner. The corporation takes on unlimited liability, but the humans owning the corporation are protected by the corporate shield.",
+    "image": ""
+  },
+  {
+    "id": 150,
+    "topic": "Corporate Finance",
+    "module": "Module 1: Organizational Forms",
+    "question": "[DAG Vignette] What is a significant difference between the limited partners of DAG LP and the outside shareholders of DAG Inc.?",
+    "options": [
+      "Managerial responsibilities",
+      "Taxation of income from the partnership",
+      "The ability to vote and replace members of the DAG Inc. board of directors"
+    ],
+    "correctIndex": 2,
+    "explanation": "The limited partners (LPs) of DAG LP own a stake in the partnership but are not shareholders of DAG Inc., meaning they have no voting rights to change the board of DAG Inc. Conversely, the outside shareholders of DAG Inc. own 70% of the corporation and hold voting rights to elect or replace the board.",
+    "formula": "Limited Partners (LPs) = No voting rights in the GP's corporate board | Corporate Shareholders = Voting rights in the corporation",
+    "trap": "Neither group has direct day-to-day managerial responsibilities (LPs are passive; shareholders delegate to the board/management).",
+    "image": ""
+  },
+  {
+    "id": 151,
+    "topic": "Corporate Finance",
+    "module": "Module 1: Organizational Forms",
+    "question": "[DAG Vignette] Which of the following rationales would be most consistent with the Dee family's choice to create this complex organizational structure (owning 30% of a corporate GP) instead of simply organizing as a limited partnership?",
+    "options": [
+      "It provides management control without the need for majority ownership by the family, while maintaining limited liability.",
+      "The complex structure eliminates the potential for double taxation.",
+      "The complex structure avoids potential problems associated with outside investors exercising voting rights."
+    ],
+    "correctIndex": 0,
+    "explanation": "By putting a corporation (DAG Inc.) in the GP role and owning just 30% of it, the Dee family controls the entire $100% of timber assets (via the board) with only a 24% effective economic stake. Furthermore, holding their stake through a corporation gives them limited liability, whereas acting directly as a General Partner would expose them to unlimited personal liability.",
+    "formula": "Corporate GP Structure = Control via Board + Limited Liability for Owners + Leveraged Effective Ownership",
+    "trap": "The structure actually creates (rather than avoids) voting risks from outside investors, since outside shareholders own 70% of DAG Inc. and could theoretically outvote the Dee family.",
+    "image": ""
+  },
+  {
+    "id": 152,
+    "topic": "Corporate Finance",
+    "module": "Module 1: Organizational Forms",
+    "question": "In which of the following business structures do owners share all risk and business liability?",
+    "options": [
+      "Corporations",
+      "Limited partnerships",
+      "General partnerships"
+    ],
+    "correctIndex": 2,
+    "explanation": "General partnerships consist of partners who establish the business by contributing capital. A key feature of general partnerships is that ALL partners share all risks and have unlimited business liability for the partnership's debts.",
+    "formula": "General Partnership = All partners have unlimited joint & several liability.",
+    "trap": "In a limited partnership, only the General Partner(s) have unlimited liability; Limited Partners (LPs) have limited liability.",
+    "image": ""
+  },
+  {
+    "id": 153,
+    "topic": "Corporate Finance",
+    "module": "Module 1: Organizational Forms",
+    "question": "Double taxation of profits is most likely a concern for owners in:",
+    "options": [
+      "corporations.",
+      "limited partnerships.",
+      "general partnerships."
+    ],
+    "correctIndex": 0,
+    "explanation": "In most jurisdictions, traditional corporations (C-Corps) are taxed directly on their corporate profits at the entity level. When those after-tax profits are distributed to shareholders as dividends, the shareholders are taxed again at the personal level. This is known as double taxation.",
+    "formula": "Double Taxation = Corporate Income Tax + Personal Dividend Tax",
+    "trap": "Partnerships (both general and limited) and sole proprietorships are pass-through entities and avoid double taxation.",
+    "image": ""
+  },
+  {
+    "id": 154,
+    "topic": "Corporate Finance",
+    "module": "Module 1: Organizational Forms",
+    "question": "Which organizational form of business has limited liability for some owners and passes through profits and losses to owners for taxation purposes?",
+    "options": [
+      "Corporation",
+      "Limited partnership",
+      "Sole proprietorship"
+    ],
+    "correctIndex": 1,
+    "explanation": "A limited partnership is a pass-through entity for tax purposes (avoiding double taxation). It has two classes of owners: at least one General Partner with unlimited liability, and Limited Partners (LPs) whose liability is strictly limited to their investment in the firm.",
+    "formula": "Limited Partnership = Pass-through taxation + Mixed liability (GP unlimited, LP limited)",
+    "trap": "A corporation offers limited liability to ALL owners but is subject to double taxation. A sole proprietorship is a pass-through but offers NO limited liability.",
+    "image": ""
+  },
+  {
+    "id": 155,
+    "topic": "Corporate Finance",
+    "module": "Module 1: Organizational Forms",
+    "question": "The business structure that provides the most operational simplicity and flexibility is a:",
+    "options": [
+      "limited partnership.",
+      "general partnership.",
+      "sole proprietorship."
+    ],
+    "correctIndex": 2,
+    "explanation": "The simplest business structure is the sole proprietorship (or sole trader). It requires no complex legal agreements among multiple partners or corporate filings, giving the single owner total control, operational simplicity, and maximum flexibility.",
+    "formula": "Sole Proprietorship = 1 Owner = Max Flexibility & Simplicity (but unlimited liability)",
+    "trap": "Partnerships require partnership agreements, and corporations require boards, bylaws, and complex regulatory filings.",
+    "image": ""
+  },
+  {
+    "id": 156,
+    "topic": "Corporate Finance",
+    "module": "Module 1: Organizational Forms",
+    "question": "The owner exposed to the least business liability is a:",
+    "options": [
+      "sole trader.",
+      "partner in a general partnership.",
+      "general partner in a limited partnership."
+    ],
+    "correctIndex": 1,
+    "explanation": "You missed this one in the video! While both a sole trader and a general partner have unlimited personal liability, general partnerships allow for the sharing of business risk and liability among a larger group of individuals (joint and several liability), thereby practically reducing the sole burden compared to a single sole trader.",
+    "formula": "Liability exposure: Sole Trader (100% solo risk) > Partner in General Partnership (Shared unlimited risk)",
+    "trap": "A general partner in an LP often takes on the entirety of the firm's liability alone, while LPs risk nothing beyond their capital. In a General Partnership, the unlimited liability is at least shared/distributed among multiple partners.",
+    "image": ""
+  },
+  {
+    "id": 157,
+    "topic": "Corporate Finance",
+    "module": "Module 1: Organizational Forms",
+    "question": "\"Economic\" profit is best described as the return to a firm's owners:",
+    "options": [
+      "after corporate taxes and taxes on distributions have been paid.",
+      "in the form of retained earnings and distributions to the owners.",
+      "in excess of what they could have earned elsewhere on different investments."
+    ],
+    "correctIndex": 2,
+    "explanation": "An issuer's income statement shows accounting (financial) net income. \"Economic\" profit, however, is the return to a firm's owners in excess of their opportunity cost of capital—what they could have earned elsewhere on different investments of similar risk (their required rate of return on equity).",
+    "formula": "Economic Profit = Accounting Net Income - Opportunity Cost of Equity Capital",
+    "trap": "Accounting profit (Net Income) only deducts explicit costs (like interest and taxes). Economic profit deducts implicit opportunity costs (the required return on equity).",
+    "image": ""
+  },
+  {
+    "id": 158,
+    "topic": "Fixed Income",
+    "module": "Module 3: Fixed-Income Issuance and Trading",
+    "question": "Which of the following correctly matches the fixed-income instrument type with its typical investor?\n(A) Commercial paper | (B) Unsecured corporate bonds | (C) Secured corporate bonds\n(I) Insurance companies | (II) Hedge funds | (III) Money market funds",
+    "options": [
+      "A → III (Money market funds), B → I (Insurance companies), C → II (Hedge funds)",
+      "A → III (Money market funds), B → II (Hedge funds), C → I (Insurance companies)",
+      "A → I (Insurance companies), B → III (Money market funds), C → II (Hedge funds)"
+    ],
+    "correctIndex": 0,
+    "explanation": "1. Commercial paper → III. Money market funds (short-term, high-grade liquidity instruments).\n2. Unsecured corporate bonds → I. Insurance companies (long-term investment-grade institutional buyers matching liability durations).\n3. Secured corporate bonds → II. Hedge funds (often higher-yield / sub-investment-grade issuers requiring collateral backing).",
+    "formula": "CP → Money Market Funds | Unsecured IG Corporate → Insurers | Secured Corporate (often HY) → Hedge Funds",
+    "trap": "You swapped B and C! Remember that high-grade corporate issuers typically issue UNSECURED bonds (bought by conservative insurance companies), whereas riskier/high-yield issuers must pledge collateral to issue SECURED bonds (attracting hedge funds).",
+    "image": ""
+  },
+  {
+    "id": 159,
+    "topic": "Fixed Income",
+    "module": "Module 3: Fixed-Income Issuance and Trading",
+    "question": "An issuer with a AAA credit rating would most likely be a:",
+    "options": [
+      "distressed issuer.",
+      "high-yield issuer.",
+      "sovereign issuer."
+    ],
+    "correctIndex": 2,
+    "explanation": "Sovereign government issuers typically have the lowest credit risk (highest credit rating) in each market, due to sovereign governments' right to tax economic activity. High-yield issuers have below-investment-grade credit ratings (BBB- or below), while distressed issuers typically have high-yield ratings or are in default.",
+    "formula": "Investment Grade: AAA to BBB- (Baa3) | High-Yield (Junk): BB+ (Ba1) and below",
+    "trap": "Sovereign issuers enjoy taxing power and monetary authority, placing developed sovereigns at the top of the credit rating spectrum.",
+    "image": ""
+  },
+  {
+    "id": 160,
+    "topic": "Fixed Income",
+    "module": "Module 3: Fixed-Income Issuance and Trading",
+    "question": "An index tracking the Bloomberg Barclays Global Aggregate Index would most likely have:",
+    "options": [
+      "limited security selection.",
+      "modest turnover due to changes in market values.",
+      "comprehensive exposure to fixed-income markets."
+    ],
+    "correctIndex": 2,
+    "explanation": "Mutual funds and ETFs that track this benchmark index offer comprehensive exposure to many fixed-income markets with no active security selection and portfolio turnover limited solely to either new issuance or issues no longer meeting inclusion criteria.",
+    "formula": "Passive Fixed-Income Index Tracking = Broad/Comprehensive Exposure + No Active Security Selection",
+    "trap": "Fixed-income indices have higher natural turnover than equity indices because bonds mature, are called, or drop below minimum maturity thresholds—not merely because of market value fluctuations.",
+    "image": ""
+  },
+  {
+    "id": 161,
+    "topic": "Fixed Income",
+    "module": "Module 3: Fixed-Income Issuance and Trading",
+    "question": "A firm that increases the size of an existing bond issue with a price significantly different from par is conducting a:",
+    "options": [
+      "reopening.",
+      "private placement.",
+      "distressed debt issuance."
+    ],
+    "correctIndex": 0,
+    "explanation": "Increasing the size of an existing bond with a price significantly different from par is referred to as the reopening of an existing bond. A private placement refers to bonds being sold to a selected investor or group of investors, versus a sale to the public. Bonds of issuers believed to be very close to or in bankruptcy are referred to as distressed.",
+    "formula": "Reopening = Issuing additional quantities of a previously issued bond (same CUSIP/ISIN, coupon, and maturity)",
+    "trap": "Even if market yields have moved so the existing bond now trades at a steep discount or premium to par, issuing more of that exact same bond series is simply a 'reopening' (not a distressed issuance).",
+    "image": ""
+  },
+  {
+    "id": 162,
+    "topic": "Fixed Income",
+    "module": "Module 3: Fixed-Income Issuance and Trading",
+    "question": "The bond issue trading at the highest bid–offer spread is most likely a:",
+    "options": [
+      "recently issued sovereign bond.",
+      "seasoned investment-grade corporate bond.",
+      "recently issued investment-grade corporate bond."
+    ],
+    "correctIndex": 1,
+    "explanation": "Bonds of less frequent corporate issuers or more seasoned (older, off-the-run) bonds of frequent issuers are rarely traded, leading dealers to quote wider bid–offer spreads of at least 10–20 basis points or more for small sizes. On-the-run sovereign bonds are the most liquid (fraction of a bps), followed by recently issued (on-the-run) IG corporate bonds.",
+    "formula": "Liquidity (Tightest to Widest Bid-Offer Spread): On-the-Run Sovereign < Off-the-Run Sovereign < Newly Issued IG Corp < Seasoned IG Corp < High-Yield Corp",
+    "trap": "Newly issued ('on-the-run') bonds always trade much more actively and with tighter bid-offer spreads than older ('seasoned' / 'off-the-run') bonds that are locked away in buy-and-hold portfolios!",
+    "image": ""
+  },
+  {
+    "id": 163,
+    "topic": "Fixed Income",
+    "module": "Module 2: Fixed-Income Cash Flows and Types",
+    "question": "[Digistrype Vignette] Digistrype Logistics (DILO) is a Canadian firm seeking to issue euro-denominated seven-year convertible bonds to institutional investors in Germany. Which of the following statements best describes the type of bonds to be issued given the issuer's country and where the bonds will be issued and traded?",
+    "options": [
+      "Since Digistrype is planning to issue and sell euro-denominated bonds, its bonds would be considered Eurobonds.",
+      "Since Digistrype is planning to issue and sell euro-denominated bonds to investors in Germany, its bonds would be considered foreign bonds.",
+      "Since Digistrype is planning to issue and sell bonds to domestic investors in Germany, its bonds would be considered domestic bonds."
+    ],
+    "correctIndex": 1,
+    "explanation": "Digistrype, a Canadian firm, is planning to issue and sell euro-denominated bonds to investors in Germany. Bonds issued in a country (Germany) in that country's currency (EUR) by an entity incorporated in another country (Canada) are called foreign bonds.",
+    "formula": "Domestic Bond = Local Market + Local Currency + Local Issuer | Foreign Bond = Local Market + Local Currency + Foreign Issuer | Eurobond = Issued outside the jurisdiction of the currency's home country",
+    "trap": "Classic CFA trap! 'Eurobond' does NOT mean denominated in euros! Because the bonds are sold in Germany in euros (the local currency of Germany) by a foreign (Canadian) firm, they are Foreign Bonds—not Eurobonds.",
+    "image": ""
+  },
+  {
+    "id": 164,
+    "topic": "Fixed Income",
+    "module": "Module 2: Fixed-Income Cash Flows and Types",
+    "question": "[Digistrype Vignette] Institutional investors have expressed concern about increased credit risk due to Digistrype's planned expansion outside of its core business. Which of the following modifications could Digistrype incorporate to best mitigate the investors' credit concerns?",
+    "options": [
+      "Digistrype could consider deferred debt coupons and/or principal payments.",
+      "Digistrype could consider adding a call provision to its new debt.",
+      "Digistrype could consider accelerating principal repayment or linking debt coupon changes to financial covenants."
+    ],
+    "correctIndex": 2,
+    "explanation": "Principal repayment acceleration, such as full amortization, partial principal amortization, or a sinking fund arrangement, reduces credit risk by reducing the principal outstanding over time. Alternatively, Digistrype could incorporate step-up debt coupon changes linked to financial covenants and/or credit ratings to compensate and protect investors.",
+    "formula": "Credit Risk Mitigation = Amortizing Principal / Sinking Fund + Credit-Linked Coupon Step-Ups",
+    "trap": "Deferred coupons delay cash payments (increasing credit risk), and a call provision benefits the issuer (not the bondholders).",
+    "image": ""
+  },
+  {
+    "id": 165,
+    "topic": "Fixed Income",
+    "module": "Module 2: Fixed-Income Cash Flows and Types",
+    "question": "[Digistrype Vignette] Digistrype's CFO prefers to fund the expansion using debt, despite an expectation of lower market interest rates in the next few years. Which of the following is the best contingency feature Digistrype could add to mitigate its own concerns regarding lower interest rates?",
+    "options": [
+      "Add a call provision to the proposed new debt.",
+      "Add a put provision to the proposed new debt.",
+      "Add a step-up coupon to the proposed new debt."
+    ],
+    "correctIndex": 0,
+    "explanation": "A call provision gives Digistrype (the issuer) the right to redeem all or part of the bond prior to maturity if interest rates decline, allowing the firm to refinance by issuing new debt at a lower cost.",
+    "formula": "Call Provision = Issuer Option (exercised when interest rates FALL) | Put Provision = Investor Option (exercised when interest rates RISE)",
+    "trap": "Read carefully WHOSE concern is being mitigated: the issuer (CFO) wants to refinance if interest rates drop → Call provision. A put provision belongs to the investor and is exercised when rates rise.",
+    "image": ""
+  },
+  {
+    "id": 166,
+    "topic": "Fixed Income",
+    "module": "Module 2: Fixed-Income Cash Flows and Types",
+    "question": "[Digistrype Vignette] DILO's convertible notes have a unit par value of EUR1,000, a current share price of EUR60.00, and a conversion price of EUR75.00 per share. If DILO's share price on the Frankfurt Stock Exchange were to rise to EUR75, the bond's conversion value would be:",
+    "options": [
+      "EUR1,000.",
+      "EUR15,000.",
+      "EUR75,000."
+    ],
+    "correctIndex": 0,
+    "explanation": "Conversion Ratio = Par Value / Conversion Price = EUR1,000 / EUR75 = 13.3333 shares per bond. When the current share price equals the conversion price (EUR75), Conversion Value = Conversion Ratio × Current Share Price = (EUR1,000 / EUR75) × EUR75 = EUR1,000 (par value).",
+    "formula": "$\\text{Conversion Ratio} = \\frac{\\text{Par Value}}{\\text{Conversion Price}} \\implies \\text{Conversion Value} = \\text{Conversion Ratio} \\times P_{\\text{share}}$",
+    "trap": "Whenever Current Share Price = Conversion Price, the Conversion Value is strictly equal to the bond's Par Value (EUR1,000)!",
+    "image": ""
+  },
+  {
+    "id": 167,
+    "topic": "Fixed Income",
+    "module": "Module 2: Fixed-Income Cash Flows and Types",
+    "question": "[Digistrype Vignette] Digistrype's CFO is considering removing the conversion feature because of concern about share dilution. Which of the following statements best describes the implications of removing the conversion feature from the bond?",
+    "options": [
+      "Removal of the conversion feature would likely result in a higher coupon.",
+      "Removal of the conversion feature would likely increase the bond price.",
+      "Removal of the conversion feature would likely reduce credit risk."
+    ],
+    "correctIndex": 0,
+    "explanation": "Because the conversion option is valuable to bondholders (giving them equity upside), convertible bonds pay a lower coupon yield than otherwise identical straight bonds. If Digistrype removes the conversion feature, it must offer a higher coupon rate to attract investors.",
+    "formula": "$\\text{Yield}_{\\text{Convertible}} < \\text{Yield}_{\\text{Option-Free}} < \\text{Yield}_{\\text{Callable}}$",
+    "trap": "Removing an investor benefit (the conversion call option on stock) lowers the bond's price and requires a higher coupon rate.",
+    "image": ""
+  },
+  {
+    "id": 168,
+    "topic": "Fixed Income",
+    "module": "Module 2: Fixed-Income Cash Flows and Types",
+    "question": "A bond portfolio manager is considering three otherwise identical bonds: Bond 1 allows the issuer to call the bond before maturity, Bond 2 allows the investor to put the bond back to the issuer before maturity, and Bond 3 contains no embedded options. The manager states: \"Bond 1 and Bond 2 should have larger nominal yield spreads to a US Treasury than Bond 3 to compensate for their embedded options.\" Is the manager most likely correct?",
+    "options": [
+      "Yes",
+      "No, because Bond 1's nominal yield spread should be less than Bond 3's",
+      "No, because Bond 2's nominal yield spread should be less than Bond 3's"
+    ],
+    "correctIndex": 2,
+    "explanation": "Bond 2's embedded put option benefits the investor (providing a floor on the bond's price if rates rise). Because investors pay for this benefit, Bond 2 will trade at a higher price and a LOWER nominal yield spread than option-free Bond 3. Bond 1's call option benefits the issuer, so Bond 1 requires a higher yield spread than Bond 3.",
+    "formula": "$\\text{Spread}_{\\text{Putable (Bond 2)}} < \\text{Spread}_{\\text{Option-Free (Bond 3)}} < \\text{Spread}_{\\text{Callable (Bond 1)}}$",
+    "trap": "Options that benefit the investor (Put, Conversion) LOWER the yield spread; options that benefit the issuer (Call) RAISE the yield spread.",
+    "image": ""
+  },
+  {
+    "id": 169,
+    "topic": "Fixed Income",
+    "module": "Module 2: Fixed-Income Cash Flows and Types",
+    "question": "Which of the following bonds is most likely to trade at a lower price relative to an otherwise identical option-free bond?",
+    "options": [
+      "Putable bond",
+      "Callable bond",
+      "Convertible bond"
+    ],
+    "correctIndex": 1,
+    "explanation": "A callable bond benefits the issuer by giving the issuer the right to redeem the bond prior to maturity. Investors demand compensation for call risk (reinvestment risk and capped price appreciation), so a callable bond trades at a lower price (and higher yield) than an otherwise identical option-free bond.",
+    "formula": "$V_{\\text{Callable}} = V_{\\text{Option-Free}} - V_{\\text{Call Option}} < V_{\\text{Option-Free}}$",
+    "trap": "Both putable bonds ($V_{\\text{Option-Free}} + V_{\\text{Put}}$) and convertible bonds ($V_{\\text{Option-Free}} + V_{\\text{Conversion Call}}$) embed options owned by the bondholder, so they trade at a HIGHER price than an option-free bond!",
+    "image": ""
+  },
+  {
+    "id": 170,
+    "topic": "Fixed Income",
+    "module": "Module 2: Fixed-Income Cash Flows and Types",
+    "question": "A company issues a 10-year bond on 1 January 2014. Its contract requires that the coupon rate increase by specified margins at specified dates (2014–2015: 4.0%; 2016–2017: 5.0%; 2018–2019: 7.5%; 2020–2023: 9.0%). This security is most likely a:",
+    "options": [
+      "floating rate bond.",
+      "step-up coupon bond.",
+      "deferred coupon bond."
+    ],
+    "correctIndex": 1,
+    "explanation": "A bond whose coupon rate increases by predetermined margins at specified dates is a step-up coupon bond. Step-up bonds protect investors against rising rates and often incentivize issuers to call/refinance the bond before the higher coupon rates kick in.",
+    "formula": "Step-Up Bond = Predetermined schedule of coupon increases at specified dates",
+    "trap": "A floating-rate bond resets based on an unknown future market reference rate (MRR), and a deferred coupon bond pays ZERO coupon for an initial period before paying a higher coupon later.",
+    "image": ""
+  },
+  {
+    "id": 171,
+    "topic": "Fixed Income",
+    "module": "Module 2: Fixed-Income Cash Flows and Types",
+    "question": "When compared with an option-free bond, which type of bond most likely offers a higher yield to bondholders?",
+    "options": [
+      "Putable",
+      "Callable",
+      "Convertible"
+    ],
+    "correctIndex": 1,
+    "explanation": "A callable bond gives the issuer the right to buy back the bond prior to maturity when interest rates fall. This exposes bondholders to reinvestment risk, causing them to require a higher yield than for a similar non-callable bond.",
+    "formula": "$\\text{Yield}_{\\text{Callable}} > \\text{Yield}_{\\text{Option-Free}} > \\text{Yield}_{\\text{Putable or Convertible}}$",
+    "trap": "Lower bond price = Higher yield to maturity. Because callable bonds have the lowest price among the three, they offer the highest yield.",
+    "image": ""
+  },
+  {
+    "id": 172,
+    "topic": "Fixed Income",
+    "module": "Module 2: Fixed-Income Cash Flows and Types",
+    "question": "Bonds issued in which of the following markets most likely have fewer reporting, regulatory, and tax constraints?",
+    "options": [
+      "Eurobond markets",
+      "Foreign bond markets",
+      "Domestic bond markets"
+    ],
+    "correctIndex": 0,
+    "explanation": "Domestic and foreign bonds are subject to the strict legal, regulatory, and tax requirements of the country in which they are issued. In contrast, a Eurobond is issued internationally outside the jurisdiction of the country in whose currency the bond is denominated, resulting in fewer reporting, regulatory, and tax constraints.",
+    "formula": "Eurobond = Issued outside currency's home jurisdiction → Less regulation & tax withholding",
+    "trap": "Do not confuse Foreign Bonds (regulated by the host domestic regulator, e.g., Yankee bonds registered with the US SEC) with Eurobonds (offshore/international, less regulated).",
+    "image": ""
+  },
+  {
+    "id": 173,
+    "topic": "Fixed Income",
+    "module": "Module 2: Fixed-Income Cash Flows and Types",
+    "question": "Ted Nguyen is an investor domiciled in a country with an original issue discount (OID) tax provision. He purchases a zero-coupon bond at a deep discount to par value with the intention of holding the bond until maturity. At maturity, he will most likely face:",
+    "options": [
+      "a capital loss.",
+      "a capital gain.",
+      "neither a capital loss nor gain."
+    ],
+    "correctIndex": 2,
+    "explanation": "Under an Original Issue Discount (OID) tax provision, the investor must recognize a prorated portion of the discount as taxable interest income each year over the bond's life, which correspondingly increases the bond's cost basis each year. By maturity, the adjusted cost basis equals par value, so the investor faces neither a capital gain nor a capital loss at maturity.",
+    "formula": "OID Tax Provision: Annual Prorated Interest Income Taxed + Cost Basis Step-Up → Cost Basis at Maturity = Par → $0 Capital Gain",
+    "trap": "Don't forget the cost-basis step-up! Because the discount is taxed annually as imputed interest income along the way, taxing it again at maturity as a capital gain would be double taxation.",
+    "image": ""
   }
 ]
