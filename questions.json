@@ -2014,5 +2014,325 @@
     "formula": "Standard II(B): Market Manipulation is based on INTENT, regardless of the financial outcome (gains or losses).",
     "trap": "The outcome (loss for the member, gain for the client) is irrelevant to whether the standard was violated. The intent to manipulate is what triggers the violation.",
     "image": ""
+  },
+  {
+    "id": 127,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Under-diversified portfolios are not a potential implication of which of the following behavioral biases?",
+    "options": [
+      "Representativeness",
+      "Illusion of control",
+      "Confirmation"
+    ],
+    "correctIndex": 0,
+    "explanation": "Under-diversified portfolios are a consequence of both illusion of control (preferring to invest in companies they feel they have control over, like their employer) and confirmation biases (ignoring negative news and holding large concentrated positions). Representativeness bias is not typically associated with under-diversified portfolios.",
+    "formula": "Illusion of Control + Confirmation Bias → Concentrated / Under-diversified Portfolios",
+    "trap": "Read carefully: the question asks which bias is NOT a potential implication for under-diversification.",
+    "image": ""
+  },
+  {
+    "id": 128,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "The advice “Don’t confuse brains with a bull market” is aimed at mitigating which of the following behavioral biases?",
+    "options": [
+      "Self-control",
+      "Conservatism",
+      "Overconfidence"
+    ],
+    "correctIndex": 2,
+    "explanation": "This advice is specifically aimed at reducing self-attribution bias, a form of overconfidence bias. This bias may result in FMPs taking credit for investment success (brains), while assigning responsibility to others for investment failures, when in reality the results reflect exogenous market forces (a bull market).",
+    "formula": "Self-Attribution Bias = Taking credit for successes (internal) and blaming failures on market/others (external)",
+    "trap": "Self-attribution is a sub-category of Overconfidence bias. Don't confuse it with Conservatism (failing to update views).",
+    "image": ""
+  },
+  {
+    "id": 129,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Status quo bias is least similar to which of the following behavioral biases?",
+    "options": [
+      "Endowment",
+      "Regret aversion",
+      "Confirmation"
+    ],
+    "correctIndex": 2,
+    "explanation": "Both endowment bias and regret-aversion bias often result in indecision or inertia—a typical outcome of status quo bias, in which people prefer to not make changes even when changes are warranted. Confirmation bias relates to seeking out information that supports existing beliefs, making it the least similar.",
+    "formula": "Inertia Biases = Status Quo + Endowment + Regret Aversion",
+    "trap": "Endowment, Regret aversion, and Status Quo all lead to 'doing nothing' (inertia). Confirmation bias leads to faulty information processing, not necessarily physical inertia.",
+    "image": ""
+  },
+  {
+    "id": 130,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Which strategy would best mitigate or prevent endowment bias?",
+    "options": [
+      "Actively seeking out information that challenges existing beliefs",
+      "When new information is presented, asking “How does this information change my forecast?”",
+      "Asking “Would you buy this security today at the current price?”"
+    ],
+    "correctIndex": 2,
+    "explanation": "Endowment bias refers to people attributing additional, unwarranted value to things they possess versus things they do not. The question “Would you buy this security today at the current price?” turns the investor’s attention to assessing the reasonableness of the current price as a buy price rather than solely as a selling price.",
+    "formula": "Endowment Bias Mitigation = Treat held assets as if you were deciding to buy them today",
+    "trap": "Option A mitigates Confirmation bias. Option B mitigates Conservatism bias.",
+    "image": ""
+  },
+  {
+    "id": 131,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Jun Park, CFA, works at a hedge fund. Most of Park’s colleagues are also CFA charterholders. At an event with recent university graduates, Park comments, “Most CFA charterholders work at hedge funds.” Park’s remark exhibits which behavioral bias?",
+    "options": [
+      "Availability",
+      "Conservatism",
+      "Framing"
+    ],
+    "correctIndex": 0,
+    "explanation": "Park is extrapolating his observation based on a narrow range of experience (working at a hedge fund that employs many CFA charterholders) to the entire population of CFA charterholders. Using a narrow, easily recalled range of experience is a form of availability bias.",
+    "formula": "Availability Bias = Estimating probabilities based on how easily examples come to mind",
+    "trap": "Representativeness (base-rate neglect) involves stereotypes, but here it's specifically about relying on what is locally 'available' in memory (his immediate colleagues).",
+    "image": ""
+  },
+  {
+    "id": 132,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "In the 1980s, Japan was viewed by many FMPs as the model economy. Although its growth began to decelerate sharply by 1990, it was not until the mid to late 1990s that FMPs’ GDP forecasts were consistently achieved. By taking several years to adapt their forecasts to the lower growth environment, FMPs exhibited which behavioral bias?",
+    "options": [
+      "Mental accounting",
+      "Overconfidence",
+      "Conservatism"
+    ],
+    "correctIndex": 2,
+    "explanation": "Conservatism bias results in maintaining or only slowly updating views and forecasts despite the presence of new information. FMPs in the 1990s were reluctant to update forecasts, clinging to their previous base rate despite materially different new information for several years.",
+    "formula": "Conservatism Bias = Under-reacting to new information / slowly updating previous beliefs",
+    "trap": "If the delay is due to anchoring on a specific number, it could be anchoring. But a slow, sluggish adaptation to a changing reality is the hallmark of Conservatism.",
+    "image": ""
+  },
+  {
+    "id": 133,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "[Daosri Vignette] Estêvão Kai has €4 million segregated across four different bank accounts. Each account is rigidly matched to specific sources (salary, bonus, interest, dividends) and uses (living expenses, charity, retirement, mother’s expenses). Based on this description, Kai most likely exhibits the behavioral bias of:",
+    "options": [
+      "endowment.",
+      "mental accounting.",
+      "framing."
+    ],
+    "correctIndex": 1,
+    "explanation": "Kai has segregated money into four different accounts based on the sources and uses of his funds. Although intuitively appealing, this approach is irrational because money is fungible across the four accounts.",
+    "formula": "Mental Accounting = Treating fungible money differently based on its source or intended use",
+    "trap": "This is the classic definition of mental accounting: failing to look at the total portfolio holistically.",
+    "image": ""
+  },
+  {
+    "id": 134,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "[Daosri Vignette] Estêvão Kai has €4 million segregated across four different bank accounts dedicated to specific uses. Which of the following is a likely consequence of Kai’s approach to managing his finances?",
+    "options": [
+      "Concentrated portfolio positions",
+      "Forgone opportunities to reduce risk by combining assets with low correlations",
+      "Excessive trading"
+    ],
+    "correctIndex": 1,
+    "explanation": "The most common consequence of mental accounting is neglecting opportunities to reduce risk by combining assets with low correlations, because each account’s asset allocation is examined discretely. This leads to an overall inefficient allocation with respect to risk.",
+    "formula": "Consequence of Mental Accounting = Suboptimal aggregate portfolio risk / Ignoring correlations",
+    "trap": "Excessive trading is associated with Overconfidence; concentrated positions are associated with Illusion of Control or Endowment.",
+    "image": ""
+  },
+  {
+    "id": 135,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "[Daosri Vignette] To correct Estêvão Kai's rigid segregation of funds across four distinct bank accounts based on specific uses, which strategy should his portfolio manager use or recommend?",
+    "options": [
+      "Keep written records of investment decisions.",
+      "Ask questions such as, “Is the decision the result of focusing on a net gain or net loss position?”",
+      "Aggregate all accounts and portfolios into a single spreadsheet."
+    ],
+    "correctIndex": 2,
+    "explanation": "Aggregating mental accounts is a logical strategy to combat mental accounting. Looking at all assets in a single spreadsheet forces the investor to view the total wealth holistically and recognize that money is fungible.",
+    "formula": "Mitigation of Mental Accounting = Holistic Aggregation",
+    "trap": "Option A mitigates Hindsight or Overconfidence bias. Option B mitigates Framing or Loss Aversion bias.",
+    "image": ""
+  },
+  {
+    "id": 136,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Which of the following individual behavioral biases is most strongly associated with market bubbles?",
+    "options": [
+      "Overconfidence",
+      "Representativeness",
+      "Framing"
+    ],
+    "correctIndex": 0,
+    "explanation": "The overconfidence and excessive trading that contribute to a bubble are linked to self-attribution bias, a form of overconfidence. In a rising market, sales of stocks will typically be profitable, and FMPs will attribute profits to their investment acumen and subsequently underestimate risks.",
+    "formula": "Market Bubbles are fueled by Overconfidence / Self-Attribution",
+    "trap": "While representativeness (recency) plays a role, overconfidence drives the massive excessive trading and risk-taking characteristic of bubbles.",
+    "image": ""
+  },
+  {
+    "id": 137,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "The halo effect, which may be evident in FMP’s assessments of a company with a history of high revenue growth, is a form of which behavioral bias?",
+    "options": [
+      "Endowment",
+      "Representativeness",
+      "Regret aversion"
+    ],
+    "correctIndex": 1,
+    "explanation": "Representativeness refers to the tendency to adopt a view or forecast based on individual information or a small sample. The halo effect is an example of representativeness, because FMPs extend an overall favorable evaluation to an investment (e.g., a “good company”) based on one or few characteristics (e.g., a “visionary CEO”).",
+    "formula": "Halo Effect = Representativeness Bias (Base-rate neglect / extrapolating one trait to the whole)",
+    "trap": "Do not confuse the Halo Effect with Framing. It specifically involves extrapolating 'good company' traits to mean 'good stock investment'.",
+    "image": ""
+  },
+  {
+    "id": 138,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "All of the following are reasons that an apparent deviation from the efficient market hypothesis might not be anomalous except:",
+    "options": [
+      "The abnormal returns represent compensation for exposure to risk.",
+      "Changing the asset pricing model makes the deviation disappear.",
+      "The deviation is well known or documented."
+    ],
+    "correctIndex": 2,
+    "explanation": "Bubbles and crashes are well-known and well-documented phenomena yet represent true market anomalies. The fact that a deviation is well known does not disqualify it from being an anomaly. (Conversely, mis-specified risk or flawed asset pricing models explain away fake anomalies).",
+    "formula": "True Anomaly = Behavioral inefficiency not explained by risk premiums or model errors.",
+    "trap": "If changing the model makes the deviation disappear (Option B), it was never a true anomaly, just a bad model (Joint Hypothesis Problem).",
+    "image": ""
+  },
+  {
+    "id": 139,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Investment managers being incentivized or held accountable for short-term performance by current and prospective clients is a potentially rational explanation for which of the following?",
+    "options": [
+      "Home bias",
+      "Bubbles",
+      "Value stocks outperforming growth stocks"
+    ],
+    "correctIndex": 1,
+    "explanation": "Investment managers’ incentives for short-term performance were named as considerations in the technology and real estate bubbles. Not participating in the bubble presented certain FMPs with commercial or career risk, prompting them to rationally join the irrational herd.",
+    "formula": "Short-term incentives / Career Risk → Institutional Herding → Bubbles",
+    "trap": "Institutional investors might rationally ride a bubble simply to avoid being fired for underperforming the benchmark in the short term.",
+    "image": ""
+  },
+  {
+    "id": 140,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Momentum can be partly explained by the following behavioral biases except:",
+    "options": [
+      "availability.",
+      "home bias.",
+      "regret."
+    ],
+    "correctIndex": 1,
+    "explanation": "Home bias refers to FMPs preferentially investing in domestic securities, reflecting perceived informational advantages. It does not explain momentum. Momentum is explained by availability (recent trends easily come to mind) and regret aversion (fear of missing out on a rallying stock).",
+    "formula": "Momentum drivers = Availability (recency) + Regret Aversion (FOMO) + Hindsight",
+    "trap": "Home bias dictates WHERE people invest geographically, not WHEN they buy based on price trends.",
+    "image": ""
+  },
+  {
+    "id": 141,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "All of the following are reasons that the historical outperformance of value stocks versus growth stocks may not be anomalous except:",
+    "options": [
+      "Abnormal returns represent compensation for risk exposures, such as the heightened risk of value stocks to suffer distress during downturns.",
+      "Companies with strong historical growth rates are viewed as good investments, with higher expected returns than risk characteristics merit.",
+      "The deviation disappears by incorporating a three-factor asset pricing model."
+    ],
+    "correctIndex": 1,
+    "explanation": "Option B describes a behavioral bias (the halo effect/representativeness), which argues that the value/growth premium IS a true behavioral anomaly caused by mispricing. Options A and C provide rational, risk-based explanations that argue the premium is NOT an anomaly.",
+    "formula": "Behavioral Anomaly = Caused by irrational biases (e.g., over-extrapolating growth rates).",
+    "trap": "Read the 'Except' carefully: You are looking for the option that CONFIRMS it is an anomaly (by giving a behavioral reason).",
+    "image": ""
+  },
+  {
+    "id": 142,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Which of the following behavioral biases is most likely the hardest to correct?",
+    "options": [
+      "Hindsight bias",
+      "Loss-aversion bias",
+      "Representativeness bias"
+    ],
+    "correctIndex": 1,
+    "explanation": "Loss-aversion bias is an emotional bias, as opposed to a cognitive error. Cognitive errors (like hindsight and representativeness) can often be corrected through better information and education. Emotional biases stem from impulses and intuitions and are much harder to correct; it is often only possible to recognize and adapt to them.",
+    "formula": "Emotional Biases (Loss Aversion, Status Quo) = Hard to correct, must adapt | Cognitive Errors = Easier to correct with education",
+    "trap": "Always classify biases first. Hindsight and Representativeness are cognitive; Loss-aversion is emotional.",
+    "image": ""
+  },
+  {
+    "id": 143,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Cognitive errors:",
+    "options": [
+      "stem from impulses and intuition.",
+      "result in the same decision as assumed by traditional finance theory.",
+      "can often be corrected or eliminated through better information, education, and advice."
+    ],
+    "correctIndex": 2,
+    "explanation": "Cognitive errors arise from faulty reasoning and can often be corrected or eliminated through better information, education, and advice. Emotional biases, on the other hand, stem from impulses and intuition.",
+    "formula": "Cognitive Errors = Faulty Reasoning (Correctable) | Emotional Biases = Feelings/Impulses (Hard to correct)",
+    "trap": "Option A describes Emotional biases. Option B is incorrect because ALL biases cause deviations from traditional rational finance theory.",
+    "image": ""
+  },
+  {
+    "id": 144,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Failing to act in pursuit of long-term goals in favor of short-term satisfaction best describes which of the following emotional biases?",
+    "options": [
+      "Self-control bias",
+      "Endowment bias",
+      "Loss-aversion bias"
+    ],
+    "correctIndex": 0,
+    "explanation": "Self-control bias is an emotional bias in which people fail to act in pursuit of their long-term, overarching goals in favor of short-term satisfaction (e.g., failing to save enough for retirement because of current consumption).",
+    "formula": "Self-Control Bias = Short-term consumption preference > Long-term goals",
+    "trap": "Loss aversion avoids realizing losses; Endowment overvalues what is owned. Only Self-control bias specifically deals with the failure of long-term discipline.",
+    "image": ""
+  },
+  {
+    "id": 145,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Which of the following behavioral biases most likely helps explain the momentum market anomaly?",
+    "options": [
+      "Status quo bias",
+      "Availability bias",
+      "Anchoring and adjustment bias"
+    ],
+    "correctIndex": 1,
+    "explanation": "Momentum can be partly explained by availability, hindsight, and loss aversion biases. Studies have identified faulty learning models within traders, in which reasoning is heavily based on their recent experience (availability bias).",
+    "formula": "Momentum Anomaly = Availability Bias + Hindsight + Regret Aversion",
+    "trap": "Status quo is about inertia; Anchoring is about getting stuck on an initial value. Availability causes investors to focus on the 'available' recent trend, fueling momentum.",
+    "image": ""
+  },
+  {
+    "id": 146,
+    "topic": "Portfolio Construction",
+    "module": "Module 5: The Behavioral Biases of Individuals",
+    "question": "Which of the following is most closely associated with representativeness bias?",
+    "options": [
+      "Momentum",
+      "The halo effect",
+      "Bubbles and crashes"
+    ],
+    "correctIndex": 1,
+    "explanation": "Representativeness bias attributes one positive trait as being representative of an overall positive investment. The halo effect extends a favorable evaluation of some characteristics (like a charismatic CEO) to other characteristics (expected stock returns), leading investors to extrapolate recent past performance.",
+    "formula": "Representativeness Bias → Base-Rate Neglect & The Halo Effect",
+    "trap": "Bubbles and crashes are most closely identified with Overconfidence/Self-attribution. Momentum is linked to Availability and Regret Aversion.",
+    "image": ""
   }
 ]
