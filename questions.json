@@ -1678,5 +1678,341 @@
     "formula": "FV_10 = CF_1(1+r)^9 + CF_2(1+r)^8 + CF_3(1+r)^7 = PV_0 × (1+r)^10",
     "trap": "10 years from now means t = 10 (not 10 years after Year 3, which is t = 13 and gives $618,996).",
     "image": ""
+  },
+  {
+    "id": 106,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 9: Guidance for Standard VII",
+    "question": "Albert and Tye, who recently started their own investment advisory business, have registered to take the Level III CFA exam. Albert’s business card reads, “Judy Albert, CFA Level II.” Tye has not put anything about the CFA designation on his business card, but promotional material that he designed for the business describes the CFA requirements and indicates that Tye participates in the CFA Program and has completed Levels I and II. According to the Standards:",
+    "options": [
+      "Albert has violated the Standards, but Tye has not.",
+      "Tye has violated the Standards, but Albert has not.",
+      "both Albert and Tye have violated the Standards."
+    ],
+    "correctIndex": 0,
+    "explanation": "The reference on Albert’s business card implies that there is a “CFA Level II” designation, which violates Standard VII(B). Candidates may not imply that there is some sort of partial designation earned after passing a level of the CFA exam. Tye merely indicates in promotional material that he is participating in the CFA Program and has completed Levels I and II, which is factual and permitted.",
+    "formula": "Standard VII(B): No partial designations (e.g., 'CFA Level II') exist. You may only state you have 'completed Level II' and are 'a Level III Candidate'.",
+    "trap": "Watch out for titles used as nouns or pseudo-designations next to a name. 'Judy Albert, CFA Level II' is strictly prohibited.",
+    "image": ""
+  },
+  {
+    "id": 107,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 9: Guidance for Standard VII",
+    "question": "Park is very frustrated after taking the Level II CFA exam. She posts the following statement on a third-party provider's discussion board: “I am very dissatisfied with your firm’s CFA Program Level II material. I found the exam extremely difficult... How could your service provide such limited instructional resources on the analysis of inventories and taxes when the exam had multiple questions about them? I will not recommend your products to other candidates.” Which of the following statements is true?",
+    "options": [
+      "Park violated the Code and Standards by purchasing third-party review material.",
+      "Park violated the Code and Standards by providing her opinion on the difficulty of the exam.",
+      "Park violated the Code and Standards by providing specific information on topics tested on the exam."
+    ],
+    "correctIndex": 2,
+    "explanation": "Standard VII(A) Conduct as Participants in CFA Institute Programs prohibits providing information to candidates or the public that is considered confidential to the CFA Program. In revealing that questions related to the analysis of inventories and taxes were actually tested on the exam, Park violated this standard.",
+    "formula": "Standard VII(A): Do not disclose specific topics, formulas, or questions tested (or not tested) on the exam.",
+    "trap": "Expressing negative opinions about the exam's difficulty or the CFA Institute is perfectly fine; revealing WHAT was tested is the violation.",
+    "image": ""
+  },
+  {
+    "id": 108,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 9: Guidance for Standard VII",
+    "question": "After completing Level II of the CFA exam, Aashi Banerjee posts several comments on an online chatroom for CFA program candidates. Which of the following comments violate the Standard relating to conduct as participants in CFA Institute programs?\n- Comment 1: CFA Institute must revise the topic area weights on the exam.\n- Comment 2: There were no questions on GIPS standards.",
+    "options": [
+      "Comment 1 only",
+      "Comment 2 only",
+      "Both Comment 1 and Comment 2"
+    ],
+    "correctIndex": 1,
+    "explanation": "According to Standard VII(A), a candidate is prohibited from disclosing content-specific information, including what subject matter was covered or NOT covered on the exam. Comment 2 violates this. Comment 1 is merely an expression of opinion/disagreement with CFA policies, which is explicitly allowed.",
+    "formula": "Standard VII(A): Disclosing what was NOT on the exam is just as much a violation as disclosing what WAS on the exam.",
+    "trap": "Members have full freedom of speech to criticize the CFA Institute (Comment 1). They just can't breach confidentiality regarding exam content.",
+    "image": ""
+  },
+  {
+    "id": 109,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 9: Guidance for Standard VII",
+    "question": "Which of the following is a violation of the Standard relating to conduct as participants in CFA Institute Programs? A Candidate:",
+    "options": [
+      "discusses broad topic areas covered in the curriculum in an online forum.",
+      "tells her brother, after taking the exam, how glad she was that no questions about the binomial model were asked.",
+      "publishes on a social media website her disappointment about what she thinks is an overly academic CFA Program."
+    ],
+    "correctIndex": 1,
+    "explanation": "Telling anyone (even family) what specific topics or formulas were tested or not tested violates the confidentiality rules under Standard VII(A). Discussing curriculum topics in general (Option A) and criticizing the program (Option C) are permitted.",
+    "formula": "Standard VII(A): Exam Confidentiality extends to family and friends, not just other candidates.",
+    "trap": "You might think telling a family member who isn't taking the exam is harmless, but the confidentiality pledge applies universally.",
+    "image": ""
+  },
+  {
+    "id": 110,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 9: Guidance for Standard VII",
+    "question": "Jane Macmara, CFA, has just passed Level III of the CFA exam. In her blog, Macmara shares her views: “CFA exams are outrageously difficult,” and “Thankfully, the CAPM was not tested.” Macmara has most likely violated the Standards:",
+    "options": [
+      "only by writing “Thankfully, the CAPM was not tested”",
+      "only by writing “CFA exams are outrageously difficult”",
+      "by writing both “Thankfully, the CAPM was not tested” and “CFA exams are outrageously difficult”"
+    ],
+    "correctIndex": 0,
+    "explanation": "Standard VII(A) prohibits disclosing whether a specific topic (like CAPM) was tested or not tested. Expressing the opinion that the exams are 'outrageously difficult' is not a violation of any standard.",
+    "formula": "Standard VII(A): Opinion on difficulty = Allowed | Revealing tested/untested topics = Violation",
+    "trap": "The CFA Institute allows candidates to complain about the exam being hard. They do not view it as a violation of professional conduct to express personal frustration.",
+    "image": ""
+  },
+  {
+    "id": 111,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 9: Guidance for Standard VII",
+    "question": "Jeffrey Jones passed the Level I CFA exam in 2007 and the Level II exam in 2019. He is not currently enrolled for the Level III exam. According to the CFA Institute Standards of Professional Conduct, which of the following is the most appropriate way for Jones to refer to his participation in the CFA Program?",
+    "options": [
+      "Jeffrey Jones, CFA (expected in a couple of years)",
+      "Jeffrey Jones, Candidate in the CFA Institute CFA Program",
+      "Jeffrey Jones, Passed Level II of the CFA examination in 2019"
+    ],
+    "correctIndex": 2,
+    "explanation": "Because he is not currently registered/enrolled to take the next exam, he cannot call himself a 'Candidate'. He can only state the factual claim that he has passed Level II. 'CFA (expected)' is never allowed.",
+    "formula": "Standard VII(B): Candidate Status requires active enrollment. Otherwise, only state levels passed.",
+    "trap": "You incorrectly chose B! You lose the right to call yourself a 'CFA Candidate' the moment you receive your exam results, unless you immediately register for the next level.",
+    "image": ""
+  },
+  {
+    "id": 112,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 9: Guidance for Standard VII",
+    "question": "Timothy Charles, CFA, applies for a role as an investment analyst. In his resume he states, \"CFA charterholders achieve better performance results.\" He adds, \"As a CFA charterholder, I am the most qualified to manage client investments.\" Charles has most likely violated the Standards:",
+    "options": [
+      "only by stating, \"CFA charterholders achieve better performance results.\"",
+      "only by stating, \"As a CFA charterholder, I am the most qualified to manage client investments.\"",
+      "both by stating, \"CFA charterholders achieve better performance results\" and by stating, \"As a CFA charterholder, I am the most qualified to manage client investments.\""
+    ],
+    "correctIndex": 2,
+    "explanation": "Both statements violate Standard VII(B), Reference to CFA Institute, the CFA Designation, and the CFA Program by implying that superior performance or superior qualifications can be expected simply from holding the CFA designation.",
+    "formula": "Standard VII(B): Never claim the CFA charter guarantees superior performance or makes you 'more qualified' than others.",
+    "trap": "The CFA designation denotes a commitment to ethics and a certain level of knowledge; it cannot be used to guarantee outperformance or claim absolute superiority over non-charterholders.",
+    "image": ""
+  },
+  {
+    "id": 113,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "The mosaic theory holds that an analyst:",
+    "options": [
+      "violates the Code and Standards if the analyst fails to have knowledge of and comply with applicable laws.",
+      "can use material public information and nonmaterial nonpublic information in the analyst’s analysis.",
+      "should use all available and relevant information in support of an investment recommendation."
+    ],
+    "correctIndex": 1,
+    "explanation": "The correct answer is B. This question deals with Standard II(A) Material Nonpublic Information. The mosaic theory states that an analyst may use material public information and nonmaterial nonpublic information in creating a larger picture than shown by any individual piece of information and the conclusions the analyst reaches become material only after the pieces are assembled.",
+    "formula": "Mosaic Theory = Material Public Info + Nonmaterial Nonpublic Info",
+    "trap": "You selected C. While C sounds like a generally good practice, it does not explicitly define the core premise of the Mosaic Theory (which specifically protects the use of nonmaterial nonpublic information).",
+    "image": ""
+  },
+  {
+    "id": 114,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "An investment banking department of a brokerage firm often receives material nonpublic information that could have considerable value if used in advising the firm’s brokerage clients. In order to conform to the Code and Standards, which one of the following is the best policy for the brokerage firm?",
+    "options": [
+      "Permanently prohibit both “buy” and “sell” recommendations of the stocks of clients of the investment banking department.",
+      "Establish physical and informational barriers within the firm to prevent the exchange of information between the investment banking and brokerage operations.",
+      "Monitor the exchange of information between the investment banking department and the brokerage operation."
+    ],
+    "correctIndex": 1,
+    "explanation": "The correct answer is B. The best policy to prevent violation of Standard II(A) Material Nonpublic Information is the establishment of firewalls in a firm to prevent the exchange of insider information. The physical and informational barrier of a firewall between the investment banking department and the brokerage operation prevents the investment banking department from providing information to analysts on the brokerage side.",
+    "formula": "Standard II(A): Information Barrier (Firewall) = Best Practice for Multidepartment Firms",
+    "trap": "Monitoring the exchange of information (Option C) is insufficient because no exchange of material nonpublic information should be occurring at all.",
+    "image": ""
+  },
+  {
+    "id": 115,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "Andrews, a private wealth manager, is conducting interviews for a new research analyst for his firm. One of the candidates is Wright, an analyst with a local investment bank. During the interview, while Wright is describing his analytical skills, he mentions a current merger in which his firm is acting as the adviser. Andrews has heard rumors of a possible merger between the two companies, but no releases have been made by the companies concerned. Which of the following actions by Andrews is least likely a violation of the Code and Standards?",
+    "options": [
+      "Waiting until the next day before trading on the information to allow time for it to become public",
+      "Notifying all investment managers in his firm of the new information so none of their clients are disadvantaged",
+      "Placing the securities mentioned as part of the merger on the firm’s restricted trading list"
+    ],
+    "correctIndex": 2,
+    "explanation": "Answer C is correct. Firms should add securities to a restricted list when the firm has or may have material nonpublic information. By adding these securities to this list, Andrews would uphold this standard.",
+    "formula": "Material Nonpublic Info (MNPI) received accidentally → Add to Restricted List & DO NOT TRADE",
+    "trap": "Waiting one day (Option A) does not guarantee the information becomes public. If it remains nonpublic, trading on it is still a violation.",
+    "image": ""
+  },
+  {
+    "id": 116,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "Pietro, president of Local Bank, has hired the bank’s market maker, Vogt, to seek a merger partner. Potential buyers decided to wait until next period's financial data are available, believing it will be worse and allow them to pay less. Pietro wants to increase the likelihood of structuring a merger deal quickly. Which of the following actions would most likely be a violation of the Code and Standards?",
+    "options": [
+      "Pietro could instruct Local Bank to issue a press release announcing that it has retained Vogt to find a merger partner.",
+      "Pietro could place a buy order for 2,000 shares (or four times the average weekly volume) through Vogt for his personal account.",
+      "After confirming with Local’s chief financial officer, Pietro could instruct Local to issue a press release reaffirming the firm’s prior announced earnings guidance for the full fiscal year."
+    ],
+    "correctIndex": 1,
+    "explanation": "Answer B is correct. Through placing a personal purchase order that is significantly greater than the average volume, Pietro is violating Standard II(B) Market Manipulation. He is attempting to manipulate an increase in the share price to artificially bring a buyer to the negotiating table.",
+    "formula": "Standard II(B): Market Manipulation = Intent to distort prices or artificially inflate trading volume",
+    "trap": "Issuing truthful press releases (Options A and C) to keep the market informed is a legitimate corporate action, not market manipulation.",
+    "image": ""
+  },
+  {
+    "id": 117,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "During a round of golf, Rodriguez, chief financial officer of Mega Retail, mentions to Hart, a local investment adviser and long-time personal friend, that Mega is having an exceptional sales quarter. Rodriguez expects the results to be almost 10% above the current estimates. The next day, Hart initiates the purchase of a large stake in the local exchange-traded retail fund for her personal account.",
+    "options": [
+      "Hart violated the Code and Standards by investing in the exchange-traded fund that included Mega Retail.",
+      "Hart did not violate the Code and Standards, because she did not invest directly in securities of Mega Retail.",
+      "Rodriguez did not violate the Code and Standards, because the comments made to Hart were not intended to solicit an investment in Mega Retail."
+    ],
+    "correctIndex": 0,
+    "explanation": "Answer A is correct. Hart’s decision to invest in the retail ETF appears directly correlated with Rodriguez’s material nonpublic statement about Mega Retail, thus violating Standard II(A). Because Mega Retail's exceptional quarter is material enough to likely influence the price of the entire retail ETF, trading the ETF based on this MNPI is a violation.",
+    "formula": "Standard II(A): Trading related derivatives or ETFs based on single-stock MNPI is still a violation.",
+    "trap": "You incorrectly chose B! The prohibition against using MNPI applies to ANY financial instrument whose price would be materially affected, including broad funds/ETFs.",
+    "image": ""
+  },
+  {
+    "id": 118,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "What is the theory that best describes the process by which financial analysts combine material public information and nonmaterial nonpublic information as a basis for investment recommendations even if those conclusions would have been material inside information had they been communicated directly to the analyst by the company?",
+    "options": [
+      "Mosaic theory",
+      "Economic theory",
+      "Probability theory"
+    ],
+    "correctIndex": 0,
+    "explanation": "The process by which financial analysts combine material public information and nonmaterial nonpublic information as a basis for investment recommendations—even if the ultimate conclusion itself is material—is known as Mosaic Theory.",
+    "formula": "Mosaic Theory = (Material Public) + (Nonmaterial Nonpublic) = (Material Conclusion)",
+    "trap": "Do not mix this up with economic or probability theory. Mosaic theory is a specific CFA ethics and securities law concept.",
+    "image": ""
+  },
+  {
+    "id": 119,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "Claire Jones, CFA, is an analyst following natural gas companies. At a conference, the CFO of Alpine Energy states they are interested in making acquisitions. At a separate event, Alpine’s head of exploration says he is bullish on natural gas in Northeastern Pennsylvania. Jones knows Pure Energy, Inc. controls significant assets in that area and is highly leveraged, needing a partner. Jones tries to contact Alpine’s CEO and is told he is unavailable because he is on a business trip to Northeastern Pennsylvania. Jones recommends Pure Energy to a PM who buys it. A week later, Alpine announces it is buying Pure Energy. Has Jones or the PM most likely violated Standards with regards to the integrity of capital markets?",
+    "options": [
+      "No",
+      "Yes, Jones’ recommendation is based on insider information",
+      "Yes, both Jones and Wong have acted on insider information"
+    ],
+    "correctIndex": 0,
+    "explanation": "Jones has not violated the Standards. She used the mosaic theory to combine non-material, nonpublic information (the CEO's travel schedule) with material public information (CFO's acquisition intent, Head of Exploration's regional focus, Pure Energy's leverage and location) to reach her conclusion.",
+    "formula": "Standard II(A) Exemption: Mosaic Theory protects conclusions built from fragmented public and nonmaterial data.",
+    "trap": "The CEO's travel schedule, taken in isolation, is nonmaterial nonpublic information. Using it as the final puzzle piece under the mosaic theory is explicitly permitted.",
+    "image": ""
+  },
+  {
+    "id": 120,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "Maria Jennings, CFA, overhears the CEO of United Retail saying that the quarterly report to be released next week will miss analysts' expectations. Jennings immediately calls her brother who owns the stock to tell him what she overheard. One week later, Jennings writes a report on another company, KTD retail. She uses public and nonmaterial nonpublic information for her analysis to issue a \"buy\" recommendation. Has Jennings most likely violated the Standards?",
+    "options": [
+      "No",
+      "Yes, by calling her brother to tell him what she overheard",
+      "Yes, by using public and nonmaterial nonpublic information for her analysis to issue a \"buy\" recommendation"
+    ],
+    "correctIndex": 1,
+    "explanation": "Jennings violated Standard II(A), Material Nonpublic Information, by sharing what she overheard from the United Retail CEO (which is Material Nonpublic Information) with her brother, causing him to potentially act on it. Her action on the second company (KTD Retail) is protected under the Mosaic Theory and is not a violation.",
+    "formula": "Standard II(A): Do not act OR CAUSE OTHERS TO ACT on MNPI.",
+    "trap": "Tipping off a family member is a direct violation of Standard II(A), even if the analyst does not trade for their own account.",
+    "image": ""
+  },
+  {
+    "id": 121,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "Oliver Opdyke, CFA, hears rumors that the president of Red Ribbon Mining, Richard Leisberg, has recently been diagnosed with late stage Alzheimer’s disease, a fact not publicly known. Leisberg is the charismatic founder and under his leadership the company grew to become one of the largest in the industry. According to the CFA Institute Code of Ethics and Standards of Professional Conduct, the most appropriate action for Opdyke is to:",
+    "options": [
+      "immediately publish a sell recommendation for Red Ribbon Mining.",
+      "confirm the president’s diagnosis before publishing his research report.",
+      "encourage Red Ribbon Mining management to disclose the president’s medical condition."
+    ],
+    "correctIndex": 2,
+    "explanation": "Members and Candidates should make reasonable efforts to achieve public dissemination of information that is material and nonpublic. This effort usually entails encouraging the issuer company to make the information public. If the diagnosis is fact and not rumor, this information is highly material and should be disclosed.",
+    "formula": "Standard II(A) Best Practice: Encourage issuer to publicly disclose MNPI.",
+    "trap": "Confirming the diagnosis (Option B) would mean the analyst now definitely possesses MNPI. He still cannot trade or publish a report based on it until it is public.",
+    "image": ""
+  },
+  {
+    "id": 122,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "A Member secures a controlling, dominant position in an option on a stock in order to benefit from trading the stock. The option trades are reported by the exchange and the increased option trading volume leads other traders to take positions in the option and in the underlying stock. The Member has violated the Standards:",
+    "options": [
+      "by engaging in transaction-based manipulation only.",
+      "by engaging in information-based manipulation only.",
+      "by engaging in both transaction-based manipulation and information-based manipulation."
+    ],
+    "correctIndex": 0,
+    "explanation": "The Member has violated Standard II(B), Market Manipulation, by engaging in transaction-based manipulation. Securing a controlling, dominant position in a financial instrument to exploit and manipulate the price of a related derivative and/or the underlying asset is a classic example of transaction-based manipulation.",
+    "formula": "Transaction-Based Manipulation = Cornering the market / Artificial trading volume",
+    "trap": "Information-based manipulation involves spreading false rumors or misleading information. Since the member only traded, it is solely transaction-based.",
+    "image": ""
+  },
+  {
+    "id": 123,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "Justin Blake, CFA, a retired portfolio manager, owns 20,000 shares of a small public company that he would like to sell because he is worried about the company’s prospects. He posts messages on several internet bulletin boards reading, “This stock is going up once the pending patents are released, so now is the time to buy. The stock is a buy at anything below $3. I have done some close research on these guys.” Blake most likely violated the Standard(s) relating to:",
+    "options": [
+      "market manipulation, but not avoid or disclose conflicts.",
+      "both market manipulation and avoid or disclose conflicts.",
+      "neither market manipulation nor avoid or disclose conflicts."
+    ],
+    "correctIndex": 0,
+    "explanation": "Blake violated Standard II(B), Market Manipulation, by engaging in a practice (spreading false positive information) intended to artificially inflate the stock price so he can sell his shares (a pump-and-dump). He did not violate Standard VI(A), Avoid or Disclose Conflicts, because he is a retired PM posting anonymously on a bulletin board and has no clients, prospective clients, or employer to whom he owes a disclosure duty.",
+    "formula": "Standard II(B): Information-based manipulation (Spreading false rumors/hype).",
+    "trap": "You incorrectly chose B! Standard VI(A) Conflicts of Interest applies specifically to duties owed to clients and employers. Since he is retired and posting on a public forum, there are no clients to disclose the conflict to.",
+    "image": ""
+  },
+  {
+    "id": 124,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "Richard Cardinal, CFA, is the founder of a short selling firm. Cardinal pays lobbying firms to update him immediately on regulatory changes that may impact target companies. He sells short companies facing regulatory challenges. Immediately after he sells a stock, Cardinal conducts a public relations campaign to disclose all of the negative information he has gathered on the company, even if the information is not yet public. Which of Cardinal’s following actions is most likely to be in violation of the CFA Institute Standards of Professional Conduct?",
+    "options": [
+      "Selling stock short",
+      "Trading on information from lobbyists",
+      "Disclosing information about target companies"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cardinal’s actions related to the public relations campaign are specifically intended to manipulate share prices lower and to advantage his short positions. Cardinal has made deliberate attempts to create artificial price volatility designed to have a material impact on the price of an issuer’s stock, in violation of Standard II(B)–Market Manipulation.",
+    "formula": "Standard II(B): Releasing non-public negative info aggressively to crash a stock you shorted is Market Manipulation.",
+    "trap": "Gathering information from lobbyists is a legitimate part of the mosaic theory (as long as it isn't MNPI obtained illegally). The violation is the deliberate PR campaign designed to crash the price.",
+    "image": ""
+  },
+  {
+    "id": 125,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "A Member most likely violates the Standard relating to market manipulation if he:",
+    "options": [
+      "secures a dominant position in a stock to win a proxy vote.",
+      "exploits market inefficiencies in a thinly traded penny stock.",
+      "places both buy and sell orders of a stock at the same price to increase trading volume."
+    ],
+    "correctIndex": 2,
+    "explanation": "Members must not engage in practices that distort prices or artificially inflate trading volume with the intent to mislead market participants. Placing buy and sell orders at the same price to artificially create the appearance of liquidity/volume (wash trading) is a direct violation of Standard II(B).",
+    "formula": "Wash Trading (Artificial Volume) = Market Manipulation (Standard II(B))",
+    "trap": "Securing a dominant position to win a proxy vote (Option A) is a legitimate corporate governance/activist strategy, not market manipulation.",
+    "image": ""
+  },
+  {
+    "id": 126,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 4: Guidance for Standard II",
+    "question": "Which of the following activities violates the Standard relating to market manipulation?\n- Activity 1: A Member secures a dominant position in futures contracts to influence the price of the underlying. The transaction results in large losses for the Member.\n- Activity 2: A Member frequently trades a stock in multiple client accounts with an intent to increase the volume of the stock. The transactions result in large gains for the clients",
+    "options": [
+      "Activity 1 only",
+      "Activity 2 only",
+      "Both Activity 1 and Activity 2"
+    ],
+    "correctIndex": 2,
+    "explanation": "According to Standard II(B), Market Manipulation, the INTENT of the action is critical to determining whether it is a violation. Despite the losses, Activity 1 is a violation because the intent was to influence the price of the underlying. Activity 2 is also a violation because the intent was to artificially increase the volume of the stock, even if the clients gained from it.",
+    "formula": "Standard II(B): Market Manipulation is based on INTENT, regardless of the financial outcome (gains or losses).",
+    "trap": "The outcome (loss for the member, gain for the client) is irrelevant to whether the standard was violated. The intent to manipulate is what triggers the violation.",
+    "image": ""
   }
 ]
