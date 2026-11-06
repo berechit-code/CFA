@@ -1174,8 +1174,8 @@
       "responses": {}
     },
     "2026-11-06": {
-      "count": 20,
-      "correct": 17,
+      "count": 21,
+      "correct": 18,
       "answeredIds": [
         1,
         2,
@@ -1189,7 +1189,8 @@
         106,
         58,
         85,
-        20
+        20,
+        149
       ],
       "responses": {
         "1": {
@@ -1256,6 +1257,11 @@
           "selectedIndex": 0,
           "isCorrect": true,
           "timestamp": 1793978828466
+        },
+        "149": {
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timestamp": 1793978900849
         }
       }
     }
@@ -1925,6 +1931,12 @@
       "isCorrect": true,
       "dateISO": "2026-10-29",
       "timestamp": 1793283056827
+    },
+    "149": {
+      "selectedIndex": 2,
+      "isCorrect": true,
+      "dateISO": "2026-11-06",
+      "timestamp": 1793978900849
     }
   },
   "questionStats": {
@@ -3836,6 +3848,20 @@
           "topic": "Fixed Income"
         }
       ]
+    },
+    "149": {
+      "attempts": 1,
+      "wrongCount": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 2,
+      "lastAnsweredDate": "2026-11-06",
+      "history": [
+        {
+          "date": "2026-11-06",
+          "isCorrect": true,
+          "topic": "Corporate Finance"
+        }
+      ]
     }
   },
   "questionEdits": {
@@ -3875,5 +3901,5 @@
     "Ethical and Professional Standards__3": true,
     "Ethical and Professional Standards__8": true
   },
-  "lastUpdated": 1793978878166
+  "lastUpdated": 1793978900849
 }
