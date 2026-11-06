@@ -1174,13 +1174,14 @@
       "responses": {}
     },
     "2026-11-06": {
-      "count": 4,
+      "count": 5,
       "correct": 3,
       "answeredIds": [
         1,
         2,
         3,
-        11
+        11,
+        42
       ],
       "responses": {
         "1": {
@@ -1202,6 +1203,11 @@
           "selectedIndex": 2,
           "isCorrect": false,
           "timestamp": 1793978095915
+        },
+        "42": {
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timestamp": 1793978175783
         }
       }
     }
@@ -1452,10 +1458,10 @@
       "timestamp": 1793658233603
     },
     "42": {
-      "selectedIndex": 1,
-      "isCorrect": true,
-      "dateISO": "2026-10-28",
-      "timestamp": 1793172478581
+      "selectedIndex": 0,
+      "isCorrect": false,
+      "dateISO": "2026-11-06",
+      "timestamp": 1793978175783
     },
     "43": {
       "selectedIndex": 2,
@@ -2686,11 +2692,11 @@
       ]
     },
     "42": {
-      "attempts": 4,
-      "wrongCount": 3,
-      "lastIsCorrect": true,
-      "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-28",
+      "attempts": 5,
+      "wrongCount": 4,
+      "lastIsCorrect": false,
+      "lastSelectedIndex": 0,
+      "lastAnsweredDate": "2026-11-06",
       "history": [
         {
           "date": "2026-10-24",
@@ -2710,6 +2716,11 @@
         {
           "date": "2026-10-28",
           "isCorrect": true,
+          "topic": "Fixed Income"
+        },
+        {
+          "date": "2026-11-06",
+          "isCorrect": false,
           "topic": "Fixed Income"
         }
       ]
@@ -3743,5 +3754,5 @@
     "Corporate Finance__0": true,
     "Portfolio Construction__4": true
   },
-  "lastUpdated": 1793978095915
+  "lastUpdated": 1793978175783
 }
