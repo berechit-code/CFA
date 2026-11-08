@@ -2766,5 +2766,277 @@
     "formula": "OID Tax Provision: Annual Prorated Interest Income Taxed + Cost Basis Step-Up → Cost Basis at Maturity = Par → $0 Capital Gain",
     "trap": "Don't forget the cost-basis step-up! Because the discount is taxed annually as imputed interest income along the way, taxing it again at maturity as a capital gain would be double taxation.",
     "image": ""
+  },
+  {
+    "id": 174,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "All of the following are current assets except:",
+    "options": [
+      "cash.",
+      "goodwill.",
+      "inventories."
+    ],
+    "correctIndex": 1,
+    "explanation": "Goodwill is a non-current (long-term) intangible asset arising from business combinations, whereas cash and inventories are current assets expected to be converted into cash, sold, or consumed within one year or one operating cycle.",
+    "formula": "Current Assets = Cash + Marketable Securities + Accounts Receivable + Inventories + Prepaid Expenses",
+    "trap": "Goodwill and other intangible assets are always classified as non-current assets on the balance sheet.",
+    "image": ""
+  },
+  {
+    "id": 175,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "The initial measurement of goodwill is most likely affected by:",
+    "options": [
+      "an acquisition’s purchase price.",
+      "the acquired company’s book value.",
+      "the fair value of the acquirer’s assets and liabilities."
+    ],
+    "correctIndex": 0,
+    "explanation": "Initially, goodwill is measured as the difference between the purchase price paid for an acquisition and the fair value of the acquired (target) company’s identifiable net assets (identifiable assets less liabilities).",
+    "formula": "$\\text{Goodwill} = \\text{Purchase Price} - \\text{Fair Value of Target's Identifiable Net Assets}$",
+    "trap": "You selected C! Watch out for TWO classic traps in goodwill questions: (1) use the FAIR value (not book value) of net assets, and (2) use the ACQUIRED target's net assets (not the acquirer's!).",
+    "image": ""
+  },
+  {
+    "id": 176,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "For financial assets classified as trading securities, how are unrealized gains and losses reflected in shareholders’ equity?",
+    "options": [
+      "They are not recognized.",
+      "They flow through income into retained earnings.",
+      "They are a component of accumulated other comprehensive income."
+    ],
+    "correctIndex": 1,
+    "explanation": "For financial assets classified as trading securities (FVTPL under IFRS), unrealized gains and losses are recognized directly on the income statement (profit and loss) and consequently flow into shareholders’ equity via retained earnings.",
+    "formula": "Trading Securities (FVTPL): Measured at Fair Value on B/S → Unrealized G/L in Net Income → Retained Earnings",
+    "trap": "Memorize the 3 accounting treatments: Trading (FVTPL) → Retained Earnings; Available-for-Sale (FVOCI) → AOCI; Held-to-Maturity (Amortized Cost) → Unrealized G/L not recognized.",
+    "image": ""
+  },
+  {
+    "id": 177,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "For financial assets classified as available for sale, how are unrealized gains and losses reflected in shareholders’ equity?",
+    "options": [
+      "They are not recognized.",
+      "They flow through retained earnings.",
+      "They are a component of accumulated other comprehensive income."
+    ],
+    "correctIndex": 2,
+    "explanation": "For financial assets classified as available for sale (FVOCI under IFRS), securities are carried at fair value on the balance sheet, but unrealized gains and losses bypass the income statement and are reported in Other Comprehensive Income (OCI), accumulating in Shareholders' Equity as Accumulated Other Comprehensive Income (AOCI).",
+    "formula": "Available-for-Sale (FVOCI): Measured at Fair Value on B/S → Unrealized G/L in OCI → AOCI in Equity",
+    "trap": "You selected A (which is the rule for Held-to-Maturity securities)! Available-for-Sale securities DO recognize unrealized gains/losses on the balance sheet inside AOCI.",
+    "image": ""
+  },
+  {
+    "id": 178,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "For financial assets classified as held to maturity, how are unrealized gains and losses reflected in shareholders’ equity?",
+    "options": [
+      "They are not recognized.",
+      "They flow through retained earnings.",
+      "They are a component of accumulated other comprehensive income."
+    ],
+    "correctIndex": 0,
+    "explanation": "Financial assets classified as held to maturity (Amortized Cost under IFRS) are debt securities the firm intends and is able to hold until maturity. They are measured at amortized cost on the balance sheet, so unrealized fair value gains and losses are not recognized in either net income or OCI.",
+    "formula": "Held-to-Maturity (Amortized Cost): Unrealized G/L = Not Recognized (Only realized G/L and interest income hit I/S)",
+    "trap": "Only Held-to-Maturity securities ignore unrealized market price fluctuations on the balance sheet.",
+    "image": ""
+  },
+  {
+    "id": 179,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "A company has total liabilities of GBP35 million and total stockholders’ equity of GBP55 million. Total liabilities are represented on a vertical common-size balance sheet by a percentage closest to:",
+    "options": [
+      "35 percent.",
+      "39 percent.",
+      "64 percent."
+    ],
+    "correctIndex": 1,
+    "explanation": "Vertical common-size balance sheet analysis states every balance sheet line item as a percentage of Total Assets. Here, Total Assets = Total Liabilities (GBP35m) + Total Stockholders' Equity (GBP55m) = GBP90m. Therefore, Total Liabilities % = 35 / 90 = 38.89% ≈ 39%.",
+    "formula": "$\\text{Vertical Common-Size B/S \\%} = \\frac{\\text{Line Item}}{\\text{Total Assets}} = \\frac{35}{35 + 55} = 38.89\\%$",
+    "trap": "64% is the Debt-to-Equity ratio (35 / 55). Always add Liabilities + Equity first to get Total Assets (90) for the denominator of a common-size balance sheet!",
+    "image": ""
+  },
+  {
+    "id": 180,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "Which of the following would an analyst most likely be able to determine from a common-size analysis of a company’s balance sheet over several periods?",
+    "options": [
+      "An increase or decrease in sales",
+      "An increase or decrease in financial leverage",
+      "A more efficient or less efficient use of assets"
+    ],
+    "correctIndex": 1,
+    "explanation": "A vertical common-size balance sheet expresses every asset, liability, and equity item as a percentage of total assets over time. This directly reveals shifts in capital structure (the proportion of debt/liabilities vs. equity financing), showing whether financial leverage has increased or decreased.",
+    "formula": "$\\frac{\\text{Total Liabilities}}{\\text{Total Assets}} + \\frac{\\text{Total Equity}}{\\text{Total Assets}} = 100\\%$",
+    "trap": "You selected C! Measuring asset efficiency (e.g., Asset Turnover = Revenue / Total Assets) or sales growth requires Revenue from the Income Statement, which is not on a common-size balance sheet.",
+    "image": ""
+  },
+  {
+    "id": 181,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "Defining total asset turnover as revenue divided by average total assets, all else equal, impairment write-downs of long-lived assets owned by a company will most likely result in an increase for that company in:",
+    "options": [
+      "the debt-to-equity ratio but not the total asset turnover.",
+      "the total asset turnover but not the debt-to-equity ratio.",
+      "both the debt-to-equity ratio and the total asset turnover."
+    ],
+    "correctIndex": 2,
+    "explanation": "An impairment write-down reduces the carrying value of long-lived assets (lowering Total Assets) and recognizes an impairment loss on the income statement (lowering Net Income and Retained Earnings, which lowers Total Equity). Because Revenue and Total Debt are unchanged: (1) Total Asset Turnover (Revenue / Avg Total Assets) increases because the denominator falls, and (2) Debt-to-Equity (Total Debt / Total Equity) increases because the denominator falls.",
+    "formula": "$\\text{Impairment} \\implies \\text{Assets} \\downarrow \\text{ and Equity} \\downarrow \\implies \\frac{\\text{Revenue}}{\\text{Assets} \\downarrow} \\uparrow \\text{ and } \\frac{\\text{Debt}}{\\text{Equity} \\downarrow} \\uparrow$",
+    "trap": "You selected B and forgot the accounting equation ($A = L + E$)! Whenever an asset is written down, the loss flows through Net Income into Retained Earnings, reducing Shareholders' Equity by the exact after-tax amount and pushing Debt-to-Equity UP.",
+    "image": ""
+  },
+  {
+    "id": 182,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "An investor concerned about a company’s ability to meet its near-term obligations is most likely to calculate the:",
+    "options": [
+      "current ratio.",
+      "return on total capital.",
+      "financial leverage ratio."
+    ],
+    "correctIndex": 0,
+    "explanation": "Ability to meet near-term (short-term) obligations is the definition of liquidity. The current ratio (Current Assets / Current Liabilities) is a liquidity ratio comparing assets expected to be converted to cash within one year to liabilities due within one year.",
+    "formula": "$\\text{Current Ratio} = \\frac{\\text{Current Assets}}{\\text{Current Liabilities}}$",
+    "trap": "Near-term obligations = Liquidity (Current, Quick, Cash ratios). Long-term obligations = Solvency (Financial Leverage, Debt-to-Equity).",
+    "image": ""
+  },
+  {
+    "id": 183,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "The most stringent test of a company’s liquidity is its:",
+    "options": [
+      "cash ratio.",
+      "quick ratio.",
+      "current ratio."
+    ],
+    "correctIndex": 0,
+    "explanation": "The cash ratio is the most conservative (stringent) liquidity measure because it includes only Cash and Marketable Securities in the numerator, excluding both inventories and accounts receivable.",
+    "formula": "$\\text{Cash Ratio} = \\frac{\\text{Cash} + \\text{Marketable Securities}}{\\text{Current Liabilities}} < \\text{Quick Ratio} < \\text{Current Ratio}$",
+    "trap": "You selected B (Quick ratio)! While the quick ratio ('acid-test') excludes inventory and prepaid expenses, it still includes Accounts Receivable. The Cash Ratio is even stricter because it only counts Cash + Marketable Securities.",
+    "image": ""
+  },
+  {
+    "id": 184,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "An investor worried about a company’s long-term solvency would most likely examine its:",
+    "options": [
+      "current ratio.",
+      "return on equity.",
+      "debt-to-equity ratio."
+    ],
+    "correctIndex": 2,
+    "explanation": "Long-term solvency refers to a company's ability to fulfill its long-term debt obligations. The debt-to-equity ratio is a core solvency/leverage ratio measuring financial risk.",
+    "formula": "$\\text{Debt-to-Equity Ratio} = \\frac{\\text{Total Debt}}{\\text{Total Shareholders' Equity}}$",
+    "trap": "Current ratio measures short-term liquidity; ROE measures profitability; Debt-to-Equity measures long-term solvency.",
+    "image": ""
+  },
+  {
+    "id": 185,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "[Exhibit 1 Common-Size B/S (% of Total Assets)] Company A: Cash 5, Mkt Sec 5, AR 5, Inv 15, Prepaid 5 (Total CA = 35); PP&E 40, Goodwill 25 (Total Assets = 100); Total CL = 35, LT Debt = 45 (Total Liab = 80), Equity = 20. Company B: Cash 5, Mkt Sec 0, AR 15, Inv 20, Prepaid 15 (Total CA = 55); PP&E 35, Goodwill 0, Other 10 (Total Assets = 100); Total CL = 25, LT Debt = 20, Other NCL = 10 (Total Liab = 55), Equity = 45. Industry Avg: Total CA = 48, Goodwill = 8; Total CL = 28, Total Liab = 63, Equity = 37. Which statement is correct?",
+    "options": [
+      "Company A has below-average liquidity risk.",
+      "Company B has above-average solvency risk.",
+      "Company A has made one or more acquisitions."
+    ],
+    "correctIndex": 2,
+    "explanation": "Accounting goodwill is only recognized when a company completes a business acquisition (purchase price > fair value of net identifiable assets). Since Goodwill represents 25% of Company A's total assets, Company A must have made one or more acquisitions. Company A has lower liquidity ratios than the industry (higher liquidity risk), and Company B has lower debt/leverage ratios than the industry (lower solvency risk).",
+    "formula": "Goodwill > 0 on Balance Sheet → Company has completed at least one acquisition (internally generated goodwill is never capitalized).",
+    "trap": "Watch the wording: 'below-average liquidity RISK' means HIGHER liquidity ratios. Company A's current ratio is 35/35 = 1.00 vs. Industry 48/28 = 1.71, so Company A has ABOVE-average liquidity risk!",
+    "image": ""
+  },
+  {
+    "id": 186,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "[Exhibit 1 Common-Size B/S] Company A reports (% of Total Assets): Cash and cash equivalents = 5, Marketable securities = 5, Accounts receivable = 5, Inventories = 15, Prepaid expenses = 5 (Total current assets = 35); Total current liabilities = 35. The quick ratio for Company A is closest to:",
+    "options": [
+      "0.43.",
+      "0.57.",
+      "1.00."
+    ],
+    "correctIndex": 0,
+    "explanation": "Quick Ratio = (Cash + Marketable Securities + Accounts Receivable) / Current Liabilities = (5 + 5 + 5) / 35 = 15 / 35 = 0.4286 ≈ 0.43.",
+    "formula": "$\\text{Quick Ratio} = \\frac{\\text{Cash} + \\text{Marketable Securities} + \\text{Receivables}}{\\text{Current Liabilities}} = \\frac{5 + 5 + 5}{35} = 0.43$",
+    "trap": "You selected 0.57 (which is 20 / 35)! You accidentally included Prepaid Expenses (5) in the numerator. Remember: the Quick Ratio strictly excludes BOTH Inventories (15) AND Prepaid Expenses (5)!",
+    "image": ""
+  },
+  {
+    "id": 187,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "[Exhibit 1 Common-Size B/S] Company B reports (% of Total Assets): Total current liabilities = 25, Long-term debt = 20, Other non-current liabilities = 10, Total liabilities = 55, Total shareholders' equity = 45, Total assets = 100. The financial leverage ratio for Company B is closest to:",
+    "options": [
+      "0.55.",
+      "1.22.",
+      "2.22."
+    ],
+    "correctIndex": 2,
+    "explanation": "The financial leverage ratio (also known as the equity multiplier in DuPont analysis) is defined as Total Assets divided by Total Shareholders' Equity. For Company B: 100 / 45 = 2.22.",
+    "formula": "$\\text{Financial Leverage Ratio} = \\frac{\\text{Total Assets}}{\\text{Total Equity}} = \\frac{100}{45} = 2.22$",
+    "trap": "You selected 1.22! 1.22 is Total Liabilities / Total Equity (55 / 45), and 0.55 is Total Liabilities / Total Assets (55 / 100). In CFA terminology, 'Financial Leverage Ratio' ALWAYS means Total Assets / Total Equity!",
+    "image": ""
+  },
+  {
+    "id": 188,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "[Exhibit 1 Common-Size B/S] Company A has: Cash = 5, Marketable securities = 5, Receivables = 5, Total CA = 35, Total CL = 35. Company B has: Cash = 5, Marketable securities = 0, Receivables = 15, Total CA = 55, Total CL = 25. Which ratio indicates lower liquidity risk for Company A compared with Company B?",
+    "options": [
+      "Cash ratio",
+      "Quick ratio",
+      "Current ratio"
+    ],
+    "correctIndex": 0,
+    "explanation": "A higher liquidity ratio indicates lower liquidity risk. Cash Ratio for Company A = (5 + 5) / 35 = 0.29, which is higher than Company B's Cash Ratio = (5 + 0) / 25 = 0.20. By contrast, Company A has a lower Quick Ratio (15/35 = 0.43 vs. 20/25 = 0.80) and a lower Current Ratio (35/35 = 1.00 vs. 55/25 = 2.20).",
+    "formula": "$\\text{Cash Ratio}_A = \\frac{5+5}{35} = 0.29 > \\text{Cash Ratio}_B = \\frac{5+0}{25} = 0.20$",
+    "trap": "Lower liquidity risk = Higher liquidity ratio. Because Company A holds 5% in Marketable Securities while Company B holds 0%, Company A beats Company B on the Cash Ratio despite losing on the Quick and Current ratios.",
+    "image": ""
+  },
+  {
+    "id": 189,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "Deferred tax liabilities result when:",
+    "options": [
+      "taxable income in a period is less than reported financial statement income before taxes.",
+      "items of expense are included in financial statement income in earlier periods than those for which taxable income is reported.",
+      "straight-line depreciation methods are used for tax purposes and accelerated methods are employed for financial statement purposes."
+    ],
+    "correctIndex": 0,
+    "explanation": "Deferred tax liabilities (DTLs) arise when a temporary timing difference causes current Taxable Income (and Taxes Payable on the tax return) to be LESS than Pre-Tax Accounting Income (and Income Tax Expense on the income statement), meaning the company will have to pay the deferred tax difference in future periods.",
+    "formula": "Pre-Tax Accounting Income (EBT) > Taxable Income → Income Tax Expense > Taxes Payable → Deferred Tax Liability (DTL)",
+    "trap": "Options B and C describe situations where Accounting Income < Taxable Income (Taxes Payable > Tax Expense), which creates a Deferred Tax ASSET (DTA), not a DTL!",
+    "image": ""
+  },
+  {
+    "id": 190,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 3: Analyzing Balance Sheets",
+    "question": "Common-size balance sheets (% of Total Assets) for three companies show: Company X (Current assets = 44.2%, Goodwill = 1.6%, Intangibles = 17.6%, PP&E = 17.7%, Total Liab = 62.3%); Company Y (Current assets = 41.5%, Goodwill = 2.2%, Intangibles = 7.0%, PP&E = 25.3%, Total Liab = 55.7%); Company Z (Current assets = 26.2%, Goodwill = 28.8%, Intangibles = 24.0%, PP&E = 8.2%, Total Liab = 61.0%). Which company is most likely to have grown through acquisitions?",
+    "options": [
+      "Company X",
+      "Company Y",
+      "Company Z"
+    ],
+    "correctIndex": 2,
+    "explanation": "Company Z has 28.8% of its total assets in Goodwill (plus 24.0% in Intangible assets), compared with only 1.6% for Company X and 2.2% for Company Y. Because goodwill is only recognized on the balance sheet when a company acquires another business for more than the fair value of its identifiable net assets, Company Z has most likely grown through acquisitions.",
+    "formula": "High Goodwill % of Total Assets (28.8%) → Growth by M&A / Acquisitions",
+    "trap": "Organic growth never creates balance sheet goodwill—only external M&A acquisitions generate accounting goodwill.",
+    "image": ""
   }
 ]
