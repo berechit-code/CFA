@@ -1396,8 +1396,8 @@
       }
     },
     "2026-11-08": {
-      "count": 26,
-      "correct": 18,
+      "count": 27,
+      "correct": 19,
       "answeredIds": [
         123,
         124,
@@ -1407,7 +1407,8 @@
         180,
         178,
         147,
-        39
+        39,
+        82
       ],
       "responses": {
         "39": {
@@ -1419,6 +1420,11 @@
           "selectedIndex": 2,
           "isCorrect": true,
           "timestamp": 1794167844779
+        },
+        "82": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1794168008978
         },
         "95": {
           "selectedIndex": 0,
@@ -1947,8 +1953,8 @@
     "82": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-28",
-      "timestamp": 1793172296515
+      "dateISO": "2026-11-08",
+      "timestamp": 1794168008978
     },
     "83": {
       "selectedIndex": 1,
@@ -3720,14 +3726,19 @@
       ]
     },
     "82": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-28",
+      "lastAnsweredDate": "2026-11-08",
       "history": [
         {
           "date": "2026-10-28",
+          "isCorrect": true,
+          "topic": "Equities"
+        },
+        {
+          "date": "2026-11-08",
           "isCorrect": true,
           "topic": "Equities"
         }
@@ -4484,5 +4495,5 @@
     "Ethical and Professional Standards__8": true,
     "Financial Statement Analysis__2": true
   },
-  "lastUpdated": 1794167962813
+  "lastUpdated": 1794168008978
 }
