@@ -1396,8 +1396,8 @@
       }
     },
     "2026-11-08": {
-      "count": 24,
-      "correct": 16,
+      "count": 25,
+      "correct": 17,
       "answeredIds": [
         123,
         124,
@@ -1405,7 +1405,8 @@
         97,
         58,
         180,
-        178
+        178,
+        147
       ],
       "responses": {
         "58": {
@@ -1432,6 +1433,11 @@
           "selectedIndex": 2,
           "isCorrect": true,
           "timestamp": 1794167631881
+        },
+        "147": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1794167897346
         },
         "178": {
           "selectedIndex": 0,
@@ -2171,6 +2177,12 @@
       "isCorrect": true,
       "dateISO": "2026-11-07",
       "timestamp": 1794080957114
+    },
+    "147": {
+      "selectedIndex": 0,
+      "isCorrect": true,
+      "dateISO": "2026-11-08",
+      "timestamp": 1794167897346
     },
     "149": {
       "selectedIndex": 2,
@@ -4296,6 +4308,20 @@
         }
       ]
     },
+    "147": {
+      "attempts": 1,
+      "wrongCount": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 0,
+      "lastAnsweredDate": "2026-11-08",
+      "history": [
+        {
+          "date": "2026-11-08",
+          "isCorrect": true,
+          "topic": "Corporate Finance"
+        }
+      ]
+    },
     "149": {
       "attempts": 1,
       "wrongCount": 0,
@@ -4447,5 +4473,5 @@
     "Ethical and Professional Standards__8": true,
     "Financial Statement Analysis__2": true
   },
-  "lastUpdated": 1794167876280
+  "lastUpdated": 1794167897346
 }
