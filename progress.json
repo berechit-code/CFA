@@ -1418,9 +1418,9 @@
           "timestamp": 1794167962813
         },
         "42": {
-          "selectedIndex": 0,
-          "isCorrect": false,
-          "timestamp": 1794168026163
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1794168033779
         },
         "58": {
           "selectedIndex": 2,
@@ -1717,10 +1717,10 @@
       "timestamp": 1793978916665
     },
     "42": {
-      "selectedIndex": 0,
-      "isCorrect": false,
+      "selectedIndex": 1,
+      "isCorrect": true,
       "dateISO": "2026-11-08",
-      "timestamp": 1794168026163
+      "timestamp": 1794168033779
     },
     "43": {
       "selectedIndex": 2,
@@ -3102,10 +3102,10 @@
       ]
     },
     "42": {
-      "attempts": 6,
+      "attempts": 7,
       "wrongCount": 5,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 1,
       "lastAnsweredDate": "2026-11-08",
       "history": [
         {
@@ -3136,6 +3136,11 @@
         {
           "date": "2026-11-08",
           "isCorrect": false,
+          "topic": "Fixed Income"
+        },
+        {
+          "date": "2026-11-08",
+          "isCorrect": true,
           "topic": "Fixed Income"
         }
       ]
@@ -4506,5 +4511,5 @@
     "Ethical and Professional Standards__8": true,
     "Financial Statement Analysis__2": true
   },
-  "lastUpdated": 1794168026163
+  "lastUpdated": 1794168033779
 }
