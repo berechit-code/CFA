@@ -1641,15 +1641,16 @@
       }
     },
     "2026-11-10": {
-      "count": 42,
-      "correct": 29,
+      "count": 43,
+      "correct": 30,
       "answeredIds": [
         119,
         125,
         69,
         192,
         186,
-        184
+        184,
+        154
       ],
       "responses": {
         "69": {
@@ -1666,6 +1667,11 @@
           "selectedIndex": 2,
           "isCorrect": true,
           "timestamp": 1794298223564
+        },
+        "154": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1794298378129
         },
         "184": {
           "selectedIndex": 2,
@@ -2502,10 +2508,10 @@
       "timestamp": 1794071604865
     },
     "154": {
-      "selectedIndex": 0,
-      "isCorrect": false,
-      "dateISO": "2026-11-09",
-      "timestamp": 1794222139563
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "dateISO": "2026-11-10",
+      "timestamp": 1794298378129
     },
     "157": {
       "selectedIndex": 2,
@@ -4924,15 +4930,20 @@
       ]
     },
     "154": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 1,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-11-09",
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-11-10",
       "history": [
         {
           "date": "2026-11-09",
           "isCorrect": false,
+          "topic": "Corporate Finance"
+        },
+        {
+          "date": "2026-11-10",
+          "isCorrect": true,
           "topic": "Corporate Finance"
         }
       ]
@@ -5186,5 +5197,5 @@
     "Ethical and Professional Standards__8": true,
     "Financial Statement Analysis__2": true
   },
-  "lastUpdated": 1794298370164
+  "lastUpdated": 1794298378129
 }
