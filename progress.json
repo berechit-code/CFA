@@ -1697,8 +1697,8 @@
       }
     },
     "2026-11-11": {
-      "count": 12,
-      "correct": 11,
+      "count": 13,
+      "correct": 12,
       "answeredIds": [
         111,
         29,
@@ -1711,7 +1711,8 @@
         40,
         41,
         11,
-        158
+        158,
+        68
       ],
       "responses": {
         "11": {
@@ -1738,6 +1739,11 @@
           "selectedIndex": 0,
           "isCorrect": true,
           "timestamp": 1794429808604
+        },
+        "68": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1794429959238
         },
         "95": {
           "selectedIndex": 1,
@@ -2182,8 +2188,8 @@
     "68": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "dateISO": "2026-11-08",
-      "timestamp": 1794168104062
+      "dateISO": "2026-11-11",
+      "timestamp": 1794429959238
     },
     "69": {
       "selectedIndex": 1,
@@ -4023,11 +4029,11 @@
       ]
     },
     "68": {
-      "attempts": 2,
+      "attempts": 3,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-11-08",
+      "lastAnsweredDate": "2026-11-11",
       "history": [
         {
           "date": "2026-10-28",
@@ -4036,6 +4042,11 @@
         },
         {
           "date": "2026-11-08",
+          "isCorrect": true,
+          "topic": "Derivatives"
+        },
+        {
+          "date": "2026-11-11",
           "isCorrect": true,
           "topic": "Derivatives"
         }
@@ -5398,5 +5409,5 @@
     "Ethical and Professional Standards__8": true,
     "Financial Statement Analysis__2": true
   },
-  "lastUpdated": 1794429955138
+  "lastUpdated": 1794429959238
 }
