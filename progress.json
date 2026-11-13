@@ -1929,8 +1929,8 @@
       }
     },
     "2026-11-13": {
-      "count": 56,
-      "correct": 40,
+      "count": 57,
+      "correct": 41,
       "answeredIds": [
         35,
         111,
@@ -1966,7 +1966,8 @@
         58,
         97,
         34,
-        41
+        41,
+        38
       ],
       "responses": {
         "11": {
@@ -1993,6 +1994,11 @@
           "selectedIndex": 1,
           "isCorrect": true,
           "timestamp": 1794563408212
+        },
+        "38": {
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timestamp": 1794564359716
         },
         "41": {
           "selectedIndex": 0,
@@ -2372,8 +2378,8 @@
     "38": {
       "selectedIndex": 2,
       "isCorrect": true,
-      "dateISO": "2026-11-12",
-      "timestamp": 1794498107221
+      "dateISO": "2026-11-13",
+      "timestamp": 1794564359716
     },
     "39": {
       "selectedIndex": 2,
@@ -4060,11 +4066,11 @@
       ]
     },
     "38": {
-      "attempts": 5,
+      "attempts": 6,
       "wrongCount": 1,
       "lastIsCorrect": true,
       "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-11-12",
+      "lastAnsweredDate": "2026-11-13",
       "history": [
         {
           "date": "2026-10-27",
@@ -4088,6 +4094,11 @@
         },
         {
           "date": "2026-11-12",
+          "isCorrect": true,
+          "topic": "Equities"
+        },
+        {
+          "date": "2026-11-13",
           "isCorrect": true,
           "topic": "Equities"
         }
@@ -6471,5 +6482,5 @@
     "Equities__10": true,
     "Alternative Investments__4": true
   },
-  "lastUpdated": 1794564330117
+  "lastUpdated": 1794564359716
 }
