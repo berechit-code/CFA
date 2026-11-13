@@ -1929,8 +1929,8 @@
       }
     },
     "2026-11-13": {
-      "count": 29,
-      "correct": 18,
+      "count": 30,
+      "correct": 19,
       "answeredIds": [
         35,
         111,
@@ -1939,7 +1939,8 @@
         51,
         174,
         181,
-        151
+        151,
+        197
       ],
       "responses": {
         "35": {
@@ -1981,6 +1982,11 @@
           "selectedIndex": 2,
           "isCorrect": true,
           "timestamp": 1794563544651
+        },
+        "197": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1794563645022
         }
       }
     }
@@ -3022,6 +3028,12 @@
       "isCorrect": true,
       "dateISO": "2026-11-10",
       "timestamp": 1794298303780
+    },
+    "197": {
+      "selectedIndex": 0,
+      "isCorrect": true,
+      "dateISO": "2026-11-13",
+      "timestamp": 1794563645022
     }
   },
   "questionStats": {
@@ -5996,6 +6008,20 @@
           "topic": "Economics"
         }
       ]
+    },
+    "197": {
+      "attempts": 1,
+      "wrongCount": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 0,
+      "lastAnsweredDate": "2026-11-13",
+      "history": [
+        {
+          "date": "2026-11-13",
+          "isCorrect": true,
+          "topic": "Equities"
+        }
+      ]
     }
   },
   "questionEdits": {
@@ -6039,5 +6065,5 @@
     "Equities__10": true,
     "Alternative Investments__4": true
   },
-  "lastUpdated": 1794563616004
+  "lastUpdated": 1794563645022
 }
