@@ -1929,7 +1929,7 @@
       }
     },
     "2026-11-13": {
-      "count": 44,
+      "count": 45,
       "correct": 29,
       "answeredIds": [
         35,
@@ -1954,7 +1954,8 @@
         137,
         42,
         11,
-        18
+        18,
+        129
       ],
       "responses": {
         "11": {
@@ -2006,6 +2007,11 @@
           "selectedIndex": 1,
           "isCorrect": false,
           "timestamp": 1794563804812
+        },
+        "129": {
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timestamp": 1794564089802
         },
         "131": {
           "selectedIndex": 2,
@@ -2844,10 +2850,10 @@
       "timestamp": 1794429993621
     },
     "129": {
-      "selectedIndex": 2,
-      "isCorrect": true,
-      "dateISO": "2026-11-08",
-      "timestamp": 1794168121162
+      "selectedIndex": 1,
+      "isCorrect": false,
+      "dateISO": "2026-11-13",
+      "timestamp": 1794564089802
     },
     "130": {
       "selectedIndex": 2,
@@ -5517,11 +5523,11 @@
       ]
     },
     "129": {
-      "attempts": 2,
-      "wrongCount": 1,
-      "lastIsCorrect": true,
-      "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-11-08",
+      "attempts": 3,
+      "wrongCount": 2,
+      "lastIsCorrect": false,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-11-13",
       "history": [
         {
           "date": "2026-11-07",
@@ -5531,6 +5537,11 @@
         {
           "date": "2026-11-08",
           "isCorrect": true,
+          "topic": "Portfolio Construction"
+        },
+        {
+          "date": "2026-11-13",
+          "isCorrect": false,
           "topic": "Portfolio Construction"
         }
       ]
@@ -6339,5 +6350,5 @@
     "Equities__10": true,
     "Alternative Investments__4": true
   },
-  "lastUpdated": 1794564062369
+  "lastUpdated": 1794564089802
 }
