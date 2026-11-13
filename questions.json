@@ -3038,5 +3038,341 @@
     "formula": "High Goodwill % of Total Assets (28.8%) → Growth by M&A / Acquisitions",
     "trap": "Organic growth never creates balance sheet goodwill—only external M&A acquisitions generate accounting goodwill.",
     "image": ""
+  },
+  {
+    "id": 191,
+    "topic": "Equities",
+    "module": "Module 1: Equity Instrument Features",
+    "question": "Which of the following securities has the lowest seniority on claiming cash flows from a portfolio company?",
+    "options": [
+      "Debt",
+      "Preference shares",
+      "Common shares"
+    ],
+    "correctIndex": 2,
+    "explanation": "Holders of common shares have the residual claim on a company’s cash flows and assets. Common shareholders are paid last, only after all other claims (debt and preference shares) are settled.",
+    "formula": "Seniority of Claims: Debt > Preference Shares > Common Shares",
+    "trap": "Highest risk = Lowest seniority. Common equity holds the residual claim and is therefore at the bottom of the capital structure.",
+    "image": ""
+  },
+  {
+    "id": 192,
+    "topic": "Equities",
+    "module": "Module 1: Equity Instrument Features",
+    "question": "[MSUMC Vignette] MSUMC's Investment Office is interested in benefiting from improved company performance and seeks a \"voice\" in management decisions. Which of the following provides the most correct response as to why MSUMC prefers investing in common shares rather than preference shares?",
+    "options": [
+      "Common shares typically provide higher dividends than are received from holding preference shares.",
+      "Common shares provide the opportunity to vote on corporate decisions in addition to the possibility for improved dividends or higher stock price as company performance improves.",
+      "Dividends on common shares are less uncertain because of the higher seniority of common shares’ payoffs."
+    ],
+    "correctIndex": 1,
+    "explanation": "MSUMC’s stated goals of being able to capitalize on improvements (price appreciation) and having a \"voice\" on corporate decisions (voting rights) best match the features of common shares. Preference shares generally do not carry voting rights and have fixed dividends.",
+    "formula": "Common Shares = Voting Rights + Residual Upside | Preference Shares = No Voting Rights + Fixed Dividends",
+    "trap": "You selected A! Common shares do NOT guarantee higher dividends than preference shares (in fact, common dividends can be cut to zero at any time). The key difference is the voting right and the unlimited upside potential.",
+    "image": ""
+  },
+  {
+    "id": 193,
+    "topic": "Equities",
+    "module": "Module 1: Equity Instrument Features",
+    "question": "[MSUMC Vignette] MSUMC targets broad exposure across the equity universe, buying both publicly listed and private equities across company life-cycle stages. In which company life-cycle stage is MSUMC most likely to find both publicly listed and private company equities as investments?",
+    "options": [
+      "Start-up",
+      "Growth",
+      "Mature"
+    ],
+    "correctIndex": 2,
+    "explanation": "In the mature stage of the company life cycle, MSUMC is likely to find both publicly listed equity and private equity securities. Publicly listed companies are often mature, while private equity buyout targets are also typically mature, cash-generating companies.",
+    "formula": "Publicly Listed + PE Buyouts → Typically Mature Stage",
+    "trap": "Start-up and early-growth companies are typically funded by Venture Capital (private) because they lack the profitability and track record required for a public listing.",
+    "image": ""
+  },
+  {
+    "id": 194,
+    "topic": "Equities",
+    "module": "Module 1: Equity Instrument Features",
+    "question": "[MSUMC Vignette] MSUMC has a very long investment horizon. This is most relevant to which one of the following equity market features in their decision to allocate between publicly listed and private equities?",
+    "options": [
+      "Owner–manager separation versus overlap",
+      "Standardized disclosures versus limited disclosures",
+      "Liquidity versus illiquidity of shares"
+    ],
+    "correctIndex": 2,
+    "explanation": "MSUMC’s long investment horizon allows them to consider holding highly illiquid private shares. A long horizon means they do not need immediate access to cash, enabling them to harvest the illiquidity premium offered by private equity.",
+    "formula": "Long Investment Horizon = Ability to tolerate Illiquidity (and earn the illiquidity premium)",
+    "trap": "While private equity involves owner-manager overlap and limited disclosures, those features are unrelated to the investor's time horizon. The time horizon specifically dictates liquidity needs.",
+    "image": ""
+  },
+  {
+    "id": 195,
+    "topic": "Equities",
+    "module": "Module 1: Equity Instrument Features",
+    "question": "Participating preference shares are least likely to entitle the shareholders to participate in:",
+    "options": [
+      "corporate decisions through voting rights.",
+      "additional distribution of the company’s assets upon liquidation.",
+      "additional dividends if the company’s profits exceed a predetermined level."
+    ],
+    "correctIndex": 0,
+    "explanation": "Participating preference shares do not entitle the shareholders to participate in corporate decisions through voting rights (which are reserved for common shares). They do, however, entitle holders to an additional dividend if profits exceed a specified level and an additional distribution of assets upon liquidation above par.",
+    "formula": "Participating Preference = Fixed Dividend + Extra Profit-based Dividend + Extra Liquidation Proceeds | NO Voting Rights",
+    "trap": "You selected C! The word 'participating' specifically means they get to *participate* in extra profits (extra dividends). It does not grant them voting rights.",
+    "image": ""
+  },
+  {
+    "id": 196,
+    "topic": "Equities",
+    "module": "Module 1: Equity Instrument Features",
+    "question": "A company has issued only one class of common shares, and it does not pay dividends on them. It has also issued two types of non-cumulative preference shares: one that is putable and the other callable. Which of these securities will most likely offer the lowest expected return to the investor?",
+    "options": [
+      "Common shares",
+      "Putable preference shares",
+      "Callable preference shares"
+    ],
+    "correctIndex": 1,
+    "explanation": "Putable preference shares give the investor the option to put (sell) the shares back to the company, establishing a floor on the price. Because this option reduces risk for the investor, putable preference shares offer the lowest expected rate of return.",
+    "formula": "Expected Return: Putable Preference < Straight Preference < Callable Preference < Common Shares",
+    "trap": "Lower Risk = Lower Expected Return. A put option benefits the investor (lowers risk/return). A call option benefits the issuer (raises risk/return). Common shares are the riskiest overall.",
+    "image": ""
+  },
+  {
+    "id": 197,
+    "topic": "Equities",
+    "module": "Module 1: Equity Instrument Features",
+    "question": "Preference shares are less risky than common shares because preference shares have:",
+    "options": [
+      "fixed dividends.",
+      "a guaranteed return if a company is liquidated.",
+      "a larger portion of total return based on future price return."
+    ],
+    "correctIndex": 0,
+    "explanation": "Dividends on preference shares are known and fixed, accounting for a large portion of the preference shares’ total return. This provides less uncertainty about future cash flows compared to common shares.",
+    "formula": "Preference Share Risk < Common Share Risk (due to Fixed Dividends and Higher Seniority)",
+    "trap": "You selected B! While preference shares have priority over common shares in liquidation, the return is NEVER 'guaranteed'. If the company is bankrupt, even preference shareholders may receive nothing.",
+    "image": ""
+  },
+  {
+    "id": 198,
+    "topic": "Equities",
+    "module": "Module 1: Equity Instrument Features",
+    "question": "Firms with which of the following characteristics are most likely candidates for a management buyout (MBO)?",
+    "options": [
+      "Firms with low levels of cash flow",
+      "Firms with high dividend payout ratios",
+      "Firms with large amounts of undervalued assets"
+    ],
+    "correctIndex": 2,
+    "explanation": "Companies with large amounts of undervalued assets (which can be sold to reduce debt) that generate high and stable levels of cash flow (which are used to make interest and principal payments on the LBO debt) are prime candidates for MBO and LBO transactions.",
+    "formula": "Ideal LBO/MBO Target = Stable Cash Flows + Undervalued Assets + Low Debt",
+    "trap": "You selected A! An MBO is heavily financed by debt (it is a type of LBO). A firm with LOW cash flow would default on that new debt immediately. They need HIGH cash flow.",
+    "image": ""
+  },
+  {
+    "id": 199,
+    "topic": "Equities",
+    "module": "Module 1: Equity Instrument Features",
+    "question": "Private equity securities most likely:",
+    "options": [
+      "are listed on public exchanges.",
+      "are illiquid and difficult to trade.",
+      "have easily available financial information."
+    ],
+    "correctIndex": 1,
+    "explanation": "Private equity securities are highly illiquid. They do not have market-determined quoted prices and require direct negotiations between investors in order to be traded, as there is no active secondary market.",
+    "formula": "Private Equity = Illiquid + Unlisted + Limited Public Disclosure",
+    "trap": "Private companies are exempt from the stringent financial reporting and disclosure requirements of public companies, making their information hard to obtain (ruling out C).",
+    "image": ""
+  },
+  {
+    "id": 200,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "Which of the following possible value drivers does not apply to both raw land and farmland investments?",
+    "options": [
+      "Lease revenue",
+      "Sale of agricultural products",
+      "Price appreciation of property"
+    ],
+    "correctIndex": 1,
+    "explanation": "Raw land’s value is derived solely from lease revenue (if any) and price appreciation. Farmland, in contrast, also generates ongoing value from the production and sale of agricultural crops and products.",
+    "formula": "Farmland Value Drivers = Price Appreciation + Lease Revenue + Agricultural Harvests | Raw Land = Price Appreciation + Lease Revenue",
+    "trap": "Raw land is just empty land; it does not produce agricultural harvests.",
+    "image": ""
+  },
+  {
+    "id": 201,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "Which of the following most correctly describes a significant difference between farmland and timberland investment?",
+    "options": [
+      "Timberland provides environmental benefits because of the ability of trees to absorb carbon, while farmland does not.",
+      "Farmland provides a resource necessary for human existence, while timberland does not.",
+      "Farmland is commonly family owned, while timberland is commonly owned by institutional investors."
+    ],
+    "correctIndex": 2,
+    "explanation": "Timberland tracts typically consist of thousands of acres and are usually owned by institutional investors (like TIMOs). Farmland is quite frequently owned in smaller tracts of tens or hundreds of acres and is much more suited to, and commonly held by, family ownership.",
+    "formula": "Timberland = Vast tracts / Institutional Ownership | Farmland = Smaller tracts / Family Ownership",
+    "trap": "Both trees and crops absorb carbon (A is false), and lumber is used for housing, which is also a basic human need (B is false).",
+    "image": ""
+  },
+  {
+    "id": 202,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "Which of the following best reflects an advantage of institutional ownership of physical farmland as opposed to buying exposure to crops through futures contracts?",
+    "options": [
+      "Liquidity of physical farmland",
+      "Price transparency of farmland",
+      "Flexibility to gain price exposure to a wider variety of agricultural products"
+    ],
+    "correctIndex": 2,
+    "explanation": "Futures contracts are available on a very limited number of common crops (e.g., wheat, corn, soybeans). Ownership of physical farmland opens up the possibilities of growing niche or specialty crops not traded on futures exchanges, providing a larger universe of agricultural product price exposures.",
+    "formula": "Physical Farmland Advantage = Exposure to Non-Exchange-Traded Crops",
+    "trap": "Physical farmland is highly ILLIQUID and lacks price transparency compared to the highly liquid, transparent futures markets.",
+    "image": ""
+  },
+  {
+    "id": 203,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "Which of the following is most consistent with backwardation in a commodity market?",
+    "options": [
+      "The convenience yield is negative.",
+      "The benefit of holding the physical commodity exceeds the cost of carry.",
+      "The forward price is above the spot price."
+    ],
+    "correctIndex": 1,
+    "explanation": "Backwardation implies that forward prices are lower than spot prices ($F_T < S_0$). This occurs when the convenience yield (the non-cash benefit of holding the physical commodity) exceeds the cost of carry (storage costs and financing).",
+    "formula": "Backwardation: Spot > Forward | Convenience Yield > Cost of Carry",
+    "trap": "Convenience yield is never negative. A market where the forward price is above the spot price ($F_T > S_0$) is called Contango, not backwardation.",
+    "image": ""
+  },
+  {
+    "id": 204,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "Which of the following futures market price conditions would be most expected in a period of low commodity inventories?",
+    "options": [
+      "Backwardation",
+      "Falling prices",
+      "Contango"
+    ],
+    "correctIndex": 0,
+    "explanation": "Low inventories of a specific commodity create a scarcity premium (high convenience yield), giving market participants a strong incentive to own the physical commodity right now rather than a derivative contract for the future. This drives spot prices higher than forward prices, creating backwardation.",
+    "formula": "Low Inventories $\\rightarrow$ High Convenience Yield $\\rightarrow$ Spot > Forward $\\rightarrow$ Backwardation",
+    "trap": "Contango ($Forward > Spot$) occurs when inventories are high and storage costs dominate the convenience yield.",
+    "image": ""
+  },
+  {
+    "id": 205,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "Which of the following characteristics is not a benefit of derivative instruments (compared to ownership of the physical commodity) as a means of gaining commodity exposure?",
+    "options": [
+      "Price transparency",
+      "Non-cash benefits",
+      "Liquidity"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non-cash benefits (convenience yield) are derived solely from owning the physical commodity (e.g., having oil on hand to keep a refinery running). Derivatives do not provide this physical utility. Derivatives do, however, provide much higher liquidity and price transparency than physical commodity markets.",
+    "formula": "Physical Commodity Benefits = Convenience Yield (Non-cash utility) | Derivative Benefits = Liquidity + Transparency + No Storage Costs",
+    "trap": "The question asks what is NOT a benefit of derivatives. Derivatives do not give you the actual physical raw material when you need it immediately.",
+    "image": ""
+  },
+  {
+    "id": 206,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "Which of the following statements most correctly describes why commodity investments are thought to provide a hedge against inflation?",
+    "options": [
+      "The returns on commodity investing are driven by commodity price changes, and inflation partially reflects these changes.",
+      "Commodity prices increase after inflation rates increase.",
+      "Expectations of higher inflation cause commodity prices to increase."
+    ],
+    "correctIndex": 0,
+    "explanation": "Commodity prices are a significant, direct component of consumer price indexes (like CPI) because they include aspects of everyday life, such as food and energy. Therefore, inflation itself incorporates and reflects the effects of commodity price changes, making commodities a direct hedge.",
+    "formula": "Commodity Prices $\\uparrow$ $\\rightarrow$ CPI (Inflation) $\\uparrow$ (Commodities lead/drive inflation measures)",
+    "trap": "Commodity prices do not increase *after* inflation increases (Option B); they are a leading indicator and a primary cause of measured inflation.",
+    "image": ""
+  },
+  {
+    "id": 207,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "Which of the following statements is most correct about commodity investments?",
+    "options": [
+      "Commodity investments are expected to perform worse in inflationary environments.",
+      "Commodity investments exhibit high risk because of high leverage.",
+      "Commodity investments provide weak portfolio diversification because of their high risk."
+    ],
+    "correctIndex": 1,
+    "explanation": "Commodity investments are typically entered into through futures and derivative contracts, which require only a small margin deposit relative to the notional value. This creates high financial leverage, making observed returns on equity highly volatile (high risk).",
+    "formula": "Commodity Futures = Low Margin Requirements $\\rightarrow$ High Leverage $\\rightarrow$ High Volatility/Risk",
+    "trap": "Despite their high standalone risk, commodities provide STRONG portfolio diversification because their correlation with traditional stocks and bonds is very low.",
+    "image": ""
+  },
+  {
+    "id": 208,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "Which of the following statements is most correct if you observe that the correlation between farmland and inflation is significantly lower than the correlation between commodities and inflation (and that both correlations are positive)?",
+    "options": [
+      "Commodities are expected to provide a better inflation hedge than farmland.",
+      "Farmland is expected to provide a better inflation hedge than commodities.",
+      "Differences in correlation do not provide any information that is useful in assessing whether an asset class is an inflation hedge."
+    ],
+    "correctIndex": 0,
+    "explanation": "An effective hedge exhibits a relatively high positive correlation with the risk exposure being hedged. Thus, the higher the correlation an asset has with inflation, the better it serves as an inflation hedge. Therefore, commodities are a better inflation hedge than farmland.",
+    "formula": "Higher Correlation with Inflation = Better Inflation Hedge",
+    "trap": "The goal of an inflation hedge is to have asset prices rise exactly when inflation rises. A correlation closer to +1.0 achieves this best.",
+    "image": ""
+  },
+  {
+    "id": 209,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "Which of the following offers the flexibility of delaying harvests when their prices are down?",
+    "options": [
+      "Farmland only",
+      "Timberland only",
+      "Both farmland and timberland"
+    ],
+    "correctIndex": 1,
+    "explanation": "Timberland serves as both a factory and a warehouse. Timber (trees) can be grown and easily stored simply by not cutting them down, offering the flexibility to delay harvesting when timber prices are low. Farmland crops (like corn or wheat) must be harvested when ripe and cannot be left in the field without spoiling.",
+    "formula": "Timberland = \"Factory + Warehouse\" (Real option to delay harvest)",
+    "trap": "Agricultural crops rot if not harvested on time, offering zero flexibility to delay.",
+    "image": ""
+  },
+  {
+    "id": 210,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "Which of the following is best categorized as a hard commodity?",
+    "options": [
+      "Cattle",
+      "Lumber",
+      "Crude oil"
+    ],
+    "correctIndex": 2,
+    "explanation": "Commodities are classified as either 'hard' (those that are mined or extracted, such as crude oil, gold, copper) or 'soft' (those that are grown over a period of time, such as livestock, grains, lumber, and cash crops like coffee).",
+    "formula": "Hard Commodities = Mined / Extracted (Energy, Metals) | Soft Commodities = Grown (Agriculture, Livestock, Forestry)",
+    "trap": "Do not confuse physical hardness with the economic classification. Lumber is physically hard, but because it is grown, it is a 'soft' commodity.",
+    "image": ""
+  },
+  {
+    "id": 211,
+    "topic": "Alternative Investments",
+    "module": "Module 5: Natural Resources",
+    "question": "The most likely impact of adding commodities to a portfolio of equities and bonds is to:",
+    "options": [
+      "increase risk.",
+      "generate cash flows.",
+      "reduce exposure to inflation."
+    ],
+    "correctIndex": 2,
+    "explanation": "Investors often add commodity investments to a traditional stock/bond portfolio primarily to hedge against inflation and to provide diversification (which reduces overall portfolio risk due to low correlations).",
+    "formula": "Commodities in Portfolio = Inflation Hedge + Lower Overall Portfolio Risk (Diversification)",
+    "trap": "Commodities do NOT generate cash flows (no dividends or interest); in fact, holding physical commodities incurs storage and insurance costs.",
+    "image": ""
   }
 ]
