@@ -1929,17 +1929,23 @@
       }
     },
     "2026-11-13": {
-      "count": 23,
-      "correct": 12,
+      "count": 24,
+      "correct": 13,
       "answeredIds": [
         35,
-        111
+        111,
+        95
       ],
       "responses": {
         "35": {
           "selectedIndex": 1,
           "isCorrect": true,
           "timestamp": 1794563408212
+        },
+        "95": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1794563431745
         },
         "111": {
           "selectedIndex": 2,
@@ -2516,8 +2522,8 @@
     "95": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-11-12",
-      "timestamp": 1794497804424
+      "dateISO": "2026-11-13",
+      "timestamp": 1794563431745
     },
     "96": {
       "selectedIndex": 1,
@@ -4743,11 +4749,11 @@
       ]
     },
     "95": {
-      "attempts": 5,
+      "attempts": 6,
       "wrongCount": 2,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-11-12",
+      "lastAnsweredDate": "2026-11-13",
       "history": [
         {
           "date": "2026-10-31",
@@ -4771,6 +4777,11 @@
         },
         {
           "date": "2026-11-12",
+          "isCorrect": true,
+          "topic": "Quantitative Methods"
+        },
+        {
+          "date": "2026-11-13",
           "isCorrect": true,
           "topic": "Quantitative Methods"
         }
@@ -5928,5 +5939,5 @@
     "Equities__10": true,
     "Alternative Investments__4": true
   },
-  "lastUpdated": 1794563425729
+  "lastUpdated": 1794563431745
 }
