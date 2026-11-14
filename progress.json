@@ -2153,8 +2153,8 @@
       }
     },
     "2026-11-14": {
-      "count": 8,
-      "correct": 3,
+      "count": 18,
+      "correct": 11,
       "answeredIds": [],
       "responses": {}
     }
@@ -6490,5 +6490,5 @@
     "Equities__2": true,
     "Equities__8": true
   },
-  "lastUpdated": 1794665489316
+  "lastUpdated": 1794665500064
 }
