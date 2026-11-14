@@ -3662,5 +3662,133 @@
     "formula": "Defensive Sectors = Consumer Staples, Healthcare, Utilities",
     "trap": "Consumer staples are defensive (people always need food and basic household goods), whereas consumer discretionary items (like luxury goods) are cyclical[cite: 1].",
     "image": ""
+  },
+  {
+    "id": 230,
+    "topic": "Equities",
+    "module": "Module 4: Sources of Equity Returns",
+    "question": "Which one of the following is typically a more predictable part of an expected holding period return?",
+    "options": [
+      "Dividend portion of total return",
+      "Capital gains portion of total return",
+      "Dividend and capital gains portions are equally unpredictable."
+    ],
+    "correctIndex": 0,
+    "explanation": "Issuers typically attempt to maintain consistency in their dividends (often avoiding cuts to prevent negative market signaling), which allows investors to view recent dividends as a somewhat predictable source of expected returns. Future prices (capital gains), however, are highly uncertain.",
+    "formula": "Total Return = Dividend Yield (Predictable/Sticky) + Capital Gains Yield (Highly Uncertain)",
+    "trap": "While analysts create target prices, market prices fluctuate wildly, making capital gains far less predictable than a company's stated dividend policy.",
+    "image": ""
+  },
+  {
+    "id": 231,
+    "topic": "Equities",
+    "module": "Module 4: Sources of Equity Returns",
+    "question": "[Addison Company Vignette] Addison Company's stock is trading at GBP54 and pays a quarterly dividend of GBP0.50 per share. Analysts have set a one-year target price of GBP60. Which one of the following is closest to Addison’s expected stock return over the next one-year holding period if the dividend stays constant, dividends are reinvested at 1% per quarter, and analysts’ target price estimate is correct?",
+    "options": [
+      "11.1%",
+      "14.8%",
+      "14.9%"
+    ],
+    "correctIndex": 2,
+    "explanation": "First, find the price return: (60 - 54) / 54 = 11.11%. Second, find the compounded future value of the 4 quarterly dividends reinvested at 1%: FV = 0.50(1.01)^3 + 0.50(1.01)^2 + 0.50(1.01)^1 + 0.50 = GBP2.03. Third, find the dividend return: 2.03 / 54 = 3.76%. Total Return = 11.11% + 3.76% = 14.87% ≈ 14.9%.",
+    "formula": "FV_{divs} = \\sum PMT(1+r)^t \\implies \\text{Total Return} = \\frac{\\Delta P + FV_{divs}}{P_0}",
+    "trap": "You selected B (14.8%)! This happens if you just add the 4 un-reinvested dividends (4 × 0.50 = 2.00) to the price gain without compounding them at the 1% quarterly reinvestment rate.",
+    "image": ""
+  },
+  {
+    "id": 232,
+    "topic": "Equities",
+    "module": "Module 4: Sources of Equity Returns",
+    "question": "[Addison Company Vignette] Addison commonly repurchases significant amounts of its stock instead of paying higher dividends. Which one of the following statements is likely most correct as to how the investor may assess Addison’s policy regarding dividend payments compared to money spent on repurchasing stock?",
+    "options": [
+      "The investor may value Addison’s policy if tax rates on capital gains are lower than tax rates on dividend income.",
+      "The investor may value Addison’s policy if the company has stable investment opportunities.",
+      "The investor likely is not in favor of Addison’s policy because cash flows from repurchase are not of equivalent value to cash flows from dividends."
+    ],
+    "correctIndex": 0,
+    "explanation": "Payout to shareholders through share repurchases generates a capital gain for shareholders who sell shares back to the company. Thus, repurchases are favored over dividends by taxable investors when capital gains tax rates are lower than those on dividend income.",
+    "formula": "If $t_{\\text{capital gains}} < t_{\\text{dividends}}$, Share Repurchases > Cash Dividends for investors.",
+    "trap": "You selected B! Share repurchases are highly valued when investment opportunities are UNSTABLE (fluctuating). It gives management the flexibility to return cash only when good internal investments aren't available, without committing to a permanent regular dividend.",
+    "image": ""
+  },
+  {
+    "id": 233,
+    "topic": "Equities",
+    "module": "Module 4: Sources of Equity Returns",
+    "question": "[Bryce Limited Vignette] Bryce Limited completed a 2-for-1 stock split immediately after its stock price hit GBP96. Which one of the following statements provides the most correct rationale to justify Bryce Limited’s decision to complete a stock split?",
+    "options": [
+      "Bryce is attempting to attract more institutional investors to buy its stock.",
+      "Bryce wants a higher per share price on its stock to improve its reputation in the equity market.",
+      "Bryce is attempting to keep its stock price within a reasonable price range to attract individual investors."
+    ],
+    "correctIndex": 2,
+    "explanation": "A forward stock split lowers the per-share price by increasing the number of shares outstanding. This keeps the price at a level low enough to attract interest from retail (individual) investors who might be priced out of buying standard lots of high-priced shares.",
+    "formula": "Forward Stock Split = Lower Share Price = Increased Retail/Individual Investor Access",
+    "trap": "A reverse stock split (not a forward split) is used to increase the per-share price (Option B) to avoid exchange delisting. Institutional investors (Option A) do not care about nominal per-share prices.",
+    "image": ""
+  },
+  {
+    "id": 234,
+    "topic": "Equities",
+    "module": "Module 4: Sources of Equity Returns",
+    "question": "[Bryce Limited Vignette] Bryce Limited traded 2 years ago at GBP76. 1 year ago, it paid a GBP5 dividend when the price was GBP96, then did a 2-for-1 stock split. Today, it paid a GBP5 dividend, and the stock trades at GBP82. Which one of the following is closest to the two-year holding return on Bryce’s stock if the dividend from one year ago is reinvested?",
+    "options": [
+      "20.4%",
+      "127%",
+      "141%"
+    ],
+    "correctIndex": 2,
+    "explanation": "Adjust historical data to post-split terms (divide by 2). T=-2: Price=38. T=-1: Price=48, Div=2.50. T=0: Price=82, Div=5.00.\nYear 1 Return: (48 - 38 + 2.50) / 38 = 12.5 / 38 = 32.89%.\nYear 2 Return: (82 - 48 + 5.00) / 48 = 39.0 / 48 = 81.25%.\nCompound Return: (1.3289) × (1.8125) - 1 = 1.4086 = 140.86% ≈ 141%.",
+    "formula": "HPR = [(1 + R_1) \\times (1 + R_2)] - 1 \\text{ (Ensure historical prices/divs are split-adjusted!)}",
+    "trap": "You selected B (127%)! You get exactly 127% if you forget to add today's final GBP5.00 dividend to the numerator of the Year 2 return calculation. The total ending wealth MUST include the dividend just received.",
+    "image": ""
+  },
+  {
+    "id": 235,
+    "topic": "Equities",
+    "module": "Module 4: Sources of Equity Returns",
+    "question": "[Caddell Corp Vignette] Caddell Corporation's stock is currently trading at GBP80.76 per share and is expected to pay dividends of GBP10 per share for the next five years. The expectation is that Caddell's share price will be GBP60 per share in five years. Analysts believe that 8% is an appropriate discount rate. Which one of the following most correctly states the relative percentage impact of Caddell’s future share price of GBP60 on its current price?",
+    "options": [
+      "−25.7%",
+      "50.6%",
+      "74.3%"
+    ],
+    "correctIndex": 1,
+    "explanation": "First, calculate the Present Value (PV) of the expected terminal price in five years discounted at 8%: 60 / (1.08)^5 = 60 / 1.4693 = 40.835. Then, divide this PV by the current stock price (GBP80.76) to find the relative impact: 40.835 / 80.76 = 50.56% ≈ 50.6%.",
+    "formula": "\\text{Impact \\%} = \\frac{PV(\\text{Terminal Price})}{\\text{Current Price}} = \\frac{P_T / (1+r)^T}{P_0}",
+    "trap": "Option A (-25.7%) is just the raw unannualized price return (60-80.76)/80.76. Option C (74.3%) divides 60 by 80.76, totally ignoring the time value of money.",
+    "image": ""
+  },
+  {
+    "id": 236,
+    "topic": "Equities",
+    "module": "Module 4: Sources of Equity Returns",
+    "question": "Which of the following dates in the dividend chronology can fall on a weekend?",
+    "options": [
+      "The ex-date.",
+      "The record date.",
+      "The payment date."
+    ],
+    "correctIndex": 2,
+    "explanation": "The payment date can occur on a weekend or holiday because it is simply the day the company mails out or electronically transfers the funds. The ex-date and record date must occur on business days because they are tied to market trading and trade settlement cycles.",
+    "formula": "Payment Date = Any Day (Funds Transfer) | Ex-Date & Record Date = Business Days (Trade Settlement)",
+    "trap": "You selected A! The ex-date determines who gets the dividend based on T+2 or T+1 settlement rules. Since stock exchanges and clearing houses do not operate on weekends, the ex-date CANNOT fall on a weekend.",
+    "image": ""
+  },
+  {
+    "id": 237,
+    "topic": "Equities",
+    "module": "Module 4: Sources of Equity Returns",
+    "question": "The first date that a share trades without the declared dividend is the:",
+    "options": [
+      "ex-date.",
+      "payable date.",
+      "declaration date."
+    ],
+    "correctIndex": 0,
+    "explanation": "The ex-dividend date (or ex-date) is the first date that a share trades without (i.e., “ex”) the dividend. If you buy the stock on or after the ex-date, the seller keeps the dividend; if you buy before the ex-date (cum-dividend), you receive the dividend.",
+    "formula": "Ex-date = First day stock trades WITHOUT dividend entitlement.",
+    "trap": "You selected C! The declaration date is just the day the Board of Directors announces the dividend. The stock continues to trade WITH the dividend attached until the ex-date.",
+    "image": ""
   }
 ]
