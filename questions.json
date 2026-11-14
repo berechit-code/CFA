@@ -3374,5 +3374,293 @@
     "formula": "Commodities in Portfolio = Inflation Hedge + Lower Overall Portfolio Risk (Diversification)",
     "trap": "Commodities do NOT generate cash flows (no dividends or interest); in fact, holding physical commodities incurs storage and insurance costs.",
     "image": ""
+  },
+  {
+    "id": 212,
+    "topic": "Equities",
+    "module": "Module 3: Equity Issuance and Trading",
+    "question": "[Eastern States Vignette] Eastern States is a US public pension plan that allocates up to 10% of its total equity portfolio to IPOs. Which one of the following provides the most likely argument as to why Eastern States seeks IPO allocations?",
+    "options": [
+      "Because of favorable long-run returns from IPOs, on average",
+      "Because IPOs are, on average, underpriced",
+      "Because IPOs are typically non-dilutive to existing shareholders"
+    ],
+    "correctIndex": 1,
+    "explanation": "IPOs, on average, experience a first-day increase in price from the offering price at which investors buy the shares to the closing price after the first day of public trading. This underpricing (often 20% or greater) is a primary draw for institutional investors receiving allocations.",
+    "formula": "IPO Underpricing = (First Day Closing Price - IPO Offering Price) / IPO Offering Price > 0",
+    "trap": "You selected A! While the first-day 'pop' (underpricing) is highly profitable, IPO companies actually tend to UNDERPERFORM the broader market over the long run (3-5 years).",
+    "image": ""
+  },
+  {
+    "id": 213,
+    "topic": "Equities",
+    "module": "Module 3: Equity Issuance and Trading",
+    "question": "[Eastern States Vignette] Eastern States' investment policy requires a minimum of two years of public trading history for any new equities on secondary markets to be considered for purchase. Which one of the following conditions may best reflect this rationale?",
+    "options": [
+      "Trading history provides the ability to assess company management quality.",
+      "Trading history provides the ability to forecast future company stock returns.",
+      "Trading history provides the ability to compare return and risk performance across similar publicly traded companies."
+    ],
+    "correctIndex": 2,
+    "explanation": "Public market data are a critical input in comparing an individual share’s performance over time to similar firms. Investors can easily measure historical returns, volatilities, and correlations across time to better understand the stock's risk profile.",
+    "formula": "Trading History = Data for Risk & Volatility Measurement (Variance, Covariance, Beta)",
+    "trap": "Historical stock prices do NOT provide the ability to forecast future returns (past performance is not indicative of future results), which rules out option B.",
+    "image": ""
+  },
+  {
+    "id": 214,
+    "topic": "Equities",
+    "module": "Module 3: Equity Issuance and Trading",
+    "question": "[Eastern States Vignette] Eastern States' investment policy dictates that the average daily turnover of all stock positions must meet minimum thresholds. Which one of the following observable costs of trading is a likely concern for Eastern States with respect to this policy?",
+    "options": [
+      "Bid–ask spread costs",
+      "Opportunity costs",
+      "Market impact costs"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bid–ask spreads are explicit, observable costs for stocks and are highly correlated with liquidity. They are typically wider (higher costs) for stocks with relatively low daily turnover. Minimum turnover thresholds ensure adequate liquidity and tighter bid-ask spreads.",
+    "formula": "Low Trading Volume (Turnover) = Lower Liquidity = Wider Bid-Ask Spread",
+    "trap": "You selected B (Opportunity costs)! Opportunity costs and market impact costs are implicitly incurred but are UNOBSERVABLE prior to or during the trade, whereas the bid-ask spread is fully observable.",
+    "image": ""
+  },
+  {
+    "id": 215,
+    "topic": "Equities",
+    "module": "Module 3: Equity Issuance and Trading",
+    "question": "[Eastern States Vignette] Eastern States follows a globally diversified investment policy focused on large-cap stocks of companies that incorporate ESG principles. Which one of the following equity index types would be most appropriate for Eastern States to use as a benchmark for their equity portfolio performance?",
+    "options": [
+      "A US large-cap ESG index",
+      "A global ESG composite index",
+      "A global large-cap ESG index"
+    ],
+    "correctIndex": 2,
+    "explanation": "A benchmark must match the risk and investment profile of the manager. Because Eastern States has a globally diversified portfolio of large-cap stocks incorporating ESG principles, a global large-cap ESG index is the only exact match.",
+    "formula": "Benchmark Match = Global + Large-Cap + ESG",
+    "trap": "Do not select 'US large-cap' just because the pension plan is based in the US. Their *portfolio mandate* is globally diversified.",
+    "image": ""
+  },
+  {
+    "id": 216,
+    "topic": "Equities",
+    "module": "Module 3: Equity Issuance and Trading",
+    "question": "Which of the following is least likely to involve the sale of new shares by the firm?",
+    "options": [
+      "An IPO",
+      "A seasoned equity offering",
+      "A secondary follow-on offering"
+    ],
+    "correctIndex": 2,
+    "explanation": "A secondary follow-on offering involves the sale of existing shares (usually held by founders, early private equity investors, or executives) into the public market. Because it is a sale of already-existing shares, it does not involve the issuance of new shares and is non-dilutive.",
+    "formula": "Primary Offering = New Shares (Dilutive) | Secondary Offering = Existing Shares (Non-dilutive to company share count)",
+    "trap": "The word 'secondary' in equity offerings means secondary owners (existing shareholders) are selling, not the firm itself raising new capital.",
+    "image": ""
+  },
+  {
+    "id": 217,
+    "topic": "Equities",
+    "module": "Module 3: Equity Issuance and Trading",
+    "question": "Over-the-counter (OTC) markets:",
+    "options": [
+      "are electronic order-driven systems.",
+      "involve buying and selling shares via a centralized trading system.",
+      "consist of multiple market makers which are typically broker–dealers."
+    ],
+    "correctIndex": 2,
+    "explanation": "The over-the-counter (OTC) market is a quote-driven trading system consisting of a network of multiple market makers (typically broker–dealers). They continuously post bid and ask prices and trade directly with clients from their own inventory.",
+    "formula": "OTC Market = Quote-driven / Dealer Network | Exchange = Order-driven / Centralized",
+    "trap": "You selected A! Electronic order-driven systems (where client orders interact directly with other client orders without a dealer middleman) describe modern centralized exchanges, not OTC markets.",
+    "image": ""
+  },
+  {
+    "id": 218,
+    "topic": "Equities",
+    "module": "Module 3: Equity Issuance and Trading",
+    "question": "The relative size of orders posted that are at or very near the best currently available bid and offer prices is referred to as the:",
+    "options": [
+      "market float.",
+      "market depth.",
+      "market breadth."
+    ],
+    "correctIndex": 1,
+    "explanation": "Market depth refers to the size/volume of orders posted at or very near the best bid and offer prices. A deep market can absorb large trades without significantly moving the price.",
+    "formula": "Market Depth = Size/Volume of orders at best prices | Market Breadth = Number of different price levels with orders",
+    "trap": "You selected A (Market float)! Market float simply refers to the total number of a company's shares available to trade by the public, excluding insider/restricted shares.",
+    "image": ""
+  },
+  {
+    "id": 219,
+    "topic": "Equities",
+    "module": "Module 3: Equity Issuance and Trading",
+    "question": "An index that uses ESG ratings to weight its constituents is an example of a(n):",
+    "options": [
+      "sectoral index.",
+      "theme-based index.",
+      "index based on fundamental factors."
+    ],
+    "correctIndex": 1,
+    "explanation": "Investment themes involve indexes created based on overarching investor trends or mandates (like ESG principles, clean energy, or cybersecurity) rather than selecting by a traditional industry sector or company size.",
+    "formula": "ESG Index = Theme-based Index",
+    "trap": "You selected C (fundamental factors)! Fundamental weighting uses objective accounting measures like revenue, earnings, dividends, or book value to weight constituents, not subjective ESG scores.",
+    "image": ""
+  },
+  {
+    "id": 220,
+    "topic": "Equities",
+    "module": "Module 9: Industry and Competitive Analysis",
+    "question": "Which of the following statements best describes the characteristics of growth companies?",
+    "options": [
+      "Unlike defensive or cyclical companies, growth companies tend to exhibit smaller revenue declines in an economic downturn.",
+      "Unlike defensive or cyclical companies, growth companies tend to exhibit higher profitability during economic expansion.",
+      "Unlike defensive or cyclical companies, growth companies exhibit higher revenue growth independent of economic fluctuations."
+    ],
+    "correctIndex": 2,
+    "explanation": "Growth company performance is relatively insensitive to the business cycle, exhibiting higher revenue growth independent of economic fluctuations[cite: 1].",
+    "formula": "Growth companies = Revenue growth independent of business cycle",
+    "trap": "Do not confuse growth companies with defensive companies (which exhibit smaller revenue declines in downturns) or cyclical companies (which exhibit higher profitability during expansions)[cite: 1].",
+    "image": ""
+  },
+  {
+    "id": 221,
+    "topic": "Equities",
+    "module": "Module 9: Industry and Competitive Analysis",
+    "question": "Which of the following statements provides the best justification for grouping companies using a geographic rather than industry approach?",
+    "options": [
+      "Firms that face similar economic conditions in the same country may have more common value drivers than those in the same industry.",
+      "Firms listed on the same exchange may have more common value drivers than those in the same industry.",
+      "Firms that report financial statements in the same currency may have more common value drivers than those in the same industry."
+    ],
+    "correctIndex": 0,
+    "explanation": "Companies operating within a specific jurisdiction or country may share more common value drivers (e.g., political, economic, and social policies and conditions) than companies spread across various jurisdictions within a single industry[cite: 1].",
+    "formula": "Geographic grouping = Focus on shared political/economic/social conditions",
+    "trap": "Listing on the same exchange or using the same currency does not necessarily equate to shared economic value drivers as strongly as operating within the same country's economic and political environment[cite: 1].",
+    "image": ""
+  },
+  {
+    "id": 222,
+    "topic": "Equities",
+    "module": "Module 9: Industry and Competitive Analysis",
+    "question": "Which of the following statements best describes the challenges of using a bottom-up approach to measure industry size?",
+    "options": [
+      "A bottom-up approach is difficult to apply when government statistics for a specific sector are unavailable.",
+      "A bottom-up approach is difficult to apply when an industry classification involves a strict hierarchical taxonomy.",
+      "A bottom-up approach is difficult to apply when an industry includes a large proportion of private companies or small businesses."
+    ],
+    "correctIndex": 2,
+    "explanation": "A bottom-up approach to measuring industry size involves aggregating the revenues of individual companies[cite: 1]. This is challenging when an industry has a large proportion of private companies or small businesses because their financial data is much harder to access than disclosures from large, publicly listed companies[cite: 1].",
+    "formula": "Bottom-up Industry Size = Sum of Individual Company Revenues",
+    "trap": "You selected A! Relying on government statistics is characteristic of a top-down approach, not a bottom-up approach[cite: 1].",
+    "image": ""
+  },
+  {
+    "id": 223,
+    "topic": "Equities",
+    "module": "Module 9: Industry and Competitive Analysis",
+    "question": "Which of the following statements best describes third-party industry classification schemes?",
+    "options": [
+      "Third-party classification schemes combine companies with a similar business model into the same industry.",
+      "Third-party classification schemes align companies to a single industry that represents their primary operating activity.",
+      "Third-party classification schemes assign the different activities of companies operating across industries to each of their different industries."
+    ],
+    "correctIndex": 1,
+    "explanation": "Third-party classification schemes are based on a strict hierarchical taxonomy that assigns each company to a single industry, typically based on its largest or primary business activity[cite: 1].",
+    "formula": "Third-party classification = Strict hierarchy mapping each company to ONE primary industry",
+    "trap": "Companies operating across multiple industries are NOT assigned to multiple industries in standard third-party schemes; they are forced into a single category based on their primary activity[cite: 1].",
+    "image": ""
+  },
+  {
+    "id": 224,
+    "topic": "Equities",
+    "module": "Module 9: Industry and Competitive Analysis",
+    "question": "Which of the following statements best describes the use of vertical integration as a competitive strategy?",
+    "options": [
+      "Vertical integration may be used to expand operations into an earlier stage of production to offset supplier bargaining power.",
+      "Vertical integration may be used to outsource production to offset consumer bargaining power.",
+      "Vertical integration may be used to expand operations in order to reduce the threat of substitutes for an industry’s products or services."
+    ],
+    "correctIndex": 0,
+    "explanation": "Vertical integration involves expanding production to an earlier stage (backward integration) to offset supplier bargaining power, or to a later stage (forward integration)[cite: 1].",
+    "formula": "Backward Vertical Integration = Expanding into earlier stages to reduce supplier power",
+    "trap": "Vertical integration is the opposite of outsourcing; it involves insourcing production processes[cite: 1].",
+    "image": ""
+  },
+  {
+    "id": 225,
+    "topic": "Equities",
+    "module": "Module 9: Industry and Competitive Analysis",
+    "question": "Which of the following statements best describes the contrast between the impacts of basic research and sustaining innovation on an industry?",
+    "options": [
+      "Basic research involves developing an understanding of scientific principles, while sustaining innovation aims to minimize a firm’s environmental impact.",
+      "Basic research creates new industries, while sustaining innovation fundamentally changes existing businesses across multiple industries.",
+      "Basic research generally has no immediate commercial application, while sustaining innovation involves incremental improvements to existing products or services."
+    ],
+    "correctIndex": 2,
+    "explanation": "Basic research generally involves discoveries with no immediate commercial application, whereas sustaining innovation focuses on making incremental improvements to existing products or services[cite: 1].",
+    "formula": "Basic Research = No immediate commercial impact | Sustaining Innovation = Incremental improvements",
+    "trap": "Breakthrough innovation (not sustaining innovation) is what fundamentally changes existing businesses across industries[cite: 1].",
+    "image": ""
+  },
+  {
+    "id": 226,
+    "topic": "Equities",
+    "module": "Module 9: Industry and Competitive Analysis",
+    "question": "Which of the following sets of industry circumstances minimizes the threat of entry?",
+    "options": [
+      "A greater proportion of intangible assets, lower network effects, and lower switching costs",
+      "A lower proportion of intangible assets, greater cost advantages, and less efficient scale",
+      "A greater proportion of intangible assets, higher network effects, and higher switching costs"
+    ],
+    "correctIndex": 2,
+    "explanation": "Factors that represent strong barriers to entry (minimizing the threat of new entrants) include a greater proportion of intangible assets (like patents or strong brands), higher network effects, and higher switching costs for customers[cite: 1].",
+    "formula": "High Barriers to Entry = High Intangible Assets + High Network Effects + High Switching Costs",
+    "trap": "Lower network effects and lower switching costs would make it easier for new entrants to steal market share, increasing the threat of entry[cite: 1].",
+    "image": ""
+  },
+  {
+    "id": 227,
+    "topic": "Equities",
+    "module": "Module 9: Industry and Competitive Analysis",
+    "question": "Which of the following statements is consistent with lower industry concentration?",
+    "options": [
+      "Lower industry concentration is consistent with a higher Herfindahl–Hirschman Index.",
+      "Lower industry concentration is generally consistent with greater competitive intensity.",
+      "Lower industry concentration is generally consistent with lower product differentiation."
+    ],
+    "correctIndex": 1,
+    "explanation": "Lower industry concentration means there are many industry participants supplying a good or service, which generally leads to higher competitive intensity[cite: 1].",
+    "formula": "Lower Concentration = More Competitors = Greater Competitive Intensity",
+    "trap": "Lower industry concentration is consistent with a LOWER Herfindahl-Hirschman Index (HHI), not a higher one[cite: 1].",
+    "image": ""
+  },
+  {
+    "id": 228,
+    "topic": "Equities",
+    "module": "Module 9: Industry and Competitive Analysis",
+    "question": "Which of the following types of companies is most sensitive to economic conditions?",
+    "options": [
+      "Cyclical",
+      "Growth",
+      "Defensive"
+    ],
+    "correctIndex": 0,
+    "explanation": "The performance of companies with cyclical demand for their products is highly variable and depends on overall economic conditions[cite: 1].",
+    "formula": "Cyclical Companies = Highly Sensitive to Business Cycle",
+    "trap": "You selected C! Defensive companies have stable demand that does NOT fluctuate with the economic cycle (except in severe recessions)[cite: 1].",
+    "image": ""
+  },
+  {
+    "id": 229,
+    "topic": "Equities",
+    "module": "Module 9: Industry and Competitive Analysis",
+    "question": "Which of the following sectors is most likely considered defensive?",
+    "options": [
+      "Financials",
+      "Industrials",
+      "Consumer staples"
+    ],
+    "correctIndex": 2,
+    "explanation": "Consumer staples, healthcare, and utilities are considered defensive sectors because their products are essential and demand remains relatively stable regardless of the economic environment[cite: 1]. Financials, basic materials, consumer discretionary, and industrials are considered cyclical[cite: 1].",
+    "formula": "Defensive Sectors = Consumer Staples, Healthcare, Utilities",
+    "trap": "Consumer staples are defensive (people always need food and basic household goods), whereas consumer discretionary items (like luxury goods) are cyclical[cite: 1].",
+    "image": ""
   }
 ]
