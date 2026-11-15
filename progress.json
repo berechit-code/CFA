@@ -2401,8 +2401,8 @@
       }
     },
     "2026-11-15": {
-      "count": 39,
-      "correct": 22,
+      "count": 40,
+      "correct": 23,
       "answeredIds": [
         257,
         253,
@@ -2411,7 +2411,8 @@
         56,
         188,
         187,
-        153
+        153,
+        195
       ],
       "responses": {
         "56": {
@@ -2443,6 +2444,11 @@
           "selectedIndex": 0,
           "isCorrect": true,
           "timestamp": 1794773900822
+        },
+        "195": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1794774433000
         },
         "253": {
           "selectedIndex": 0,
@@ -3581,10 +3587,10 @@
       "timestamp": 1794667504166
     },
     "195": {
-      "selectedIndex": 2,
-      "isCorrect": false,
-      "dateISO": "2026-11-14",
-      "timestamp": 1794667247601
+      "selectedIndex": 0,
+      "isCorrect": true,
+      "dateISO": "2026-11-15",
+      "timestamp": 1794774433000
     },
     "196": {
       "selectedIndex": 1,
@@ -7087,15 +7093,20 @@
       ]
     },
     "195": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 1,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-11-14",
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 0,
+      "lastAnsweredDate": "2026-11-15",
       "history": [
         {
           "date": "2026-11-14",
           "isCorrect": false,
+          "topic": "Equities"
+        },
+        {
+          "date": "2026-11-15",
+          "isCorrect": true,
           "topic": "Equities"
         }
       ]
@@ -7497,5 +7508,5 @@
     "Economics__2": true,
     "Ethical and Professional Standards__2": true
   },
-  "lastUpdated": 1794774075926
+  "lastUpdated": 1794774433000
 }
