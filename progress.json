@@ -2401,8 +2401,8 @@
       }
     },
     "2026-11-15": {
-      "count": 45,
-      "correct": 26,
+      "count": 46,
+      "correct": 27,
       "answeredIds": [
         257,
         253,
@@ -2417,7 +2417,8 @@
         162,
         163,
         9,
-        201
+        201,
+        129
       ],
       "responses": {
         "9": {
@@ -2439,6 +2440,11 @@
           "selectedIndex": 1,
           "isCorrect": true,
           "timestamp": 1794773688367
+        },
+        "129": {
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timestamp": 1794775043130
         },
         "153": {
           "selectedIndex": 0,
@@ -3263,10 +3269,10 @@
       "timestamp": 1794429993621
     },
     "129": {
-      "selectedIndex": 0,
-      "isCorrect": false,
-      "dateISO": "2026-11-14",
-      "timestamp": 1794667142441
+      "selectedIndex": 2,
+      "isCorrect": true,
+      "dateISO": "2026-11-15",
+      "timestamp": 1794775043130
     },
     "130": {
       "selectedIndex": 2,
@@ -6239,11 +6245,11 @@
       ]
     },
     "129": {
-      "attempts": 4,
+      "attempts": 5,
       "wrongCount": 3,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-11-14",
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 2,
+      "lastAnsweredDate": "2026-11-15",
       "history": [
         {
           "date": "2026-11-07",
@@ -6263,6 +6269,11 @@
         {
           "date": "2026-11-14",
           "isCorrect": false,
+          "topic": "Portfolio Construction"
+        },
+        {
+          "date": "2026-11-15",
+          "isCorrect": true,
           "topic": "Portfolio Construction"
         }
       ]
@@ -7593,5 +7604,5 @@
     "Economics__2": true,
     "Ethical and Professional Standards__2": true
   },
-  "lastUpdated": 1794775022580
+  "lastUpdated": 1794775043130
 }
