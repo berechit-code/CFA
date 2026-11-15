@@ -2500,9 +2500,9 @@
           "timestamp": 1794774494635
         },
         "232": {
-          "selectedIndex": 1,
-          "isCorrect": false,
-          "timestamp": 1794775307856
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1794775463790
         },
         "253": {
           "selectedIndex": 0,
@@ -3797,10 +3797,10 @@
       "timestamp": 1794667578066
     },
     "232": {
-      "selectedIndex": 1,
-      "isCorrect": false,
+      "selectedIndex": 0,
+      "isCorrect": true,
       "dateISO": "2026-11-15",
-      "timestamp": 1794775307856
+      "timestamp": 1794775463790
     },
     "253": {
       "selectedIndex": 0,
@@ -7564,15 +7564,20 @@
       ]
     },
     "232": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 1,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 1,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 0,
       "lastAnsweredDate": "2026-11-15",
       "history": [
         {
           "date": "2026-11-15",
           "isCorrect": false,
+          "topic": "Equities"
+        },
+        {
+          "date": "2026-11-15",
+          "isCorrect": true,
           "topic": "Equities"
         }
       ]
@@ -7652,5 +7657,5 @@
     "Economics__2": true,
     "Ethical and Professional Standards__2": true
   },
-  "lastUpdated": 1794775307856
+  "lastUpdated": 1794775463790
 }
