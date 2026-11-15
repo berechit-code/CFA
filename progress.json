@@ -2401,12 +2401,18 @@
       }
     },
     "2026-11-15": {
-      "count": 32,
-      "correct": 17,
+      "count": 33,
+      "correct": 18,
       "answeredIds": [
-        257
+        257,
+        253
       ],
       "responses": {
+        "253": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1794773549815
+        },
         "257": {
           "selectedIndex": 0,
           "isCorrect": true,
@@ -3675,6 +3681,12 @@
       "isCorrect": true,
       "dateISO": "2026-11-14",
       "timestamp": 1794667578066
+    },
+    "253": {
+      "selectedIndex": 0,
+      "isCorrect": true,
+      "dateISO": "2026-11-15",
+      "timestamp": 1794773549815
     },
     "257": {
       "selectedIndex": 0,
@@ -7329,6 +7341,20 @@
         }
       ]
     },
+    "253": {
+      "attempts": 1,
+      "wrongCount": 0,
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 0,
+      "lastAnsweredDate": "2026-11-15",
+      "history": [
+        {
+          "date": "2026-11-15",
+          "isCorrect": true,
+          "topic": "Ethical and Professional Standards"
+        }
+      ]
+    },
     "257": {
       "attempts": 1,
       "wrongCount": 0,
@@ -7390,5 +7416,5 @@
     "Economics__2": true,
     "Ethical and Professional Standards__2": true
   },
-  "lastUpdated": 1794773490847
+  "lastUpdated": 1794773549815
 }
