@@ -3790,5 +3790,965 @@
     "formula": "Ex-date = First day stock trades WITHOUT dividend entitlement.",
     "trap": "You selected C! The declaration date is just the day the Board of Directors announces the dividend. The stock continues to trade WITH the dividend attached until the ex-date.",
     "image": ""
+  },
+  {
+    "id": 238,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "Crowding out refers to a:",
+    "options": [
+      "fall in interest rates that reduces private investment.",
+      "rise in private investment that reduces private consumption.",
+      "rise in government borrowing that reduces the ability of the private sector to access investment funds."
+    ],
+    "correctIndex": 2,
+    "explanation": "Crowding out refers to the tendency for an increase in government borrowing to drive up real interest rates, which subsequently reduces (crowds out) private sector investment.",
+    "formula": "Govt Deficit $\\uparrow$ $\\rightarrow$ Govt Borrowing $\\uparrow$ $\\rightarrow$ Interest Rates $\\uparrow$ $\\rightarrow$ Private Investment $\\downarrow$ (Crowding out)",
+    "trap": "You selected A! A fall in interest rates would *increase* private investment. Government borrowing causes a *rise* in interest rates, which *reduces* private investment.",
+    "image": ""
+  },
+  {
+    "id": 239,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "A contractionary fiscal policy will always involve which of the following?",
+    "options": [
+      "Balanced budget",
+      "Reduction in government spending",
+      "Fall in the budget deficit or rise in the surplus"
+    ],
+    "correctIndex": 2,
+    "explanation": "A contractionary fiscal policy requires the government to take more money out of the economy than it puts in, which mathematically results in a fall in the budget deficit (or a rise in the budget surplus). A reduction in government spending alone is not *always* contractionary if taxes are cut by an even larger amount.",
+    "formula": "Contractionary Fiscal Policy = Deficit $\\downarrow$ or Surplus $\\uparrow$ (Tax Revenue increases relative to Govt Spending)",
+    "trap": "You selected B! A reduction in government spending (e.g., -$10 billion) accompanied by a massive tax cut (e.g., -$50 billion) results in a net *expansionary* stimulus. Thus, a fall in the overall deficit is the only absolute indicator.",
+    "image": ""
+  },
+  {
+    "id": 240,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "Which one of the following statements is most accurate?",
+    "options": [
+      "Ricardian equivalence refers to individuals having no idea of future tax liabilities.",
+      "Governments do not allow political pressures to influence fiscal policies but do allow voters to affect monetary policies.",
+      "If there is high unemployment in an economy, then easy monetary and fiscal policies should lead to an expansion in aggregate demand."
+    ],
+    "correctIndex": 2,
+    "explanation": "When an economy suffers from high unemployment, expansionary (easy) monetary and fiscal policies are deployed specifically to stimulate and expand aggregate demand. Ricardian equivalence actually assumes individuals *do* perfectly anticipate future tax liabilities.",
+    "formula": "Easy Monetary + Easy Fiscal Policy $\\rightarrow$ Aggregate Demand $\\uparrow$",
+    "trap": "You selected A! Ricardian equivalence is the exact opposite of choice A: it assumes taxpayers *perfectly* anticipate that current deficit spending equals future taxes, so they save today, offsetting the stimulus.",
+    "image": ""
+  },
+  {
+    "id": 241,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "Which statement regarding fiscal policy is most accurate?",
+    "options": [
+      "Cyclically adjusted budget deficits are appropriate indicators of fiscal policy.",
+      "To raise business capital spending, personal income taxes should be reduced.",
+      "An increase in the budget surplus is associated with expansionary fiscal policy."
+    ],
+    "correctIndex": 0,
+    "explanation": "Cyclically adjusted budget deficits (or structural deficits) are the most appropriate indicators of fiscal policy because they strip out the automatic stabilizers of the business cycle, revealing the deficit that would exist if the economy were at full employment.",
+    "formula": "Structural Deficit = Actual Deficit - Cyclical Deficit",
+    "trap": "You selected B! To raise *business* capital spending, *corporate* taxes (or capital gains taxes) should be reduced. Reducing personal income taxes raises personal consumption, not necessarily business investment.",
+    "image": ""
+  },
+  {
+    "id": 242,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "The least likely explanation for why fiscal policy cannot stabilize aggregate demand completely is that:",
+    "options": [
+      "private sector behavior changes over time.",
+      "policy changes are implemented very quickly.",
+      "fiscal policy focuses more on inflation than on unemployment."
+    ],
+    "correctIndex": 1,
+    "explanation": "Fiscal policy cannot stabilize aggregate demand perfectly because policy changes are NOT implemented quickly. Fiscal policy is notoriously subject to long recognition, action (legislative), and impact lags. Therefore, claiming that policy changes are implemented quickly is the *least likely* explanation.",
+    "formula": "Fiscal Lags = Recognition Lag + Action/Legislative Lag + Impact Lag",
+    "trap": "You selected C! The question asks for the LEAST likely explanation. Because fiscal policy is extremely slow (due to politics and legislation), option B is a completely false statement, making it the correct answer to 'least likely'.",
+    "image": ""
+  },
+  {
+    "id": 243,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "The primary goal of both monetary and fiscal policy focuses on balancing economic growth and:",
+    "options": [
+      "inflation.",
+      "employment.",
+      "income distribution."
+    ],
+    "correctIndex": 0,
+    "explanation": "The overarching dual mandate of monetary and fiscal policy is to create economic conditions characterized by positive, stable economic growth and low, stable inflation.",
+    "formula": "Macroeconomic Policy Goals = Stable Economic Growth + Stable Inflation",
+    "trap": "You selected B (employment)! While employment is a target, it is an outcome of balancing the primary macroeconomic trade-off: stimulating economic growth without triggering runaway inflation.",
+    "image": ""
+  },
+  {
+    "id": 244,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "Fiscal policy refers to the government's decisions about:",
+    "options": [
+      "taxation only.",
+      "taxation and spending only.",
+      "taxation, spending, and the quantity of money in the economy."
+    ],
+    "correctIndex": 1,
+    "explanation": "Fiscal policy strictly refers to the government's decisions regarding taxation and government spending. The quantity of money and credit in the economy is the domain of monetary policy (the central bank).",
+    "formula": "Fiscal Policy = Government Taxation + Government Spending",
+    "trap": "Do not mix fiscal and monetary policy tools. Money supply is controlled by the central bank, not the fiscal government.",
+    "image": ""
+  },
+  {
+    "id": 245,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "Which of the following economic policies is most likely directed toward influencing the quantity of credit in an economy?",
+    "options": [
+      "Fiscal policy only",
+      "Monetary policy only",
+      "Both fiscal policy and monetary policy"
+    ],
+    "correctIndex": 1,
+    "explanation": "Monetary policy refers to central bank activities that are directly targeted toward influencing the quantity of money and credit in an economy (via interest rates, reserve requirements, and open market operations).",
+    "formula": "Monetary Policy = Control of Money Supply + Credit + Interest Rates",
+    "trap": "Fiscal policy involves tax and spend, not the direct manipulation of credit quantities.",
+    "image": ""
+  },
+  {
+    "id": 246,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "The crowding-out effect is most likely associated with:",
+    "options": [
+      "falling real interest rates.",
+      "decreasing government borrowing.",
+      "increasing government borrowing."
+    ],
+    "correctIndex": 2,
+    "explanation": "The crowding-out effect occurs when an increase in government borrowing (to finance a deficit) absorbs available loanable funds, driving up real interest rates and decreasing (crowding out) private sector investment.",
+    "formula": "Government Borrowing $\\uparrow$ $\\rightarrow$ Interest Rates $\\uparrow$ $\\rightarrow$ Private Investment $\\downarrow$",
+    "trap": "Government borrowing must increase, not decrease, to cause crowding out.",
+    "image": ""
+  },
+  {
+    "id": 247,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "Which of the following is most likely an objective of fiscal policy?",
+    "options": [
+      "Maintaining price stability",
+      "Affecting aggregate demand",
+      "Achieving an exchange rate target"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fiscal policy uses government spending and taxation to directly affect the overall level of aggregate demand in an economy, thereby influencing the level of economic activity. Price stability and exchange rate targeting are core objectives of monetary policy.",
+    "formula": "Fiscal Policy Objective = Shift Aggregate Demand via $G$ or $T$",
+    "trap": "While fiscal policy *affects* inflation, maintaining price stability is the explicit mandate of the central bank (monetary policy).",
+    "image": ""
+  },
+  {
+    "id": 248,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "An objective of fiscal policy is to:",
+    "options": [
+      "supervise the banking system.",
+      "influence the quantity of credit in an economy.",
+      "distribute income among different segments of the population."
+    ],
+    "correctIndex": 2,
+    "explanation": "Fiscal policy, through progressive taxation and targeted government spending (e.g., social welfare programs), is uniquely capable of affecting the distribution of income and wealth among different segments of the population. Supervising banks and influencing credit are monetary functions.",
+    "formula": "Fiscal Policy = Income/Wealth Distribution + Aggregate Demand Management",
+    "trap": "Monetary policy cannot effectively target wealth redistribution because interest rate changes affect the broad economy, whereas fiscal policy can target specific tax brackets.",
+    "image": ""
+  },
+  {
+    "id": 249,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "If a government increases its spending on domestically produced goods by an amount that is financed by an equivalent increase in taxes, the aggregate demand will most likely:",
+    "options": [
+      "decrease.",
+      "remain unchanged.",
+      "increase."
+    ],
+    "correctIndex": 2,
+    "explanation": "This demonstrates the balanced budget multiplier. If spending ($G$) and taxes ($T$) increase by the same amount, aggregate demand increases because the government spends 100% of the tax revenue, whereas the private sector would have saved a portion of it (since the marginal propensity to consume, $c$, is less than 1).",
+    "formula": "Balanced Budget Multiplier = 1 $\\implies \\Delta Y = \\Delta G = \\Delta T > 0$",
+    "trap": "The net effect is NOT zero. Because the government does not save, transferring funds from consumers to the government injects the otherwise-saved portion back into the economy.",
+    "image": ""
+  },
+  {
+    "id": 250,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "In a hypothetical economy, consumption is 70% of disposable income, and the average tax rate is 25% of total income. If planned government expenditures are expected to increase by $1.25 billion, the increase in total income and spending, in billions, is closest to:",
+    "options": [
+      "$1.5.",
+      "$2.6.",
+      "$3.1."
+    ],
+    "correctIndex": 1,
+    "explanation": "The fiscal multiplier with taxes is $\\frac{1}{1 - c(1 - t)}$. Given $c = 0.70$ and $t = 0.25$: $\\text{Multiplier} = \\frac{1}{1 - 0.70(1 - 0.25)} = \\frac{1}{1 - 0.525} = \\frac{1}{0.475} \\approx 2.1053$. The increase in total income is $2.1053 \\times \\$1.25\\text{ billion} = \\$2.63\\text{ billion} \\approx \\$2.6\\text{ billion}$.",
+    "formula": "$\\text{Fiscal Multiplier} = \\frac{1}{1 - c(1 - t)} \\implies \\Delta Y = \\Delta G \\times \\text{Multiplier}$",
+    "trap": "Do not multiply $c \\times t$ directly. You must calculate the after-tax portion of income $(1 - t)$ first, then multiply by the MPC ($c$).",
+    "image": ""
+  },
+  {
+    "id": 251,
+    "topic": "Economics",
+    "module": "Module 3: Fiscal Policy",
+    "question": "The government embarks on a policy intended to reduce the budget deficit. This is most likely:",
+    "options": [
+      "an expansionary fiscal policy.",
+      "a contractionary fiscal policy.",
+      "an example of quantitative easing."
+    ],
+    "correctIndex": 1,
+    "explanation": "A policy intended to reduce a budget deficit requires the government to raise taxes and/or reduce government spending. Either of these actions slows economic growth, defining a contractionary fiscal policy.",
+    "formula": "Reduce Deficit = Taxes $\\uparrow$ or Spending $\\downarrow$ = Contractionary Fiscal Policy",
+    "trap": "Quantitative easing (Option C) is a monetary policy tool used by the central bank, not a fiscal tool.",
+    "image": ""
+  },
+  {
+    "id": 252,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "Jurgen is a portfolio manager. One of her firm’s clients has told Jurgen that he will compensate her beyond the compensation provided by her firm on the basis of the capital appreciation of his portfolio each year. Jurgen should:",
+    "options": [
+      "turn down the additional compensation because it will result in conflicts with the interests of other clients’ accounts.",
+      "turn down the additional compensation because it will create undue pressure on her to achieve strong short-term performance.",
+      "obtain permission from her employer prior to accepting the compensation arrangement."
+    ],
+    "correctIndex": 2,
+    "explanation": "Under Standard IV(B) Additional Compensation Arrangements, members may accept compensation beyond what their employer provides, even if it creates potential performance pressures, as long as they disclose the arrangement in writing and obtain permission from their employer prior to entering into the agreement.",
+    "formula": "Standard IV(B): Outside Compensation = Disclosure to Employer + PRIOR Written Permission",
+    "trap": "The Standards do not strictly forbid performance-based bonuses from clients, provided full disclosure and prior employer consent mitigate the conflict of interest.",
+    "image": ""
+  },
+  {
+    "id": 253,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "Anderb, a PM, has been using Jonelli (a broker) exclusively. For securities where Jonelli makes a market, Jonelli gives Anderb lower prices for personal purchases and higher prices for personal sales than Jonelli gives to Anderb’s portfolio accounts and other investors. Anderb files monthly reports with her supervisor, Bates, only during months she has no personal transactions. Bates reviews these reports. Which of the following is most likely to be a violation of the Code and Standards?",
+    "options": [
+      "Anderb failed to disclose to her employer her personal transactions.",
+      "Anderb owned the same securities as those of her clients.",
+      "Bates allowed Anderb to use Jonelli as her broker for personal trades."
+    ],
+    "correctIndex": 0,
+    "explanation": "Anderb violated Standard I(D) Misconduct by hiding her personal transactions from her firm, and Standard III(A) Loyalty, Prudence, and Care by obtaining more favorable prices for herself than her clients. Owning the same securities as clients (Option B) is permitted as long as clients trade first. Using the same broker (Option C) is permitted if disclosed.",
+    "formula": "Standard I(D) Misconduct & Standard III(A): Hiding trades and front-running/taking better prices = Violation.",
+    "trap": "Bates (the supervisor) also violated Standard IV(C) by failing to adequately enforce reporting requirements, but Option C states Bates violated it simply by allowing the use of the same broker, which is factually incorrect (using the same broker is not inherently a violation).",
+    "image": ""
+  },
+  {
+    "id": 254,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "Which of the following statements is correct under the Code and Standards?",
+    "options": [
+      "CFA Institute members and candidates are prohibited from undertaking independent practice in competition with their employer.",
+      "Written consent from the employer is necessary to permit independent practice that could result in compensation or other benefits in competition with a member’s or candidate’s employer.",
+      "Members and candidates are prohibited from making arrangements or preparations to go into a competitive business before terminating their relationship with their employer."
+    ],
+    "correctIndex": 1,
+    "explanation": "Under Standard IV(A) Loyalty, members and candidates may undertake independent practice that may result in compensation or benefit in competition with their employer, PROVIDED they obtain prior written consent from their employer. Preparing to leave (Option C) is allowed on one's own time.",
+    "formula": "Standard IV(A) Independent Practice = Allowed ONLY with prior written consent from employer.",
+    "trap": "Preparations to compete (incorporating a business, renting office space) are allowed while still employed, provided they are done on personal time and do not breach the duty of loyalty.",
+    "image": ""
+  },
+  {
+    "id": 255,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "A former hedge fund manager, Jackman, launches a new wealth management firm. He offers a US$10,000 incentive to any adviser who joins his firm bringing a minimum of US$200,000 in committed investments. Jackman advertises this on career search sites. Which of the following is correct according to the Code and Standards?",
+    "options": [
+      "A member or candidate is eligible for the new position and incentive if he or she can arrange for enough current clients to switch to the new firm and if the member or candidate discloses the incentive fee.",
+      "A member or candidate may not accept employment with the new firm, because Jackman’s incentive offer violates the Code and Standards.",
+      "A member or candidate is not eligible for the new position unless he or she is currently unemployed, because soliciting the clients of the member’s or candidate’s current employer is prohibited."
+    ],
+    "correctIndex": 2,
+    "explanation": "Standard IV(A) Loyalty strictly prohibits members from soliciting the clients of their current employer prior to leaving. Therefore, an employed member cannot arrange for current clients to switch to secure this incentive. Only an unemployed member (or a member soliciting non-clients) could accept the offer without violating the standard.",
+    "formula": "Standard IV(A): Soliciting current employer's clients before departure = Strict Violation",
+    "trap": "You selected A! Disclosure does NOT make it acceptable to steal clients from a current employer. Solicitation of current clients before departure is an absolute breach of loyalty.",
+    "image": ""
+  },
+  {
+    "id": 256,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "Which of the following statements is accurate according to the Standards?\n- Statement 1: A Member, prior to leaving his current employer, may contact potential clients for purposes of soliciting their business for their new employer.\n- Statement 2: A Member, while still employed, is free to make arrangements outside of normal working hours to apply for a license with the local regulator to set up a competing business",
+    "options": [
+      "Statement 1 only",
+      "Statement 2 only",
+      "Both Statement 1 and Statement 2"
+    ],
+    "correctIndex": 1,
+    "explanation": "Statement 2 is accurate: a departing employee may make preparations to go into a competitive business (such as applying for a license) outside of normal working hours before terminating the relationship with their employer. Statement 1 is false: a member must not contact existing OR potential clients of the current employer prior to leaving.",
+    "formula": "Preparation (licensing, office space on own time) = Permitted | Solicitation (contacting clients before leaving) = Violation",
+    "trap": "You selected C! A member cannot solicit 'potential' clients either, because any pipeline client developed while at the firm belongs to the firm.",
+    "image": ""
+  },
+  {
+    "id": 257,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "When Jefferson Piedmont, CFA, joined Branch Investing, Branch began using a quantitative stock selection model Piedmont had developed on his own personal time prior to his employment with Branch. One year later when Piedmont left the firm, he presented the original copy of the model he had developed to his new employer. According to the Standards of Practice Handbook, did Piedmont most likely violate any CFA Institute Standards of Professional Conduct?",
+    "options": [
+      "No",
+      "Yes, because he misappropriated property now belonging to Branch",
+      "Yes, because he failed to inform his new employer the model was the same one used by his previous employer"
+    ],
+    "correctIndex": 0,
+    "explanation": "Piedmont did not violate the Standards because the model was created on his own personal time prior to his employment with Branch. Therefore, it was his intellectual property, not Branch's property. He is free to take his own property to his new employer.",
+    "formula": "Standard IV(A): IP created prior to employment = Employee's property (can take it) | IP created during employment = Employer's property (cannot take it)",
+    "trap": "You selected C! The fact that Branch adopted the model does not transfer ownership to Branch. Piedmont does not need to warn his new employer about his own property.",
+    "image": ""
+  },
+  {
+    "id": 258,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "Jimmy Lan, CFA, is a technology analyst at Pacific Securities. While still employed, Lan makes plans during weekends to start a new company (contracting office space, interviewing potential employees). Lan provides his resignation notice, leaves, and then constructs earnings models using the knowledge and experience gained while at Pacific. He then contacts former clients by using public sources. Are Lan’s actions in compliance with the Code and Standards?",
+    "options": [
+      "Yes, assuming he is not in breach of any non-compete agreement signed while at Pacific Securities",
+      "No, because he is prohibited from engaging in activities related to starting his new business while still employed by Pacific Securities",
+      "No, because the names of former clients, modeling skills and experience gained by Lan are confidential information of Pacific Securities"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lan’s actions do not violate Standard IV(A). Making preparations on personal time is permitted. Using general skills, knowledge, and experience gained at the prior employer is not a violation. Contacting former clients using public sources (rather than a stolen firm client list) after leaving is also permitted (assuming no non-compete agreement prevents it).",
+    "formula": "Standard IV(A) Post-Employment: General Skills + Public Client Info = Permitted | Stolen Client List = Violation",
+    "trap": "General skills and modeling experience belong to the analyst, not the employer.",
+    "image": ""
+  },
+  {
+    "id": 259,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "Marc Davidson, CFA, works for Integrity Financial. On his own time, Davidson starts a part time consulting business providing advice for a fee without informing Integrity. Davidson also asks his assistant to compile a list of Integrity’s clients. The following month, Davidson moves to a competitor, Legacy Trust. His new manager at Legacy arranges for him to meet with Integrity's clients, many of whom transfer to Legacy. Did Davidson’s action violate the Code and Standards?",
+    "options": [
+      "No",
+      "Yes, Davidson’s part time consulting business is a violation of the Standards",
+      "Yes, both Davidson’s part time consulting business and his meetings with Integrity clients are a violation of the Standards"
+    ],
+    "correctIndex": 1,
+    "explanation": "Davidson's part-time consulting business for a fee without disclosing it to Integrity violates Standard IV(A) because members must disclose any compensation arrangement involving services their employers could charge for. However, having meetings at Legacy arranged by his new manager is not a violation, as Davidson did not utilize the confidential client list he compiled to solicit them (the new employer arranged the meetings independently).",
+    "formula": "Standard IV(A): Secret Paid Consulting = Violation | Meeting former clients set up by new employer independently = No Violation",
+    "trap": "You selected A! You cannot run a secret side business providing services your employer provides. You must disclose it. But the second action (meetings) was technically clean because he didn't use the stolen list.",
+    "image": ""
+  },
+  {
+    "id": 260,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "Melinda Jacobs, CFA, is a PM with SFM Asset Managers. Jacobs teaches an investment course at a business school on weekends for a fee. Jacobs is planning to leave SFM and has begun to develop marketing materials on her own time for a new business that will compete with SFM. Has Jacobs most likely violated the Standards?",
+    "options": [
+      "No",
+      "Yes, by accepting a fee from the business school",
+      "Yes, by developing marketing materials for her new business that will compete with SFM"
+    ],
+    "correctIndex": 0,
+    "explanation": "Jacobs has not violated the Standards. Teaching at a business school on weekends does not compete with her role as a PM and does not create a conflict of interest, so consent is not required. Furthermore, a departing employee is free to make arrangements or preparations (like developing marketing materials) to go into a competitive business before leaving, provided it is on personal time and does not breach the duty of loyalty.",
+    "formula": "Standard IV(A) & IV(B): Non-competing outside work (teaching) + Personal time prep = No Violation",
+    "trap": "You selected C! Developing marketing materials is considered 'preparation' and is explicitly allowed prior to leaving the firm.",
+    "image": ""
+  },
+  {
+    "id": 261,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "According to the Standards, Members are required to obtain permission from their employer before accepting additional compensation from:",
+    "options": [
+      "clients only.",
+      "third parties only.",
+      "both clients and third parties."
+    ],
+    "correctIndex": 2,
+    "explanation": "Standard IV(B), Additional Compensation Arrangements, requires Members to obtain written consent from all parties involved (including their employer) before accepting gifts, benefits, compensation, or consideration that competes with or might reasonably be expected to create a conflict of interest with their employer. This includes direct compensation from clients AND indirect compensation from third parties.",
+    "formula": "Standard IV(B) Additional Compensation = Clients AND Third Parties require Employer Consent",
+    "trap": "Any outside compensation related to professional services requires employer consent, regardless of the source.",
+    "image": ""
+  },
+  {
+    "id": 262,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "Frank Taylor, CFA, manages a portfolio for a football club. The club’s chairman offers him a front-row ticket to a sold-out match. Taylor accepts the ticket without informing his employer. The chairman also provides a performance-based cash incentive for which Taylor receives permission from his employer. Has Taylor most likely violated the Standards?",
+    "options": [
+      "No",
+      "Yes, the Standard relating to loyalty, prudence, and care",
+      "Yes, the Standard relating to additional compensation arrangements"
+    ],
+    "correctIndex": 2,
+    "explanation": "Taylor violated Standard IV(B), Additional Compensation Arrangements. The standard dictates that Members must not accept gifts or benefits that might reasonably be expected to create a conflict of interest with their employer’s interest unless they obtain consent from all parties involved. Taylor failed to obtain consent for the sold-out football ticket.",
+    "formula": "Standard IV(B): Gifts from clients (tickets, vouchers) = Require Employer Disclosure & Consent",
+    "trap": "You selected A! Even non-cash gifts of significant value (like a sold-out front-row ticket) are considered compensation and require employer consent.",
+    "image": ""
+  },
+  {
+    "id": 263,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "According to the Standard relating to additional compensation arrangements, a Member who is offered additional compensation from a third party for services that conflict with his employer’s interest:",
+    "options": [
+      "is prohibited from accepting the additional compensation in all cases.",
+      "is required to notify his employer about compensation from the third party immediately after receiving it.",
+      "must obtain written consent from his employer and the third party offering fees to the member before accepting the compensation."
+    ],
+    "correctIndex": 2,
+    "explanation": "Standard IV(B) dictates that Members must not accept gifts, benefits, or compensation that might create a conflict of interest with their employer unless they obtain written consent from all parties involved BEFORE accepting the compensation.",
+    "formula": "Standard IV(B) Rules: Must obtain PRIOR WRITTEN consent from ALL parties (Employer + Third Party)",
+    "trap": "Notifying the employer 'after' receiving it (Option B) is a violation. It must be disclosed and approved PRIOR to acceptance.",
+    "image": ""
+  },
+  {
+    "id": 264,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "John Run, CFA, manages client accounts. A client offers him the use of a beach home for a week if his portfolio beats the benchmark by 5%. Run also serves on the board of Core Air Ltd, which sends him a family flight voucher instead of cash payments. Run accepts both without informing his firm. Has Run most likely violated the Standard relating to additional compensation arrangements?",
+    "options": [
+      "No",
+      "Yes, only because Run accepts the beach home offer without informing his employer",
+      "Yes, both because Run accepts the beach home offer and the family flight voucher without informing his employer"
+    ],
+    "correctIndex": 2,
+    "explanation": "Standard IV(B), Additional Compensation Arrangements, requires Run to obtain written consent from his employer before accepting any compensation or benefit that competes with or creates a conflict with his employer's interest. This includes direct compensation from clients (the beach home) and indirect benefits from third parties (the flight voucher).",
+    "formula": "Standard IV(B): Non-cash benefits (Beach Home, Flight Vouchers) = Compensation = Requires Employer Consent",
+    "trap": "You selected B! Do not assume that serving on a board for 'free' (non-cash) means no conflict. The flight voucher is compensation from a third party and requires disclosure.",
+    "image": ""
+  },
+  {
+    "id": 265,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "Cecilia Foster, CFA, is the new director of research overseeing analysts. She discovers the compliance system is inadequate and tells her supervisor, who says improvements will be considered in four months. To comply with the Standards, Foster most likely should initially:",
+    "options": [
+      "resign her new position.",
+      "decline in writing to accept supervisory responsibility.",
+      "establish departmental procedures to ensure fellow Charterholders comply with applicable regulations."
+    ],
+    "correctIndex": 1,
+    "explanation": "Under Standard IV(C), Responsibilities of Supervisors, if a Member cannot discharge supervisory responsibilities due to the absence or inadequacy of a compliance system, the Member must decline in writing to accept supervisory responsibility until the firm adopts reasonable procedures.",
+    "formula": "Standard IV(C) Inadequate Compliance = Decline Supervisory Responsibility in Writing",
+    "trap": "Resigning the position entirely (Option A) is extreme and not required initially. She only needs to formally decline the *supervisory* aspect of the role until the system is fixed.",
+    "image": ""
+  },
+  {
+    "id": 266,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "According to the Standards, which of the following statements relating to a member in a supervisory position is accurate?\n- Statement 1: The Member must make reasonable efforts to ensure that anyone subject to her supervision complies with the Code and Standards.\n- Statement 2: The Member must adopt the CFA Institute Code of Ethics to substitute for lack of compliance procedures until the firm adopts reasonable procedures to allow adequate exercise of supervisory responsibility",
+    "options": [
+      "Statement 1 only",
+      "Statement 2 only",
+      "Both Statement 1 and Statement 2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Statement 1 is an accurate summary of Standard IV(C). Statement 2 is incorrect because if compliance procedures are lacking, the Member should decline in writing to accept supervisory responsibility. The Member cannot simply 'substitute' the CFA Code for a missing firm compliance system and carry on supervising.",
+    "formula": "Standard IV(C): Cannot substitute CFA Code for missing firm compliance system. Must decline supervision.",
+    "trap": "You selected C! Just handing employees the CFA Code of Ethics is not a substitute for a functional firm-wide compliance and monitoring system.",
+    "image": ""
+  },
+  {
+    "id": 267,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "Madeline Smith, CFA, is promoted to senior portfolio manager and must supervise three PMs. She asks for written supervisory policies, but is advised none are required by local regulatory standards. According to the Standards of Practice Handbook, Smith’s most appropriate course of action would be to:",
+    "options": [
+      "require her firm to adopt the CFA Institute Code of Ethics and Standards of Professional Conduct.",
+      "require the employees she supervises to adopt the CFA Institute Code of Ethics and Standards of Professional Conduct.",
+      "decline to accept supervisory responsibility until her firm adopts procedures to allow her to adequately exercise such responsibility."
+    ],
+    "correctIndex": 2,
+    "explanation": "Regardless of local law, Standard IV(C) dictates that if an adequate compliance system does not exist, the Member must decline in writing to accept supervisory responsibility until the firm adopts reasonable procedures.",
+    "formula": "Standard IV(C) trumps loose local laws: No compliance system = Decline supervisory responsibility in writing.",
+    "trap": "You selected B! As seen in the previous question, simply asking employees to adopt the CFA Code does not create a systemic compliance monitoring program.",
+    "image": ""
+  },
+  {
+    "id": 268,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 6: Guidance for Standard IV: Duties to Employers",
+    "question": "According to the compliance practices for the Standard relating to responsibilities of supervisors, a firm's code of ethics should:",
+    "options": [
+      "only be written in plain language.",
+      "only be integrated in the firm's compliance procedures.",
+      "both be be written in plain language and be integrated in the firm's compliance procedures."
+    ],
+    "correctIndex": 0,
+    "explanation": "According to the compliance practices for Standard IV(C), a firm's stand-alone code of ethics should be written in plain language and address general fiduciary concepts. It should NOT be mingled or integrated directly into the detailed firm compliance manual, as doing so dilutes the overarching ethical obligations and makes it a mere checklist.",
+    "formula": "Code of Ethics = Plain language, separate from detailed compliance procedures.",
+    "trap": "You selected C! The CFA Institute explicitly advises *against* integrating the code of ethics into compliance procedures, to avoid reducing ethics to a legalistic rulebook.",
+    "image": ""
+  },
+  {
+    "id": 269,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Ratios are an input into which step in the financial statement analysis framework?",
+    "options": [
+      "Process data",
+      "Collect input data",
+      "Analyze/interpret the processed data"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ratios are an output of the 'process data' step but are an input into the 'analyze/interpret the processed data' step of the financial statement analysis framework.",
+    "formula": "Process Data (Output: Ratios) → Analyze/Interpret Data (Input: Ratios)",
+    "trap": "Ratios are computed during data processing, making them the output of that stage, but the input for the next stage (analysis).",
+    "image": ""
+  },
+  {
+    "id": 270,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Which phase in the financial statement analysis framework is most likely to involve producing updated reports and recommendations?",
+    "options": [
+      "Follow-up",
+      "Analyze/interpret the processed data",
+      "Develop and communicate conclusions and recommendations"
+    ],
+    "correctIndex": 0,
+    "explanation": "The follow-up phase involves gathering new information and repeating the analysis periodically to determine whether it is necessary to update reports and recommendations.",
+    "formula": "Follow-up Phase = Updating reports and monitoring changes over time",
+    "trap": "You selected C! The initial creation of the report is 'Develop and communicate conclusions', but producing UPDATED reports based on new periodic data is part of the 'Follow-up' phase.",
+    "image": ""
+  },
+  {
+    "id": 271,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Which of the following best describes the role of financial statement analysis?",
+    "options": [
+      "To provide information about a company’s performance",
+      "To provide information about a company’s changes in financial position",
+      "To form expectations about a company’s future performance and financial position"
+    ],
+    "correctIndex": 2,
+    "explanation": "Analysts seek to examine the past and current performance and financial position of a company specifically to form expectations about its future performance and financial position.",
+    "formula": "Financial Reporting = Provides Past/Current Data | Financial Analysis = Uses data to form FUTURE expectations",
+    "trap": "Options A and B describe the role of financial REPORTING (the accounting process), not the role of financial statement ANALYSIS.",
+    "image": ""
+  },
+  {
+    "id": 272,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "The primary role of financial statement analysis is best described as:",
+    "options": [
+      "providing information useful for making investment decisions.",
+      "evaluating a company for the purpose of making economic decisions.",
+      "using financial reports prepared by analysts to make economic decisions."
+    ],
+    "correctIndex": 1,
+    "explanation": "The primary role of financial statement analysis is to use financial reports prepared by companies to evaluate their past, current, and potential performance and financial position for the purpose of making investment, credit, and other economic decisions.",
+    "formula": "Financial Analysis = Evaluating company performance to make economic decisions",
+    "trap": "You selected A! Option A ('providing information...') is the definition of Financial Reporting. The analyst's job is evaluating that information to make decisions.",
+    "image": ""
+  },
+  {
+    "id": 273,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "International Financial Reporting Standards (IFRS) are currently developed by which entity?",
+    "options": [
+      "IFRS Foundation",
+      "International Accounting Standards Board (IASB)",
+      "International Organization of Securities Commissions (IOSCO)"
+    ],
+    "correctIndex": 1,
+    "explanation": "The International Accounting Standards Board (IASB) is the independent standard-setting body charged with developing International Financial Reporting Standards (IFRS).",
+    "formula": "IASB develops IFRS | FASB develops US GAAP",
+    "trap": "The IFRS Foundation oversees the IASB, but the IASB is the specific board that writes and develops the standards.",
+    "image": ""
+  },
+  {
+    "id": 274,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "US GAAP are currently developed by which entity?",
+    "options": [
+      "Securities and Exchange Commission (SEC)",
+      "Financial Accounting Standards Board (FASB)",
+      "Public Company Accounting Oversight Board (PCAOB)"
+    ],
+    "correctIndex": 1,
+    "explanation": "US Generally Accepted Accounting Principles (US GAAP) are developed by the US Financial Accounting Standards Board (FASB).",
+    "formula": "FASB = Standard-setting body for US GAAP",
+    "trap": "The SEC enforces the rules and has ultimate statutory authority, but they delegate the actual development and writing of US GAAP to the FASB.",
+    "image": ""
+  },
+  {
+    "id": 275,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "A core objective of the International Organization of Securities Commissions (IOSCO) is to:",
+    "options": [
+      "eliminate systemic risk.",
+      "protect users of financial statements.",
+      "ensure that markets are fair, efficient, and transparent."
+    ],
+    "correctIndex": 2,
+    "explanation": "A core objective of IOSCO is to ensure that markets are fair, efficient, and transparent. Its other core objectives are to reduce (not eliminate) systemic risk and to protect investors (not all users).",
+    "formula": "IOSCO Objectives: Protect Investors + Fair/Efficient Markets + REDUCE Systemic Risk",
+    "trap": "Systemic risk can never be 'eliminated' entirely, only reduced. IOSCO protects 'investors', which is a narrower group than all 'users' of financial statements.",
+    "image": ""
+  },
+  {
+    "id": 276,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Which of the following best describes why the notes that accompany the financial statements are required? The notes:",
+    "options": [
+      "permit flexibility in statement preparation.",
+      "standardize financial reporting across companies.",
+      "provide information necessary to understand the financial statements."
+    ],
+    "correctIndex": 2,
+    "explanation": "The notes to the financial statements (footnotes) provide information that is essential to understanding the information provided in the primary statements, including accounting choices, estimates, and assumptions.",
+    "formula": "Notes = Details, policies, and estimates necessary to interpret the financial statements",
+    "trap": "Notes do not 'standardize' reporting; if anything, they explain the unique, flexible choices and estimates management made.",
+    "image": ""
+  },
+  {
+    "id": 277,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Accounting policies, methods, and estimates used in preparing financial statements are most likely to be found in the:",
+    "options": [
+      "auditor’s report.",
+      "management commentary.",
+      "notes to the financial statements."
+    ],
+    "correctIndex": 2,
+    "explanation": "The notes to the financial statements disclose the specific choices in accounting policies, methods (e.g., FIFO vs. LIFO, straight-line vs. accelerated depreciation), and estimates used by management.",
+    "formula": "Accounting Policies & Estimates = Notes to the Financial Statements",
+    "trap": "Management commentary discusses strategic direction and risk, not the technical accounting policies used to build the statements.",
+    "image": ""
+  },
+  {
+    "id": 278,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Information about management and director compensation is most likely to be found in the:",
+    "options": [
+      "auditor’s report.",
+      "proxy statement.",
+      "earnings release."
+    ],
+    "correctIndex": 1,
+    "explanation": "Disclosure of management and director compensation is typically included in the proxy statement (Form DEF-14A in the US), which is sent to shareholders prior to a vote.",
+    "formula": "Proxy Statement (DEF-14A) = Executive Compensation + Board Elections + Shareholder Votes",
+    "trap": "An earnings release is about corporate profits, not what managers earn as personal compensation.",
+    "image": ""
+  },
+  {
+    "id": 279,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Information about a company’s objectives, strategies, and significant risks are most likely to be found in the:",
+    "options": [
+      "auditor’s report.",
+      "management commentary.",
+      "notes to the financial statements."
+    ],
+    "correctIndex": 1,
+    "explanation": "Management commentary (also known as Management's Discussion and Analysis or MD&A) provides management's view on the company's objectives, strategies, significant risks, and unrecorded off-balance-sheet commitments.",
+    "formula": "Management Commentary (MD&A) = Strategy + Objectives + Risks + Future Outlook",
+    "trap": "The notes to the financial statements explain past accounting choices, whereas the MD&A is a forward-looking and strategic discussion.",
+    "image": ""
+  },
+  {
+    "id": 280,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "What type of audit opinion is preferred when analyzing financial statements?",
+    "options": [
+      "Adverse",
+      "Qualified",
+      "Unqualified"
+    ],
+    "correctIndex": 2,
+    "explanation": "An unqualified opinion is a 'clean' opinion. It indicates that the financial statements present the company’s performance and financial position fairly in accordance with applicable accounting standards.",
+    "formula": "Unqualified Opinion = Clean / Good | Qualified = Exception / Warning | Adverse = Materially Misstated / Bad",
+    "trap": "In non-accounting contexts, 'unqualified' can sound negative, but in auditing, it means the auditor has 'no qualifications or reservations' about the accuracy of the statements (it's the best outcome).",
+    "image": ""
+  },
+  {
+    "id": 281,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "An auditor determines that a company’s financial statements are prepared in accordance with applicable accounting standards except with respect to inventory reporting. This exception is most likely to result in an audit opinion that is:",
+    "options": [
+      "adverse.",
+      "qualified.",
+      "unqualified."
+    ],
+    "correctIndex": 1,
+    "explanation": "A qualified audit opinion is issued when there is some scope limitation or a specific exception to accounting standards (like a localized issue with inventory), but the rest of the statements are fairly presented.",
+    "formula": "Qualified Opinion = Clean 'Except For' one specific issue or limitation",
+    "trap": "An adverse opinion is issued only when the entire set of financial statements is materially misleading and completely departs from accounting standards.",
+    "image": ""
+  },
+  {
+    "id": 282,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "An independent audit report is most likely to provide:",
+    "options": [
+      "absolute assurance about the accuracy of the financial statements.",
+      "reasonable assurance that the financial statements are fairly presented.",
+      "a qualified opinion with respect to the transparency of the financial statements."
+    ],
+    "correctIndex": 1,
+    "explanation": "The independent audit report provides 'reasonable assurance' that the financial statements are fairly presented, meaning there is a high probability they are free from material error, fraud, or illegal acts.",
+    "formula": "Audits provide REASONABLE assurance, not absolute assurance.",
+    "trap": "Auditors only test samples of transactions; they cannot examine every single receipt. Thus, they cannot guarantee 'absolute' assurance.",
+    "image": ""
+  },
+  {
+    "id": 283,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Interim financial reports released by a company are most likely to be:",
+    "options": [
+      "monthly.",
+      "unaudited.",
+      "unqualified."
+    ],
+    "correctIndex": 1,
+    "explanation": "Interim reports (such as 10-Q quarterly reports) are typically provided semiannually or quarterly and contain financial statements that are unaudited. Only the annual report (10-K) requires a full external audit.",
+    "formula": "Interim Reports (Q1, Q2, Q3) = Unaudited | Annual Reports (10-K) = Audited",
+    "trap": "Because interim reports are unaudited, they cannot be described as 'unqualified', which is a type of audit opinion.",
+    "image": ""
+  },
+  {
+    "id": 284,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Which of the following sources of information used by analysts is found outside a company’s annual report?",
+    "options": [
+      "Auditor’s report",
+      "Peer company analysis",
+      "Management discussion and analysis"
+    ],
+    "correctIndex": 1,
+    "explanation": "When performing financial statement analysis, analysts must review external sources regarding the economy, the industry, and peer (comparable) companies. The auditor's report and MD&A are included *inside* the company's annual report.",
+    "formula": "External Sources = Macro Economy + Industry Data + Peer Analysis",
+    "trap": "The company's annual report is internally generated (even the independent auditor's report is bundled within it).",
+    "image": ""
+  },
+  {
+    "id": 285,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Common-size financial statements are most likely a component of which step in the financial analysis framework?",
+    "options": [
+      "Collect data",
+      "Process data",
+      "Analyze/interpret data"
+    ],
+    "correctIndex": 1,
+    "explanation": "Preparing common-size financial statements (converting absolute numbers into percentages of total assets or revenue) is an active transformation of the raw data, which takes place in the 'Process data' step.",
+    "formula": "Process Data = Calculating Ratios + Creating Common-Size Statements",
+    "trap": "You selected C (Analyze/interpret)! You must *process* the data into a common-size format first; only then can you *analyze* the resulting percentages in the next step.",
+    "image": ""
+  },
+  {
+    "id": 286,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Which of the following statements is most accurate? The role of financial reporting is to:",
+    "options": [
+      "forecast future net income and cash flow.",
+      "value a security for making investment decisions.",
+      "provide information about a company's performance, financial position, and changes in financial position."
+    ],
+    "correctIndex": 2,
+    "explanation": "The role of financial reporting (accounting) is to provide information about a company’s past and current performance, financial position, and changes in financial position. Forecasting future cash flows and valuing securities is the role of financial *analysis*.",
+    "formula": "Financial Reporting = Provide Past/Current Data | Financial Analysis = Forecast Future / Value Security",
+    "trap": "Options A and B describe the job of the financial analyst, not the job of the accountant preparing the reports.",
+    "image": ""
+  },
+  {
+    "id": 287,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Providing information about the performance of a company, its financial position, and changes in financial position that is useful to a wide range of users is most accurately described as the role of:",
+    "options": [
+      "the audit report.",
+      "financial reporting.",
+      "financial statement analysis."
+    ],
+    "correctIndex": 1,
+    "explanation": "This is the exact definition of the role of financial reporting. The role of financial statement analysis is to take those reports and evaluate them to make economic decisions.",
+    "formula": "Financial Reporting = Providing the information to a wide range of users",
+    "trap": "You selected C! Providing the raw data is reporting. Analysis is the act of *using* that data.",
+    "image": ""
+  },
+  {
+    "id": 288,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "A qualified audit opinion is most appropriately issued when:",
+    "options": [
+      "there is some scope limitation or exception to accounting standards.",
+      "the company's financial statements are fairly presented and free from material error.",
+      "the company's financial statements materially depart from accounting standards and are not fairly presented."
+    ],
+    "correctIndex": 0,
+    "explanation": "A qualified opinion is issued when there is a specific exception to accounting standards or a scope limitation, but the statements are otherwise fairly presented. Option B describes an unqualified opinion, and Option C describes an adverse opinion.",
+    "formula": "Qualified Opinion = Clean 'Except For' a specific limitation/deviation",
+    "trap": "Do not confuse 'qualified' with 'unqualified'. Unqualified means clean/good.",
+    "image": ""
+  },
+  {
+    "id": 289,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Which of the following statements is most accurate about the responsibilities of an auditor for a publicly traded firm in the United States? The auditor must:",
+    "options": [
+      "ensure that the financial statements are free from error, fraud, or illegal acts.",
+      "express an opinion about the effectiveness of the company’s internal control systems.",
+      "state that the financial statements are prepared according to generally accepted accounting principles."
+    ],
+    "correctIndex": 1,
+    "explanation": "Under the Sarbanes–Oxley Act (SOX), auditors of publicly traded US firms must explicitly express an opinion on the effectiveness of the company’s internal control systems over financial reporting.",
+    "formula": "US Sarbanes-Oxley Act (SOX) = Auditor MUST express an opinion on Internal Controls",
+    "trap": "You selected A! Auditors can only provide 'reasonable assurance' against material errors; they cannot guarantee absolute freedom from all fraud. Furthermore, it is *management*, not the auditor, who prepares the statements (Option C).",
+    "image": ""
+  },
+  {
+    "id": 290,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Which of the following reports is least likely to be filed with the US SEC?",
+    "options": [
+      "Form 10-K",
+      "Annual report",
+      "Proxy statement"
+    ],
+    "correctIndex": 1,
+    "explanation": "The 'Annual Report to Shareholders' is a glossy marketing and informational document that is NOT a formal SEC filing requirement. Forms 10-K, 10-Q, 8-K, and Proxy statements (DEF-14A) are strictly required SEC filings.",
+    "formula": "10-K = Formal SEC Filing | Annual Report = Informational glossy booklet (Not required by SEC)",
+    "trap": "You selected A! Form 10-K is the ultimate mandatory annual SEC filing. Do not confuse the legal 10-K with the glossy 'annual report' mailed to shareholders.",
+    "image": ""
+  },
+  {
+    "id": 291,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Notes to financial statements most likely include:",
+    "options": [
+      "an auditor’s opinion as to the fair presentation of the financial statements.",
+      "supplementary information about accounting policies, methods, and estimates.",
+      "a discussion of significant trends, events, and uncertainties that affect the operating results."
+    ],
+    "correctIndex": 1,
+    "explanation": "The notes to the financial statements disclose essential supplementary details about the accounting policies, methods, and estimates used to prepare the numbers. Trends and uncertainties (Option C) belong in the Management Discussion and Analysis (MD&A).",
+    "formula": "Notes = Accounting Methods & Estimates | MD&A = Trends & Uncertainties",
+    "trap": "You selected C! Forward-looking trends and strategic uncertainties are never placed in the audited financial notes; they are part of the MD&A.",
+    "image": ""
+  },
+  {
+    "id": 292,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "The role of the International Organization of Securities Commissions (IOSCO) is best described as:",
+    "options": [
+      "promoting cross-border cooperation and uniformity in securities regulation.",
+      "enforcing financial reporting requirements for entities participating in capital markets.",
+      "promoting the use of International Financial Reporting Standards (IFRS) and the convergence of national accounting standards."
+    ],
+    "correctIndex": 0,
+    "explanation": "IOSCO assists in attaining the goal of uniform regulation as well as cross-border cooperation in combating violations of securities and derivatives laws among national regulators (like the SEC).",
+    "formula": "IOSCO = Cross-border regulatory cooperation & uniformity",
+    "trap": "You selected C! The IASB promotes IFRS and accounting convergence. IOSCO is an organization of market *regulators*, not accounting standard setters.",
+    "image": ""
+  },
+  {
+    "id": 293,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "For a company issuing securities in the United States to meet its obligations under the Sarbanes–Oxley Act, which of the following is management required to attest to?",
+    "options": [
+      "The adequacy of internal control over financial reporting",
+      "The suitability of management and director compensation agreements",
+      "The accuracy of estimates and assumptions used in preparing the financial statements"
+    ],
+    "correctIndex": 0,
+    "explanation": "The Sarbanes-Oxley Act requires executive management to certify that the company’s financial reports fairly present the company’s condition and explicitly requires management to report on and attest to the effectiveness and adequacy of the company’s internal control over financial reporting.",
+    "formula": "Sarbanes-Oxley (SOX) = Management must attest to Internal Controls",
+    "trap": "Compensation agreements are detailed in the proxy statement, not SOX attestation requirements.",
+    "image": ""
+  },
+  {
+    "id": 294,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Where might an analyst look for details covering the full extent of a company’s capital resources?",
+    "options": [
+      "Balance sheet",
+      "Notes to the financial statements",
+      "Management discussion and analysis (MD&A)"
+    ],
+    "correctIndex": 2,
+    "explanation": "In the MD&A, management must highlight favorable or unfavorable trends regarding liquidity and capital resources, and explicitly provide information about off-balance-sheet obligations and contractual commitments (which are not found directly on the balance sheet).",
+    "formula": "MD&A = Liquidity Trends + Capital Resources + Off-Balance-Sheet Commitments",
+    "trap": "You selected A (Balance sheet)! The balance sheet only lists formalized debt; the MD&A details off-balance-sheet financing and future capital commitments.",
+    "image": ""
+  },
+  {
+    "id": 295,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "A disclaimer of opinion is issued when an auditor:",
+    "options": [
+      "is unable to issue an opinion.",
+      "notes an exception to accounting standards.",
+      "finds a material departure from accounting standards."
+    ],
+    "correctIndex": 0,
+    "explanation": "A disclaimer of opinion occurs when auditors are unable to issue an opinion (typically due to a severe scope limitation, lack of independence, or missing records).",
+    "formula": "Disclaimer = No Opinion Issued (Cannot verify data)",
+    "trap": "You selected C! A material departure from accounting standards triggers an Adverse Opinion, not a Disclaimer.",
+    "image": ""
+  },
+  {
+    "id": 296,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Which of the following opinions is the best indication that the auditor believes that the financial statements depart materially from accounting standards and are not fairly presented?",
+    "options": [
+      "Adverse opinion",
+      "Qualified opinion",
+      "Disclaimer of opinion"
+    ],
+    "correctIndex": 0,
+    "explanation": "An adverse audit opinion is issued when an auditor determines that the financial statements as a whole materially depart from accounting standards and are not fairly presented.",
+    "formula": "Adverse Opinion = Material Departures / Not Fairly Presented (The worst opinion)",
+    "trap": "Qualified means mostly clean with one exception. Adverse means the statements are fundamentally flawed.",
+    "image": ""
+  },
+  {
+    "id": 297,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 1: Introduction to Financial Statement Analysis",
+    "question": "Interim reports most likely:",
+    "options": [
+      "are audited.",
+      "are issued semi-annually or quarterly.",
+      "include a full set of financial statements and notes."
+    ],
+    "correctIndex": 1,
+    "explanation": "Interim reports are provided semi-annually or quarterly, depending on regulatory requirements. They are unaudited and generally present only condensed notes, not a full set.",
+    "formula": "Interim Reports = Quarterly/Semi-Annually + Unaudited + Condensed Notes",
+    "trap": "Annual reports (10-K) contain the full notes and the audit; interim reports (10-Q) are abbreviated and unaudited.",
+    "image": ""
   }
 ]
