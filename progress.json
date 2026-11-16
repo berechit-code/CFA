@@ -2739,13 +2739,19 @@
       }
     },
     "2026-11-16": {
-      "count": 31,
-      "correct": 20,
+      "count": 32,
+      "correct": 21,
       "answeredIds": [
         255,
-        262
+        262,
+        81
       ],
       "responses": {
+        "81": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1794859119365
+        },
         "255": {
           "selectedIndex": 0,
           "isCorrect": false,
@@ -3243,8 +3249,8 @@
     "81": {
       "selectedIndex": 1,
       "isCorrect": true,
-      "dateISO": "2026-10-29",
-      "timestamp": 1793282000548
+      "dateISO": "2026-11-16",
+      "timestamp": 1794859119365
     },
     "82": {
       "selectedIndex": 1,
@@ -5968,14 +5974,19 @@
       ]
     },
     "81": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 0,
       "lastIsCorrect": true,
       "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-10-29",
+      "lastAnsweredDate": "2026-11-16",
       "history": [
         {
           "date": "2026-10-29",
+          "isCorrect": true,
+          "topic": "Quantitative Methods"
+        },
+        {
+          "date": "2026-11-16",
           "isCorrect": true,
           "topic": "Quantitative Methods"
         }
@@ -8680,5 +8691,5 @@
     "Ethical and Professional Standards__2": true,
     "Financial Statement Analysis__0": true
   },
-  "lastUpdated": 1794859095232
+  "lastUpdated": 1794859119365
 }
