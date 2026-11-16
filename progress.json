@@ -2739,15 +2739,21 @@
       }
     },
     "2026-11-16": {
-      "count": 33,
-      "correct": 22,
+      "count": 34,
+      "correct": 23,
       "answeredIds": [
         255,
         262,
         81,
-        60
+        60,
+        56
       ],
       "responses": {
+        "56": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1794859136332
+        },
         "60": {
           "selectedIndex": 2,
           "isCorrect": true,
@@ -3103,10 +3109,10 @@
       "timestamp": 1794429808604
     },
     "56": {
-      "selectedIndex": 1,
-      "isCorrect": false,
-      "dateISO": "2026-11-15",
-      "timestamp": 1794773823486
+      "selectedIndex": 0,
+      "isCorrect": true,
+      "dateISO": "2026-11-16",
+      "timestamp": 1794859136332
     },
     "57": {
       "selectedIndex": 1,
@@ -5525,11 +5531,11 @@
       ]
     },
     "56": {
-      "attempts": 3,
+      "attempts": 4,
       "wrongCount": 2,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-11-15",
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 0,
+      "lastAnsweredDate": "2026-11-16",
       "history": [
         {
           "date": "2026-10-26",
@@ -5544,6 +5550,11 @@
         {
           "date": "2026-11-15",
           "isCorrect": false,
+          "topic": "Economics"
+        },
+        {
+          "date": "2026-11-16",
+          "isCorrect": true,
           "topic": "Economics"
         }
       ]
@@ -8702,5 +8713,5 @@
     "Ethical and Professional Standards__2": true,
     "Financial Statement Analysis__0": true
   },
-  "lastUpdated": 1794859124015
+  "lastUpdated": 1794859136332
 }
