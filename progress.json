@@ -2739,8 +2739,8 @@
       }
     },
     "2026-11-16": {
-      "count": 42,
-      "correct": 30,
+      "count": 43,
+      "correct": 31,
       "answeredIds": [
         255,
         262,
@@ -2754,7 +2754,8 @@
         220,
         163,
         173,
-        9
+        9,
+        202
       ],
       "responses": {
         "9": {
@@ -2801,6 +2802,11 @@
           "selectedIndex": 0,
           "isCorrect": true,
           "timestamp": 1794859261148
+        },
+        "202": {
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timestamp": 1794859421532
         },
         "215": {
           "selectedIndex": 2,
@@ -4015,10 +4021,10 @@
       "timestamp": 1794775022580
     },
     "202": {
-      "selectedIndex": 1,
-      "isCorrect": false,
-      "dateISO": "2026-11-15",
-      "timestamp": 1794775165233
+      "selectedIndex": 2,
+      "isCorrect": true,
+      "dateISO": "2026-11-16",
+      "timestamp": 1794859421532
     },
     "203": {
       "selectedIndex": 1,
@@ -7937,11 +7943,11 @@
       ]
     },
     "202": {
-      "attempts": 2,
+      "attempts": 3,
       "wrongCount": 2,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-11-15",
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 2,
+      "lastAnsweredDate": "2026-11-16",
       "history": [
         {
           "date": "2026-11-14",
@@ -7951,6 +7957,11 @@
         {
           "date": "2026-11-15",
           "isCorrect": false,
+          "topic": "Alternative Investments"
+        },
+        {
+          "date": "2026-11-16",
+          "isCorrect": true,
           "topic": "Alternative Investments"
         }
       ]
@@ -8816,5 +8827,5 @@
     "Ethical and Professional Standards__2": true,
     "Financial Statement Analysis__0": true
   },
-  "lastUpdated": 1794859399399
+  "lastUpdated": 1794859421532
 }
