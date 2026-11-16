@@ -2739,8 +2739,8 @@
       }
     },
     "2026-11-16": {
-      "count": 46,
-      "correct": 33,
+      "count": 47,
+      "correct": 34,
       "answeredIds": [
         255,
         262,
@@ -2758,7 +2758,8 @@
         202,
         140,
         129,
-        201
+        201,
+        239
       ],
       "responses": {
         "9": {
@@ -2835,6 +2836,11 @@
           "selectedIndex": 2,
           "isCorrect": true,
           "timestamp": 1794859328482
+        },
+        "239": {
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timestamp": 1794859498183
         },
         "255": {
           "selectedIndex": 0,
@@ -4249,10 +4255,10 @@
       "timestamp": 1794775966909
     },
     "239": {
-      "selectedIndex": 1,
-      "isCorrect": false,
-      "dateISO": "2026-11-15",
-      "timestamp": 1794776256311
+      "selectedIndex": 2,
+      "isCorrect": true,
+      "dateISO": "2026-11-16",
+      "timestamp": 1794859498183
     },
     "242": {
       "selectedIndex": 1,
@@ -8492,15 +8498,20 @@
       ]
     },
     "239": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 1,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 1,
-      "lastAnsweredDate": "2026-11-15",
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 2,
+      "lastAnsweredDate": "2026-11-16",
       "history": [
         {
           "date": "2026-11-15",
           "isCorrect": false,
+          "topic": "Economics"
+        },
+        {
+          "date": "2026-11-16",
+          "isCorrect": true,
           "topic": "Economics"
         }
       ]
@@ -8875,5 +8886,5 @@
     "Ethical and Professional Standards__2": true,
     "Financial Statement Analysis__0": true
   },
-  "lastUpdated": 1794859475682
+  "lastUpdated": 1794859498183
 }
