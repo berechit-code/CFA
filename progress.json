@@ -2873,8 +2873,8 @@
       "responses": {}
     },
     "2026-11-18": {
-      "count": 18,
-      "correct": 16,
+      "count": 19,
+      "correct": 17,
       "answeredIds": [
         255,
         262,
@@ -2893,7 +2893,8 @@
         127,
         131,
         244,
-        241
+        241,
+        239
       ],
       "responses": {
         "68": {
@@ -2950,6 +2951,11 @@
           "selectedIndex": 1,
           "isCorrect": false,
           "timestamp": 1795015536437
+        },
+        "239": {
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timestamp": 1795016265993
         },
         "240": {
           "selectedIndex": 2,
@@ -4409,8 +4415,8 @@
     "239": {
       "selectedIndex": 2,
       "isCorrect": true,
-      "dateISO": "2026-11-16",
-      "timestamp": 1794859498183
+      "dateISO": "2026-11-18",
+      "timestamp": 1795016265993
     },
     "240": {
       "selectedIndex": 2,
@@ -8382,11 +8388,11 @@
       ]
     },
     "239": {
-      "attempts": 2,
+      "attempts": 3,
       "wrongCount": 1,
       "lastIsCorrect": true,
       "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-11-16",
+      "lastAnsweredDate": "2026-11-18",
       "history": [
         {
           "date": "2026-11-15",
@@ -8395,6 +8401,11 @@
         },
         {
           "date": "2026-11-16",
+          "isCorrect": true,
+          "topic": "Economics"
+        },
+        {
+          "date": "2026-11-18",
           "isCorrect": true,
           "topic": "Economics"
         }
@@ -8851,5 +8862,5 @@
     "Financial Statement Analysis__0": true,
     "Economics__0": true
   },
-  "lastUpdated": 1795015770311
+  "lastUpdated": 1795016265993
 }
