@@ -4750,5 +4750,933 @@
     "formula": "Interim Reports = Quarterly/Semi-Annually + Unaudited + Condensed Notes",
     "trap": "Annual reports (10-K) contain the full notes and the audit; interim reports (10-Q) are abbreviated and unaudited.",
     "image": ""
+  },
+  {
+    "id": 298,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Which of the following statements best describes an aspect of the Professional Conduct Program process?",
+    "options": [
+      "Inquiries are not initiated in response to information provided by the media.",
+      "Investigations result in Disciplinary Review Committee panels for each case.",
+      "Investigations may include requesting a written explanation from the member or candidate."
+    ],
+    "correctIndex": 2,
+    "explanation": "When an inquiry is initiated, the Professional Conduct staff conducts an investigation that may include requesting a written explanation from the member or candidate, interviewing witnesses, or collecting documents. Inquiries CAN be initiated from media reports, and a Disciplinary Review Committee (DRC) panel is only convened if the member or candidate rejects the charges and proposed sanction.",
+    "formula": "PCP Investigation Sources: Self-disclosure, Written Complaints, Media/Public Sources, Exam Proctors | DRC Panel = Only if sanction is rejected",
+    "trap": "Do not assume every PCP investigation goes to a DRC hearing panel—a DRC panel is only triggered if the member contests the PCP's findings or proposed sanction.",
+    "image": ""
+  },
+  {
+    "id": 299,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "A current Code of Ethics principle reads in full, “Promote the integrity:",
+    "options": [
+      "and viability of the global capital markets.”",
+      "of and uphold the rules governing capital markets.”",
+      "and viability of the global capital markets for the ultimate benefit of society.”"
+    ],
+    "correctIndex": 2,
+    "explanation": "One of the six components of the CFA Institute Code of Ethics explicitly states: 'Promote the integrity and viability of the global capital markets for the ultimate benefit of society.'",
+    "formula": "Code of Ethics (Component 5): Promote the integrity and viability of the global capital markets FOR THE ULTIMATE BENEFIT OF SOCIETY.",
+    "trap": "Watch for incomplete wording (Option A): the CFA Institute explicitly emphasizes the phrase 'for the ultimate benefit of society'—not merely for employers or markets themselves.",
+    "image": ""
+  },
+  {
+    "id": 300,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Which of the following is correct with regard to the Standards of Professional Conduct?",
+    "options": [
+      "They require supervisors to focus only on the detection and prevention of violations.",
+      "They set ethical conduct requirements for members and candidates that have remained unchanged since their creation.",
+      "They address the risks and limitations of recommendations being made to clients."
+    ],
+    "correctIndex": 2,
+    "explanation": "Under Standard V(B) Communication with Clients and Prospective Clients, members and candidates must disclose to clients and prospective clients the significant limitations and risks associated with the investment process and recommendations. Standard IV(C) goes beyond mere detection/prevention to promote broad compliance, and the Standards evolve over time.",
+    "formula": "Standard V(B): Must disclose significant RISKS and LIMITATIONS of investment recommendations/processes.",
+    "trap": "You selected A! Watch out for extreme qualifiers like 'only'. Standard IV(C) requires broader compliance culture and proactive systems—not 'only' detecting and preventing violations.",
+    "image": ""
+  },
+  {
+    "id": 301,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Which of the following statements best describes an aspect of the Standards of Professional Conduct? Members and candidates are required to:",
+    "options": [
+      "ensure a portfolio mandate is suitable for all investors.",
+      "promptly disclose changes that might materially affect investment processes.",
+      "have a reasonable and adequate basis for decisions about client confidentiality."
+    ],
+    "correctIndex": 1,
+    "explanation": "Under Standard V(B) Communication with Clients and Prospective Clients, members and candidates must promptly disclose any changes that might materially affect the basic format and general principles of their investment processes.",
+    "formula": "Standard V(B): Disclose investment process + Promptly disclose material changes to that process.",
+    "trap": "Under Standard III(C) Suitability, managers of a specific mandate (e.g., an ETF or sector fund) only ensure actions match the stated mandate—not that the mandate is suitable for all investors. 'Reasonable and adequate basis' belongs to Standard V(A), not confidentiality.",
+    "image": ""
+  },
+  {
+    "id": 302,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "A CFA Institute member or candidate violates Standard II(A) Material Nonpublic Information by:",
+    "options": [
+      "conducting price distortion practices.",
+      "inappropriately causing others to act.",
+      "inadequately maintaining investment records."
+    ],
+    "correctIndex": 1,
+    "explanation": "Under Standard II(A) Material Nonpublic Information, members and candidates who possess material nonpublic information that could affect the value of an investment must not act or cause others to act on the information.",
+    "formula": "Standard II(A): Must NOT act OR cause others to act on MNPI.",
+    "trap": "Price distortion belongs to Standard II(B) Market Manipulation; record maintenance belongs to Standard V(C) Record Retention.",
+    "image": ""
+  },
+  {
+    "id": 303,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Standard III(C) Suitability requires members and candidates in an advisory relationship with a client to:",
+    "options": [
+      "place their client’s interests before their own interests.",
+      "consider investments in the context of the client’s total portfolio.",
+      "not knowingly make misrepresentations relating to recommendations."
+    ],
+    "correctIndex": 1,
+    "explanation": "Standard III(C) Suitability requires members and candidates in an advisory relationship to judge the suitability of investments in the context of the client’s total portfolio (rather than evaluating an asset's risk in isolation).",
+    "formula": "Standard III(C) Suitability = Total Portfolio Context (Risk/Return/Constraints)",
+    "trap": "Option A is Standard III(A) Loyalty, Prudence, and Care; Option C is Standard I(C) Misrepresentation. Know which exact rule sits under which Standard letter!",
+    "image": ""
+  },
+  {
+    "id": 304,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Standard III: Duties to Clients states that members and candidates must:",
+    "options": [
+      "document client financial constraints after an initial investment action.",
+      "maintain an equal balance of interests owed to their clients and employers.",
+      "deal fairly and objectively with all clients when engaging in professional activities."
+    ],
+    "correctIndex": 2,
+    "explanation": "Under Standard III(B) Fair Dealing, members and candidates must deal fairly and objectively with all clients when providing investment analysis, making investment recommendations, taking investment action, or engaging in other professional activities.",
+    "formula": "Standard III(B) Fair Dealing = Deal fairly and objectively with ALL clients | Priority: Clients > Employer > Self",
+    "trap": "Client constraints must be documented PRIOR to (not after) taking investment action, and client interests always come BEFORE (not equal to) employer interests.",
+    "image": ""
+  },
+  {
+    "id": 305,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Standard IV: Duties to Employers states that members and candidates must not:",
+    "options": [
+      "accept any gifts that might compromise their independence and objectivity.",
+      "deprive their employer of their skills and abilities as related to their employment.",
+      "accept compensation competing with their employer’s interest without the written consent of their employer only."
+    ],
+    "correctIndex": 1,
+    "explanation": "Under Standard IV(A) Loyalty, in matters related to their employment, members and candidates must act for the benefit of their employer and not deprive their employer of the advantage of their skills and abilities, divulge confidential information, or otherwise cause harm to their employer.",
+    "formula": "Standard IV(A) Loyalty = Do not deprive employer of skills/abilities | Standard IV(B) = Written consent from ALL parties involved",
+    "trap": "You selected A! Accepting gifts compromising independence and objectivity is Standard I(B) Independence and Objectivity (under Professionalism), NOT Standard IV. Also watch Option C: Standard IV(B) requires written consent from ALL parties involved, not 'employer only'.",
+    "image": ""
+  },
+  {
+    "id": 306,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Standard V: Investment Analysis, Recommendations, and Actions states that members and candidates must:",
+    "options": [
+      "find an investment suitable for their client before making a recommendation.",
+      "make reasonable efforts to ensure that performance presentation is fair, accurate, and complete.",
+      "distinguish between fact and opinion in the presentation of investment analysis and recommendations."
+    ],
+    "correctIndex": 2,
+    "explanation": "Standard V(B) Communication with Clients and Prospective Clients explicitly requires members and candidates to distinguish between fact and opinion in the presentation of investment analysis and recommendations.",
+    "formula": "Standard V = (A) Diligence & Reasonable Basis | (B) Communication (Fact vs. Opinion) | (C) Record Retention",
+    "trap": "Suitability [III(C)] and Performance Presentation [III(D)] both sit under Standard III: Duties to Clients, not Standard V.",
+    "image": ""
+  },
+  {
+    "id": 307,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Standard VII: Responsibilities as a CFA Institute Member or CFA Candidate explicitly states a requirement regarding:",
+    "options": [
+      "loyalty.",
+      "responsibility of supervisors.",
+      "reference to the CFA Program."
+    ],
+    "correctIndex": 2,
+    "explanation": "Standard VII consists of VII(A) Conduct as Participants in CFA Institute Programs and VII(B) Reference to CFA Institute, the CFA Designation, and the CFA Program.",
+    "formula": "Standard VII = VII(A) Conduct in CFA Programs + VII(B) Reference to CFA Institute / Designation / Program",
+    "trap": "You selected A (loyalty)! Loyalty is never in Standard VII—it appears in Standard III(A) (Loyalty to Clients) and Standard IV(A) (Loyalty to Employers).",
+    "image": ""
+  },
+  {
+    "id": 308,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Which of the following least likely reflects the two primary principles of the CFA Institute Rules of Procedure for Proceedings Related to Professional Conduct?",
+    "options": [
+      "Confidentiality of proceedings",
+      "Public disclosure of disciplinary sanctions",
+      "Fair process to the Member and Candidate"
+    ],
+    "correctIndex": 1,
+    "explanation": "The two primary principles governing the CFA Institute Rules of Procedure for Proceedings Related to Professional Conduct are (1) confidentiality of proceedings and (2) fair process to the Member and Candidate. Public disclosure of sanctions is a possible outcome/sanction, not one of the two procedural principles.",
+    "formula": "2 Principles of PCP Rules of Procedure = (1) Confidentiality of Proceedings + (2) Fair Process",
+    "trap": "Even though 'public censure' exists as a sanction, the *proceedings* themselves are strictly governed by confidentiality and fair process.",
+    "image": ""
+  },
+  {
+    "id": 309,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Which of the following groups is most likely responsible for maintaining oversight and responsibility for the Professional Conduct Program (PCP)?",
+    "options": [
+      "Professional Conduct Division",
+      "Disciplinary Review Committee",
+      "CFA Institute Board of Governors"
+    ],
+    "correctIndex": 2,
+    "explanation": "The CFA Institute Board of Governors maintains overall oversight and responsibility for the Professional Conduct Program (PCP). The Disciplinary Review Committee (DRC) is responsible for enforcement in conjunction with the PCP, and the Professional Conduct Division staff conducts investigations and works with the DRC on policies.",
+    "formula": "Board of Governors = Oversight & Responsibility of PCP | DRC = Enforcement | PC Staff/Division = Investigations",
+    "trap": "You selected A (Professional Conduct Division)! Memorize the governance hierarchy: Board of Governors (top-level oversight) > DRC (enforcement panels) > Professional Conduct staff/division (day-to-day inquiries & investigations).",
+    "image": ""
+  },
+  {
+    "id": 310,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Sanctions imposed by CFA Institute for violations of the CFA Institute Code of Ethics or Standards of Professional Conduct least likely include:",
+    "options": [
+      "public censure.",
+      "monetary fines.",
+      "revocation of a CFA Charter."
+    ],
+    "correctIndex": 1,
+    "explanation": "Because CFA Institute is a private professional association—not a government regulator or court—it has NO legal authority to impose monetary fines or prison sentences. Its sanctions include private/public censure, suspension of membership/designation, revocation of the CFA charter, or suspension/prohibition from the CFA Program.",
+    "formula": "CFA Institute Sanctions: Censure, Suspension, Revocation/Prohibition | NO Monetary Fines!",
+    "trap": "You selected A (public censure)! CFA Institute DOES impose public censure, suspension, and charter revocation—what it can NEVER impose is a monetary fine.",
+    "image": ""
+  },
+  {
+    "id": 311,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Disclosure of confidential CFA exam information will most likely be detected by the Professional Conduct staff through:",
+    "options": [
+      "analysis of Proctor Reports.",
+      "monitoring online and social media.",
+      "annual Professional Conduct Statements."
+    ],
+    "correctIndex": 1,
+    "explanation": "Professional Conduct staff actively monitor online forums, chatrooms, and social media specifically to detect candidate disclosures of confidential exam content after exam sessions. Proctor reports catch exam-day testing-center rule violations, and annual PCS forms are for self-disclosing legal/regulatory complaints.",
+    "formula": "Online/Social Media Monitoring → Detects Confidential Exam Disclosures | Proctor Reports → Exam-Day Violations",
+    "trap": "Candidates rarely self-report leaking exam questions on their annual PCS, and leaks usually happen online *after* leaving the proctored test center.",
+    "image": ""
+  },
+  {
+    "id": 312,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Which of the following is not a component of the CFA Institute Code of Ethics?",
+    "options": [
+      "Promote financial integrity and seek to prevent and punish abuses in the financial markets",
+      "Place the integrity of the investment profession and the interests of clients above their own personal interests",
+      "Practice and encourage others to practice in a professional and ethical manner that will reflect credit on themselves and the profession"
+    ],
+    "correctIndex": 0,
+    "explanation": "The six components of the Code of Ethics do NOT require members or candidates to 'prevent and punish abuses in the financial markets' (punishing market abuses is the role of regulators and law enforcement). Options B and C are verbatim components of the Code of Ethics.",
+    "formula": "6 Code of Ethics Components: (1) Act with integrity/competence/diligence/respect, (2) Place profession & clients above self, (3) Reasonable care & independent judgment, (4) Practice & encourage ethical behavior, (5) Promote integrity/viability of global markets for society, (6) Maintain/improve competence.",
+    "trap": "You selected C! Read the 'NOT' carefully—C is one of the 6 exact components of the Code of Ethics, whereas members have no authority or mandate to 'punish abuses' in financial markets.",
+    "image": ""
+  },
+  {
+    "id": 313,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Which of the following statements related to requirements for the CFA Institute Standards of Professional Conduct Standard V(B)–Communication with Clients and Prospective Clients is least likely accurate? The standard requires Members and Candidates to:",
+    "options": [
+      "disclose the basic format and general principles of the investment process.",
+      "divulge the number of investment related personnel responsible for external communication.",
+      "distinguish between fact and opinion in the presentation of investment analysis and recommendations."
+    ],
+    "correctIndex": 1,
+    "explanation": "Standard V(B) requires disclosing the basic format and general principles of the investment process, disclosing significant limitations and risks, identifying important factors, and distinguishing fact from opinion. It does NOT require divulging the number of personnel responsible for external communication.",
+    "formula": "Standard V(B): Process Format + Material Changes + Risks/Limitations + Fact vs. Opinion (No headcount rule)",
+    "trap": "Always check the 4 pillars of Standard V(B); headcount of communications staff is never a CFA disclosure requirement.",
+    "image": ""
+  },
+  {
+    "id": 314,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Which of the following is most likely found in the CFA Institute Standards of Professional Conduct, Standard I–Professionalism? Members and Candidates must:",
+    "options": [
+      "place the integrity of the investment profession and the interest of clients above their own interest.",
+      "maintain and improve their professional competence and strive to maintain and improve the competence of other investment professionals.",
+      "not engage in any professional conduct involving dishonesty, fraud, or deceit or commit any act that reflects adversely on their professional reputation, integrity, or competence."
+    ],
+    "correctIndex": 2,
+    "explanation": "Option C is the exact text of Standard I(D) Misconduct under Standard I: Professionalism. Options A and B are principles from the six-part Code of Ethics, not Standard I of the Standards of Professional Conduct.",
+    "formula": "Standard I(D) Misconduct = No dishonesty, fraud, deceit, or acts reflecting adversely on professional reputation, integrity, or competence.",
+    "trap": "Be able to separate the 6 broad aspirational principles of the *Code of Ethics* (Options A & B) from the 7 specific operational rules of the *Standards of Professional Conduct* (Option C).",
+    "image": ""
+  },
+  {
+    "id": 315,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Which of the following statements most likely reflects one of the six components of the CFA Code of Ethics? Candidates must:",
+    "options": [
+      "ignore unprofessional conduct displayed by others within the profession.",
+      "place the integrity of the investment profession above their own interests.",
+      "promote the viability of the global capital markets for their employer’s benefit."
+    ],
+    "correctIndex": 1,
+    "explanation": "One of the six components of the Code of Ethics states that Members and Candidates must 'place the integrity of the investment profession and the interests of clients above their own personal interests.' Option A contradicts encouraging ethical practice, and Option C falsely replaces 'ultimate benefit of society' with 'employer’s benefit.'",
+    "formula": "Code of Ethics: Profession & Clients > Own Personal Interests | Global Markets → Ultimate Benefit of Society",
+    "trap": "Spot the subtle word swap in Option C: 'for their employer's benefit' instead of 'for the ultimate benefit of society'.",
+    "image": ""
+  },
+  {
+    "id": 316,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Which of the following activities if undertaken by CFA Institute Members and/or Candidates would most likely violate the Code and Standards?",
+    "options": [
+      "An analyst discloses confidential, sensitive information about a client account as part of an investigation by the CFA Institute Professional Conduct Program",
+      "A senior trader does not have safeguards in place to determine whether a junior trader under their supervision is following the firm’s policies regarding best execution",
+      "An institutional portfolio manager takes a group of clients to an expensive restaurant to discuss portfolio returns over the recently completed quarter without prior written consent from his employer"
+    ],
+    "correctIndex": 1,
+    "explanation": "Under Standard IV(C) Responsibilities of Supervisors, supervisors must make reasonable efforts to prevent and detect violations by anyone under their authority—having no safeguards for a junior trader's best execution is a clear violation. Cooperating with a PCP investigation (Option A) is explicitly allowed under Standard III(E), and taking clients out to dinner (Option C) does not create a conflict with the employer unless prohibited by firm policy.",
+    "formula": "Standard IV(C): Supervisors MUST have reasonable safeguards/procedures | Standard III(E): PCP is treated as an extension of yourself (cooperating is NOT a confidentiality breach)",
+    "trap": "You selected C! Taking clients to dinner to discuss their returns is standard client relationship management (no conflict with employer). By contrast, a supervisor having ZERO safeguards over a junior trader is an explicit breach of Standard IV(C).",
+    "image": ""
+  },
+  {
+    "id": 317,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Nicholas Bennett, CFA, is a trader at a stock exchange. Another trader approached Bennett on the floor of the exchange and verbally harassed him about a poorly executed trade. In response, Bennett pushed the trader and knocked him to the ground. After investigating the incident, the exchange cleared Bennett from any wrongdoing. Which of the following best describes Bennett’s conduct in relation to the CFA Institute Code of Ethics or Standards of Professional Conduct? Bennett:",
+    "options": [
+      "did not violate any Code or Standard.",
+      "violated the Professional Misconduct Standard.",
+      "violated both Misconduct and Integrity of Capital Markets Standards."
+    ],
+    "correctIndex": 1,
+    "explanation": "Physical violence on the trading floor during a professional dispute reflects adversely on Bennett's professional reputation and integrity, violating Standard I(D) Misconduct (and the Code of Ethics requirement to act with respect), regardless of whether the exchange cleared him. It did not distort prices or involve MNPI, so Standard II (Integrity of Capital Markets) was not violated.",
+    "formula": "Standard I(D) Misconduct applies independently of whether a regulator or exchange clears the individual.",
+    "trap": "Being cleared by an exchange or local law does NOT absolve a member under the CFA Code and Standards—the stricter rule always governs.",
+    "image": ""
+  },
+  {
+    "id": 318,
+    "topic": "Ethical and Professional Standards",
+    "module": "Module 2: Code of Ethics and Standards of Professional Conduct",
+    "question": "Tibor Figeczky, CFA, is an equity trader at Global Investment Bank (GB). Figeczky traded the bank’s investment portfolio profitably for the past three years and earned significant bonuses. Subsequently, internal auditors of GB formally accused Figeczky of exceeding his trading authority and engaging in unauthorized trades. According to the CFA Institute Code of Ethics and Standards of Professional Conduct, Figeczky should most likely:",
+    "options": [
+      "disclose the complaint to CFA Institute.",
+      "refuse further bonuses until the issue is resolved.",
+      "request a temporary suspension of his CFA Institute membership."
+    ],
+    "correctIndex": 0,
+    "explanation": "Members and Candidates must self-disclose on their annual Professional Conduct Statement (PCS) all matters that question their professional conduct, including civil litigation, criminal investigations, or being the subject of a formal written/internal complaint.",
+    "formula": "Annual Professional Conduct Statement (PCS) = Mandatory Self-Disclosure of written complaints, investigations, or litigation questioning professional conduct.",
+    "trap": "You do NOT need to forfeit bonuses or voluntarily suspend your membership merely because an accusation has been made—you are entitled to due process, but self-disclosure to CFA Institute is mandatory.",
+    "image": ""
+  },
+  {
+    "id": 319,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Under IFRS, income includes increases in economic benefits from:",
+    "options": [
+      "increases in liabilities not related to owners’ contributions.",
+      "enhancements of assets not related to owners’ contributions.",
+      "increases in owners’ equity related to owners’ contributions."
+    ],
+    "correctIndex": 1,
+    "explanation": "Under IFRS, income is defined as increases in economic benefits during the accounting period in the form of inflows or enhancements of assets or decreases of liabilities that result in increases in equity, other than those relating to contributions from equity participants.",
+    "formula": "IFRS Income = Asset Increases / Enhancements OR Liability Decreases (excluding owner contributions)",
+    "trap": "Increases in liabilities reduce equity (expenses, not income), and owner capital contributions are equity transactions, never income.",
+    "image": ""
+  },
+  {
+    "id": 320,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Fairplay reported the following information related to the sale of its products during 2009 (its first year of business): Revenue = USD1,000,000; Returns of goods sold = USD100,000; Cash collected = USD800,000; Cost of goods sold = USD700,000. Under the accrual basis of accounting, how much net revenue would be reported on Fairplay’s 2009 income statement?",
+    "options": [
+      "USD200,000",
+      "USD900,000",
+      "USD1,000,000"
+    ],
+    "correctIndex": 1,
+    "explanation": "Under accrual accounting, net revenue equals gross revenue earned during the period less estimated or actual returns and allowances: USD1,000,000 − USD100,000 = USD900,000. Cash collected (USD800,000) and COGS (USD700,000) do not determine net revenue.",
+    "formula": "$\\text{Net Revenue} = \\text{Gross Revenue} - \\text{Returns \\& Allowances} = \\$1,000,000 - \\$100,000 = \\$900,000$",
+    "trap": "Do not confuse Net Revenue with Gross Profit (USD200,000 = Net Revenue − COGS) or with Cash Collected (cash basis, not accrual basis).",
+    "image": ""
+  },
+  {
+    "id": 321,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Apex Consignment sells items over the internet for individuals on a consignment basis, receiving a 25% commission on items sold. Apex collects the full amount from buyers, pays the net amount to owners, and returns unsold items after 90 days. During 2009, total sales price of items sold on consignment was EUR2,000,000 and total commissions retained by Apex was EUR500,000. How much revenue should Apex report on its 2009 income statement?",
+    "options": [
+      "EUR500,000",
+      "EUR2,000,000",
+      "EUR1,500,000"
+    ],
+    "correctIndex": 0,
+    "explanation": "Because Apex sells on consignment and never takes ownership or inventory risk (unsold items return to the owner), Apex acts as an agent rather than a principal. Agents use net revenue reporting and recognize only their commission (EUR500,000) as revenue.",
+    "formula": "Principal (bears inventory/credit risk) = Gross Revenue | Agent (consignment/commission) = Net Revenue (Commission Only)",
+    "trap": "Gross revenue reporting (EUR2,000,000) applies only if the firm controls the goods and bears inventory risk before transfer to the customer.",
+    "image": ""
+  },
+  {
+    "id": 322,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company previously expensed the incremental costs of obtaining a contract. All else being equal, adopting the May 2014 IASB and FASB converged accounting standards on revenue recognition makes the company’s profitability initially appear:",
+    "options": [
+      "lower.",
+      "unchanged.",
+      "higher."
+    ],
+    "correctIndex": 2,
+    "explanation": "Under the converged revenue recognition standard (IFRS 15 / ASC 606), incremental costs of obtaining a contract (such as sales commissions) and certain fulfillment costs must be capitalized and amortized over time rather than expensed immediately. Shifting from immediate expensing to capitalization lowers initial expenses and makes initial profitability appear higher.",
+    "formula": "Expensing → Capitalizing Contract Acquisition Costs ⇒ Initial Expenses ↓ ⇒ Initial Profitability ↑",
+    "trap": "Capitalizing costs moves them from the income statement to the balance sheet initially, boosting near-term operating and net income.",
+    "image": ""
+  },
+  {
+    "id": 323,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Under IFRS, a loss from the destruction of property in a fire would most likely be classified as:",
+    "options": [
+      "continuing operations.",
+      "discontinued operations.",
+      "other comprehensive income."
+    ],
+    "correctIndex": 0,
+    "explanation": "Under both IFRS and US GAAP, unusual or infrequent items—such as a loss from a fire or natural disaster—are reported as part of continuing operations on the income statement (presented separately if material). Discontinued operations apply strictly to disposing of a major business line or operating division, and fire losses never bypass the income statement into OCI.",
+    "formula": "Unusual / Infrequent Loss (Fire, Restructuring) = Part of Continuing Operations (Presented Separately)",
+    "trap": "You selected C (Other Comprehensive Income)! OCI is reserved for specific unrealized items (FX translation, cash flow hedges, AFS/FVOCI securities, pension adjustments)—never operating or casualty losses like fires.",
+    "image": ""
+  },
+  {
+    "id": 324,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company chooses to change an accounting policy. This change requires that, if practical, the company restate its financial statements for:",
+    "options": [
+      "all prior periods.",
+      "current and future periods.",
+      "prior periods shown in a report."
+    ],
+    "correctIndex": 2,
+    "explanation": "A voluntary change in accounting policy (e.g., switching inventory methods) requires retrospective application: the company must restate the financial statements for all prior periods presented in the financial report (if practical) so that all comparative years are on the same basis.",
+    "formula": "Change in Accounting Policy = Retrospective Application (Restate Prior Periods Shown) | Change in Accounting Estimate = Prospective Only",
+    "trap": "Do not confuse 'prior periods shown in a report' with 'all prior periods' since inception—companies restate the comparative periods presented in the report.",
+    "image": ""
+  },
+  {
+    "id": 325,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "For 2009, Flamingo Products had net income of USD1,000,000. At 1 January 2009, there were 1,000,000 shares outstanding. On 1 July 2009, the company issued 100,000 new shares for USD20 per share. The company paid USD200,000 in dividends to common shareholders. What is Flamingo’s basic earnings per share for 2009?",
+    "options": [
+      "USD0.80",
+      "USD0.91",
+      "USD0.95"
+    ],
+    "correctIndex": 2,
+    "explanation": "Compute the time-weighted average number of common shares (WACS): $1,000,000 \\times (12/12) + 100,000 \\times (6/12) = 1,050,000$ shares. Common dividends are NEVER subtracted from net income for EPS (only preferred dividends are). Therefore, $\\text{Basic EPS} = \\$1,000,000 / 1,050,000 = \\$0.9524 \\approx \\$0.95$.",
+    "formula": "$\\text{Basic EPS} = \\frac{\\text{Net Income} - \\text{Preferred Dividends}}{\\text{WACS}} = \\frac{\\$1,000,000}{1,000,000 + 100,000(6/12)} = \\$0.95$",
+    "trap": "You selected B (USD0.91 = 1,000,000 / 1,100,000)! You used year-end shares instead of time-weighting the 100,000 shares issued on July 1 (6/12 of the year). Also remember: never subtract common dividends!",
+    "image": ""
+  },
+  {
+    "id": 326,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company with no debt or convertible securities issued publicly traded common stock three times during the current fiscal year. Under both IFRS and US GAAP, the company’s:",
+    "options": [
+      "basic EPS equals its diluted EPS.",
+      "capital structure is considered complex at year-end.",
+      "basic EPS is calculated by using a simple average number of shares outstanding."
+    ],
+    "correctIndex": 0,
+    "explanation": "A company with no potentially dilutive securities (no convertible bonds, convertible preferred stock, options, or warrants) has a simple capital structure, meaning its basic EPS equals its diluted EPS. Multiple common stock issuances do not make a capital structure complex, and basic EPS always uses a time-WEIGHTED average (not simple average) of shares.",
+    "formula": "Simple Capital Structure (No Convertible Debt/Preferred/Options/Warrants) ⇒ Basic EPS = Diluted EPS",
+    "trap": "You selected C! Basic EPS NEVER uses a simple average of shares—it ALWAYS uses a time-WEIGHTED average number of shares outstanding.",
+    "image": ""
+  },
+  {
+    "id": 327,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "For its fiscal year-end, Sublyme Corporation reported net income of USD200 million and a weighted average of 50,000,000 common shares outstanding. There are 2,000,000 convertible preferred shares outstanding that paid an annual dividend of USD5. Each preferred share is convertible into two shares of common stock. The diluted EPS is closest to:",
+    "options": [
+      "USD3.52",
+      "USD3.65",
+      "USD3.70"
+    ],
+    "correctIndex": 2,
+    "explanation": "First check Basic EPS: $(\\$200\\text{M} - 2\\text{M} \\times \\$5) / 50\\text{M} = \\$190\\text{M} / 50\\text{M} = \\$3.80$. Using the if-converted method for convertible preferred stock, preferred dividends are no longer deducted and $2,000,000 \\times 2 = 4,000,000$ new common shares are added: $\\text{Diluted EPS} = \\$200,000,000 / (50,000,000 + 4,000,000) = \\$3.7037 \\approx \\$3.70$. Since $\\$3.70 < \\$3.80$, the preferred shares are dilutive.",
+    "formula": "$\\text{Diluted EPS (Conv. Pref.)} = \\frac{\\text{Net Income}}{\\text{WACS} + \\text{New Shares from Conversion}} = \\frac{\\$200\\text{M}}{54\\text{M}} = \\$3.70$",
+    "trap": "Once convertible preferred shares are assumed converted, do NOT subtract preferred dividends from net income (and never tax-adjust preferred dividends).",
+    "image": ""
+  },
+  {
+    "id": 328,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "For its fiscal year-end, Calvan Water Corporation (CWC) reported net income of USD12 million and a weighted average of 2,000,000 common shares outstanding. The company paid USD800,000 in preferred dividends and had 100,000 options outstanding with an average exercise price of USD20. CWC’s market price over the year averaged USD25 per share. CWC’s diluted EPS is closest to:",
+    "options": [
+      "USD5.33",
+      "USD5.54",
+      "USD5.94"
+    ],
+    "correctIndex": 1,
+    "explanation": "Under the treasury stock method, exercising 100,000 options at USD20 yields USD2,000,000 in cash proceeds, which repurchases $\\$2,000,000 / \\$25 = 80,000$ shares at the average market price. Net incremental shares = $100,000 - 80,000 = 20,000$. Subtract non-convertible preferred dividends in the numerator: $\\text{Diluted EPS} = (\\$12,000,000 - \\$800,000) / (2,000,000 + 20,000) = \\$11,200,000 / 2,020,000 = \\$5.5446 \\approx \\$5.54$.",
+    "formula": "$\\text{Net Shares} = N_{\\text{opt}} - \\frac{N_{\\text{opt}} \\times X}{P_{\\text{avg}}} = 100,000 - \\frac{2,000,000}{25} = 20,000 \\implies \\text{Diluted EPS} = \\frac{\\$11.2\\text{M}}{2.02\\text{M}} = \\$5.54$",
+    "trap": "Do not forget to subtract preferred dividends (USD800,000) from net income—USD5.94 (Option C) ignores preferred dividends, and USD5.33 (Option A) forgets the treasury stock buyback.",
+    "image": ""
+  },
+  {
+    "id": 329,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Laurelli Builders (LB) reported for year-end 31 December: Common shares outstanding (1 Jan) = 2,020,000; Common shares issued as stock dividend (1 June) = 380,000; Warrants outstanding (1 Jan) = 500,000; Net income = USD3,350,000; Preferred stock dividends paid = USD430,000; Common stock dividends paid = USD240,000. Which statement about the calculation of LB’s EPS is most accurate?",
+    "options": [
+      "LB’s basic EPS is USD1.12.",
+      "LB’s diluted EPS is equal to or less than its basic EPS.",
+      "The weighted average number of shares outstanding is 2,210,000."
+    ],
+    "correctIndex": 1,
+    "explanation": "By definition, diluted EPS can NEVER exceed basic EPS: if LB's warrants are in-the-money ($X < P_{\\text{avg}}$), diluted EPS < basic EPS; if at-the-money or out-of-the-money (anti-dilutive), diluted EPS = basic EPS. Stock dividends are retroactive to Jan 1, so WACS = $2,020,000 + 380,000 = 2,400,000$ (not 2,210,000), and Basic EPS = $(\\$3,350,000 - \\$430,000) / 2,400,000 = \\$1.22$ (not USD1.12, which wrongly subtracts common dividends).",
+    "formula": "$\\text{Diluted EPS} \\le \\text{Basic EPS Always} \\mid \\text{Stock Dividends/Splits} \\implies \\text{Retroactive to Jan 1}$",
+    "trap": "Stock dividends are treated retroactively to the start of the year (do NOT time-weight them by 7/12), and never subtract common stock dividends from Net Income!",
+    "image": ""
+  },
+  {
+    "id": 330,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Cell Services Inc. (CSI) had 1,000,000 average shares outstanding during all of 2009. During 2009, CSI also had 10,000 options outstanding with exercise prices of USD10 each. The average stock price of CSI during 2009 was USD15. For purposes of computing diluted earnings per share, how many shares would be used in the denominator?",
+    "options": [
+      "1,003,333",
+      "1,006,667",
+      "1,010,000"
+    ],
+    "correctIndex": 0,
+    "explanation": "Under the treasury stock method, exercising 10,000 options at USD10 yields USD100,000 in cash proceeds, which repurchases $\\$100,000 / \\$15 = 6,667$ shares. Net new shares = $10,000 - 6,667 = 3,333$. Diluted denominator = $1,000,000 + 3,333 = 1,003,333$.",
+    "formula": "$\\text{Diluted Shares} = 1,000,000 + 10,000 \\times \\left(\\frac{15 - 10}{15}\\right) = 1,003,333$",
+    "trap": "Option B (1,006,667) adds the repurchased shares instead of the net incremental shares; Option C (1,010,000) forgets to subtract the treasury shares repurchased.",
+    "image": ""
+  },
+  {
+    "id": 331,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "When calculating diluted EPS, which of the following securities in the capital structure increases the weighted average number of common shares outstanding without affecting net income available to common shareholders?",
+    "options": [
+      "Stock options",
+      "Convertible debt that is dilutive",
+      "Convertible preferred stock that is dilutive"
+    ],
+    "correctIndex": 0,
+    "explanation": "Under the treasury stock method, exercising in-the-money stock options increases the denominator (net incremental shares) while having ZERO impact on the numerator (net income available to common shareholders). By contrast, convertible debt adds back after-tax interest $\\text{Int}(1-t)$ to the numerator, and convertible preferred stock removes preferred dividends from the numerator.",
+    "formula": "Stock Options/Warrants: Numerator Δ = $0, Denominator Δ = +Net Shares | Conv. Debt/Pref: Both Numerator and Denominator Increase",
+    "trap": "Because options affect only the denominator, in-the-money options ($X < P_{\\text{avg}}$) are ALWAYS dilutive.",
+    "image": ""
+  },
+  {
+    "id": 332,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Which statement is most accurate? A common size income statement:",
+    "options": [
+      "restates each line item of the income statement as a percentage of net income.",
+      "allows an analyst to conduct cross-sectional analysis by removing the effect of company size.",
+      "standardizes each line item of the income statement but fails to help an analyst identify differences in companies’ strategies."
+    ],
+    "correctIndex": 1,
+    "explanation": "A vertical common-size income statement expresses every line item as a percentage of REVENUE (not net income). This removes the effect of company size, enabling both cross-sectional comparisons across peers and time-series analysis across periods, and highlighting strategic differences (such as R&D vs. advertising spend).",
+    "formula": "$\\text{Common-Size Income Statement \\%} = \\frac{\\text{Income Statement Line Item}}{\\text{Total Revenue}}$",
+    "trap": "You selected A! A common-size income statement divides every line by REVENUE (top line), NEVER by Net Income (bottom line). A common-size balance sheet divides by Total Assets.",
+    "image": ""
+  },
+  {
+    "id": 333,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "An artists’ cooperative sells its artwork on a consignment basis through a local art gallery. The cooperative should most likely recognize revenue when the art gallery:",
+    "options": [
+      "sells the artwork.",
+      "receives the artwork.",
+      "remits payment for the artwork."
+    ],
+    "correctIndex": 0,
+    "explanation": "In a consignment arrangement, the consignor (the cooperative) retains control, risks, and rewards of ownership until the consignee (the art gallery) actually sells the artwork to an end buyer. Revenue is therefore recognized when the gallery sells the artwork.",
+    "formula": "Consignment Sales: Control transfers & revenue is recognized ONLY when consignee sells to the final customer.",
+    "trap": "Shipping/delivering inventory to a consignment gallery (Option B) does NOT transfer control and is not a revenue recognition event.",
+    "image": ""
+  },
+  {
+    "id": 334,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company sells a non-refundable, two-year service contract for €420. Based on historical patterns, the company expects to incur 25% of service costs in the first year of the contract and the remainder in the second year. The amount of revenue the company recognizes in the first year is closest to:",
+    "options": [
+      "€105.",
+      "€210.",
+      "€420."
+    ],
+    "correctIndex": 0,
+    "explanation": "Revenue on a multi-year service contract is recognized over time as the performance obligation is satisfied (measured here by the proportion of expected service costs incurred). Because 25% of services are performed in Year 1, Year 1 revenue = $25\\% \\times €420 = €105$.",
+    "formula": "$\\text{Year 1 Revenue} = \\text{Stage of Completion} \\times \\text{Contract Value} = 25\\% \\times €420 = €105$",
+    "trap": "You selected C (€420)! Even though the upfront payment is 'non-refundable', under accrual accounting you CANNOT recognize revenue until the service is actually performed—the remaining €315 sits on the balance sheet as Unearned (Deferred) Revenue.",
+    "image": ""
+  },
+  {
+    "id": 335,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Which of the following items is an example of deferred income?",
+    "options": [
+      "Normal operating expenses that have been paid in advance",
+      "A payment received for contracted goods and services prior to their delivery",
+      "An expense recognized on a company’s income statement but not paid for as of the balance sheet date"
+    ],
+    "correctIndex": 1,
+    "explanation": "Deferred income (also called unearned revenue) is a liability recorded when cash is received from a customer BEFORE the company delivers the contracted goods or services (e.g., prepaid software subscriptions or airline tickets).",
+    "formula": "Deferred Income (Unearned Revenue) = Cash Received BEFORE Delivery (Liability) | Prepaid Expense = Cash Paid BEFORE Consumption (Asset)",
+    "trap": "You selected C (which describes an Accrued Expense, not deferred income)! Option A is a Prepaid Expense; only Option B involves income/revenue received in advance.",
+    "image": ""
+  },
+  {
+    "id": 336,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Under general principles of expense recognition, a company should:",
+    "options": [
+      "apply uniform treatment for administrative and depreciation costs.",
+      "recognize expenses in the period that it consumes the associated economic benefits.",
+      "allocate lost economic benefits prospectively over the expected period in which the benefits would have been earned."
+    ],
+    "correctIndex": 1,
+    "explanation": "Under the general expense recognition principle, expenses are recognized in the period in which the company consumes the economic benefits associated with the expenditure (or immediately when previously recognized economic benefits are lost/impaired). Administrative costs are period costs (expensed immediately), whereas depreciation allocates asset cost over its useful life.",
+    "formula": "Expense Recognition = Period when economic benefits are CONSUMED (matching / systematic allocation) or LOST (immediate write-down)",
+    "trap": "You selected C! When economic benefits are LOST (e.g., impairment or casualty), the loss must be recognized IMMEDIATELY—never deferred or allocated prospectively!",
+    "image": ""
+  },
+  {
+    "id": 337,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Under US GAAP, for reporting periods after 15 December 2015, unusual or infrequent items are shown on the income statement separately:",
+    "options": [
+      "below continuing operations.",
+      "below discontinued operations.",
+      "as part of continuing operations."
+    ],
+    "correctIndex": 2,
+    "explanation": "US GAAP eliminated the concept of 'extraordinary items' for periods after 15 December 2015 (aligning with IFRS). Material items that are unusual, infrequent, or both are now presented separately AS PART OF continuing operations (pre-tax), above discontinued operations.",
+    "formula": "Post-2015 US GAAP & IFRS: No Extraordinary Items → Unusual/Infrequent Items = Separately inside Continuing Operations",
+    "trap": "You selected A (below continuing operations)! Only Discontinued Operations (shown net of tax) appear below Continuing Operations. Unusual/infrequent items are INSIDE continuing operations.",
+    "image": ""
+  },
+  {
+    "id": 338,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Unless it is impractical to do so, changes in accounting policies are to be reported:",
+    "options": [
+      "prospectively.",
+      "retrospectively.",
+      "at the bottom of the income statement in the year of change."
+    ],
+    "correctIndex": 1,
+    "explanation": "Under both IFRS and US GAAP, changes in accounting policies (and corrections of prior-period accounting errors) are reported through retrospective application—restating prior periods shown—unless impractical. Changes in accounting estimates are reported prospectively.",
+    "formula": "Accounting Policy Change & Prior Error = Retrospective | Accounting Estimate Change = Prospective",
+    "trap": "You selected C! Showing the cumulative effect at the bottom of the income statement was an old pre-2005 rule that is no longer permitted under IFRS or US GAAP.",
+    "image": ""
+  },
+  {
+    "id": 339,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Selected year-end financial data for a company is as follows: Net income = $200,000; Tax rate = 15%; Weighted average number of common shares outstanding = 125,000; 12% convertible bond = $60,000 (convertible into 3,000 common shares). Given this information, the diluted EPS of the company is closest to:",
+    "options": [
+      "$1.51.",
+      "$1.60.",
+      "$1.61."
+    ],
+    "correctIndex": 1,
+    "explanation": "Step 1: $\\text{Basic EPS} = \\$200,000 / 125,000 = \\$1.60$. Step 2: Check convertible bond if-converted impact. After-tax interest = $\\$60,000 \\times 12\\% \\times (1 - 0.15) = \\$6,120$. Incremental EPS = $\\$6,120 / 3,000 = \\$2.04$, which is GREATER than Basic EPS ($1.60), pushing combined EPS to $\\$206,120 / 128,000 = \\$1.61$. Because the bond is ANTI-DILUTIVE, it is excluded and reported Diluted EPS equals Basic EPS = $1.60.",
+    "formula": "$\\text{Basic EPS} = \\$1.60 < \\text{Bond Incremental EPS} = \\frac{\\$60,000(0.12)(0.85)}{3,000} = \\$2.04 \\implies \\text{Anti-Dilutive} \\implies \\text{Diluted EPS} = \\$1.60$",
+    "trap": "You selected C ($1.61)! ALWAYS compute Basic EPS first and check whether each security is anti-dilutive. Reported Diluted EPS can NEVER be higher than Basic EPS!",
+    "image": ""
+  },
+  {
+    "id": 340,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "After a two-for-one stock split, which of the following will most likely change relative to its pre-split value?",
+    "options": [
+      "Dividend payout ratio",
+      "Earnings per share (EPS)",
+      "Price-to-earnings ratio (P/E)"
+    ],
+    "correctIndex": 1,
+    "explanation": "A 2-for-1 stock split doubles the share count while leaving total net income and total dividends unchanged, cutting both EPS and share price in half. Because both P and EPS halve, the P/E ratio is unchanged, and the dividend payout ratio (Dividends / Net Income) is unchanged.",
+    "formula": "2-for-1 Split: Shares × 2, Price ÷ 2, EPS ÷ 2, DPS ÷ 2 ⇒ P/E and Payout Ratio Unchanged",
+    "trap": "A stock split changes per-share figures (Price, EPS, DPS, BVPS) but leaves all valuation multiples (P/E, P/B) and payout ratios unchanged.",
+    "image": ""
+  },
+  {
+    "id": 341,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company reports: Net income = $1,000,000; Average common shares = 100,000; Corporate tax rate = 40%. Convertible securities: (1) 2,000 convertible preferred shares ($10/share dividend, each convertible into 5 common shares); (2) $80,000 of 8% convertible bonds ($100 face value per bond, each bond convertible into 25 common shares). The company’s diluted EPS is closest to:",
+    "options": [
+      "$7.57.",
+      "$7.69.",
+      "$7.72."
+    ],
+    "correctIndex": 2,
+    "explanation": "Basic EPS = $(\\$1,000,000 - \\$20,000) / 100,000 = \\$9.80$.\n• Preferred shares: add back $20,000 dividend, add $2,000 \\times 5 = 10,000$ shares (incremental = $\\$2.00 < \\$9.80$, dilutive).\n• Bonds ($80,000 / $100 = 800 bonds): add back after-tax interest $\\$80,000 \\times 8\\% \\times (1 - 0.40) = \\$3,840$, add $800 \\times 25 = 20,000$ shares (incremental = $\\$0.19 < \\$9.80$, dilutive).\nConvert both: $\\text{Diluted EPS} = (\\$1,000,000 + \\$3,840) / (100,000 + 10,000 + 20,000) = \\$1,003,840 / 130,000 = \\$7.7218 \\approx \\$7.72$.",
+    "formula": "$\\text{Diluted EPS} = \\frac{\\text{NI} + \\text{Int}(1 - t)}{\\text{WACS} + N_{\\text{pref}} + N_{\\text{bond}}} = \\frac{\\$1,000,000 + \\$3,840}{130,000} = \\$7.72$",
+    "trap": "You selected B ($7.69 = $1,000,000 / 130,000)! You forgot to add back the after-tax bond interest $\\$80,000 \\times 8\\% \\times (1 - 0.40) = \\$3,840$ to the numerator!",
+    "image": ""
+  },
+  {
+    "id": 342,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company reports: Net income = $5,000,000; Common shares at start of year = 2,000,000; Stock options outstanding all year = 100,000 (exercise price $5, average market price $20); Shares issued on 1 April = 300,000; Shares repurchased on 1 July = 100,000. Its diluted EPS is closest to:",
+    "options": [
+      "$2.17.",
+      "$2.20.",
+      "$2.22."
+    ],
+    "correctIndex": 2,
+    "explanation": "Step 1 (Time-weighted common shares): $2,000,000 + 300,000(9/12) - 100,000(6/12) = 2,000,000 + 225,000 - 50,000 = 2,175,000$. Step 2 (Options via treasury stock method): $100,000 - (100,000 \\times \\$5 / \\$20) = 100,000 - 25,000 = 75,000$ net shares. Step 3: $\\text{Diluted EPS} = \\$5,000,000 / (2,175,000 + 75,000) = \\$5,000,000 / 2,250,000 = \\$2.222 \\approx \\$2.22$.",
+    "formula": "$\\text{Diluted WACS} = 2,000\\text{k} + 300\\text{k}(9/12) - 100\\text{k}(6/12) + 75\\text{k} = 2,250\\text{k} \\implies \\text{EPS} = \\frac{\\$5,000\\text{k}}{2,250\\text{k}} = \\$2.22$",
+    "trap": "Always prorate BOTH newly issued shares (April 1 = 9/12) AND repurchased treasury shares (July 1 = 6/12), and apply the treasury stock method to options.",
+    "image": ""
+  },
+  {
+    "id": 343,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company had the following common share activity during 2012: 1 Jan = 180,000 shares outstanding; 1 June = 60,000 new shares issued; 1 August = 2-for-1 stock split; 31 Dec = 480,000 shares outstanding. To calculate EPS for 2012, the company’s weighted average number of shares outstanding is closest to:",
+    "options": [
+      "215,000.",
+      "315,000.",
+      "430,000."
+    ],
+    "correctIndex": 2,
+    "explanation": "Time-weight the share issuances first, then apply the 2-for-1 split retroactively to the start of the year: $[180,000 \\times (5/12) + 240,000 \\times (7/12)] \\times 2 = (75,000 + 140,000) \\times 2 = 215,000 \\times 2 = 430,000$ shares.",
+    "formula": "$\\text{WACS} = \\left[180,000\\left(\\frac{5}{12}\\right) + 240,000\\left(\\frac{7}{12}\\right)\\right] \\times 2 = 430,000$",
+    "trap": "Option B (315,000) fails to apply the August 1 stock split retroactively to January 1. Stock splits and stock dividends ALWAYS apply retroactively to all prior shares in the year!",
+    "image": ""
+  },
+  {
+    "id": 344,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company reports: Net income = $32 million; WACS = 4.5 million; $15 million of 12% convertible bonds (convertible into 50,000 shares); 200,000 options (exercise price $50, average market price $80); Tax rate = 30%. The company’s diluted EPS is closest to:",
+    "options": [
+      "$6.81.",
+      "$6.99.",
+      "$7.19."
+    ],
+    "correctIndex": 1,
+    "explanation": "Basic EPS = $\\$32\\text{M} / 4.5\\text{M} = \\$7.11$. Test convertible bonds: after-tax interest = $\\$15\\text{M} \\times 12\\% \\times (1 - 0.30) = \\$1.26\\text{M}$; incremental EPS = $\\$1.26\\text{M} / 50,000 = \\$25.20 > \\$7.11$, so the bonds are ANTI-DILUTIVE and excluded. Test options (treasury stock method): $200,000 - (200,000 \\times \\$50 / \\$80) = 200,000 - 125,000 = 75,000$ net shares. Diluted EPS = $\\$32\\text{M} / 4.575\\text{M} = \\$6.9945 \\approx \\$6.99$.",
+    "formula": "$\\text{Bonds Anti-Dilutive } (\\$25.20 > \\$7.11) \\implies \\text{Diluted EPS} = \\frac{\\$32,000,000}{4,500,000 + 75,000} = \\$6.99$",
+    "trap": "Test every potentially dilutive security individually against Basic EPS before combining them—Option C ($7.19) mistakenly includes the anti-dilutive bonds.",
+    "image": ""
+  },
+  {
+    "id": 345,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company reports year-end net income of $1,000,000 and the following issued & outstanding shares: Common stock = 250,000 ($1/share dividend); Preferred Series A = 12,000 (nonconvertible, cumulative, $4/share dividend); Preferred Series B = 30,000 (convertible into 2.5 common shares each, $7.50/share dividend). The diluted EPS is closest to:",
+    "options": [
+      "$2.91.",
+      "$2.93.",
+      "$3.08."
+    ],
+    "correctIndex": 0,
+    "explanation": "Preferred dividends: Series A = $12,000 \\times \\$4 = \\$48,000$; Series B = $30,000 \\times \\$7.50 = \\$225,000$. Basic EPS = $(\\$1,000,000 - \\$48,000 - \\$225,000) / 250,000 = \\$727,000 / 250,000 = \\$2.908 \\approx \\$2.91$. Check Series B conversion: incremental EPS = $\\$225,000 / (30,000 \\times 2.5) = \\$225,000 / 75,000 = \\$3.00 > \\$2.91$ (anti-dilutive, pushing EPS up to $2.93). Thus, Series B is excluded and Diluted EPS = Basic EPS = $2.91.",
+    "formula": "$\\text{Basic EPS} = \\frac{\\$1,000\\text{k} - \\$48\\text{k} - \\$225\\text{k}}{250\\text{k}} = \\$2.91 < \\text{Series B Incr. } (\\$3.00) \\implies \\text{Diluted EPS} = \\$2.91$",
+    "trap": "Never include anti-dilutive convertible preferred stock (Option B = $2.93), and never drop nonconvertible Series A preferred dividends (Option C = $3.08).",
+    "image": ""
+  },
+  {
+    "id": 346,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Selected year-end financial data for Mega Industries: Net income = $100 million; Tax rate = 25%; Weighted average common shares = 25 million; Convertible preferred shares = 10 million ($1.00 preferred dividend per share; each share is convertible into 0.5 common shares). The net difference between Mega’s reported basic EPS and its diluted EPS is closest to:",
+    "options": [
+      "$0.27.",
+      "$0.37.",
+      "$0.74."
+    ],
+    "correctIndex": 0,
+    "explanation": "Basic EPS = $(\\$100\\text{M} - 10\\text{M} \\times \\$1.00) / 25\\text{M} = \\$90\\text{M} / 25\\text{M} = \\$3.60$. Diluted EPS (converting 10M preferred into $10\\text{M} \\times 0.5 = 5\\text{M}$ common shares) = $\\$100\\text{M} / (25\\text{M} + 5\\text{M}) = \\$100\\text{M} / 30\\text{M} = \\$3.333$. Net difference = $\\$3.60 - \\$3.333 = \\$0.267 \\approx \\$0.27$.",
+    "formula": "$\\text{Basic} = \\frac{100 - 10}{25} = \\$3.60 \\mid \\text{Diluted} = \\frac{100}{25 + 5} = \\$3.33 \\implies \\Delta = \\$0.27$",
+    "trap": "You selected B ($0.37)! You multiplied preferred dividends by $(1 - 0.25)$! Remember: ONLY bond interest is tax-deductible—preferred dividends are paid out of AFTER-TAX net income and are NEVER multiplied by $(1 - t)$!",
+    "image": ""
+  },
+  {
+    "id": 347,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company reports for its fiscal year ended 31 December: Net income = €3,000,000; Common shares on 1 Jan = 3,500,000; Common shares issued on 1 April = 1,000,000 (31 Dec total = 4,500,000); Convertible preferred shares = 400,000 (€1.00 dividend per share, each convertible into 2 common shares). Reported diluted EPS is closest to:",
+    "options": [
+      "€0.51.",
+      "€0.57.",
+      "€0.59."
+    ],
+    "correctIndex": 2,
+    "explanation": "Step 1: Time-weighted common shares = $3,500,000 + 1,000,000 \\times (9/12) = 4,250,000$. Step 2: Basic EPS = $(€3,000,000 - €400,000) / 4,250,000 = €0.6118$. Step 3: Convertible preferred adds $400,000 \\times 2 = 800,000$ shares; Diluted EPS = $€3,000,000 / (4,250,000 + 800,000) = €3,000,000 / 5,050,000 = €0.5941 \\approx €0.59$ (dilutive since $< €0.61$).",
+    "formula": "$\\text{WACS} = 3.5\\text{M} + 1.0\\text{M}(9/12) = 4.25\\text{M} \\implies \\text{Diluted EPS} = \\frac{€3.0\\text{M}}{4.25\\text{M} + 0.80\\text{M}} = €0.59$",
+    "trap": "You selected B (€0.57 = €3M / 5.3M)! You used the 31 December ending share count (4,500,000) instead of time-weighting the 1,000,000 shares issued on April 1 (9/12 of the year → 4,250,000).",
+    "image": ""
+  },
+  {
+    "id": 348,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company reports for its fiscal year ended 31 December: Net income = €80,000; Common dividends declared and paid = €16,000; Preferred dividends declared and paid = €10,000; Weighted average common shares outstanding = 150,000; Common shares outstanding at year end = 130,000. Basic EPS is closest to:",
+    "options": [
+      "€0.36.",
+      "€0.47.",
+      "€0.54."
+    ],
+    "correctIndex": 1,
+    "explanation": "Basic EPS subtracts ONLY preferred dividends (never common dividends) from net income and divides by weighted average common shares (never year-end shares): $(€80,000 - €10,000) / 150,000 = €70,000 / 150,000 = €0.4667 \\approx €0.47$.",
+    "formula": "$\\text{Basic EPS} = \\frac{€80,000 - €10,000}{150,000} = €0.47$",
+    "trap": "Option A (€0.36) wrongly subtracts common dividends (€16,000); Option C (€0.54) wrongly uses year-end shares (130,000).",
+    "image": ""
+  },
+  {
+    "id": 349,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company reports for its fiscal year ended 31 December: Net income = €5,000,000; Common dividends declared and paid = €500,000; Weighted average common shares = 2,000,000; Convertible preferred shares = 400,000 (€2 dividend per share; each convertible into 6 common shares). Reported diluted EPS is closest to:",
+    "options": [
+      "€0.95.",
+      "€1.02.",
+      "€1.14."
+    ],
+    "correctIndex": 2,
+    "explanation": "Basic EPS = $(€5,000,000 - 400,000 \\times €2) / 2,000,000 = €4,200,000 / 2,000,000 = €2.10$. Under the if-converted method, converting the preferred shares adds $400,000 \\times 6 = 2,400,000$ shares and removes the preferred dividend deduction (and common dividends are NEVER subtracted): Diluted EPS = $€5,000,000 / (2,000,000 + 2,400,000) = €5,000,000 / 4,400,000 = €1.136 \\approx €1.14$.",
+    "formula": "$\\text{Diluted EPS} = \\frac{€5,000,000}{2,000,000 + (400,000 \\times 6)} = \\frac{€5,000,000}{4,400,000} = €1.14$",
+    "trap": "You selected B (€1.02 = €4.5M / 4.4M)! You subtracted COMMON dividends (€500,000) from net income—NEVER subtract common dividends in any EPS formula!",
+    "image": ""
+  },
+  {
+    "id": 350,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company reports for its fiscal year ended 31 December: Net income = $210,000; Common shares outstanding on 1 January = 50,000; Common shares repurchased on 1 April = 20,000. If a 2-for-1 stock split took effect on 1 July, basic EPS for the year is:",
+    "options": [
+      "$3.00.",
+      "$3.50.",
+      "$4.20."
+    ],
+    "correctIndex": 0,
+    "explanation": "Step 1: Compute time-weighted shares before the split: 50,000 shares for 3 months (Jan–Mar) and 30,000 shares for 9 months (Apr–Dec) → $50,000(3/12) + 30,000(9/12) = 12,500 + 22,500 = 35,000$. Step 2: Apply the 2-for-1 stock split retroactively to Jan 1: $35,000 \\times 2 = 70,000$ shares. Step 3: $\\text{Basic EPS} = \\$210,000 / 70,000 = \\$3.00$.",
+    "formula": "$\\text{WACS} = \\left[50,000\\left(\\frac{3}{12}\\right) + 30,000\\left(\\frac{9}{12}\\right)\\right] \\times 2 = 70,000 \\implies \\text{Basic EPS} = \\frac{\\$210,000}{70,000} = \\$3.00$",
+    "trap": "You selected B ($3.50 = $210,000 / 60,000)! You used year-end shares $(30,000 \\times 2 = 60,000)$ instead of time-weighting the April 1 share repurchase.",
+    "image": ""
+  },
+  {
+    "id": 351,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "A company reports for its fiscal year ended 31 December: Net income = $1,200,000; Common shares on 1 Jan = 1,000,000; Common shares issued on 1 April = 100,000 (31 Dec total = 1,100,000); Convertible bonds = $2,000,000 face value, 8% coupon, convertible into 200,000 common shares; Tax rate = 30%. Reported diluted EPS is closest to:",
+    "options": [
+      "$1.01.",
+      "$1.03.",
+      "$1.07."
+    ],
+    "correctIndex": 1,
+    "explanation": "WACS = $1,000,000 + 100,000(9/12) = 1,075,000$. Basic EPS = $\\$1,200,000 / 1,075,000 = \\$1.12$. After-tax bond interest = $\\$2,000,000 \\times 8\\% \\times (1 - 0.30) = \\$112,000$. Diluted EPS = $(\\$1,200,000 + \\$112,000) / (1,075,000 + 200,000) = \\$1,312,000 / 1,275,000 = \\$1.029 \\approx \\$1.03$ (dilutive since $< \\$1.12$).",
+    "formula": "$\\text{Diluted EPS} = \\frac{\\$1,200,000 + \\$2,000,000(0.08)(1 - 0.30)}{1,075,000 + 200,000} = \\frac{\\$1,312,000}{1,275,000} = \\$1.03$",
+    "trap": "Option A ($1.01) forgets to time-weight the April 1 share issuance; Option C ($1.07) adds back pre-tax interest ($160,000) instead of after-tax interest ($112,000).",
+    "image": ""
+  },
+  {
+    "id": 352,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Common-size income statements (% of Revenue) for three companies in the same industry show: Company X (COGS 65%, Admin 20%, R&D 0%, Adv 5%, Op Profit 10%); Company Y (COGS 50%, Admin 20%, R&D 5%, Adv 15%, Op Profit 10%); Company Z (COGS 30%, Admin 20%, R&D 30%, Adv 10%, Op Profit 10%). Which company is most likely to have a technically superior product?",
+    "options": [
+      "Company X",
+      "Company Y",
+      "Company Z"
+    ],
+    "correctIndex": 2,
+    "explanation": "Company Z invests heavily in Research & Development (30% of revenue vs. 0% for X and 5% for Y) and commands the highest gross margin (70%, since COGS is only 30%), strongly indicating a technically superior, differentiated product with strong pricing power.",
+    "formula": "High R&D % + High Gross Margin (Low COGS %) → Product Differentiation / Technical Superiority",
+    "trap": "Even though all three firms have the exact same 10% operating profit margin, common-size analysis exposes completely different business strategies (cost leader X, marketing-driven Y, R&D innovator Z).",
+    "image": ""
+  },
+  {
+    "id": 353,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "For which of the examples given would common-size income statements generally provide the most insight?",
+    "options": [
+      "A liquidity analysis of two companies within the same industry",
+      "A time-series analysis of a rapidly expanding single company",
+      "A comparison of similarly sized companies from different industries"
+    ],
+    "correctIndex": 1,
+    "explanation": "Common-size income statements scale all expenses and profits as percentages of revenue to neutralize size differences. This provides maximum insight when analyzing a single rapidly expanding company over time (revealing operating leverage and economies of scale as revenue surges). Liquidity requires balance sheet/cash flow data, and different industries have inherently different cost structures.",
+    "formula": "Common-Size IS Best Uses = Cross-sectional (same industry, different sizes) OR Time-series (rapidly growing company)",
+    "trap": "You selected C! Comparing companies from DIFFERENT industries is misleading because industries naturally have different margin profiles, and if they are already 'similarly sized', removing the size effect adds little value.",
+    "image": ""
+  },
+  {
+    "id": 354,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Oceanaqua Apparel (OA) common-size income statements (% of Net Revenues) for 2013 → 2014 → 2015: Cost of Sales (59.5% → 62.5% → 64.3%); Gross Profit (40.5% → 37.5% → 35.7%); Operating Income (11.9% → 11.4% → 11.7%); EBT (8.1% → 9.2% → 9.9%); Taxes (1.9% → 2.0% → 2.0%); Net Income (6.2% → 7.2% → 7.9%). Industry averages (2013 → 2015): Gross Margin (40.7% → 39.1% → 38.4%); Net Margin (6.1% → 6.8% → 7.1%). Which statement about OA’s three-year financial performance is most accurate? OA’s:",
+    "options": [
+      "effective tax rate has been holding steady at approximately 2%.",
+      "revenues per dollar of sales costs are falling over the time period.",
+      "profit margins indicate performance superior to the industry average."
+    ],
+    "correctIndex": 1,
+    "explanation": "OA's Cost of Sales rose from 59.5% to 64.3% of revenue (Gross Margin fell from 40.5% to 35.7%), which mathematically means revenue generated per dollar of Cost of Sales ($1 / \\text{COGS \\%}$) is falling over time. OA's effective tax rate is $\\text{Taxes} / \\text{EBT}$ ($1.9/8.1 = 23.5\\%$ down to $2.0/9.9 = 20.2\\%$), NOT 2% (which is Taxes/Sales). Also, OA's gross margin is BELOW the industry average.",
+    "formula": "$\\text{Effective Tax Rate} = \\frac{\\text{Income Tax Expense}}{\\text{EBT}} \\neq \\frac{\\text{Income Tax Expense}}{\\text{Revenue}}$",
+    "trap": "You selected A! Classic CFA common-size trap: the 'Taxes = 2.0%' line on a common-size income statement is Taxes / SALES, NEVER the effective tax rate (Taxes / EBT = ~20%–23.5%)!",
+    "image": ""
+  },
+  {
+    "id": 355,
+    "topic": "Financial Statement Analysis",
+    "module": "Module 2: Analyzing Income Statements",
+    "question": "Data ($ millions) for two companies in the same industry: Company X (Sales 11.2, COGS 5.7, Admin 1.9, Interest 0.3, R&D 1.5); Company Y (Sales 14.5, COGS 7.7, Admin 2.2, Interest 0.7, R&D 1.7). Which statement is most appropriate? Better margin performance will be reported by:",
+    "options": [
+      "Company Y at both the gross margin and operating margin levels.",
+      "Company Y at the gross margin level and Company X at the operating margin level.",
+      "Company X at the gross margin level and Company Y at the operating margin level."
+    ],
+    "correctIndex": 2,
+    "explanation": "Compute common-size margins (excluding interest expense, which sits below operating income):\n• Company X: $\\text{Gross Margin} = (11.2 - 5.7) / 11.2 = 5.5 / 11.2 = 49.1\\%$; $\\text{Operating Margin} = (5.5 - 1.9 - 1.5) / 11.2 = 2.1 / 11.2 = 18.8\\%$.\n• Company Y: $\\text{Gross Margin} = (14.5 - 7.7) / 14.5 = 6.8 / 14.5 = 46.9\\%$; $\\text{Operating Margin} = (6.8 - 2.2 - 1.7) / 14.5 = 2.9 / 14.5 = 20.0\\%$.\nTherefore, Company X has the higher gross margin (49.1% vs. 46.9%), while Company Y has the higher operating margin (20.0% vs. 18.8%).",
+    "formula": "$\\text{GM}_X = 49.1\\% > \\text{GM}_Y = 46.9\\% \\quad | \\quad \\text{OM}_X = 18.8\\% < \\text{OM}_Y = 20.0\\%$",
+    "trap": "You selected A! Remember two things: (1) divide by Sales to compare margins rather than raw dollar profits ($6.8M > $5.5M, yet Y's GM% is lower!), and (2) NEVER subtract Interest Expense when computing Operating Profit/EBIT!",
+    "image": ""
   }
 ]
