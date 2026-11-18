@@ -2873,8 +2873,8 @@
       "responses": {}
     },
     "2026-11-18": {
-      "count": 13,
-      "correct": 12,
+      "count": 14,
+      "correct": 13,
       "answeredIds": [
         255,
         262,
@@ -2888,7 +2888,8 @@
         234,
         173,
         159,
-        68
+        68,
+        201
       ],
       "responses": {
         "68": {
@@ -2920,6 +2921,11 @@
           "selectedIndex": 2,
           "isCorrect": true,
           "timestamp": 1795015603377
+        },
+        "201": {
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timestamp": 1795015669581
         },
         "230": {
           "selectedIndex": 0,
@@ -4157,8 +4163,8 @@
     "201": {
       "selectedIndex": 2,
       "isCorrect": true,
-      "dateISO": "2026-11-16",
-      "timestamp": 1794859475682
+      "dateISO": "2026-11-18",
+      "timestamp": 1795015669581
     },
     "202": {
       "selectedIndex": 2,
@@ -7762,11 +7768,11 @@
       ]
     },
     "201": {
-      "attempts": 3,
+      "attempts": 4,
       "wrongCount": 2,
       "lastIsCorrect": true,
       "lastSelectedIndex": 2,
-      "lastAnsweredDate": "2026-11-16",
+      "lastAnsweredDate": "2026-11-18",
       "history": [
         {
           "date": "2026-11-14",
@@ -7780,6 +7786,11 @@
         },
         {
           "date": "2026-11-16",
+          "isCorrect": true,
+          "topic": "Alternative Investments"
+        },
+        {
+          "date": "2026-11-18",
           "isCorrect": true,
           "topic": "Alternative Investments"
         }
@@ -8766,5 +8777,5 @@
     "Financial Statement Analysis__0": true,
     "Economics__0": true
   },
-  "lastUpdated": 1795015643132
+  "lastUpdated": 1795015669581
 }
