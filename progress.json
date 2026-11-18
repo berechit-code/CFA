@@ -2873,8 +2873,8 @@
       "responses": {}
     },
     "2026-11-18": {
-      "count": 19,
-      "correct": 17,
+      "count": 56,
+      "correct": 36,
       "answeredIds": [
         255,
         262,
@@ -2899,98 +2899,79 @@
       "responses": {
         "68": {
           "selectedIndex": 0,
-          "isCorrect": true,
-          "timestamp": 1795015643132
+          "isCorrect": true
         },
         "69": {
           "selectedIndex": 1,
-          "isCorrect": true,
-          "timestamp": 1795015073277
+          "isCorrect": true
         },
         "97": {
           "selectedIndex": 0,
-          "isCorrect": true,
-          "timestamp": 1795015081366
+          "isCorrect": true
         },
         "127": {
           "selectedIndex": 0,
-          "isCorrect": true,
-          "timestamp": 1795015686838
+          "isCorrect": true
         },
         "131": {
           "selectedIndex": 0,
-          "isCorrect": true,
-          "timestamp": 1795015694091
+          "isCorrect": true
         },
         "154": {
           "selectedIndex": 1,
-          "isCorrect": true,
-          "timestamp": 1795015164205
+          "isCorrect": true
         },
         "159": {
           "selectedIndex": 2,
-          "isCorrect": true,
-          "timestamp": 1795015628353
+          "isCorrect": true
         },
         "173": {
           "selectedIndex": 2,
-          "isCorrect": true,
-          "timestamp": 1795015603377
+          "isCorrect": true
         },
         "201": {
           "selectedIndex": 2,
-          "isCorrect": true,
-          "timestamp": 1795015669581
+          "isCorrect": true
         },
         "230": {
           "selectedIndex": 0,
-          "isCorrect": true,
-          "timestamp": 1795015186404
+          "isCorrect": true
         },
         "234": {
           "selectedIndex": 1,
-          "isCorrect": false,
-          "timestamp": 1795015536437
+          "isCorrect": false
         },
         "239": {
           "selectedIndex": 2,
-          "isCorrect": true,
-          "timestamp": 1795016265993
+          "isCorrect": true
         },
         "240": {
           "selectedIndex": 2,
-          "isCorrect": true,
-          "timestamp": 1795015117329
+          "isCorrect": true
         },
         "241": {
           "selectedIndex": 2,
-          "isCorrect": false,
-          "timestamp": 1795015770311
+          "isCorrect": false
         },
         "244": {
           "selectedIndex": 1,
-          "isCorrect": true,
-          "timestamp": 1795015712051
+          "isCorrect": true
         },
         "255": {
           "selectedIndex": 2,
-          "isCorrect": true,
-          "timestamp": 1795015032088
+          "isCorrect": true
         },
         "262": {
           "selectedIndex": 2,
-          "isCorrect": true,
-          "timestamp": 1795015040251
+          "isCorrect": true
         },
         "280": {
           "selectedIndex": 2,
-          "isCorrect": true,
-          "timestamp": 1795015147382
+          "isCorrect": true
         },
         "297": {
           "selectedIndex": 1,
-          "isCorrect": true,
-          "timestamp": 1795015155520
+          "isCorrect": true
         }
       }
     }
@@ -8862,5 +8843,5 @@
     "Financial Statement Analysis__0": true,
     "Economics__0": true
   },
-  "lastUpdated": 1795016265993
+  "lastUpdated": 1795031882311
 }
