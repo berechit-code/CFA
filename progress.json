@@ -2873,7 +2873,7 @@
       "responses": {}
     },
     "2026-11-18": {
-      "count": 56,
+      "count": 57,
       "correct": 36,
       "answeredIds": [
         255,
@@ -2894,7 +2894,8 @@
         131,
         244,
         241,
-        239
+        239,
+        172
       ],
       "responses": {
         "68": {
@@ -2924,6 +2925,11 @@
         "159": {
           "selectedIndex": 2,
           "isCorrect": true
+        },
+        "172": {
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timestamp": 1795031903546
         },
         "173": {
           "selectedIndex": 2,
@@ -4002,6 +4008,12 @@
       "isCorrect": true,
       "dateISO": "2026-11-12",
       "timestamp": 1794498044655
+    },
+    "172": {
+      "selectedIndex": 2,
+      "isCorrect": false,
+      "dateISO": "2026-11-18",
+      "timestamp": 1795031903546
     },
     "173": {
       "selectedIndex": 2,
@@ -7383,6 +7395,20 @@
         }
       ]
     },
+    "172": {
+      "attempts": 1,
+      "wrongCount": 1,
+      "lastIsCorrect": false,
+      "lastSelectedIndex": 2,
+      "lastAnsweredDate": "2026-11-18",
+      "history": [
+        {
+          "date": "2026-11-18",
+          "isCorrect": false,
+          "topic": "Fixed Income"
+        }
+      ]
+    },
     "173": {
       "attempts": 2,
       "wrongCount": 1,
@@ -8843,5 +8869,5 @@
     "Financial Statement Analysis__0": true,
     "Economics__0": true
   },
-  "lastUpdated": 1795031882311
+  "lastUpdated": 1795031903546
 }
