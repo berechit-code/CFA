@@ -2873,8 +2873,8 @@
       "responses": {}
     },
     "2026-11-18": {
-      "count": 7,
-      "correct": 7,
+      "count": 8,
+      "correct": 8,
       "answeredIds": [
         255,
         262,
@@ -2882,7 +2882,8 @@
         97,
         240,
         280,
-        297
+        297,
+        154
       ],
       "responses": {
         "69": {
@@ -2894,6 +2895,11 @@
           "selectedIndex": 0,
           "isCorrect": true,
           "timestamp": 1795015081366
+        },
+        "154": {
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timestamp": 1795015164205
         },
         "240": {
           "selectedIndex": 2,
@@ -3843,10 +3849,10 @@
       "timestamp": 1794430072439
     },
     "154": {
-      "selectedIndex": 0,
-      "isCorrect": false,
-      "dateISO": "2026-11-09",
-      "timestamp": 1794222139563
+      "selectedIndex": 1,
+      "isCorrect": true,
+      "dateISO": "2026-11-18",
+      "timestamp": 1795015164205
     },
     "155": {
       "selectedIndex": 2,
@@ -7004,15 +7010,20 @@
       ]
     },
     "154": {
-      "attempts": 1,
+      "attempts": 2,
       "wrongCount": 1,
-      "lastIsCorrect": false,
-      "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-11-09",
+      "lastIsCorrect": true,
+      "lastSelectedIndex": 1,
+      "lastAnsweredDate": "2026-11-18",
       "history": [
         {
           "date": "2026-11-09",
           "isCorrect": false,
+          "topic": "Corporate Finance"
+        },
+        {
+          "date": "2026-11-18",
+          "isCorrect": true,
           "topic": "Corporate Finance"
         }
       ]
@@ -8655,5 +8666,5 @@
     "Financial Statement Analysis__0": true,
     "Economics__0": true
   },
-  "lastUpdated": 1795015155520
+  "lastUpdated": 1795015164205
 }
