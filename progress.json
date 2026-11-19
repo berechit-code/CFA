@@ -3035,8 +3035,8 @@
       }
     },
     "2026-11-19": {
-      "count": 12,
-      "correct": 11,
+      "count": 13,
+      "correct": 12,
       "answeredIds": [
         310,
         312,
@@ -3049,9 +3049,15 @@
         234,
         235,
         172,
-        77
+        77,
+        9
       ],
       "responses": {
+        "9": {
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timestamp": 1795120953164
+        },
         "77": {
           "selectedIndex": 1,
           "isCorrect": true,
@@ -3167,8 +3173,8 @@
     "9": {
       "selectedIndex": 0,
       "isCorrect": true,
-      "dateISO": "2026-11-05",
-      "timestamp": 1793904650790
+      "dateISO": "2026-11-19",
+      "timestamp": 1795120953164
     },
     "10": {
       "selectedIndex": 1,
@@ -4939,11 +4945,11 @@
       ]
     },
     "9": {
-      "attempts": 5,
+      "attempts": 6,
       "wrongCount": 1,
       "lastIsCorrect": true,
       "lastSelectedIndex": 0,
-      "lastAnsweredDate": "2026-11-05",
+      "lastAnsweredDate": "2026-11-19",
       "history": [
         {
           "date": "2026-10-23",
@@ -4967,6 +4973,11 @@
         },
         {
           "date": "2026-11-05",
+          "isCorrect": true,
+          "topic": "Derivatives"
+        },
+        {
+          "date": "2026-11-19",
           "isCorrect": true,
           "topic": "Derivatives"
         }
@@ -9283,5 +9294,5 @@
     "Economics__0": true,
     "Ethical and Professional Standards__1": true
   },
-  "lastUpdated": 1795120940120
+  "lastUpdated": 1795120953164
 }
